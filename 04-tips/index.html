@@ -326,10 +326,68 @@
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
                     <h1><a class="header" href="#intro" id="intro">Tips</a></h1>
-                    <p>input in running gdb
+                    <p><h4>> input in running gdb</h4> 
                         <pre><code>(gdb) r &lt;&lt;&lt; $(<span class="hljs-name">python</span> -c <span class="hljs-string">"print '\xde\xad\xbe\xef'"</span>)</code></pre></p>
                         <pre><code>(gdb) r &lt;&lt;&lt; $(<span class="hljs-name">python</span> -c <span class="hljs-string">"print 0xdeadbeef"</span>)</code></pre>
                     </p>
+                    <br>
+                    <hr><br>
+                    <p>
+                        <h4>> Using radare2 </h4>
+                        install <pre><code>git clone https://github.com/radare/radare2.git
+cd radare2/
+./sys/install.sh</code></pre>
+                        menjalankan program<br><code>r2 (elf) <br> r2 -d (elf) <br> radare2 (elf)</code>
+                        <br><br> beberapa instruksi :
+                        <ol>
+                            <ul>analisis blablabla : <code>aaa</code></ul> 
+                            <ul>seek to main : <code>s sys.main</code></ul> 
+                            <ul>print disassambly : <code>pdf</code></ul> 
+                            <ul>break : <code>db break_point</code></ul> 
+                            <ul>run/continue : <code>dc</code></ul> 
+                            <ul>visual : <code>VV</code></ul> 
+                            <ul>step into : <code>s</code></ul> 
+                            <ul>next into : <code>caps + s</code></ul>
+                            <ul>info register : <code>dr</code></ul>
+                        </ol>
+                        mengubah nilai : (misal ke memori 0x000) <br> <pre><code>dr rip=0x000</code></pre>
+                        rename var-name : <pre><code>afvn prev_name name</code></pre>
+                    </p>
+                    <br><hr><br>
+                    <p>
+                        <h4>> contoh cracking CTF licence key </h4>
+                        ada 2 kasus : 
+                        <ul>
+                            <li>compare langsung dengan key string</li>
+                            <li>compare dengan nilai int total key string</li> 
+                        </ul>
+                        untuk kasus pertama, berarti tinggal dilihat sourcenya, <br>
+                        untuk kasus kedua, dapat dengan
+                        <ul>
+                            <li>mengganti nilai tujuan alamat (jump) ke alamat yang dituju</li>
+                            <li>menggunakan sourcecode python berikut</li>
+                        </ul>
+<pre><code>import random, sys, string
+
+def check_key(key):
+    char_sum = 0
+    for c in key:
+        char_sum += ord(c)
+    sys.stdout.write("[0:1] | [1]    \r".format(char_sum, key))
+    sys.stdout.flush()
+    return char_sum
+
+key = ""
+a = string.printable
+while True:
+    key += random.choice(a)
+    s = check_key(key)
+    if s > 916:
+        key = "" 
+    elif s == 916:
+        print "found valid key : [0]".format(key)</code></pre>
+                    </p>
+                    <br><br><br><br><br><br>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
