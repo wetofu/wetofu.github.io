@@ -1,4 +1,4 @@
 echo `cat ../wetofu.txt`
 git add *
 git commit -m "updating"
-git push -u origin main
+git push origin main

@@ -5,7 +5,8 @@ listFile = ["index.html", "print.html", "00-intro/index.html", "00-intro/inf.htm
 			"05-jarkom/email.html", "05-jarkom/hacking.html", "05-jarkom/index.html", "05-jarkom/ipv6.html", 
 			"05-jarkom/keamananJar.html", "05-jarkom/nlipv4.html", "05-jarkom/nmb.html", "05-jarkom/pemjar.html", 
 			"05-jarkom/pendahuluan.html", "05-jarkom/pkjdll.html", "05-jarkom/pwwi.html", "05-jarkom/rnat.html", 
-			"05-jarkom/simJar.html", "05-jarkom/sm.html", "05-jarkom/tl.html", "05-jarkom/voip.html", "05-jarkom/webcms.html"]	# ini diisi file oprec
+			"05-jarkom/simJar.html", "05-jarkom/sm.html", "05-jarkom/tl.html", "05-jarkom/voip.html", "05-jarkom/webcms.html", 
+			"06-tools/nmap.html", "06-tools/index.html"]	# ini diisi file oprec
 baseFile = "base/baseNav.html"
 firstTextLooking = "<!-- ---------------------------------------- NAV ---------------------------------------- -->"
 endTextLooking = "<!-- ---------------------------------------# NAV #--------------------------------------- -->"
@@ -40,3 +41,20 @@ for file in listFile:
 	file1.write(bs)
 	file1.write('\n')
 	file1.write(tampungAkhir)
+
+ind = open("index.html", "r")
+bersihkan = ind.read()
+bersihkan = bersihkan.replace("../", "")
+ind.close()
+
+ind = open("index.html", "w")
+ind.write(bersihkan)
+ind.close()
+
+
+
+
+
+
+
+
