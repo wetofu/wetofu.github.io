@@ -448,9 +448,97 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1><a class="header" href="#intro" id="intro">Intro</a></h1>
-                    <p> Kosong.</p>
-
+                    referensi : <br>
+                    <a href="https://lms.onnocenter.or.id/wiki/index.php/Nmap">https://lms.onnocenter.or.id/wiki/index.php/Nmap</a><br>
+                    <a href="https://noxtal.com/cheatsheets/2020/07/13/nmap-cheatsheet/">https://noxtal.com/cheatsheets/2020/07/13/nmap-cheatsheet/</a>
+                    <h1><a class="header" href="#intro" id="intro">Beberapa intruksi bagus : </a></h1>
+                    guide : <code>nmap [Scan Type(s)] [Options] {target specification}</code><br><br>
+                    scan ip :
+                    <pre><code>nmap $IP</code></pre>
+                    scan host :
+                    <pre><code>nmap hostname.com</code></pre>
+                    scan range IP :
+                    <pre><code>nmap 192.168.1.1-20</code></pre>
+                    scan subnet
+                    <pre><code>nmap 192.168.1.0/24</code></pre>
+                    port selection : (single)
+                    <pre><code>nmap -p 80 $IP</code></pre>
+                    port selection : (most commond)
+                    <pre><code>nmap -F $IP</code></pre>
+                    port selection : (range)
+                    <pre><code>nmap -p 1-100 $IP</code></pre>
+                    port selection : (all)
+                    <pre><code>nmap -p- $IP</code></pre>
+                    scaning mesin :
+                    <pre><code>nmap -v -sS -O 192.168.0.254
+nmap –sV –O 192.168.12.120
+nmap –Pn --script vuln 192.168.12.120</code></pre>
+                    <table style="width: 100%;">
+                        <tbody>
+                            <tr>
+                                <td style="width: 10.1423%;">
+                                    <pre>-v</pre>
+                                </td>
+                                <td style="width: 89.8577%;">
+                                    <pre>untuk verbose supaya banyak keluar informasi</pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 10.1423%;">
+                                    <pre>-sS</pre>
+                                </td>
+                                <td style="width: 89.8577%;">
+                                    <pre>scanning port dengan mengirim paket SYNC</pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="width: 10.1423%;">
+                                    <pre>-O</pre>
+                                </td>
+                                <td style="width: 89.8577%;">
+                                    <pre>dicoba juga untuk menebak sitem operasi yang digunakan</pre>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table><br>
+                    very verbose :
+                    <pre><code>nmap -vv $IP</code></pre>
+                    bypass firewall :
+                    <pre><code>nmap -Pn $IP</code></pre>
+                    <strong>default scan : </strong> 
+                    <pre><code>nmap -vv -sC -sV -oN nmap.log $IP</code></pre>
+                    <strong>complete scan : </strong> 
+                    <pre><code>nmap -vv -A -p- -oN nmap-complete.log $IP</code></pre>
+                    <strong>vulnerability scan : </strong> 
+                    <pre><code>nmap -vv --script vuln -oN nmap-vuln.log $IP</code></pre>
+                    <strong>http scan : </strong> 
+                    <pre><code>nmap -vv --script http* -oN nmap-http.log $IP</code></pre>
+                    <strong>mysql scan : </strong> 
+                    <pre><code>nmap -vv --script mysql* -oN nmap-mysql.log $IP</code></pre>
+                    <strong>ftp scan : </strong> 
+                    <pre><code>nmap -vv --script ftp* -oN nmap-ftp.log $IP</code></pre>
+                    <strong>smb scan : </strong> 
+                    <pre><code>nmap -vv --script smb* -oN nmap-smb.log $IP</code></pre>
+                    <strong>ssh scan : </strong> 
+                    <pre><code>nmap -vv --script ssh* -oN nmap-ssh.log $IP</code></pre>
+                    ip address information :
+                    <pre><code>nmap --script=asn-query,whois,ip-geolocation-maxmind $IP</code></pre>
+                    passing brute force :
+                    <pre><code>nmap --script=ssh-brute --script-args userdb=usernames.lst,passwd=passwords.lst $IP</code></pre>
+                    brute force ftp password :
+                    <pre><code>nmap -p21 –script ftp-brute.nse –script-args userdb=rockyou.txt,passdb=rockyou.txt 192.168.1.105</code></pre>
+                    brute force telnet password :
+                    <pre><code>nmap -p23 --script telnet-brute.nse --script-args userdb=rockyou.txt,passdb=rockyou.txt 192.168.1.105
+                      </code></pre>
+                    brute force smb password :
+                    <pre><code>nmap --script smb-brute.nse -p445 192.168.0.7
+nmap --script smb-brute.nse -p445 192.168.0.80
+nmap -sU -sS --script smb-brute.nse -p U:137,T:139 192.168.0.80
+nmap –p445 –script smb-brute.nse –script-args userdb=/root/Desktop/user.txt,passdb=/root/Desktop/pass.txt 192.168.1.105</code></pre>
+                    brute force mysql : *masih ada catatan
+                    <pre><code>nmap --script=mysql-brute &lt;target&gt;
+nmap  -sT -p3306 --script mysql-brute.nse --script-args userdb=/root/user.txt --script-trace  192.168.0.100
+nmap  -sT -p3306 --script mysql-brute.nse --script-args userdb=/root/user.txt,passdb=/root/pass.txt --script-trace 192.168.0.100</code></pre>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
@@ -485,8 +573,8 @@
                 <i class="fa fa-angle-left"></i>
             </a>
             <!-- sesudah -->
-            <a rel="next" href="../04-tips/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
-                aria-keyshortcuts="Right">
+            <a rel="next" href="../04-tips/index.html" class="nav-chapters next" title="Next chapter"
+                aria-label="Next chapter" aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
             </a>
             <!-- ----------------------------------------------# DIGANTI PREV NEXT 2 #---------------------------------------------- -->
