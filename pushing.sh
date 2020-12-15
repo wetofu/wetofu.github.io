@@ -1,5 +1,4 @@
-echo "wetofu"
-echo "@siapagun@!yahh:)-_"
+echo `cat ../wetofu.txt`
 git add *
 git commit -m "updating"
 git push -u origin main
