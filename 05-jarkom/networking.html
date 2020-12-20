@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>TOOLS</title>
+    <title>Networking</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -413,7 +413,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">TOOLS</h1>
+                <h1 class="menu-title">Networking</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -454,9 +454,50 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1><a class="header" href="#intro" id="intro">Intro</a></h1>
-                    <p> Ayok cari tau tools apa saja yang keren.</p>
-
+                    <br><br><br>
+                    Mikrotik :
+                    <ul>
+                        <li><a class="header" href="#setup">Setup (basic)</a></li>
+                        <li><a class="header" href="#setuppass">Ganti user password</a></li>
+                    </ul>
+                    <br><hr><br>
+                    <p> <img src="../gambar/networking.png" alt=""></p>
+                    <h3><a class="header" id="setup" style="text-decoration: none;">Setup (basic)</a></h3>
+                    <ol type="1">
+                        <li>setting mikrotik</li>
+                        <!-- <li>rename interface</li> -->
+                        <ol>
+                            <li><pre><code>interface eternet set ether1 name=LAN</code></pre> </li>
+                            <li><pre><code>interface eternet set ether2 name=WAN</code></pre> </li>
+                            <li><pre><code>ip address add address=192.168.x.x/24 interface=WAN</code></pre> </li>
+                            lanjut di winbox biar a6 : <br><br>
+                            <li>buka browser, tulis ip WAN mikrotik, misal <code>192.168.43.10</code></li>
+                            <br>
+                            <li>unduh winbox, lalu login winbox, default <code>user : admin, password : (kosong)</code> </li>
+                            <br>
+                            <li>ip > address > add > address : 172.16.0.1/24 > interface : LAN</li>
+                            <br>
+                        </ol>
+                        <li>setting komputer</li>
+                        <ol>
+                            <br>
+                            <li>wifi > edit connections > ethernet</li>
+                            <br>
+                            <li>menu IPv4 > method Manual</li>
+                            <br>
+                            <li>add > address : 172.16.0.123 > netmask : 255.255.255.0 > gateway : 172.16.0.1 > dns server : 8.8.8.8 > ok ;)</li>
+                            <br>
+                        </ol>
+                        <li>tambahan</li>
+                        <ol>
+                            <br>
+                            <li>ip > routes > add > dst.address : 0.0.0.0/0 > gateway : 192.169.43.1</li>
+                        </ol>
+                    </ol>
+                    <h3><a class="header" id="setuppass" style="text-decoration: none;">Ganti user password : </a></h3>
+                    <ol>
+                        <li>system > users > tinggal ganti2</li>
+                    </ol>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
@@ -465,14 +506,14 @@
                     <!-- ----------------------------------------------- DIGANTI PREV NEXT ----------------------------------------------- -->
 
                     <!-- sebelum -->
-                    <a rel="prev" href="../03-ctf/assembly.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                    <a rel="prev" href="index.html" class="mobile-nav-chapters previous" title="Previous chapter"
                         aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
 
                     <!-- sesudah -->
-                    <a rel="next" href="../06-tools/nmap.html" class="mobile-nav-chapters next" title="Next chapter"
+                    <a rel="next" href="pkjdll.html" class="mobile-nav-chapters next" title="Next chapter"
                         aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -486,12 +527,12 @@
         <nav class="nav-wide-wrapper" aria-label="Page navigation">
             <!-- ----------------------------------------------- DIGANTI PREV NEXT 2 ----------------------------------------------- -->
             <!-- sebelum -->
-            <a rel="prev" href="../03-ctf/assembly.html" class="nav-chapters previous" title="Previous chapter"
+            <a rel="prev" href="index.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
             </a>
             <!-- sesudah -->
-            <a rel="next" href="../06-tools/nmap.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+            <a rel="next" href="pkjdll.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
                 aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
             </a>

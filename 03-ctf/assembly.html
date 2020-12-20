@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>TOOLS</title>
+    <title>WETOFU</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -413,7 +413,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">TOOLS</h1>
+                <h1 class="menu-title">WeTofu</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -454,9 +454,39 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1><a class="header" href="#intro" id="intro">Intro</a></h1>
-                    <p> Ayok cari tau tools apa saja yang keren.</p>
+                    <p>sumber : <br>
+                        <a href="https://www.youtube.com/playlist?list=PLetF-YjXm-sCH6FrTz4AQhfH6INDQvQSn" target="_blank">https://www.youtube.com/playlist?list=PLetF-YjXm-sCH6FrTz4AQhfH6INDQvQSn</a><br>
+                        <a href="https://www.tutorialspoint.com/assembly_programming" target="_blank">https://www.tutorialspoint.com/assembly_programming</a>
+                    </p>
+                    <h1><a class="header" href="#intro" id="intro">Linux</a></h1>
+                    <p>Contoh kode sederhana beserta penjelasan : <br></p>
+                    <pre><code>section .data
+    text db "Hello world", 10
 
+section .text
+    global _start
+
+_start:
+    mov rax, 1
+    mov rdi, 1
+    mov rsi, text
+    mov rdx, 14
+    syscall
+
+    mov rax, 60
+    mov rdi, 0
+    syscall</code></pre>
+    <br>
+                    <p>
+                    <code>section .data</code><br>
+                    tempat nyimpan data <br>
+                    </p>
+                    <p>
+                    <code>text db "Hello world", 10</code><br>
+                    nama memory address 'text',<br> 
+                    defining bytes 'db', <br>
+                    berisi "Hello world" dan '10' / newline
+                    </p>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
@@ -465,14 +495,14 @@
                     <!-- ----------------------------------------------- DIGANTI PREV NEXT ----------------------------------------------- -->
 
                     <!-- sebelum -->
-                    <a rel="prev" href="../03-ctf/assembly.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                    <a rel="prev" href="binex-pwnshell.html" class="mobile-nav-chapters previous" title="Previous chapter"
                         aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
 
                     <!-- sesudah -->
-                    <a rel="next" href="../06-tools/nmap.html" class="mobile-nav-chapters next" title="Next chapter"
+                    <a rel="next" href="../06-tools/index.html" class="mobile-nav-chapters next" title="Next chapter"
                         aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -486,12 +516,12 @@
         <nav class="nav-wide-wrapper" aria-label="Page navigation">
             <!-- ----------------------------------------------- DIGANTI PREV NEXT 2 ----------------------------------------------- -->
             <!-- sebelum -->
-            <a rel="prev" href="../03-ctf/assembly.html" class="nav-chapters previous" title="Previous chapter"
+            <a rel="prev" href="binex-pwnshell.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
             </a>
             <!-- sesudah -->
-            <a rel="next" href="../06-tools/nmap.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+            <a rel="next" href="../06-tools/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
                 aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
             </a>
