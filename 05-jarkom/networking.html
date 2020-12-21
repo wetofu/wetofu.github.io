@@ -459,6 +459,7 @@
                     <ul>
                         <li><a class="header" href="#setup">Setup (basic)</a></li>
                         <li><a class="header" href="#setuppass">Ganti user password</a></li>
+                        <li><a class="header" href="#dhcp">DHCP client & server</a></li>
                     </ul>
                     <br><hr><br>
                     <p> <img src="../gambar/networking.png" alt=""></p>
@@ -497,6 +498,41 @@
                     <h3><a class="header" id="setuppass" style="text-decoration: none;">Ganti user password : </a></h3>
                     <ol>
                         <li>system > users > tinggal ganti2</li>
+                    </ol>
+                    <h3><a class="header" id="dhcp" style="text-decoration: none;">DHCP client & server</a></h3>
+                    nyoba setting DHCP server untuk interface LAN, agar komputer client dapat IP dinamis 
+                    <ol type="1">
+                        <li>ip > dhcp server</li>
+                        <li>DHCP setup</li>
+                        <li>interface LAN > next terosss</li>
+                        <li>setting jaringan komputer client menjadi otomatis</li>
+                        <li>jika ingin IP client statis, ip dhcp server > leases > klik kanan D > make statis</li>
+                    </ol>
+                    membatasi koneksi client :
+                    <ol type="1">
+                        <li>ip > dhcp > static</li>
+                        <li>add</li>
+                        <li>regexp : .*\youtube.com ---> yg ingin diblokir</li>
+                        <li>address : 172.16.0.1 ---> pengalihannya, bisa ke web server sendiri</li>
+                        <br>
+                        suatu ketika krn sistem lemah, maka automatic dhcp dapat dialihkan 
+                        <img src="../gambar/networking2.png" alt="">
+                        pemaksaan pembatasan akses :
+                        <li>ip > firewall</li>
+                        <ul>
+                            <li> > NAT</li>
+                            <ul>
+                                <li>chain : dstnat</li>
+                                <li>dst.port : 53</li>
+                                <li>protocol : udp & tcp ---> krn terkadang pake udp / tcp, lngs 2 2 nya ajaaa</li>
+                            </ul>
+                            <li> > action</li>
+                            <ul>
+                                <li>action : dst-nat</li>
+                                <li>to addresses : 172.16.0.1</li>
+                                <li>to ports : 53</li>
+                            </ul>
+                        </ul>
                     </ol>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
