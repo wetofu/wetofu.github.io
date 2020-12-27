@@ -531,8 +531,11 @@
                     </ul><br>
                     <hr>
                     <h1><code>Rangkuman</code></h1>
+                    <ul>
+                        <li><a class="header" href="#pbo">PBO</a></li>
+                    </ul>
                     <p>
-                        <h2><a class="header" href="#pbo" id="pbo"> Pemrograman Berorientasi Objek</a></h2>
+                        <h2><a class="header" id="pbo" style="text-decoration: none;"> Pemrograman Berorientasi Objek</a></h2>
                         <ul>
                             <li><a class="header" href="#javgen"> Java Generics(ArrayList,Set,Map,Enum,Stack,Queue)</a>
                             </li>
@@ -697,6 +700,79 @@ Sequential Program dengan array
                         </ul>
                         <h4><a class="header" id="stop" style="text-decoration: none;">String Operation</a></h4>
                         <h4><a class="header" id="regex" style="text-decoration: none;">Regex</a></h4>
+                        <ul>
+                            <li>Sequence of character that forms a search pattern</li>
+                            <li>can be a single character, or a more complicated pattern</li>
+                            <li>can be used to perform all types of text search and text replace operation</li>
+                        </ul>
+                        <pre><code>String s1 = "Java";
+String regex1 = "J[a-z][a-z][a-z]";
+String regex4 = "J[a-z]*";
+                    
+// [a-z] : A single lowercase letter that is a,b,c,d,...,or z
+                    
+// J[a-z][a-z][a-z] : A single that consists of four character.
+// The first character is J. the second character is a,b,c,d,...,or z
+                    
+String s2 = "3";
+String regex4 = "[0123]";
+                    
+// [0123] : A single digit 0,1,2, or 3</code></pre><br>
+Common regex sintax :
+<table style="width: 80%;">
+    <tbody>
+        <tr>
+            <td colspan="2" style="width: 25%;">
+                <div style="text-align: center;">Subexpression</div>
+            </td>
+            <td style="width: 75%;">
+                <div style="text-align: center;">Matches</div>
+            </td>
+        </tr>
+        <tr>
+            <td style="width: 7%;">
+                <div style="text-align: center;">1</div>
+            </td>
+            <td style="width: 18%;">^</td>
+            <td style="width: 75%;">Matches the begining of the line</td>
+        </tr>
+        <tr>
+            <td style="width: 7%;">
+                <div style="text-align: center;">2</div>
+            </td>
+            <td style="width: 18%;">$</td>
+            <td style="width: 75%;">Matches the end of the line</td>
+        </tr>
+        <tr>
+            <td style="width: 7%;">
+                <div style="text-align: center;">3</div>
+            </td>
+            <td style="width: 18%;">[...]</td>
+            <td style="width: 75%;">Matches any single character in the brackets</td>
+        </tr>
+        <tr>
+            <td style="width: 7%;">
+                <div style="text-align: center;">4</div>
+            </td>
+            <td style="width: 18%;">a| b</td>
+            <td style="width: 75%;">Matches either a or b</td>
+        </tr>
+        <tr>
+            <td style="width: 7%;">
+                <div style="text-align: center;">5</div>
+            </td>
+            <td style="width: 18%;">re*</td>
+            <td style="width: 75%;">Matches 0 or more occurrences of the preceding expression</td>
+        </tr>
+        <tr>
+            <td style="width: 7%;">
+                <div style="text-align: center;">6</div>
+            </td>
+            <td style="width: 18%;">re+</td>
+            <td style="width: 75%;">Matches 1 or more of the previous thing</td>
+        </tr>
+    </tbody>
+</table>
                         <h4><a class="header" id="exas" style="text-decoration: none;">Exception & Assertion</a></h4>
                         <h4><a class="header" id="io" style="text-decoration: none;">I/O</a></h4>
                         <h4><a class="header" id="mul" style="text-decoration: none;">MultiThreading</a></h4>

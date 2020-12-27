@@ -457,8 +457,19 @@
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
                     <h1><a class="header" href="#intro" id="intro">Tips</a></h1>
+                    <ul>
+                        <li><a class="header" href="#inp">input in running gdb</a></li>
+                        <li><a class="header" href="#rad">Using radare2</a></li>
+                        <li><a class="header" href="#licen">contoh cracking CTF licence key</a></li>
+                        <li><a class="header" href="#pyt">Some python import and using</a></li>
+                        <li><a class="header" href="#rsa">RSA</a></li>
+                        <li><a class="header" href="#pil">Python PIL</a></li>
+                        <li><a class="header" href="#deb">Install / Remove .deb in ubuntu</a></li>
+                        <li><a class="header" href="#sqlserv">Install sql server ubuntu 18.04</a></li>
+                    </ul>
+                    <br><hr><br>
                     <p>
-                        <h4>> input in running gdb</h4>
+                        <h4><a class="header" id="inp" style="text-decoration: none;">input in running gdb</a></h4>
                         <pre><code>(gdb) r &lt;&lt;&lt; $(<span class="hljs-name">python</span> -c <span class="hljs-string">"print '\xde\xad\xbe\xef'"</span>)</code></pre>
                     </p>
                     <pre><code>(gdb) r &lt;&lt;&lt; $(<span class="hljs-name">python</span> -c <span class="hljs-string">"print 0xdeadbeef"</span>)</code></pre>
@@ -466,7 +477,7 @@
                     <br>
                     <hr><br>
                     <p>
-                        <h4>> Using radare2 </h4>
+                        <h4><a class="header" id="rad" style="text-decoration: none;">Using radare2 </a></h4>
                         install
                         <pre><code>git clone https://github.com/radare/radare2.git
 cd radare2/
@@ -492,7 +503,7 @@ cd radare2/
                     <br>
                     <hr><br>
                     <p>
-                        <h4>> contoh cracking CTF licence key </h4>
+                        <h4><a class="header" id="licen" style="text-decoration: none;">contoh cracking CTF licence key </a></h4>
                         ada 2 kasus :
                         <ul>
                             <li>compare langsung dengan key string</li>
@@ -525,7 +536,7 @@ while True:
         print "found valid key : [0]".format(key)</code></pre>
                     </p>
                     <br>
-                    <hr><br><h4>> Some python import and using</h4>
+                    <hr><br><h4><a class="header" id="pyt" style="text-decoration: none;">Some python import and using</a></h4>
                     <pre><code>import string
 import hashlib
 import base64
@@ -620,7 +631,7 @@ text = 'a,b,c'
 text = eval('[' + text + ']')
 print text</code></pre>
                     <br><hr><br>
-                    <h4>> RSA</h4> 
+                    <h4><a class="header" id="rsa" style="text-decoration: none;">RSA</a></h4> 
                     <pre><code># tambahan dr http://www.factordb.com/
 
 def egcd(a, b):
@@ -658,7 +669,7 @@ n = 2395293735264352745137922751642837770500489450856630431317788019166217706187
 d = modinv(e,(p-1)*(n/p-1))
 print '8.\n', pow(ciphertext,d,n)</code></pre>
                     <br><hr><br>
-                    <h4>> Python PIL</h4>
+                    <h4><a class="header" id="pil" style="text-decoration: none;">Python PIL</a></h4>
                     <pre><code># the idea is converting the image to vertical position
 
 from PIL import Image
@@ -687,7 +698,7 @@ for x in range(width):
     
 gambar_baru.save("gambar_baru3.jpg")
 gambar_baru.show()</code></pre><br><hr><br>
-                    <h4>>Install / Remove .deb in ubuntu</h4>
+                    <h4><a class="header" id="deb" style="text-decoration: none;">Install / Remove .deb in ubuntu</a></h4>
                     <ol>
                         using :
                         <li>
@@ -707,6 +718,54 @@ sudo apt-get install -f</code></pre>
                             <pre><code>sudo apt-get remove packagename</code></pre>
                         </li>
                     </ol>
+<br><hr><br>
+                    jika update ada kendala, remove di <code>/etc/apt/sources.list.d/</code><br>
+                    <br><hr><br>
+                    <p><h4><a class="header" id="sqlserv" style="text-decoration: none;">Install sql server ubuntu 18.04</a></h4>
+                    gagal di ubuntu 20.04, bisa di ubuntu 18.04 <br>
+                    -> gagal di 'sudo apt-get install mssql-tools unixodbc-dev'
+                    <br>
+                    *jika tdk punya, bisa pakai virtualbox, dengan spesifikasi virtualbox mesin min 2gb ram <br>
+                    dan tiap ingin menjalankan harus sambil menghidupkan mesin 
+<pre><code>sudo apt update && sudo apt upgrade</code></pre>
+<pre><code>wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/18.04/mssql-server-2019.list)"
+sudo apt-get install -y mssql-server
+sudo /opt/mssql/bin/mssql-conf setup
+</code></pre>
+pilih developer, yes, masukkan password <br><br>
+cek apakah sdh bisa, jika bisa ada tulisan <code>active</code> :
+<pre><code>systemctl status mssql-server --no-pager</code></pre>
+lanjut :
+<pre><code>curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+curl https://packages.microsoft.com/config/ubuntu/18.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
+sudo apt-get update 
+sudo apt-get install mssql-tools unixodbc-dev</code></pre>
+opsional : (tdk jg gpp, aku jg ga)
+<pre><code>sudo apt-get update 
+sudo apt-get install mssql-tools</code></pre>
+lanjut :
+<pre><code>echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
+echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+source ~/.bashrc</code></pre>
+login sqlserver lwat terminal : (atau boleh lngs ke software spt dbeaver)
+<pre><code>sqlcmd -S localhost -U 'usernamemu' -P 'passwordmu'</code></pre>
+default username : SA <br><br>
+nyoba2 kuy : <br><br>
+create db
+<pre><code>CREATE DATABASE TestDB
+SELECT Name from sys.Databases
+GO</code></pre>
+insert db 
+<pre><code>USE TestDB
+CREATE TABLE Inventory (id INT, name NVARCHAR(50), quantity INT)
+INSERT INTO Inventory VALUES (1, 'banana', 150); INSERT INTO Inventory VALUES (2, 'orange', 154);
+GO</code></pre>
+select db
+<pre><code>SELECT * FROM Inventory WHERE quantity > 152;
+GO
+</code></pre>
+                    </p>
                     <br><br>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
