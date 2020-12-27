@@ -533,6 +533,7 @@
                     <h1><code>Rangkuman</code></h1>
                     <ul>
                         <li><a class="header" href="#pbo">PBO</a></li>
+                        <li><a class="header" href="#bd">Basis Data</a></li>
                     </ul>
                     <p>
                         <h2><a class="header" id="pbo" style="text-decoration: none;"> Pemrograman Berorientasi Objek</a></h2>
@@ -776,6 +777,64 @@ Common regex sintax :
                         <h4><a class="header" id="exas" style="text-decoration: none;">Exception & Assertion</a></h4>
                         <h4><a class="header" id="io" style="text-decoration: none;">I/O</a></h4>
                         <h4><a class="header" id="mul" style="text-decoration: none;">MultiThreading</a></h4>
+                    </p>
+                    <br><hr>
+                    <p>
+                        <h2><a class="header" id="bd" style="text-decoration: none;">Basis Data</a></h2>
+                        <strong>perintah umum</strong> 
+                        <pre><code>SELECT * FROM table_name;
+SELECT col1_name[, col2_name[, ...]] FROM table_name;
+SELECT col_name AS alias FROM table_name;
+SELECT TOP(50) * FROM table_name;</code></pre>
+distinct = nampikan yg tdk doble
+<pre><code>SELECT DISTINCT * FROM table_name;
+SELECT DISTINCT col1_name[, col2_name[, ...]] FROM table_name;</code></pre>
+<pre><code>SELECT * FROM table WHERE col1 > col2;
+SELECT * FROM table WHERE col > 50 OR col &lt; 20;
+SELECT * FROM table WHERE col > 90 AND col &lt;= 100;
+SELECT * FROM table WHERE col [NOT] BETWEEN 90 AND 100;
+SELECT * FROM table WHERE col [NOT] IN ('Solo', 'Palu');
+SELECT * FROM table WHERE col IS [NOT] NULL;
+SELECT * FROM table WHERE col LIKE '%budi%';
+SELECT * FROM table WHERE col LIKE '%budi';
+SELECT * FROM table WHERE col LIKE 'budi%';
+SELECT * FROM table WHERE col LIKE '_i%a';</code></pre>
+pengurutan
+<pre><code>SELECT * FROM table_name ORDER BY col ASC;
+SELECT * FROM table_name ORDER BY col DESC;
+SELECT * FROM table_name ORDER BY col1 ASC, col2 DESC;
+SELECT TOP(50) * FROM table_name ORDER BY col ASC;</code></pre>
+<strong>Agregasi baris</strong>
+<pre><code>SELECT * FROM table_name GROUP BY col;
+SELECT * FROM table_name GROUP BY col1, col2;
+SELECT COUNT(*) FROM table_name;
+SELECT SUM(col) FROM table_name;
+SELECT AVG(col) FROM table_name;
+SELECT MIN(col) FROM table_name;
+SELECT MAX(col) FROM table_name;
+SELECT COUNT(*) FROM table WHERE conditions;
+SELECT SUM(col1) FROM table GROUP BY col2;
+SELECT MIN(col1) FROM table WHERE col2 > 10;
+SELECT col1, SUM(col2) FROM table GROUP BY col3 HAVING SUM(col2) > 100;</code></pre>
+<strong>Perintah banyak baris</strong> 
+<pre><code>SELECT * FROM A CROSS JOIN B;
+SELECT * FROM A LEFT JOIN B ON A.k = B.k;
+SELECT * FROM A INNER JOIN B ON A.k = B.k;
+SELECT * FROM A RIGHT JOIN B ON A.k = B.k;
+SELECT * FROM A FULL OUTER JOIN B ON A.k = B.k;
+SELECT * FROM A UNION SELECT * FROM B;
+SELECT * FROM A UNION ALL SELECT * FROM B;</code></pre>
+<strong>Query lain-lain</strong> 
+<pre><code>CREATE VIEW view_name AS SELECT * FROM table; CREATE VIEW view_name AS SELECT col1, SUM(col2) AS sum FROM table_name GROUP BY col3;
+SELECT * FROM view_name;
+SELECT REPLACE(text, search, replace);
+SELECT REPLACE(col, s, r) FROM table;
+CASE var
+    WHEN val1 THEN expr1
+    WHEN val2 THEN expr2
+    ELSE expr3
+END
+COALESCE(expr1, [expr2[, ...]])</code></pre>
                     </p>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
