@@ -706,19 +706,43 @@ Sequential Program dengan array
                             <li>can be a single character, or a more complicated pattern</li>
                             <li>can be used to perform all types of text search and text replace operation</li>
                         </ul>
-                        <pre><code>String s1 = "Java";
-String regex1 = "J[a-z][a-z][a-z]";
-String regex4 = "J[a-z]*";
-                    
-// [a-z] : A single lowercase letter that is a,b,c,d,...,or z
-                    
-// J[a-z][a-z][a-z] : A single that consists of four character.
-// The first character is J. the second character is a,b,c,d,...,or z
-                    
-String s2 = "3";
-String regex4 = "[0123]";
-                    
-// [0123] : A single digit 0,1,2, or 3</code></pre><br>
+                        <a href="https://github.com/ardhiesta/oop_regex" target="_blank">https://github.com/ardhiesta/oop_regex</a>
+<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>package</span> com.oop.regex;
+
+<span style='color:#3F7F5F'>// ebook hlm 510
+</span><span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> Example1 <span style='font-weight:bold;color:#D3171B'>{</span>
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args) <span style='font-weight:bold;color:#D3171B'>{</span>
+		String s1 = <span style='color:#2A00FF'>"Java"</span>;
+		<span style='color:#3F7F5F'>// pattern matching : mencari ada tidaknya suatu string di dalam string lain 
+</span>		System.out.println(s1+<span style='color:#2A00FF'>" equals Java : "</span>+s1.equals(<span style='color:#2A00FF'>"Java"</span>));
+		System.out.println(s1+<span style='color:#2A00FF'>" matches Java : "</span>+s1.matches(<span style='color:#2A00FF'>"Java"</span>));
+		
+		<span style='color:#3F7F5F'>// equals : parameter string
+</span>		<span style='color:#3F7F5F'>// matches : parameter regex (regular expression)
+</span>		
+		String regex1 = <span style='color:#2A00FF'>"J[a-z][a-z][a-z]"</span>;
+		String regex2 = <span style='color:#2A00FF'>"J[a-z]*"</span>;
+		String regex3 = <span style='color:#2A00FF'>"j[a-z]*"</span>;
+		System.out.println(s1+<span style='color:#2A00FF'>" matches "</span>+regex1+<span style='color:#2A00FF'>": "</span>+s1.matches(regex1));
+		System.out.println(s1+<span style='color:#2A00FF'>" matches "</span>+regex2+<span style='color:#2A00FF'>": "</span>+s1.matches(regex2));
+		System.out.println(s1+<span style='color:#2A00FF'>" matches "</span>+regex3+<span style='color:#2A00FF'>": "</span>+s1.matches(regex3));
+		
+		<span style='color:#3F7F5F'>/*
+		
+		[a-z] : A single lowercase letter that is a, b, c, d, ... or z
+		J[a-z][a-z][a-z] : A string that consists of four characters. 
+		The first character is J.The second character is a, b, c, d, ... or z
+		J[a-z]* : Same as above, * means matches 0 or more occurrences of the preceding expression
+		
+		*/</span>
+		
+		String s2 = <span style='color:#2A00FF'>"3"</span>;
+		String regex4 = <span style='color:#2A00FF'>"[0123]"</span>;
+		System.out.println(s2+<span style='color:#2A00FF'>" matches "</span>+regex4+<span style='color:#2A00FF'>": "</span>+s2.matches(regex4));
+		<span style='color:#3F7F5F'>// [0123] : A single digit 0, 1, 2, or 3
+</span>	<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
+                        <br>
 Common regex sintax :
 <table style="width: 80%;">
     <tbody>
@@ -930,13 +954,92 @@ Quantifier :
                 <p class="tableblock"><code>\d{3}</code> searches for three digits, <code>.{10}</code> for any character sequence of length 10.</p>
             </td>
         </tr>
-        <tr>
-            <td style="width: 10.5675%;"><br></td>
-            <td style="width: 55.9687%;"><br></td>
-            <td style="width: 33.3333%;"><br></td>
-        </tr>
     </tbody>
-</table>
+</table><br>
+grouping :
+<ul>
+    <li>group parts of regex</li>
+    <li>using round brackets ()</li>
+    <li>$ you can refer to a group.</li>
+    <ul>
+        <li>$1 is the first group</li>
+        <li>$2 is the second group</li>
+    </ul>
+</ul>
+<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;''><code><span style='font-weight:bold;color:#7B0052;'>package</span> com.oop.regex;
+
+<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> Example2 <span style='font-weight:bold;color:#D3171B'>{</span>
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args) <span style='font-weight:bold;color:#D3171B'>{</span>
+		<span style='color:#3F7F5F'>// formatting phone number
+</span>		<span style='color:#3F7F5F'>// mobile phone number, separate each 4 digits
+</span>		String regex = <span style='color:#2A00FF'>"\\b(\\d{4})(\\d{4})(\\d{4})\\b"</span>;
+	    String replacementText = <span style='color:#2A00FF'>"$1-$2-$3"</span>;
+	    System.out.println(<span style='color:#2A00FF'>"085645123123"</span>.replaceAll(regex, replacementText));
+	    
+	    <span style='color:#3F7F5F'>// office phone number, separate between code area and phone number
+</span>	    regex = <span style='color:#2A00FF'>"\\b(\\d{1})(\\d{3})(\\d{6})\\b"</span>;
+	    replacementText = <span style='color:#2A00FF'>"(+62$2)-$3"</span>;
+	    System.out.println(<span style='color:#2A00FF'>"0271646999"</span>.replaceAll(regex, replacementText));
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
+<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>package</span> com.oop.regex;
+
+<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> Example3 <span style='font-weight:bold;color:#D3171B'>{</span>
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args) <span style='font-weight:bold;color:#D3171B'>{</span>
+		String EXAMPLE_TEST = <span style='color:#2A00FF'>"This is my small example "</span>
+	            + <span style='color:#2A00FF'>"string which I'm going to "</span> + <span style='color:#2A00FF'>"use for pattern matching."</span>;
+		
+		<span style='color:#3F7F5F'>// matches word character [a-zA-Z_0-9]
+</span>		System.out.println(EXAMPLE_TEST.matches(<span style='color:#2A00FF'>"\\w.*"</span>));
+		
+        <span style='color:#3F7F5F'>// split based on whitespace character [ \t\n\x0b\r\f]
+</span>		String[] splitString = (EXAMPLE_TEST.split(<span style='color:#2A00FF'>"\\s+"</span>));
+        System.out.println(splitString.length);<span style='color:#3F7F5F'>// should be 14
+</span>        <span style='font-weight:bold;color:#7B0052;'>for</span> (String string : splitString) <span style='font-weight:bold;color:#D3171B'>{</span>
+            System.out.println(string);
+        <span style='font-weight:bold;color:#D3171B'>}</span>
+        
+        <span style='color:#3F7F5F'>// replace all whitespace with tabs
+</span>        System.out.println(EXAMPLE_TEST.replaceAll(<span style='color:#2A00FF'>"\\s+"</span>, <span style='color:#2A00FF'>"\t"</span>));
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
+Pattern and Matcher :
+<ul>
+    <li>Advanced regular expressions</li> 
+    <li>java.util.regex</li> 
+    <li>create a pattern object which defines the regular expression</li> 
+    <li>pattern object allows to create a matcher object for a given string</li> 
+    <li>matcher object then allows to do regex operations on a string</li> 
+</ul>
+<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>package</span> com.oop.regex;
+
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.regex.Matcher;
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.regex.Pattern;
+
+<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> Example4 <span style='font-weight:bold;color:#D3171B'>{</span>
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args) <span style='font-weight:bold;color:#D3171B'>{</span>
+		String EXAMPLE_TEST = <span style='color:#2A00FF'>"This is my small example string which I'm going to use "</span>
+				+ <span style='color:#2A00FF'>"for pattern matching."</span>;
+		Pattern pattern = Pattern.compile(<span style='color:#2A00FF'>"\\w+"</span>);
+		
+        <span style='color:#3F7F5F'>// in case you would like to ignore case sensitivity,
+</span>        <span style='color:#3F7F5F'>// you could use this statement:
+</span>        <span style='color:#3F7F5F'>// Pattern pattern = Pattern.compile("\\s+", Pattern.CASE_INSENSITIVE);
+</span>        Matcher matcher = pattern.matcher(EXAMPLE_TEST);
+        
+        <span style='color:#3F7F5F'>// check all occurance
+</span>        <span style='font-weight:bold;color:#7B0052;'>while</span> (matcher.find()) <span style='font-weight:bold;color:#D3171B'>{</span>
+            System.out.print(<span style='color:#2A00FF'>"Start index: "</span> + matcher.start());
+            System.out.print(<span style='color:#2A00FF'>", End index: "</span> + matcher.end() + <span style='color:#2A00FF'>" --&gt; "</span>);
+            System.out.println(matcher.group());
+        <span style='font-weight:bold;color:#D3171B'>}</span>
+        
+        <span style='color:#3F7F5F'>// now create a new pattern and matcher to replace whitespace with tabs
+</span>        Pattern replace = Pattern.compile(<span style='color:#2A00FF'>"\\s+"</span>);
+        Matcher matcher2 = replace.matcher(EXAMPLE_TEST);
+        System.out.println(matcher2.replaceAll(<span style='color:#2A00FF'>"\t"</span>));
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
                         <h4><a class="header" id="exas" style="text-decoration: none;">Exception & Assertion</a></h4>
                         <h4><a class="header" id="io" style="text-decoration: none;">I/O</a></h4>
                         <h4><a class="header" id="mul" style="text-decoration: none;">MultiThreading</a></h4>

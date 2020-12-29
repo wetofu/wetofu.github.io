@@ -461,7 +461,8 @@
                         <a href="https://www.tutorialspoint.com/assembly_programming" target="_blank">https://www.tutorialspoint.com/assembly_programming</a>
                     </p>
                     <h1><a class="header" href="#intro" id="intro">Linux</a></h1>
-                    <p>Contoh kode sederhana beserta penjelasan : <br></p>
+                    sementara versi 64bit
+                    <p>Contoh kode sederhana beserta penjelasan : (misal nama file hello.asm)<br></p>
                     <pre><code>section .data
     text db "Hello world", 10
 
@@ -478,6 +479,11 @@ _start:
     mov rax, 60
     mov rdi, 0
     syscall</code></pre>
+    run :
+<pre><code>sudo apt install nasm
+nasm -f elf64 -o hello.o hello.asm
+ld hello.o -o hello
+./hello</code></pre>
     <br>
                     <p>
                     <code>section .data</code><br>
