@@ -1128,6 +1128,434 @@ Pattern and Matcher :
 	<span style='font-weight:bold;color:#D3171B'>}</span>
 <span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
                         <h4><a class="header" id="exas" style="text-decoration: none;">Exception & Assertion</a></h4>
+                        EXCEPTION
+<ul>
+    <li>Represents an error condition that can occur during the normal course of program execution</li> 
+    <li>exception handling increase robustness</li> 
+</ul>
+
+EXCEPTION HANDLING
+<ul>
+    <li>When an exception occurs -> the normal sequence of flow is terminated and the exception-handling routine is executed</li>
+    <li>Exception occurs -> exeption is thrown</li>
+    <li>Exception-handling code is executed -> exception is caught</li>
+</ul>
+<pre><code>try {
+	// Block of code to try
+}
+catch(Exception e){
+	// Block of code to handle errors
+}</code></pre>
+
+TYPE OF EXCEPTIONS
+<ul>
+    <li>Checked : </li>
+    <ul>
+        <li>checked at compile time</li>
+    </ul>
+    <li>Unchecked / runtime exceptions :</li>
+    <ul>
+        <li>unchecked at compile time and are detected only at runtime</li>
+    </ul>
+</ul>
+
+ASSERTIONS
+<br>
+<ul>
+    <li>A language feature we use to detect logical errors in a program</li> 
+    <li>display logical error when compilling</li> 
+</ul>
+
+TYPE OF ASSERTION 
+<ul>    
+    <li>Postconditon assertion :</li> 
+    <ul>
+        <li>checks for a condition that must be true after a method is executed</li> 
+
+    </ul>
+    <li>Precondition assertion :</li> 
+    <ul>
+        <li>a checking of condition that must be true before a method is executed</li> 
+
+    </ul>
+    <li>Control flow invariant</li> 
+</ul>
+<img src="../gambar/gamb6.png" alt="">
+<br><br>
+SOURCE CODE : <br><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Execption :
+<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>package</span> oop.exceptions;
+
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.Calendar;
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.GregorianCalendar;
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.Scanner;
+
+<span style='color:#3F7F5F'>// program mencari tahun lahir berdasarkan usia
+</span>
+<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> AgeInput1 <span style='font-weight:bold;color:#D3171B'>{</span>
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>int</span> getAge(String prompt, Scanner scanner) <span style='font-weight:bold;color:#D3171B'>{</span>
+		System.out.print(prompt);
+		<span style='font-weight:bold;color:#7B0052;'>int</span> age = scanner.nextInt();
+		<span style='font-weight:bold;color:#7B0052;'>return</span> age;
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args) <span style='font-weight:bold;color:#D3171B'>{</span>
+		GregorianCalendar today;
+		<span style='font-weight:bold;color:#7B0052;'>int</span> age, thisYear, bornYr;
+		String answer;
+		
+		Scanner scanner = <span style='font-weight:bold;color:#7B0052;'>new</span> Scanner(System.in);
+		AgeInput1 input = <span style='font-weight:bold;color:#7B0052;'>new</span> AgeInput1();
+		age = input.getAge(<span style='color:#2A00FF'>"How old are you? "</span>, scanner);
+		today = <span style='font-weight:bold;color:#7B0052;'>new</span> GregorianCalendar();
+		thisYear = today.get(Calendar.YEAR);
+		bornYr = thisYear - age;
+		
+		System.out.print(<span style='color:#2A00FF'>"Already had your birthday this year? (Y or N)"</span>);
+		answer = scanner.next();
+		<span style='font-weight:bold;color:#7B0052;'>if</span> (answer.equals(<span style='color:#2A00FF'>"N"</span>) || answer.equals(<span style='color:#2A00FF'>"n"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>
+			bornYr--;
+		<span style='font-weight:bold;color:#D3171B'>}</span>
+		System.out.println(<span style='color:#2A00FF'>"\nYou are born in "</span> + bornYr);
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
+<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>package</span> oop.exceptions;
+
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.Calendar;
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.GregorianCalendar;
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.InputMismatchException;
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.Scanner;
+
+<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> AgeInput2 <span style='font-weight:bold;color:#D3171B'>{</span>
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>int</span> getAge(String prompt, Scanner scanner) <span style='font-weight:bold;color:#D3171B'>{</span>
+		<span style='font-weight:bold;color:#7B0052;'>int</span> age = 0;
+		<span style='font-weight:bold;color:#7B0052;'>boolean</span> keepGoing = <span style='font-weight:bold;color:#7B0052;'>true</span>;
+		<span style='font-weight:bold;color:#7B0052;'>while</span> (keepGoing) <span style='font-weight:bold;color:#D3171B'>{</span>
+			System.out.print(prompt);
+			<span style='font-weight:bold;color:#7B0052;'>try</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+				age = scanner.nextInt();
+				keepGoing = <span style='font-weight:bold;color:#7B0052;'>false</span>;
+			<span style='font-weight:bold;color:#D3171B'>}</span> <span style='font-weight:bold;color:#7B0052;'>catch</span> (InputMismatchException e) <span style='font-weight:bold;color:#D3171B'>{</span>
+				scanner.next(); <span style='color:#3F7F5F'>// remove the leftover garbage
+</span>				<span style='color:#3F7F5F'>// from the input buffer
+</span>				System.out.println(<span style='color:#2A00FF'>"Invalid Entry.Please enter digits only."</span>);
+			<span style='font-weight:bold;color:#D3171B'>}</span>
+		<span style='font-weight:bold;color:#D3171B'>}</span>
+		<span style='font-weight:bold;color:#7B0052;'>return</span> age;
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args) <span style='font-weight:bold;color:#D3171B'>{</span>
+		GregorianCalendar today;
+		<span style='font-weight:bold;color:#7B0052;'>int</span> age, thisYear, bornYr;
+		String answer;
+		
+		Scanner scanner = <span style='font-weight:bold;color:#7B0052;'>new</span> Scanner(System.in);
+		AgeInput2 input = <span style='font-weight:bold;color:#7B0052;'>new</span> AgeInput2();
+		age = input.getAge(<span style='color:#2A00FF'>"How old are you? "</span>, scanner);
+		today = <span style='font-weight:bold;color:#7B0052;'>new</span> GregorianCalendar();
+		thisYear = today.get(Calendar.YEAR);
+		bornYr = thisYear - age;
+		
+		System.out.print(<span style='color:#2A00FF'>"Already had your birthday this year? (Y or N)"</span>);
+		answer = scanner.next();
+		<span style='font-weight:bold;color:#7B0052;'>if</span> (answer.equals(<span style='color:#2A00FF'>"N"</span>) || answer.equals(<span style='color:#2A00FF'>"n"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>
+			bornYr--;
+		<span style='font-weight:bold;color:#D3171B'>}</span>
+		System.out.println(<span style='color:#2A00FF'>"\nYou are born in "</span> + bornYr);
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
+
+<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>package</span> oop.exceptions;
+
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.Calendar;
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.GregorianCalendar;
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.InputMismatchException;
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.Scanner;
+
+<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> AgeInput3 <span style='font-weight:bold;color:#D3171B'>{</span>
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>int</span> getAge(String prompt, Scanner scanner) <span style='font-weight:bold;color:#D3171B'>{</span>
+		<span style='font-weight:bold;color:#7B0052;'>int</span> age = 0;
+		<span style='font-weight:bold;color:#7B0052;'>while</span> (<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>
+			System.out.print(prompt);
+			<span style='font-weight:bold;color:#7B0052;'>try</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+				age = scanner.nextInt();
+				<span style='font-weight:bold;color:#7B0052;'>if</span> (age &lt; 0) <span style='font-weight:bold;color:#D3171B'>{</span>
+					<span style='font-weight:bold;color:#7B0052;'>throw</span> <span style='font-weight:bold;color:#7B0052;'>new</span> Exception(<span style='color:#2A00FF'>"Negative age is invalid"</span>);
+				<span style='font-weight:bold;color:#D3171B'>}</span>
+				<span style='font-weight:bold;color:#7B0052;'>return</span> age;
+			<span style='font-weight:bold;color:#D3171B'>}</span> <span style='font-weight:bold;color:#7B0052;'>catch</span> (InputMismatchException e) <span style='font-weight:bold;color:#D3171B'>{</span>
+				scanner.next(); <span style='color:#3F7F5F'>// remove the leftover garbage
+</span>				<span style='color:#3F7F5F'>// from the input buffer
+</span>				System.out.println(<span style='color:#2A00FF'>"Invalid Entry.Please enter digits only."</span>);
+			<span style='font-weight:bold;color:#D3171B'>}</span> <span style='font-weight:bold;color:#7B0052;'>catch</span> (Exception e) <span style='font-weight:bold;color:#D3171B'>{</span>
+				System.out.println(<span style='color:#2A00FF'>"Error: "</span> + e.getMessage());
+			<span style='font-weight:bold;color:#D3171B'>}</span>
+		<span style='font-weight:bold;color:#D3171B'>}</span>
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args) <span style='font-weight:bold;color:#D3171B'>{</span>
+		GregorianCalendar today;
+		<span style='font-weight:bold;color:#7B0052;'>int</span> age, thisYear, bornYr;
+		String answer;
+		
+		Scanner scanner = <span style='font-weight:bold;color:#7B0052;'>new</span> Scanner(System.in);
+		AgeInput3 input = <span style='font-weight:bold;color:#7B0052;'>new</span> AgeInput3();
+		age = input.getAge(<span style='color:#2A00FF'>"How old are you? "</span>, scanner);
+		today = <span style='font-weight:bold;color:#7B0052;'>new</span> GregorianCalendar();
+		thisYear = today.get(Calendar.YEAR);
+		bornYr = thisYear - age;
+		
+		System.out.print(<span style='color:#2A00FF'>"Already had your birthday this year? (Y or N)"</span>);
+		answer = scanner.next();
+		<span style='font-weight:bold;color:#7B0052;'>if</span> (answer.equals(<span style='color:#2A00FF'>"N"</span>) || answer.equals(<span style='color:#2A00FF'>"n"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>
+			bornYr--;
+		<span style='font-weight:bold;color:#D3171B'>}</span>
+		System.out.println(<span style='color:#2A00FF'>"\nYou are born in "</span> + bornYr);
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
+
+<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>package</span> oop.exceptions;
+
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.InputMismatchException;
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.Scanner;
+
+<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> AgeInput4 <span style='font-weight:bold;color:#D3171B'>{</span>
+	<span style='font-weight:bold;color:#7B0052;'>private</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>final</span> String DEFAULT_MESSAGE = <span style='color:#2A00FF'>"Your age:"</span>;
+	<span style='font-weight:bold;color:#7B0052;'>private</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>final</span> <span style='font-weight:bold;color:#7B0052;'>int</span> DEFAULT_LOWER_BOUND = 0;
+	<span style='font-weight:bold;color:#7B0052;'>private</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>final</span> <span style='font-weight:bold;color:#7B0052;'>int</span> DEFAULT_UPPER_BOUND = 99;
+
+	<span style='font-weight:bold;color:#7B0052;'>private</span> <span style='font-weight:bold;color:#7B0052;'>int</span> lowerBound;
+	<span style='font-weight:bold;color:#7B0052;'>private</span> <span style='font-weight:bold;color:#7B0052;'>int</span> upperBound;
+	<span style='font-weight:bold;color:#7B0052;'>private</span> Scanner scanner;
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> AgeInput4() <span style='font-weight:bold;color:#D3171B'>{</span>
+		init(DEFAULT_LOWER_BOUND, DEFAULT_UPPER_BOUND);
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> AgeInput4(<span style='font-weight:bold;color:#7B0052;'>int</span> low, <span style='font-weight:bold;color:#7B0052;'>int</span> high) <span style='font-weight:bold;color:#7B0052;'>throws</span> IllegalArgumentException <span style='font-weight:bold;color:#D3171B'>{</span>
+		<span style='font-weight:bold;color:#7B0052;'>if</span> (low &gt; high) <span style='font-weight:bold;color:#D3171B'>{</span>
+			<span style='font-weight:bold;color:#7B0052;'>throw</span> <span style='font-weight:bold;color:#7B0052;'>new</span> IllegalArgumentException(<span style='color:#2A00FF'>"Low ("</span> + low + <span style='color:#2A00FF'>") was "</span> + <span style='color:#2A00FF'>"larger than high("</span> + high + <span style='color:#2A00FF'>")"</span>);
+		<span style='font-weight:bold;color:#D3171B'>}</span> <span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+			init(low, high);
+		<span style='font-weight:bold;color:#D3171B'>}</span>
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>int</span> getAge() <span style='font-weight:bold;color:#7B0052;'>throws</span> Exception <span style='font-weight:bold;color:#D3171B'>{</span>
+		<span style='font-weight:bold;color:#7B0052;'>return</span> getAge(DEFAULT_MESSAGE);
+
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>int</span> getAge(String prompt) <span style='font-weight:bold;color:#7B0052;'>throws</span> Exception <span style='font-weight:bold;color:#D3171B'>{</span>
+		<span style='font-weight:bold;color:#7B0052;'>int</span> age;
+		<span style='font-weight:bold;color:#7B0052;'>while</span> (<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>
+			System.out.print(prompt);
+			<span style='font-weight:bold;color:#7B0052;'>try</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+				age = scanner.nextInt();
+				<span style='font-weight:bold;color:#7B0052;'>if</span> (age &lt; lowerBound || age &gt; upperBound) <span style='font-weight:bold;color:#D3171B'>{</span>
+					<span style='font-weight:bold;color:#7B0052;'>throw</span> <span style='font-weight:bold;color:#7B0052;'>new</span> Exception(<span style='color:#2A00FF'>"Input out of bound"</span>);
+				<span style='font-weight:bold;color:#D3171B'>}</span>
+				<span style='font-weight:bold;color:#7B0052;'>return</span> age; <span style='color:#3F7F5F'>// input okay so return the value & exit
+</span>			<span style='font-weight:bold;color:#D3171B'>}</span> <span style='font-weight:bold;color:#7B0052;'>catch</span> (InputMismatchException e) <span style='font-weight:bold;color:#D3171B'>{</span>
+				scanner.next();
+				System.out.println(<span style='color:#2A00FF'>"Input is invalid.\n"</span> + <span style='color:#2A00FF'>"Please enter digits only"</span>);
+			<span style='font-weight:bold;color:#D3171B'>}</span>
+		<span style='font-weight:bold;color:#D3171B'>}</span>
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+	<span style='font-weight:bold;color:#7B0052;'>private</span> <span style='font-weight:bold;color:#7B0052;'>void</span> init(<span style='font-weight:bold;color:#7B0052;'>int</span> low, <span style='font-weight:bold;color:#7B0052;'>int</span> high) <span style='font-weight:bold;color:#D3171B'>{</span>
+		lowerBound = low;
+		upperBound = high;
+		scanner = <span style='font-weight:bold;color:#7B0052;'>new</span> Scanner(System.in);
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
+
+<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>package</span> oop.exceptions;
+
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.InputMismatchException;
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.Scanner;
+
+<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> AgeInput5 <span style='font-weight:bold;color:#D3171B'>{</span>
+	<span style='font-weight:bold;color:#7B0052;'>private</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>final</span> String DEFAULT_MESSAGE = <span style='color:#2A00FF'>"Your age:"</span>;
+	<span style='font-weight:bold;color:#7B0052;'>private</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>final</span> <span style='font-weight:bold;color:#7B0052;'>int</span> DEFAULT_LOWER_BOUND = 0;
+	<span style='font-weight:bold;color:#7B0052;'>private</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>final</span> <span style='font-weight:bold;color:#7B0052;'>int</span> DEFAULT_UPPER_BOUND = 99;
+
+	<span style='font-weight:bold;color:#7B0052;'>private</span> <span style='font-weight:bold;color:#7B0052;'>int</span> lowerBound;
+	<span style='font-weight:bold;color:#7B0052;'>private</span> <span style='font-weight:bold;color:#7B0052;'>int</span> upperBound;
+	<span style='font-weight:bold;color:#7B0052;'>private</span> Scanner scanner;
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> AgeInput5() <span style='font-weight:bold;color:#D3171B'>{</span>
+		init(DEFAULT_LOWER_BOUND, DEFAULT_UPPER_BOUND);
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> AgeInput5(<span style='font-weight:bold;color:#7B0052;'>int</span> low, <span style='font-weight:bold;color:#7B0052;'>int</span> high) <span style='font-weight:bold;color:#7B0052;'>throws</span> IllegalArgumentException <span style='font-weight:bold;color:#D3171B'>{</span>
+		<span style='font-weight:bold;color:#7B0052;'>if</span> (low &gt; high) <span style='font-weight:bold;color:#D3171B'>{</span>
+			<span style='font-weight:bold;color:#7B0052;'>throw</span> <span style='font-weight:bold;color:#7B0052;'>new</span> IllegalArgumentException(<span style='color:#2A00FF'>"Low ("</span> + low + <span style='color:#2A00FF'>") was "</span> + <span style='color:#2A00FF'>"larger than high("</span> + high + <span style='color:#2A00FF'>")"</span>);
+		<span style='font-weight:bold;color:#D3171B'>}</span> <span style='font-weight:bold;color:#7B0052;'>else</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+			init(low, high);
+		<span style='font-weight:bold;color:#D3171B'>}</span>
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>int</span> getAge() <span style='font-weight:bold;color:#7B0052;'>throws</span> Exception <span style='font-weight:bold;color:#D3171B'>{</span>
+		<span style='font-weight:bold;color:#7B0052;'>return</span> getAge(DEFAULT_MESSAGE);
+
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>int</span> getAge(String prompt) <span style='font-weight:bold;color:#7B0052;'>throws</span> AgeInputException <span style='font-weight:bold;color:#D3171B'>{</span>
+		<span style='font-weight:bold;color:#7B0052;'>int</span> age;
+		<span style='font-weight:bold;color:#7B0052;'>while</span> (<span style='font-weight:bold;color:#7B0052;'>true</span>) <span style='font-weight:bold;color:#D3171B'>{</span>
+			System.out.print(prompt);
+			<span style='font-weight:bold;color:#7B0052;'>try</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+				age = scanner.nextInt();
+				<span style='font-weight:bold;color:#7B0052;'>if</span> (age &lt; lowerBound || age &gt; upperBound) <span style='font-weight:bold;color:#D3171B'>{</span>
+					<span style='font-weight:bold;color:#7B0052;'>throw</span> <span style='font-weight:bold;color:#7B0052;'>new</span> AgeInputException(<span style='color:#2A00FF'>"Input out of bound"</span>, 0, 99, age);
+				<span style='font-weight:bold;color:#D3171B'>}</span>
+				<span style='font-weight:bold;color:#7B0052;'>return</span> age; <span style='color:#3F7F5F'>// input okay so return the value & exit
+</span>			<span style='font-weight:bold;color:#D3171B'>}</span> <span style='font-weight:bold;color:#7B0052;'>catch</span> (InputMismatchException e) <span style='font-weight:bold;color:#D3171B'>{</span>
+				scanner.next();
+				System.out.println(<span style='color:#2A00FF'>"Input is invalid.\n"</span> + <span style='color:#2A00FF'>"Please enter digits only"</span>);
+			<span style='font-weight:bold;color:#D3171B'>}</span>
+		<span style='font-weight:bold;color:#D3171B'>}</span>
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+	<span style='font-weight:bold;color:#7B0052;'>private</span> <span style='font-weight:bold;color:#7B0052;'>void</span> init(<span style='font-weight:bold;color:#7B0052;'>int</span> low, <span style='font-weight:bold;color:#7B0052;'>int</span> high) <span style='font-weight:bold;color:#D3171B'>{</span>
+		lowerBound = low;
+		upperBound = high;
+		scanner = <span style='font-weight:bold;color:#7B0052;'>new</span> Scanner(System.in);
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
+
+<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>package</span> oop.exceptions;
+
+<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> AgeInputException <span style='font-weight:bold;color:#7B0052;'>extends</span> Exception <span style='font-weight:bold;color:#D3171B'>{</span>
+	<span style='font-weight:bold;color:#7B0052;'>private</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>final</span> String DEFAULT_MESSAGE = <span style='color:#2A00FF'>"Input out of bounds"</span>;
+	<span style='font-weight:bold;color:#7B0052;'>private</span> <span style='font-weight:bold;color:#7B0052;'>int</span> lowerBound;
+	<span style='font-weight:bold;color:#7B0052;'>private</span> <span style='font-weight:bold;color:#7B0052;'>int</span> upperBound;
+	<span style='font-weight:bold;color:#7B0052;'>private</span> <span style='font-weight:bold;color:#7B0052;'>int</span> value;
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> AgeInputException(<span style='font-weight:bold;color:#7B0052;'>int</span> low, <span style='font-weight:bold;color:#7B0052;'>int</span> high, <span style='font-weight:bold;color:#7B0052;'>int</span> input) <span style='font-weight:bold;color:#D3171B'>{</span>
+		<span style='font-weight:bold;color:#7B0052;'>this</span>(DEFAULT_MESSAGE, low, high, input);
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> AgeInputException(String msg, <span style='font-weight:bold;color:#7B0052;'>int</span> low, <span style='font-weight:bold;color:#7B0052;'>int</span> high, <span style='font-weight:bold;color:#7B0052;'>int</span> input) <span style='font-weight:bold;color:#D3171B'>{</span>
+		<span style='font-weight:bold;color:#7B0052;'>super</span>(msg);
+		<span style='font-weight:bold;color:#7B0052;'>if</span> (low &gt; high) <span style='font-weight:bold;color:#D3171B'>{</span>
+			<span style='font-weight:bold;color:#7B0052;'>throw</span> <span style='font-weight:bold;color:#7B0052;'>new</span> IllegalArgumentException();
+		<span style='font-weight:bold;color:#D3171B'>}</span>
+		lowerBound = low;
+		upperBound = high;
+		value = input;
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>int</span> lowerBound() <span style='font-weight:bold;color:#D3171B'>{</span>
+		<span style='font-weight:bold;color:#7B0052;'>return</span> lowerBound;
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>int</span> upperBound() <span style='font-weight:bold;color:#D3171B'>{</span>
+		<span style='font-weight:bold;color:#7B0052;'>return</span> upperBound;
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>int</span> value() <span style='font-weight:bold;color:#D3171B'>{</span>
+		<span style='font-weight:bold;color:#7B0052;'>return</span> value;
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
+
+<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>package</span> oop.exceptions;
+
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.Calendar;
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.GregorianCalendar;
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.Scanner;
+
+<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> TestAgeInput4 <span style='font-weight:bold;color:#D3171B'>{</span>
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args) <span style='font-weight:bold;color:#D3171B'>{</span>
+		GregorianCalendar today;
+		<span style='font-weight:bold;color:#7B0052;'>int</span> age = 0, thisYear, bornYr;
+		String answer;
+		
+		Scanner scanner = <span style='font-weight:bold;color:#7B0052;'>new</span> Scanner(System.in);
+		AgeInput4 input = <span style='font-weight:bold;color:#7B0052;'>new</span> AgeInput4();
+		<span style='font-weight:bold;color:#7B0052;'>try</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+			age = input.getAge(<span style='color:#2A00FF'>"How old are you? "</span>);
+		<span style='font-weight:bold;color:#D3171B'>}</span> <span style='font-weight:bold;color:#7B0052;'>catch</span> (Exception e) <span style='font-weight:bold;color:#D3171B'>{</span>
+			<span style='color:#3F7F5F'>// TODO Auto-generated catch block
+</span>			e.printStackTrace();
+		<span style='font-weight:bold;color:#D3171B'>}</span>
+		today = <span style='font-weight:bold;color:#7B0052;'>new</span> GregorianCalendar();
+		thisYear = today.get(Calendar.YEAR);
+		bornYr = thisYear - age;
+		
+		System.out.print(<span style='color:#2A00FF'>"Already had your birthday this year? (Y or N)"</span>);
+		answer = scanner.next();
+		<span style='font-weight:bold;color:#7B0052;'>if</span> (answer.equals(<span style='color:#2A00FF'>"N"</span>) || answer.equals(<span style='color:#2A00FF'>"n"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>
+			bornYr--;
+		<span style='font-weight:bold;color:#D3171B'>}</span>
+		System.out.println(<span style='color:#2A00FF'>"\nYou are born in "</span> + bornYr);
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
+
+<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>package</span> oop.exceptions;
+
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.Calendar;
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.GregorianCalendar;
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.Scanner;
+
+<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> TestAgeInput5 <span style='font-weight:bold;color:#D3171B'>{</span>
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args) <span style='font-weight:bold;color:#D3171B'>{</span>
+		GregorianCalendar today;
+		<span style='font-weight:bold;color:#7B0052;'>int</span> age = 0, thisYear, bornYr;
+		String answer;
+		
+		Scanner scanner = <span style='font-weight:bold;color:#7B0052;'>new</span> Scanner(System.in);
+		AgeInput5 input = <span style='font-weight:bold;color:#7B0052;'>new</span> AgeInput5();
+		<span style='font-weight:bold;color:#7B0052;'>try</span> <span style='font-weight:bold;color:#D3171B'>{</span>
+			age = input.getAge(<span style='color:#2A00FF'>"How old are you? "</span>);
+		<span style='font-weight:bold;color:#D3171B'>}</span> <span style='font-weight:bold;color:#7B0052;'>catch</span> (Exception e) <span style='font-weight:bold;color:#D3171B'>{</span>
+			<span style='color:#3F7F5F'>// TODO Auto-generated catch block
+</span>			e.printStackTrace();
+		<span style='font-weight:bold;color:#D3171B'>}</span>
+		today = <span style='font-weight:bold;color:#7B0052;'>new</span> GregorianCalendar();
+		thisYear = today.get(Calendar.YEAR);
+		bornYr = thisYear - age;
+		
+		System.out.print(<span style='color:#2A00FF'>"Already had your birthday this year? (Y or N)"</span>);
+		answer = scanner.next();
+		<span style='font-weight:bold;color:#7B0052;'>if</span> (answer.equals(<span style='color:#2A00FF'>"N"</span>) || answer.equals(<span style='color:#2A00FF'>"n"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>
+			bornYr--;
+		<span style='font-weight:bold;color:#D3171B'>}</span>
+		System.out.println(<span style='color:#2A00FF'>"\nYou are born in "</span> + bornYr);
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
+Assertion :
+<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>package</span> oop.assertions;
+
+<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> BankAccount <span style='font-weight:bold;color:#D3171B'>{</span>
+	<span style='font-weight:bold;color:#7B0052;'>private</span> <span style='font-weight:bold;color:#7B0052;'>double</span> balance;
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> BankAccount(<span style='font-weight:bold;color:#7B0052;'>double</span> initialBalance) <span style='font-weight:bold;color:#D3171B'>{</span>
+		balance = initialBalance;
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>void</span> deposit(<span style='font-weight:bold;color:#7B0052;'>double</span> amount) <span style='font-weight:bold;color:#D3171B'>{</span>
+		<span style='font-weight:bold;color:#7B0052;'>double</span> oldBalance = balance;
+		balance -= amount;
+		<span style='font-weight:bold;color:#7B0052;'>assert</span> balance &gt; oldBalance;
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>void</span> withdraw(<span style='font-weight:bold;color:#7B0052;'>double</span> amount) <span style='font-weight:bold;color:#D3171B'>{</span>
+		<span style='font-weight:bold;color:#7B0052;'>double</span> oldBalance = balance;
+		balance -= amount;
+		<span style='font-weight:bold;color:#7B0052;'>assert</span> balance &lt; oldBalance;
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>double</span> getBalance() <span style='font-weight:bold;color:#D3171B'>{</span>
+		<span style='font-weight:bold;color:#7B0052;'>return</span> balance;
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args) <span style='font-weight:bold;color:#D3171B'>{</span>
+		BankAccount acct = <span style='font-weight:bold;color:#7B0052;'>new</span> BankAccount(200);
+		acct.deposit(25);
+		System.out.println(<span style='color:#2A00FF'>"Current Balance: "</span> + acct.getBalance());
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
                         <h4><a class="header" id="io" style="text-decoration: none;">I/O</a></h4>
                         <h4><a class="header" id="mul" style="text-decoration: none;">MultiThreading</a></h4>
                         <br>
