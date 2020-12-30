@@ -8,7 +8,8 @@ listFile = ["index.html", "print.html",
 				"05-jarkom/keamananJar.html", "05-jarkom/nlipv4.html", "05-jarkom/nmb.html", "05-jarkom/pemjar.html", 
 				"05-jarkom/pendahuluan.html", "05-jarkom/pkjdll.html", "05-jarkom/pwwi.html", "05-jarkom/rnat.html", 
 				"05-jarkom/simJar.html", "05-jarkom/sm.html", "05-jarkom/tl.html", "05-jarkom/voip.html", "05-jarkom/webcms.html", 
-			"06-tools/nmap.html", "06-tools/index.html"]	# ini diisi file oprec
+			"06-tools/nmap.html", "06-tools/index.html", "06-tools/py.html"]	# ini diisi file oprec
+			
 baseFile = "base/baseNav.html"
 firstTextLooking = "<!-- ---------------------------------------- NAV ---------------------------------------- -->"
 endTextLooking = "<!-- ---------------------------------------# NAV #--------------------------------------- -->"
