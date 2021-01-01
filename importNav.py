@@ -1,17 +1,27 @@
-listFile = ["index.html", "print.html", 
-			"00-intro/index.html", "00-intro/inf.html", "00-intro/kimia.html", "00-intro/pbo.html", "00-intro/basdat.html",
-				"00-intro/pboea.html", "00-intro/pboio.html", "00-intro/pbojavgen.html", "00-intro/pbomu.html", "00-intro/pboprak6.html",
-				"00-intro/pboprak7.html", "00-intro/pboreg.html", "00-intro/pboso.html", 
-			"02-cybersec/deepweeb.html", "02-cybersec/footprinting.html", "02-cybersec/index.html", "02-cybersec/infgather.html", "02-cybersec/tcpip.html", 
-			"03-ctf/index.html", "03-ctf/binex.html", "03-ctf/binex-pwnshell.html", "03-ctf/assembly.html",  
-			"04-tips/index.html", 
-			"05-jarkom/networking.html", "05-jarkom/basicdatasec.html", "05-jarkom/cmlNwireshark.html", 
-				"05-jarkom/dsnpi.html", "05-jarkom/email.html", "05-jarkom/hacking.html", "05-jarkom/index.html", "05-jarkom/ipv6.html", 
-				"05-jarkom/keamananJar.html", "05-jarkom/nlipv4.html", "05-jarkom/nmb.html", "05-jarkom/pemjar.html", 
-				"05-jarkom/pendahuluan.html", "05-jarkom/pkjdll.html", "05-jarkom/pwwi.html", "05-jarkom/rnat.html", 
-				"05-jarkom/simJar.html", "05-jarkom/sm.html", "05-jarkom/tl.html", "05-jarkom/voip.html", "05-jarkom/webcms.html", 
-			"06-tools/nmap.html", "06-tools/index.html", "06-tools/py.html"]	# ini diisi file oprec
-			
+import os
+
+# melist SEMUA file ekstensi .html
+listFile = []
+listBase = ["base/baseNav.html", "base/tesbase.html", "base/base.html", "404.html"]
+for root, dirs, files in os.walk("."):
+    for file in files:
+        if file.endswith(".html"):
+             tmp = os.path.join(root, file)
+             tmp = tmp.replace('./', '')
+             if tmp not in listBase:
+	             listFile.append(tmp)
+
+# jika ada file < 10byte (kosong/baru), maka akan diisi file base/base.html
+FileBase = open("base/base.html", "r")
+isi_fileBase = FileBase.read()
+FileBase.close()
+for file in listFile:
+	if os.stat(file).st_size < 10:
+		isi = open(file, "w")
+		isi.write(isi_fileBase)
+		isi.close()
+
+# mengisi NAV ke file yg belum ada NAV-nya			
 baseFile = "base/baseNav.html"
 firstTextLooking = "<!-- ---------------------------------------- NAV ---------------------------------------- -->"
 endTextLooking = "<!-- ---------------------------------------# NAV #--------------------------------------- -->"
@@ -48,6 +58,7 @@ for file in listFile:
 	file1.write(tampungAkhir)
 	file1.close()
 
+	# menambah highlight warna rgb(252, 155, 171)
 	file1 = open(file, "r")
 	repairing = file1.read()
 	file1.close()
@@ -57,26 +68,14 @@ for file in listFile:
 	file1.write(repairing)
 	file1.close()
 
-ind = open("index.html", "r")
-bersihkan = ind.read()
-bersihkan = bersihkan.replace("../", "")
-ind.close()
+pembersihan = ["index.html", "print.html"]
+for x in pembersihan:
+	ind = open(x, "r")
+	bersihkan = ind.read()
+	bersihkan = bersihkan.replace("../", "")
+	ind.close()
 
-ind = open("index.html", "w")
-ind.write(bersihkan)
-ind.close()
-
-ind = open("print.html", "r")
-bersihkan = ind.read()
-bersihkan = bersihkan.replace("../", "")
-ind.close()
-
-ind = open("print.html", "w")
-ind.write(bersihkan)
-ind.close()
-
-
-
-
-
+	ind = open(x, "w")
+	ind.write(bersihkan)
+	ind.close()
 
