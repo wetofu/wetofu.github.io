@@ -1,5 +1,7 @@
 listFile = ["index.html", "print.html", 
 			"00-intro/index.html", "00-intro/inf.html", "00-intro/kimia.html", "00-intro/pbo.html", "00-intro/basdat.html",
+				"00-intro/pboea.html", "00-intro/pboio.html", "00-intro/pbojavgen.html", "00-intro/pbomu.html", "00-intro/pboprak6.html",
+				"00-intro/pboprak7.html", "00-intro/pboreg.html", "00-intro/pboso.html", 
 			"02-cybersec/deepweeb.html", "02-cybersec/footprinting.html", "02-cybersec/index.html", "02-cybersec/infgather.html", "02-cybersec/tcpip.html", 
 			"03-ctf/index.html", "03-ctf/binex.html", "03-ctf/binex-pwnshell.html", "03-ctf/assembly.html",  
 			"04-tips/index.html", 

@@ -1,0 +1,802 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js navy">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+
+    <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
+    <title>PBO-I/O</title>
+    <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
+
+
+
+    <!-- Custom HTML head -->
+
+
+
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="Wetofu : belajar suka-suka aee">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+
+    <link rel="icon" href="../favicon.svg">
+
+
+    <link rel="shortcut icon" href="../favicon.png">
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+
+
+
+</head>
+
+<body>
+    <!-- Provide site root to javascript -->
+    <script type="text/javascript">
+        var path_to_root = "../";
+        var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+            var theme = localStorage.getItem('mdbook-theme');
+            var sidebar = localStorage.getItem('mdbook-sidebar');
+
+            if (theme.startsWith('"') && theme.endsWith('"')) {
+                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+            }
+
+            if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+            }
+        } catch (e) {}
+    </script>
+
+    <!-- Set the theme before any content is loaded, prevents flash -->
+    <script type="text/javascript">
+        var theme;
+        try {
+            theme = localStorage.getItem('mdbook-theme');
+        } catch (e) {}
+        if (theme === null || theme === undefined) {
+            theme = default_theme;
+        }
+        var html = document.querySelector('html');
+        html.classList.remove('no-js')
+        html.classList.remove('navy')
+        html.classList.add(theme);
+        html.classList.add('js');
+    </script>
+
+    <!-- Hide / unhide sidebar before it is displayed -->
+    <script type="text/javascript">
+        var html = document.querySelector('html');
+        var sidebar = 'hidden';
+        if (document.body.clientWidth >= 1080) {
+            try {
+                sidebar = localStorage.getItem('mdbook-sidebar');
+            } catch (e) {}
+            sidebar = sidebar || 'visible';
+        }
+        html.classList.remove('sidebar-visible');
+        html.classList.add("sidebar-" + sidebar);
+    </script>
+
+    <!-- ---------------------------------------- NAV ---------------------------------------- -->
+<nav id="sidebar" class="sidebar" aria-label="Table of contents">
+    <div class="sidebar-scrollbox">
+        <ol class="chapter">
+            <!-- -------------------- KENALAN -------------------- -->
+            <li class="chapter-item expanded affix "><a href="../index.html"><strong
+                        aria-hidden="true">KENALAN</strong></a></li>
+            <!-- -------------------- KULIAH -------------------- -->
+            <li class="chapter-item expanded ">
+                <a href="../00-intro/index.html">
+                    <strong aria-hidden="true">1. Mata Kuliah </strong>
+                </a>
+            </li>
+            <li>
+                <ol class="section">
+                    <li class="chapter-item expanded ">
+                        <a href="../00-intro/inf.html">
+                            <strong aria-hidden="true">1.1.</strong> Informatika 
+                        </a>
+                    </li>
+                    <li>
+                        <ol class="section">
+                            <li class="chapter-item expanded "><a href="../00-intro/pbo.html">1.1.1. PBO</a></li>
+                            <li>
+                                <ol class="section">
+                                    <li class="chapter-item expanded "><a href="../00-intro/pbojavgen.html">1.1.1.1 Java Generics</a></li>
+                                    <li class="chapter-item expanded "><a href="../00-intro/pboso.html">1.1.1.2 String Operation</a></li>
+                                    <li class="chapter-item expanded "><a href="../00-intro/pboreg.html">1.1.1.3 Regex</a></li>
+                                    <li class="chapter-item expanded "><a href="../00-intro/pboea.html">1.1.1.4 Exception & Assertion</a></li>
+                                    <li class="chapter-item expanded "><a href="../00-intro/pboio.html" style="color: rgb(252, 155, 171);">1.1.1.5 I/O</a></li>
+                                    <li class="chapter-item expanded "><a href="../00-intro/pbomu.html">1.1.1.6 Multithreading</a></li>
+                                    <li class="chapter-item expanded "><a href="../00-intro/pboprak6.html">1.1.1.7 Prak 6</a></li>
+                                    <li class="chapter-item expanded "><a href="../00-intro/pboprak7.html">1.1.1.8 Prak 7</a></li>
+                                </ol>
+                            </li>
+                            <li class="chapter-item expanded "><a href="../00-intro/basdat.html">1.1.2. Basdat</a></li>
+                        </ol>
+                    </li>
+                    <li class="chapter-item expanded "><a href="../00-intro/kimia.html"><strong
+                                aria-hidden="true">1.2.</strong> Kimia</a>
+                    </li>
+                    
+                    <!-- <li>
+                        <ol class="section">
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/pico18_strings/index.html"><strong
+                                        aria-hidden="true">1.6.1.</strong> Pico'18: Strings</a></li>
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/helithumper_re/index.html"><strong
+                                        aria-hidden="true">1.6.2.</strong> Helithumper RE</a></li>
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/csaw19_beleaf/index.html"><strong
+                                        aria-hidden="true">1.6.3.</strong> CSAW'19: Beleaf</a></li>
+                        </ol>
+                    </li> -->
+                </ol>
+            </li>
+            <!-- -------------------- CYBER SECURITY -------------------- -->
+            <li class="chapter-item expanded ">
+                <a href="../02-cybersec/index.html">
+                    <strong aria-hidden="true">2. Cyber Security </strong>
+                </a>
+            </li>
+            <li>
+                <ol class="section">
+                    <li class="chapter-item expanded "><a href="../02-cybersec/tcpip.html"><strong
+                                aria-hidden="true">2.01.</strong> Konsep TCP/IP</a></li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.02.</strong> IPv6
+                    </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.03.</strong> Routing
+                    </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.04.</strong> Network
+                        Programming </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.05.</strong> Persiapan Hacking
+                    </li>
+                    <li class="chapter-item expanded "><a href="../02-cybersec/footprinting.html"><strong
+                                aria-hidden="true">2.06.</strong> Footprinting </a></li>
+                    <li class="chapter-item expanded "><a href="../02-cybersec/infgather.html"><strong
+                                aria-hidden="true">2.07.</strong> Information Gathering </a></li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.08.</strong> Sniffing </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.09.</strong> Spoffing </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.10.</strong> Hacking Wireless
+                    </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.11.</strong> Attack
+                        password </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.12.</strong> Attack
+                        database SQL </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.13.</strong> DNS &
+                        Deface WEB </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.14.</strong> Attack
+                        File Sharing </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.15.</strong>
+                        Vulnerability Analysis </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.16.</strong> Dasar
+                        Pengamanan Server </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.17.</strong>
+                        Firewall </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.18.</strong> VPN
+                    </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.19.</strong> Web
+                        Application Firewall </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.20.</strong>
+                        Pertahanan Host </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.21.</strong> Basic
+                        Data Security </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.22.</strong>
+                        Forensic </li>
+                    <li class="chapter-item expanded "><a href="../02-cybersec/deepweeb.html"><strong
+                                aria-hidden="true">2.23.</strong> Deep Web </a></li>
+
+                    <!-- <li>
+                        <ol class="section">
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/pico18_strings/index.html"><strong
+                                        aria-hidden="true">1.6.1.</strong> Pico'18: Strings</a></li>
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/helithumper_re/index.html"><strong
+                                        aria-hidden="true">1.6.2.</strong> Helithumper RE</a></li>
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/csaw19_beleaf/index.html"><strong
+                                        aria-hidden="true">1.6.3.</strong> CSAW'19: Beleaf</a></li>
+                        </ol>
+                    </li> -->
+                </ol>
+            </li>
+            <!-- -------------------- JARKOM -------------------- -->
+            <li class="chapter-item expanded ">
+                <a href="../05-jarkom/index.html">
+                    <strong aria-hidden="true">3. Jaringan Komputer </strong>
+                </a>
+            </li>
+            <li>
+                <ol class="section">
+                    <li class="chapter-item expanded ">
+                        <!--<a href="../05-jarkom/pendahuluan.html">--><strong aria-hidden="true">3.01.</strong>
+                        Pendahuluan
+                        <!--</a>-->
+                    </li>
+                    <li class="chapter-item expanded ">
+                        <!--<a href="../05-jarkom/cmlNwireshark.html">--><strong aria-hidden="true">3.02.</strong>
+                        Command Line & Wireshark
+                        <!--</a>-->
+                    </li>
+                    <li class="chapter-item expanded ">
+                        <!--<a href="../05-jarkom/simJar.html">--><strong aria-hidden="true">3.03.</strong> Simulator
+                        Jaringan
+                        <!--</a>-->
+                    </li>
+                    <li class="chapter-item expanded "><a href="../05-jarkom/networking.html"><strong
+                        aria-hidden="true">3.04.</strong> Networking</a></li>
+                    <li class="chapter-item expanded "><a href="../05-jarkom/pkjdll.html"><strong
+                                aria-hidden="true">3.05.</strong> Perangkat Keras Jaringan & Data Link Layer</a></li>
+                    <li class="chapter-item expanded "><a href="../05-jarkom/pwwi.html"><strong
+                                aria-hidden="true">3.06.</strong> Perangkat WiFi / Wireless Internet</a></li>
+                    <li class="chapter-item expanded ">
+                        <!--<a href="../05-jarkom/nlipv4.html">--><strong aria-hidden="true">3.07.</strong> Network
+                        Layer IPv4</a></li>
+                    <li class="chapter-item expanded ">
+                        <!--<a href="../05-jarkom/tl.html">--><strong aria-hidden="true">3.08.</strong> Transport
+                        Layer</a></li>
+                    <li class="chapter-item expanded ">
+                        <!--<a href="../05-jarkom/dsnpi.html">--><strong aria-hidden="true">3.09.</strong> Domain Name
+                        System & Pengaturan Internet</a></li>
+                    <li class="chapter-item expanded ">
+                        <!--<a href="../05-jarkom/rnat.html">--><strong aria-hidden="true">3.10.</strong> Routing &
+                        NAT</a></li>
+                    <li class="chapter-item expanded ">
+                        <!--<a href="../05-jarkom/webcms.html">--><strong aria-hidden="true">3.11.</strong> Web /
+                        Content Management System</a></li>
+                    <li class="chapter-item expanded ">
+                        <!--<a href="../05-jarkom/email.html">--><strong aria-hidden="true">3.12.</strong> e-mail / SMTP
+                        / POP3 / IMAP / Webmail</a></li>
+                    <li class="chapter-item expanded ">
+                        <!--<a href="../05-jarkom/voip.html">--><strong aria-hidden="true">3.13.</strong> VoIP /
+                        Internet Telepon</a></li>
+                    <li class="chapter-item expanded ">
+                        <!--<a href="../05-jarkom/sm.html">--><strong aria-hidden="true">3.14.</strong> Streaming
+                        Multimedia</a></li>
+                    <li class="chapter-item expanded ">
+                        <!--<a href="../05-jarkom/ipv6.html">--><strong aria-hidden="true">3.15.</strong> IPv6
+                        <!--</a>-->
+                    </li>
+                    <li class="chapter-item expanded ">
+                        <!--<a href="../05-jarkom/hacking.html">--><strong aria-hidden="true">3.16.</strong> Hacking
+                        <!--</a>-->
+                    </li>
+                    <li class="chapter-item expanded "><a href="../02-cybersec/index.html"><strong
+                                aria-hidden="true">3.17.</strong> Cyber Security</a></li>
+                    <li class="chapter-item expanded ">
+                        <!--<a href="../05-jarkom/basicdatasec.html">--><strong aria-hidden="true">3.18.</strong> Basic
+                        Data Security
+                        <!--</a>-->
+                    </li>
+                    <li class="chapter-item expanded ">
+                        <!--<a href="../05-jarkom/pemjar.html">--><strong aria-hidden="true">3.19.</strong> Pemrograman
+                        Jaringan & IoT
+                        <!--</a>-->
+                    </li>
+                    <li class="chapter-item expanded ">
+                        <!--<a href="../05-jarkom/nmb.html">--><strong aria-hidden="true">3.20.</strong> Network
+                        Management & Benchmarking
+                        <!--</a>-->
+                    </li>
+
+                    <!-- <li>
+                        <ol class="section">
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/pico18_strings/index.html"><strong
+                                        aria-hidden="true">1.6.1.</strong> Pico'18: Strings</a></li>
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/helithumper_re/index.html"><strong
+                                        aria-hidden="true">1.6.2.</strong> Helithumper RE</a></li>
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/csaw19_beleaf/index.html"><strong
+                                        aria-hidden="true">1.6.3.</strong> CSAW'19: Beleaf</a></li>
+                        </ol>
+                    </li> -->
+                </ol>
+            </li>
+            <!-- -------------------- CTF -------------------- -->
+            <li class="chapter-item expanded "><a href="../03-ctf/index.html"><strong aria-hidden="true">3.
+                        Capture The Flag </strong></a></li>
+            <li>
+                <ol class="section">
+                    <li class="chapter-item expanded ">
+                        <a href="../03-ctf/binex.html"><strong aria-hidden="true">3.1.</strong> Binary Exploitation
+                        </a>
+                    </li>
+                    <li>
+                        <ol class="section">
+                            <li class="chapter-item expanded ">
+                                <a href="../03-ctf/binex-pwnshell.html">3.10. Pwn & Shellcode</a>
+                            </li>
+                        </ol>
+                    </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">3.2.</strong>
+                        Cryptography </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">3.3.</strong> Reverse
+                        Engineering </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">3.4.</strong> Web
+                    </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">3.5.</strong> Forensic
+                    </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">3.6.</strong>
+                        Miscellaneous </li>
+                    <li class="chapter-item expanded ">
+                        <a href="../03-ctf/assembly.html"><strong aria-hidden="true">3.7.</strong> Assembly
+                        </a>
+                    </li>
+                    <!-- <li>
+                        <ol class="section">
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/pico18_strings/index.html"><strong
+                                        aria-hidden="true">1.6.1.</strong> Pico'18: Strings</a></li>
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/helithumper_re/index.html"><strong
+                                        aria-hidden="true">1.6.2.</strong> Helithumper RE</a></li>
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/csaw19_beleaf/index.html"><strong
+                                        aria-hidden="true">1.6.3.</strong> CSAW'19: Beleaf</a></li>
+                        </ol>
+                    </li> -->
+                </ol>
+            </li>
+            <!-- -------------------- TOOLS -------------------- -->
+            <li class="chapter-item expanded "><a href="../06-tools/index.html"><strong aria-hidden="true">4.
+                        Tools </strong></a></li>
+            <li>
+                <ol class="section">
+                    <li class="chapter-item expanded ">
+                        <a href="../06-tools/nmap.html"><strong aria-hidden="true">4.1.</strong> Nmap</a>
+                    </li>
+                    <li class="chapter-item expanded ">
+                        <a href="../06-tools/py.html"><strong aria-hidden="true">4.3.</strong> Python</a>
+                    </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">4.4.</strong>
+                        Ghidra </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">4.5.</strong> Ida </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">4.6.</strong> Hydra
+                    </li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">4.7.</strong> Wireshark
+                    </li>
+                    <!-- <li>
+                <ol class="section">
+                    <li class="chapter-item expanded "><a
+                            href="03-beginner_re/pico18_strings/index.html"><strong
+                                aria-hidden="true">1.6.1.</strong> Pico'18: Strings</a></li>
+                    <li class="chapter-item expanded "><a
+                            href="03-beginner_re/helithumper_re/index.html"><strong
+                                aria-hidden="true">1.6.2.</strong> Helithumper RE</a></li>
+                    <li class="chapter-item expanded "><a
+                            href="03-beginner_re/csaw19_beleaf/index.html"><strong
+                                aria-hidden="true">1.6.3.</strong> CSAW'19: Beleaf</a></li>
+                </ol>
+            </li> -->
+                </ol>
+            </li>
+            <!-- -------------------- TIPS -------------------- -->
+            <li class="chapter-item expanded "><a href="../04-tips/index.html"><strong aria-hidden="true">5.
+                        TIPS </strong></a></li>
+            <!-- -------------------- Akhir -------------------- -->
+        </ol>
+    </div>
+    <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+</nav>
+<!-- ---------------------------------------# NAV #--------------------------------------- -->
+
+    <div id="page-wrapper" class="page-wrapper">
+
+        <div class="page">
+
+            <div id="menu-bar-hover-placeholder"></div>
+            <div id="menu-bar" class="menu-bar sticky bordered">
+                <div class="left-buttons">
+                    <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                        aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                        aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                        <i class="fa fa-paint-brush"></i>
+                    </button>
+                    <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                        <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="navy">Navy (default)</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                    </ul>
+
+                    <!-- <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                        aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                        aria-controls="searchbar">
+                        <i class="fa fa-search"></i>
+                    </button> -->
+
+                </div>
+                <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
+                <h1 class="menu-title">PBO-I/O</h1>
+                <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
+
+                <div class="right-buttons">
+                    <a href="../print.html" title="Print this book" aria-label="Print this book">
+                        <i id="print-button" class="fa fa-print"></i>
+                    </a>
+
+                    <a href="https://github.com/syahrolus" title="Git repository" aria-label="Git repository">
+                        <i id="git-repository-button" class="fa fa-github"></i>
+                    </a>
+                </div>
+            </div>
+
+
+            <div id="search-wrapper" class="hidden">
+                <form id="searchbar-outer" class="searchbar-outer">
+                    <input type="search" name="search" id="searchbar" name="searchbar"
+                        placeholder="Search this book ..." aria-controls="searchresults-outer"
+                        aria-describedby="searchresults-header">
+                </form>
+                <div id="searchresults-outer" class="searchresults-outer hidden">
+                    <div id="searchresults-header" class="searchresults-header"></div>
+                    <ul id="searchresults">
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+            <script type="text/javascript">
+                document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                    link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                });
+            </script>
+
+            <div id="content" class="content">
+                <main>
+                    <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
+                    <h4><a class="header" id="io" style="text-decoration: none;">I/O</a></h4>
+                        sumber : <a href="https://docs.oracle.com/javase/tutorial/essential/io/index.html" target="_blank">https://docs.oracle.com/javase/tutorial/essential/io/index.html</a>
+                        <br>
+                        <br>
+                        <ul>
+                            <li>Byte Stream :</li> 
+                        <img src="../gambar/gamb7.png" alt="" style="display: block; margin-left: auto; margin-right: auto;"><br>
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.FileInputStream</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.FileOutputStream</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.IOException</span><span style="color: #f92672">;</span>
+
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">CopyBytes</span> <span style="color: #f92672">{</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #66d9ef">throws</span> <span style="color: #f8f8f2">IOException</span> <span style="color: #f92672">{</span>
+
+        <span style="color: #f8f8f2">FileInputStream</span> <span style="color: #f8f8f2">in</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">;</span>
+        <span style="color: #f8f8f2">FileOutputStream</span> <span style="color: #f8f8f2">out</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">;</span>
+
+        <span style="color: #66d9ef">try</span> <span style="color: #f92672">{</span>
+            <span style="color: #f8f8f2">in</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">FileInputStream</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;xanadu.txt&quot;</span><span style="color: #f92672">);</span>
+            <span style="color: #f8f8f2">out</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">FileOutputStream</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;outagain.txt&quot;</span><span style="color: #f92672">);</span>
+            <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">c</span><span style="color: #f92672">;</span>
+
+            <span style="color: #66d9ef">while</span> <span style="color: #f92672">((</span><span style="color: #f8f8f2">c</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">in</span><span style="color: #f92672">.</span><span style="color: #a6e22e">read</span><span style="color: #f92672">())</span> <span style="color: #f92672">!=</span> <span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+                <span style="color: #f8f8f2">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">write</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">c</span><span style="color: #f92672">);</span>
+            <span style="color: #f92672">}</span>
+        <span style="color: #f92672">}</span> <span style="color: #66d9ef">finally</span> <span style="color: #f92672">{</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">in</span> <span style="color: #f92672">!=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+                <span style="color: #f8f8f2">in</span><span style="color: #f92672">.</span><span style="color: #a6e22e">close</span><span style="color: #f92672">();</span>
+            <span style="color: #f92672">}</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">out</span> <span style="color: #f92672">!=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+                <span style="color: #f8f8f2">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">close</span><span style="color: #f92672">();</span>
+            <span style="color: #f92672">}</span>
+        <span style="color: #f92672">}</span>
+    <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code></pre>
+<br>
+<li>Character Stream :</li> 
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.FileReader</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.FileWriter</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.IOException</span><span style="color: #f92672">;</span>
+
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">CopyCharacters</span> <span style="color: #f92672">{</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #66d9ef">throws</span> <span style="color: #f8f8f2">IOException</span> <span style="color: #f92672">{</span>
+
+        <span style="color: #f8f8f2">FileReader</span> <span style="color: #f8f8f2">inputStream</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">;</span>
+        <span style="color: #f8f8f2">FileWriter</span> <span style="color: #f8f8f2">outputStream</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">;</span>
+
+        <span style="color: #66d9ef">try</span> <span style="color: #f92672">{</span>
+            <span style="color: #f8f8f2">inputStream</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">FileReader</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;xanadu.txt&quot;</span><span style="color: #f92672">);</span>
+            <span style="color: #f8f8f2">outputStream</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">FileWriter</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;characteroutput.txt&quot;</span><span style="color: #f92672">);</span>
+
+            <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">c</span><span style="color: #f92672">;</span>
+            <span style="color: #66d9ef">while</span> <span style="color: #f92672">((</span><span style="color: #f8f8f2">c</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">inputStream</span><span style="color: #f92672">.</span><span style="color: #a6e22e">read</span><span style="color: #f92672">())</span> <span style="color: #f92672">!=</span> <span style="color: #f92672">-</span><span style="color: #ae81ff">1</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+                <span style="color: #f8f8f2">outputStream</span><span style="color: #f92672">.</span><span style="color: #a6e22e">write</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">c</span><span style="color: #f92672">);</span>
+            <span style="color: #f92672">}</span>
+        <span style="color: #f92672">}</span> <span style="color: #66d9ef">finally</span> <span style="color: #f92672">{</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">inputStream</span> <span style="color: #f92672">!=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+                <span style="color: #f8f8f2">inputStream</span><span style="color: #f92672">.</span><span style="color: #a6e22e">close</span><span style="color: #f92672">();</span>
+            <span style="color: #f92672">}</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">outputStream</span> <span style="color: #f92672">!=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+                <span style="color: #f8f8f2">outputStream</span><span style="color: #f92672">.</span><span style="color: #a6e22e">close</span><span style="color: #f92672">();</span>
+            <span style="color: #f92672">}</span>
+        <span style="color: #f92672">}</span>
+    <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
+&nbsp;&nbsp;&nbsp;&nbsp; Line Oriented I/O: 
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.FileReader</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.FileWriter</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.BufferedReader</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.PrintWriter</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.IOException</span><span style="color: #f92672">;</span>
+
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">CopyLines</span> <span style="color: #f92672">{</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #66d9ef">throws</span> <span style="color: #f8f8f2">IOException</span> <span style="color: #f92672">{</span>
+
+        <span style="color: #f8f8f2">BufferedReader</span> <span style="color: #f8f8f2">inputStream</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">;</span>
+        <span style="color: #f8f8f2">PrintWriter</span> <span style="color: #f8f8f2">outputStream</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">;</span>
+
+        <span style="color: #66d9ef">try</span> <span style="color: #f92672">{</span>
+            <span style="color: #f8f8f2">inputStream</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">BufferedReader</span><span style="color: #f92672">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">FileReader</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;xanadu.txt&quot;</span><span style="color: #f92672">));</span>
+            <span style="color: #f8f8f2">outputStream</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">PrintWriter</span><span style="color: #f92672">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">FileWriter</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;characteroutput.txt&quot;</span><span style="color: #f92672">));</span>
+
+            <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">l</span><span style="color: #f92672">;</span>
+            <span style="color: #66d9ef">while</span> <span style="color: #f92672">((</span><span style="color: #f8f8f2">l</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">inputStream</span><span style="color: #f92672">.</span><span style="color: #a6e22e">readLine</span><span style="color: #f92672">())</span> <span style="color: #f92672">!=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+                <span style="color: #f8f8f2">outputStream</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">l</span><span style="color: #f92672">);</span>
+            <span style="color: #f92672">}</span>
+        <span style="color: #f92672">}</span> <span style="color: #66d9ef">finally</span> <span style="color: #f92672">{</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">inputStream</span> <span style="color: #f92672">!=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+                <span style="color: #f8f8f2">inputStream</span><span style="color: #f92672">.</span><span style="color: #a6e22e">close</span><span style="color: #f92672">();</span>
+            <span style="color: #f92672">}</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">outputStream</span> <span style="color: #f92672">!=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+                <span style="color: #f8f8f2">outputStream</span><span style="color: #f92672">.</span><span style="color: #a6e22e">close</span><span style="color: #f92672">();</span>
+            <span style="color: #f92672">}</span>
+        <span style="color: #f92672">}</span>
+    <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>    
+</pre>
+<li>Buffered Streams :</li> 
+<pre><code>inputStream = new BufferedReader(new FileReader("xanadu.txt"));
+outputStream = new BufferedWriter(new FileWriter("characteroutput.txt"));</code></pre>
+<li>Scanning : </li>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Breaking input into tokens :
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.*</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.Scanner</span><span style="color: #f92672">;</span>
+
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">ScanXan</span> <span style="color: #f92672">{</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #66d9ef">throws</span> <span style="color: #f8f8f2">IOException</span> <span style="color: #f92672">{</span>
+
+        <span style="color: #f8f8f2">Scanner</span> <span style="color: #f8f8f2">s</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">;</span>
+
+        <span style="color: #66d9ef">try</span> <span style="color: #f92672">{</span>
+            <span style="color: #f8f8f2">s</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Scanner</span><span style="color: #f92672">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">BufferedReader</span><span style="color: #f92672">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">FileReader</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;xanadu.txt&quot;</span><span style="color: #f92672">)));</span>
+
+            <span style="color: #66d9ef">while</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">s</span><span style="color: #f92672">.</span><span style="color: #a6e22e">hasNext</span><span style="color: #f92672">())</span> <span style="color: #f92672">{</span>
+                <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">s</span><span style="color: #f92672">.</span><span style="color: #a6e22e">next</span><span style="color: #f92672">());</span>
+            <span style="color: #f92672">}</span>
+        <span style="color: #f92672">}</span> <span style="color: #66d9ef">finally</span> <span style="color: #f92672">{</span>
+            <span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">s</span> <span style="color: #f92672">!=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+                <span style="color: #f8f8f2">s</span><span style="color: #f92672">.</span><span style="color: #a6e22e">close</span><span style="color: #f92672">();</span>
+            <span style="color: #f92672">}</span>
+        <span style="color: #f92672">}</span>
+    <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Translating Individual Tokens :
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.FileReader</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.BufferedReader</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.IOException</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.Scanner</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.Locale</span><span style="color: #f92672">;</span>
+
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">ScanSum</span> <span style="color: #f92672">{</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #66d9ef">throws</span> <span style="color: #f8f8f2">IOException</span> <span style="color: #f92672">{</span>
+
+        <span style="color: #f8f8f2">Scanner</span> <span style="color: #f8f8f2">s</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">;</span>
+        <span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">sum</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">;</span>
+
+        <span style="color: #66d9ef">try</span> <span style="color: #f92672">{</span>
+            <span style="color: #f8f8f2">s</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Scanner</span><span style="color: #f92672">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">BufferedReader</span><span style="color: #f92672">(</span><span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">FileReader</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;usnumbers.txt&quot;</span><span style="color: #f92672">)));</span>
+            <span style="color: #f8f8f2">s</span><span style="color: #f92672">.</span><span style="color: #a6e22e">useLocale</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">Locale</span><span style="color: #f92672">.</span><span style="color: #a6e22e">US</span><span style="color: #f92672">);</span>
+
+            <span style="color: #66d9ef">while</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">s</span><span style="color: #f92672">.</span><span style="color: #a6e22e">hasNext</span><span style="color: #f92672">())</span> <span style="color: #f92672">{</span>
+                <span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">s</span><span style="color: #f92672">.</span><span style="color: #a6e22e">hasNextDouble</span><span style="color: #f92672">())</span> <span style="color: #f92672">{</span>
+                    <span style="color: #f8f8f2">sum</span> <span style="color: #f92672">+=</span> <span style="color: #f8f8f2">s</span><span style="color: #f92672">.</span><span style="color: #a6e22e">nextDouble</span><span style="color: #f92672">();</span>
+                <span style="color: #f92672">}</span> <span style="color: #66d9ef">else</span> <span style="color: #f92672">{</span>
+                    <span style="color: #f8f8f2">s</span><span style="color: #f92672">.</span><span style="color: #a6e22e">next</span><span style="color: #f92672">();</span>
+                <span style="color: #f92672">}</span>   
+            <span style="color: #f92672">}</span>
+        <span style="color: #f92672">}</span> <span style="color: #66d9ef">finally</span> <span style="color: #f92672">{</span>
+            <span style="color: #f8f8f2">s</span><span style="color: #f92672">.</span><span style="color: #a6e22e">close</span><span style="color: #f92672">();</span>
+        <span style="color: #f92672">}</span>
+
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">sum</span><span style="color: #f92672">);</span>
+    <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
+<li>Formatting : </li> 
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Root</span> <span style="color: #f92672">{</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+        <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">2</span><span style="color: #f92672">;</span>
+        <span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">r</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Math</span><span style="color: #f92672">.</span><span style="color: #a6e22e">sqrt</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">);</span>
+        
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;The square root of &quot;</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot; is &quot;</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">r</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;.&quot;</span><span style="color: #f92672">);</span>
+
+        <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">5</span><span style="color: #f92672">;</span>
+        <span style="color: #f8f8f2">r</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Math</span><span style="color: #f92672">.</span><span style="color: #a6e22e">sqrt</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;The square root of &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot; is &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">r</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;.&quot;</span><span style="color: #f92672">);</span>
+    <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Root2</span> <span style="color: #f92672">{</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+        <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">2</span><span style="color: #f92672">;</span>
+        <span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">r</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Math</span><span style="color: #f92672">.</span><span style="color: #a6e22e">sqrt</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">);</span>
+        
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">format</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;The square root of %d is %f.%n&quot;</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">r</span><span style="color: #f92672">);</span>
+    <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Format</span> <span style="color: #f92672">{</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">format</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;%f, %1$+020.10f %n&quot;</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">Math</span><span style="color: #f92672">.</span><span style="color: #a6e22e">PI</span><span style="color: #f92672">);</span>
+    <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
+<li>I/O from the Command Line</li>
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.Console</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.Arrays</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.IOException</span><span style="color: #f92672">;</span>
+
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Password</span> <span style="color: #f92672">{</span>
+    
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">[])</span> <span style="color: #66d9ef">throws</span> <span style="color: #f8f8f2">IOException</span> <span style="color: #f92672">{</span>
+
+        <span style="color: #f8f8f2">Console</span> <span style="color: #f8f8f2">c</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">console</span><span style="color: #f92672">();</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">c</span> <span style="color: #f92672">==</span> <span style="color: #66d9ef">null</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+            <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">err</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;No console.&quot;</span><span style="color: #f92672">);</span>
+            <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">exit</span><span style="color: #f92672">(</span><span style="color: #ae81ff">1</span><span style="color: #f92672">);</span>
+        <span style="color: #f92672">}</span>
+
+        <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">login</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">c</span><span style="color: #f92672">.</span><span style="color: #a6e22e">readLine</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Enter your login: &quot;</span><span style="color: #f92672">);</span>
+        <span style="color: #66d9ef">char</span> <span style="color: #f92672">[]</span> <span style="color: #f8f8f2">oldPassword</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">c</span><span style="color: #f92672">.</span><span style="color: #a6e22e">readPassword</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Enter your old password: &quot;</span><span style="color: #f92672">);</span>
+
+        <span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">verify</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">login</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">oldPassword</span><span style="color: #f92672">))</span> <span style="color: #f92672">{</span>
+            <span style="color: #66d9ef">boolean</span> <span style="color: #f8f8f2">noMatch</span><span style="color: #f92672">;</span>
+            <span style="color: #66d9ef">do</span> <span style="color: #f92672">{</span>
+                <span style="color: #66d9ef">char</span> <span style="color: #f92672">[]</span> <span style="color: #f8f8f2">newPassword1</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">c</span><span style="color: #f92672">.</span><span style="color: #a6e22e">readPassword</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Enter your new password: &quot;</span><span style="color: #f92672">);</span>
+                <span style="color: #66d9ef">char</span> <span style="color: #f92672">[]</span> <span style="color: #f8f8f2">newPassword2</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">c</span><span style="color: #f92672">.</span><span style="color: #a6e22e">readPassword</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Enter new password again: &quot;</span><span style="color: #f92672">);</span>
+                <span style="color: #f8f8f2">noMatch</span> <span style="color: #f92672">=</span> <span style="color: #f92672">!</span> <span style="color: #f8f8f2">Arrays</span><span style="color: #f92672">.</span><span style="color: #a6e22e">equals</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">newPassword1</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">newPassword2</span><span style="color: #f92672">);</span>
+                <span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">noMatch</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+                    <span style="color: #f8f8f2">c</span><span style="color: #f92672">.</span><span style="color: #a6e22e">format</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Passwords don&#39;t match. Try again.%n&quot;</span><span style="color: #f92672">);</span>
+                <span style="color: #f92672">}</span> <span style="color: #66d9ef">else</span> <span style="color: #f92672">{</span>
+                    <span style="color: #f8f8f2">change</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">login</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">newPassword1</span><span style="color: #f92672">);</span>
+                    <span style="color: #f8f8f2">c</span><span style="color: #f92672">.</span><span style="color: #a6e22e">format</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Password for %s changed.%n&quot;</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">login</span><span style="color: #f92672">);</span>
+                <span style="color: #f92672">}</span>
+                <span style="color: #f8f8f2">Arrays</span><span style="color: #f92672">.</span><span style="color: #a6e22e">fill</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">newPassword1</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&#39; &#39;</span><span style="color: #f92672">);</span>
+                <span style="color: #f8f8f2">Arrays</span><span style="color: #f92672">.</span><span style="color: #a6e22e">fill</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">newPassword2</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&#39; &#39;</span><span style="color: #f92672">);</span>
+            <span style="color: #f92672">}</span> <span style="color: #66d9ef">while</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">noMatch</span><span style="color: #f92672">);</span>
+        <span style="color: #f92672">}</span>
+
+        <span style="color: #f8f8f2">Arrays</span><span style="color: #f92672">.</span><span style="color: #a6e22e">fill</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">oldPassword</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&#39; &#39;</span><span style="color: #f92672">);</span>
+    <span style="color: #f92672">}</span>
+    
+    <span style="color: #75715e">// Dummy change method.</span>
+    <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">boolean</span> <span style="color: #a6e22e">verify</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">login</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">char</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">password</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+        <span style="color: #75715e">// This method always returns</span>
+        <span style="color: #75715e">// true in this example.</span>
+        <span style="color: #75715e">// Modify this method to verify</span>
+        <span style="color: #75715e">// password according to your rules.</span>
+        <span style="color: #66d9ef">return</span> <span style="color: #66d9ef">true</span><span style="color: #f92672">;</span>
+    <span style="color: #f92672">}</span>
+
+    <span style="color: #75715e">// Dummy change method.</span>
+    <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">change</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">login</span><span style="color: #f92672">,</span> <span style="color: #66d9ef">char</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">password</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+        <span style="color: #75715e">// Modify this method to change</span>
+        <span style="color: #75715e">// password according to your rules.</span>
+    <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
+
+</ul>
+
+                    <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
+                </main>
+
+                <nav class="nav-wrapper" aria-label="Page navigation">
+                    <!-- Mobile navigation buttons -->
+                    <!-- ----------------------------------------------- DIGANTI PREV NEXT ----------------------------------------------- -->
+
+                    <!-- sebelum -->
+                    <a rel="prev" href="pboea.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                        aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <!-- sesudah -->
+                    <a rel="next" href="pbomu.html" class="mobile-nav-chapters next" title="Next chapter"
+                        aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                    <!-- ----------------------------------------------# DIGANTI PREV NEXT #---------------------------------------------- -->
+
+                    <div style="clear: both"></div>
+                </nav>
+            </div>
+        </div>
+
+        <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            <!-- ----------------------------------------------- DIGANTI PREV NEXT 2 ----------------------------------------------- -->
+            <!-- sebelum -->
+            <a rel="prev" href="pboea.html" class="nav-chapters previous" title="Previous chapter"
+                aria-label="Previous chapter" aria-keyshortcuts="Left">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <!-- sesudah -->
+            <a rel="next" href="pbomu.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+                aria-keyshortcuts="Right">
+                <i class="fa fa-angle-right"></i>
+            </a>
+            <!-- ----------------------------------------------# DIGANTI PREV NEXT 2 #---------------------------------------------- -->
+        </nav>
+
+    </div>
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        window.playground_copyable = true;
+    </script>
+
+
+
+
+
+    <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+    <!-- <script src="../searcher.js" type="text/javascript" charset="utf-8"></script> -->
+
+
+    <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Custom JS scripts -->
+
+
+
+
+</body>
+
+</html>

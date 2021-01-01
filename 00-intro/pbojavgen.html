@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>Mata Kuliah</title>
+    <title>PBO-JavGen</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -16,8 +16,7 @@
 
 
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <meta name="description"
-        content="Nightmare: an intro to binary exploitation / reverse engineering course based around CTF challenges.">
+    <meta name="description" content="Wetofu : belajar suka-suka aee">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff" />
 
@@ -102,7 +101,7 @@
         html.classList.add("sidebar-" + sidebar);
     </script>
 
-   <!-- ---------------------------------------- NAV ---------------------------------------- -->
+    <!-- ---------------------------------------- NAV ---------------------------------------- -->
 <nav id="sidebar" class="sidebar" aria-label="Table of contents">
     <div class="sidebar-scrollbox">
         <ol class="chapter">
@@ -112,7 +111,7 @@
             <!-- -------------------- KULIAH -------------------- -->
             <li class="chapter-item expanded ">
                 <a href="../00-intro/index.html">
-                    <strong aria-hidden="true" style="color: rgb(252, 155, 171);">1. Mata Kuliah </strong>
+                    <strong aria-hidden="true">1. Mata Kuliah </strong>
                 </a>
             </li>
             <li>
@@ -127,7 +126,7 @@
                             <li class="chapter-item expanded "><a href="../00-intro/pbo.html">1.1.1. PBO</a></li>
                             <li>
                                 <ol class="section">
-                                    <li class="chapter-item expanded "><a href="../00-intro/pbojavgen.html">1.1.1.1 Java Generics</a></li>
+                                    <li class="chapter-item expanded "><a href="../00-intro/pbojavgen.html" style="color: rgb(252, 155, 171);">1.1.1.1 Java Generics</a></li>
                                     <li class="chapter-item expanded "><a href="../00-intro/pboso.html">1.1.1.2 String Operation</a></li>
                                     <li class="chapter-item expanded "><a href="../00-intro/pboreg.html">1.1.1.3 Regex</a></li>
                                     <li class="chapter-item expanded "><a href="../00-intro/pboea.html">1.1.1.4 Exception & Assertion</a></li>
@@ -440,7 +439,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">Mata Kuliah</h1>
+                <h1 class="menu-title">PBO-Java Generics</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -481,8 +480,156 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1><a class="header" href="#intro" id="intro">Intro</a></h1>
-                    <p>Ayok yang ingin belajar materi perkuliahan...</p>
+                    <h4><a class="header" id="javgen" style="text-decoration: none;">Java Generics</a></h4>
+                        <ul>
+                            <li>Array List</li>
+                            <p>sumber : <a href="http://jagocoding.com/tutorial/1142/Belajar_ArrayList_di_Java%20URL"
+                                    target="_blank">http://jagocoding.com/tutorial/1142/Belajar_ArrayList_di_Java%20URL</a>
+                                <br>
+                                <br>
+                                - Pakai fitur ini ketika jumlah Data itu tidak bisa Anda tentukan sendiri melainkan dari
+                                si User. <br>
+                                - Contoh program sederhananya seperti program Sequential Searching. <br>
+                                <br>
+                                Pada program Sequential Searching, jumlah Data sebenarnya bisa di modifikasi menjadi 2
+                                pilihan yakni : <br>
+                                <br>
+                                - Jumlah Data ditentukan sendiri oleh si Programmer <br>
+                                - Jumlah Data di input oleh si User.
+<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>import</span> java.util.ArrayList;
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.Scanner;
+ 
+<span style='color:#3F5FBF'>/**
+ * 
+ * @author Yudi Setiawan
+ * 
+ * Input Data dengan ArrayList
+ *
+ */</span>
+ 
+<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> InputData
+<span style='font-weight:bold;color:#D3171B'>{</span>
+    <span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args)
+    <span style='font-weight:bold;color:#D3171B'>{</span>
+        <span style='color:#3F7F5F'>//  Buat Objek dari ArrayList
+</span>        ArrayList arr_data = <span style='font-weight:bold;color:#7B0052;'>new</span> ArrayList();
+
+        <span style='color:#3F7F5F'>//  Input jumlah Data yang di inginkan oleh User
+</span>        System.out.print(<span style='color:#2A00FF'>"Input jumlah Data : "</span>);   
+        <span style='font-weight:bold;color:#7B0052;'>int</span> jlh_data = <span style='font-weight:bold;color:#7B0052;'>new</span> Scanner(System.in).nextInt();
+
+        <span style='color:#3F7F5F'>//  Input Data dan masukkan ke dalam objek ArrayList yang telah Anda buat
+</span>        <span style='font-weight:bold;color:#7B0052;'>for</span>(<span style='font-weight:bold;color:#7B0052;'>int</span> a = 0; a &lt; jlh_data; a++)
+        <span style='font-weight:bold;color:#D3171B'>{</span>
+            System.out.print(<span style='color:#2A00FF'>"Masukkan Data ke-"</span>+(a+1)+<span style='color:#2A00FF'>": "</span>);
+            arr_data.add(<span style='font-weight:bold;color:#7B0052;'>new</span> Scanner(System.in).nextLine());
+        <span style='font-weight:bold;color:#D3171B'>}</span>
+
+        <span style='color:#3F7F5F'>//  Tampilkan nilai yang di simpan di dalam ArrayList
+</span>        System.out.println(<span style='color:#2A00FF'>"\nTampilkan Data yang di input"</span>);
+        <span style='font-weight:bold;color:#7B0052;'>for</span>(Object o : arr_data)
+        <span style='font-weight:bold;color:#D3171B'>{</span>
+            System.out.println(o);
+        <span style='font-weight:bold;color:#D3171B'>}</span>
+
+        <span style='color:#3F7F5F'>//  Masukkan Data yang akan dihapus
+</span>        System.out.print(<span style='color:#2A00FF'>"\nInput Data yang akan dihapus : "</span>);  
+        String data_hapus = <span style='font-weight:bold;color:#7B0052;'>new</span> Scanner(System.in).nextLine();
+
+        <span style='color:#3F7F5F'>//  Lakukan penghapusan Data di dalam ArrayList
+</span>        arr_data.remove(data_hapus);
+
+        <span style='color:#3F7F5F'>//  Tampilkan kembali nilai yang di simpan di dalam ArrayList
+</span>        System.out.println(<span style='color:#2A00FF'>"\nTampilkan kembali Data yang ada di dalam ArrayList"</span>);
+        <span style='font-weight:bold;color:#7B0052;'>for</span>(Object o : arr_data)
+            System.out.println(o);
+
+    <span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
+<ul>
+<li>'add' digunakan untuk memasukkan sebuah value ke dalam ArrayList. Sedikit catatan, bahwa pada umumnya ArrayList hanya bisa menyimpan tipe data Object. Namun, Anda bisa mengubahnya sesuai keinginan Anda dengan cara mem-parsing tipe datanya dari object ke tipe data lainnya seperti integer, double dan lainnya. Bisa Anda lihat pada contoh berikutnya.</li> 
+<li>'remove' digunakan untuk menghapus sebuah value dari daftar ArrayList yang tersedia menggunakan nomor index maupun langsung dari value-nya. Sedikit catatan, bahwa ketika sebuah value dimasukkan ke dalam ArrayList maka, index pertamanya selalu dimulai dari nol(0) dan secara otomatis indexnya akan bertambah dengan sendirinya. Hal inilah yang saya sebut tadi dengan fleksible. Jumlah Datanya tidak terbatas.</li> 
+<li>'Object o : arr_data' berarti, Anda akan melakukan perulangan sebanyak jumlah Data yang terisi di dalam ArrayList.</li> 
+</ul><br>
+Sequential Program dengan array 
+<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>import</span> java.util.ArrayList;
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.Scanner;
+ 
+<span style='color:#3F5FBF'>/**
+ * 
+ * @author Yudi Setiawan
+ * 
+ * Contoh Program Sequential Searching dengan fitur ArrayList
+ *
+ */</span>
+ 
+<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> SequentialSearchingArrayList
+<span style='font-weight:bold;color:#D3171B'>{</span>
+    <span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args)
+    <span style='font-weight:bold;color:#D3171B'>{</span>
+        <span style='color:#3F7F5F'>//  Buat Objek ArrayList dan set datanya menjadi integer
+</span>        ArrayList&lt;Integer&gt; arr_data = <span style='font-weight:bold;color:#7B0052;'>new</span> ArrayList();
+         
+        <span style='color:#3F7F5F'>//  Buat Objek Scanner
+</span>        Scanner scan = <span style='font-weight:bold;color:#7B0052;'>new</span> Scanner(System.in);
+         
+        <span style='color:#3F7F5F'>//  Input jumlah Data yang di inginkan oleh User
+</span>        System.out.print(<span style='color:#2A00FF'>"Input jumlah Data : "</span>);   <span style='font-weight:bold;color:#7B0052;'>int</span> jlh_data = scan.nextInt();
+         
+        <span style='color:#3F7F5F'>//  Input tiap nilai dan masukkan ke dalam ArrayList
+</span>        System.out.println(<span style='color:#2A00FF'>"\nInput nilai Data"</span>);
+        <span style='font-weight:bold;color:#7B0052;'>for</span>(<span style='font-weight:bold;color:#7B0052;'>int</span> a = 0; a &lt; jlh_data; a++)
+        <span style='font-weight:bold;color:#D3171B'>{</span>
+            System.out.print(<span style='color:#2A00FF'>"Data ke-"</span>+(a+1)+<span style='color:#2A00FF'>" : "</span>);
+            <span style='font-weight:bold;color:#7B0052;'>int</span> value = scan.nextInt();     <span style='color:#3F7F5F'>//  Membaca inputan dari si User
+</span>             
+            <span style='color:#3F7F5F'>//  Masukkan ke dalam ArrayList
+</span>            arr_data.add(value);
+        <span style='font-weight:bold;color:#D3171B'>}</span>
+         
+        <span style='color:#3F7F5F'>//  Tampilkan Data hasil inputan
+</span>        System.out.println(<span style='color:#2A00FF'>"\nData yang ada di dalam ArrayList"</span>);
+        <span style='font-weight:bold;color:#7B0052;'>int</span> posisi = 1;
+        <span style='font-weight:bold;color:#7B0052;'>for</span>(Integer i : arr_data)
+        <span style='font-weight:bold;color:#D3171B'>{</span>
+            System.out.println(<span style='color:#2A00FF'>"--&gt;Data ke-"</span>+posisi+<span style='color:#2A00FF'>" : "</span>+i);
+            posisi++;
+        <span style='font-weight:bold;color:#D3171B'>}</span>
+         
+        <span style='color:#3F7F5F'>//  Input Data yang akan dicari
+</span>        System.out.print(<span style='color:#2A00FF'>"\nInput Data yang akan dicari : "</span>);   <span style='font-weight:bold;color:#7B0052;'>int</span> cari = scan.nextInt();
+         
+        <span style='color:#3F7F5F'>//  Proses Pencarian di dalam ArrayList
+</span>        <span style='font-weight:bold;color:#7B0052;'>int</span> iterasi = 1;
+        <span style='font-weight:bold;color:#7B0052;'>boolean</span> temu = <span style='font-weight:bold;color:#7B0052;'>false</span>;
+        <span style='font-weight:bold;color:#7B0052;'>for</span>(Integer i : arr_data)
+        <span style='font-weight:bold;color:#D3171B'>{</span>
+            <span style='font-weight:bold;color:#7B0052;'>if</span>(i == cari)
+            <span style='font-weight:bold;color:#D3171B'>{</span>
+                System.out.println(<span style='color:#2A00FF'>"Iterasi ke-"</span>+iterasi);
+                System.out.println(i+<span style='color:#2A00FF'>" == "</span>+cari);
+                temu = <span style='font-weight:bold;color:#7B0052;'>true</span>;
+                    <span style='font-weight:bold;color:#7B0052;'>break</span>;
+            <span style='font-weight:bold;color:#D3171B'>}</span>
+            <span style='font-weight:bold;color:#7B0052;'>else</span>
+            <span style='font-weight:bold;color:#D3171B'>{</span>
+                System.out.println(<span style='color:#2A00FF'>"Iterasi ke-"</span>+iterasi);
+                System.out.println(i+<span style='color:#2A00FF'>" != "</span>+cari);
+            <span style='font-weight:bold;color:#D3171B'>}</span>
+            iterasi++;
+            System.out.println();
+        <span style='font-weight:bold;color:#D3171B'>}</span>
+         
+        <span style='font-weight:bold;color:#7B0052;'>if</span>(temu == <span style='font-weight:bold;color:#7B0052;'>true</span>)
+            System.out.println(<span style='color:#2A00FF'>"\nData ditemukan pada iterasi ke-"</span>+iterasi);
+         
+        <span style='font-weight:bold;color:#7B0052;'>else</span>
+            System.out.println(<span style='color:#2A00FF'>"\nData tidak ditemukan"</span>);
+         
+    <span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
+                            </p>
+                        </ul>
 
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
@@ -490,15 +637,17 @@
                 <nav class="nav-wrapper" aria-label="Page navigation">
                     <!-- Mobile navigation buttons -->
                     <!-- ----------------------------------------------- DIGANTI PREV NEXT ----------------------------------------------- -->
-                    <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter"
+
+                    <!-- sebelum -->
+                    <a rel="prev" href="pbo.html" class="mobile-nav-chapters previous" title="Previous chapter"
                         aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
 
-
-                    <a rel="next" href="inf.html" class="mobile-nav-chapters next"
-                        title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <!-- sesudah -->
+                    <a rel="next" href="pboso.html" class="mobile-nav-chapters next" title="Next chapter"
+                        aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                     <!-- ----------------------------------------------# DIGANTI PREV NEXT #---------------------------------------------- -->
@@ -510,13 +659,14 @@
 
         <nav class="nav-wide-wrapper" aria-label="Page navigation">
             <!-- ----------------------------------------------- DIGANTI PREV NEXT 2 ----------------------------------------------- -->
-            <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter"
+            <!-- sebelum -->
+            <a rel="prev" href="pbo.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
             </a>
-
-            <a rel="next" href="inf.html" class="nav-chapters next" title="Next chapter"
-                aria-label="Next chapter" aria-keyshortcuts="Right">
+            <!-- sesudah -->
+            <a rel="next" href="pboso.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+                aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
             </a>
             <!-- ----------------------------------------------# DIGANTI PREV NEXT 2 #---------------------------------------------- -->

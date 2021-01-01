@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>Mata Kuliah</title>
+    <title>PBO-StrO</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -16,8 +16,7 @@
 
 
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <meta name="description"
-        content="Nightmare: an intro to binary exploitation / reverse engineering course based around CTF challenges.">
+    <meta name="description" content="Wetofu : belajar suka-suka aee">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffffff" />
 
@@ -102,7 +101,7 @@
         html.classList.add("sidebar-" + sidebar);
     </script>
 
-   <!-- ---------------------------------------- NAV ---------------------------------------- -->
+    <!-- ---------------------------------------- NAV ---------------------------------------- -->
 <nav id="sidebar" class="sidebar" aria-label="Table of contents">
     <div class="sidebar-scrollbox">
         <ol class="chapter">
@@ -112,7 +111,7 @@
             <!-- -------------------- KULIAH -------------------- -->
             <li class="chapter-item expanded ">
                 <a href="../00-intro/index.html">
-                    <strong aria-hidden="true" style="color: rgb(252, 155, 171);">1. Mata Kuliah </strong>
+                    <strong aria-hidden="true">1. Mata Kuliah </strong>
                 </a>
             </li>
             <li>
@@ -128,7 +127,7 @@
                             <li>
                                 <ol class="section">
                                     <li class="chapter-item expanded "><a href="../00-intro/pbojavgen.html">1.1.1.1 Java Generics</a></li>
-                                    <li class="chapter-item expanded "><a href="../00-intro/pboso.html">1.1.1.2 String Operation</a></li>
+                                    <li class="chapter-item expanded "><a href="../00-intro/pboso.html" style="color: rgb(252, 155, 171);">1.1.1.2 String Operation</a></li>
                                     <li class="chapter-item expanded "><a href="../00-intro/pboreg.html">1.1.1.3 Regex</a></li>
                                     <li class="chapter-item expanded "><a href="../00-intro/pboea.html">1.1.1.4 Exception & Assertion</a></li>
                                     <li class="chapter-item expanded "><a href="../00-intro/pboio.html">1.1.1.5 I/O</a></li>
@@ -440,7 +439,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">Mata Kuliah</h1>
+                <h1 class="menu-title">PBO-String Operation</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -481,8 +480,163 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1><a class="header" href="#intro" id="intro">Intro</a></h1>
-                    <p>Ayok yang ingin belajar materi perkuliahan...</p>
+                    <h4><a class="header" id="stop" style="text-decoration: none;">String Operation</a></h4>
+                        <a href="https://www.w3schools.com/java/java_strings.asp" target="_blank">https://www.w3schools.com/java/java_strings.asp</a>
+                        <br>
+                        <a href="https://www.geeksforgeeks.org/strings-in-java/" target="_blank">https://www.geeksforgeeks.org/strings-in-java/</a>
+<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='color:#3F7F5F'>// Java code to illustrate String 
+</span>
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.io.*; 
+<span style='font-weight:bold;color:#7B0052;'>import</span> java.lang.*; 
+
+<span style='font-weight:bold;color:#7B0052;'>class</span> BelajarString<span style='font-weight:bold;color:#D3171B'>{</span>
+	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args)<span style='font-weight:bold;color:#D3171B'>{</span>
+		String greeting = <span style='color:#2A00FF'>"Hello"</span>;
+		String txt = <span style='color:#2A00FF'>"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>;
+		System.out.println(<span style='color:#2A00FF'>"The length of the txt string is: "</span> + txt.length());
+		String txt = <span style='color:#2A00FF'>"Hello World"</span>;
+		System.out.println(txt.toUpperCase());   <span style='color:#3F7F5F'>// Outputs "HELLO WORLD"
+</span>		System.out.println(txt.toLowerCase());   <span style='color:#3F7F5F'>// Outputs "hello world"
+</span>		String txt = <span style='color:#2A00FF'>"Please locate where 'locate' occurs!"</span>;
+		System.out.println(txt.indexOf(<span style='color:#2A00FF'>"locate"</span>)); <span style='color:#3F7F5F'>// Outputs 7
+</span>		String firstName = <span style='color:#2A00FF'>"John"</span>;
+		String lastName = <span style='color:#2A00FF'>"Doe"</span>;
+		System.out.println(firstName + <span style='color:#2A00FF'>" "</span> + lastName);
+		String firstName = <span style='color:#2A00FF'>"John "</span>;
+		String lastName = <span style='color:#2A00FF'>"Doe"</span>;
+		System.out.println(firstName.concat(lastName));
+		String txt = <span style='color:#2A00FF'>"We are the so-called \"Vikings\" from the north."</span>;
+		String txt = <span style='color:#2A00FF'>"It\'s alright."</span>;
+		String txt = <span style='color:#2A00FF'>"The character \\ is called backslash."</span>;
+
+<span style='color:#3F7F5F'>// 		\n 	New Line 	
+</span><span style='color:#3F7F5F'>// 		\r 	Carriage Return 	
+</span><span style='color:#3F7F5F'>// 		\t 	Tab 	
+</span><span style='color:#3F7F5F'>// 		\b 	Backspace 	
+</span><span style='color:#3F7F5F'>// 		\f 	Form Feed
+</span>
+		String x = <span style='color:#2A00FF'>"10"</span>;
+		String y = <span style='color:#2A00FF'>"20"</span>;
+		String z = x + y;   <span style='color:#3F7F5F'>// z will be 1020 (a String)
+</span>		String x = <span style='color:#2A00FF'>"10"</span>;
+		<span style='font-weight:bold;color:#7B0052;'>int</span> y = 20;
+		String z = x + y;   <span style='color:#3F7F5F'>// z will be 1020 (a String)
+</span>
+		<span style='color:#3F7F5F'>// Declare String without using new operator 
+</span>		String s = <span style='color:#2A00FF'>"GeeksforGeeks"</span>; 
+
+		<span style='color:#3F7F5F'>// Prints the String. 
+</span>		System.out.println(<span style='color:#2A00FF'>"String s = "</span> + s); 
+
+		<span style='color:#3F7F5F'>// Declare String using new operator 
+</span>		String s1 = <span style='font-weight:bold;color:#7B0052;'>new</span> String(<span style='color:#2A00FF'>"GeeksforGeeks"</span>); 
+
+		<span style='color:#3F7F5F'>// Prints the String. 
+</span>		System.out.println(<span style='color:#2A00FF'>"String s1 = "</span> + s1); 
+
+        <span style='color:#3F7F5F'>// StringBuffer: StringBuffer is a peer class of String that provides much of the </span>	
+        <span style='color:#3F7F5F'>// functionality of strings. </span>
+        <span style='color:#3F7F5F'>// String represents fixed-length, immutable character sequences while </span>
+        <span style='color:#3F7F5F'>// StringBuffer represents growable and writable character sequences.</span>
+        StringBuffer s = <span style='font-weight:bold;color:#7B0052;'>new</span> StringBuffer(<span style='color:#2A00FF'>"GeeksforGeeks"</span>);
+
+		byte[] b_arr = <span style='font-weight:bold;color:#D3171B'>{</span>71, 101, 101, 107, 115<span style='font-weight:bold;color:#D3171B'>}</span>;
+		String s_byte =<span style='font-weight:bold;color:#7B0052;'>new</span> String(b_arr); <span style='color:#3F7F5F'>//Geeks
+</span>
+		byte[] b_arr = <span style='font-weight:bold;color:#D3171B'>{</span>71, 101, 101, 107, 115<span style='font-weight:bold;color:#D3171B'>}</span>;
+		Charset cs = Charset.defaultCharset();
+		String s_byte_char = <span style='font-weight:bold;color:#7B0052;'>new</span> String(b_arr, cs); <span style='color:#3F7F5F'>//Geeks
+</span>
+		byte[] b_arr = <span style='font-weight:bold;color:#D3171B'>{</span>71, 101, 101, 107, 115<span style='font-weight:bold;color:#D3171B'>}</span>;
+		String s = <span style='font-weight:bold;color:#7B0052;'>new</span> String(b_arr, <span style='color:#2A00FF'>"US-ASCII"</span>); <span style='color:#3F7F5F'>//Geeks
+</span>
+		byte[] b_arr = <span style='font-weight:bold;color:#D3171B'>{</span>71, 101, 101, 107, 115<span style='font-weight:bold;color:#D3171B'>}</span>;
+		String s = <span style='font-weight:bold;color:#7B0052;'>new</span> String(b_arr, 1, 3); <span style='color:#3F7F5F'>// eek
+</span>
+		byte[] b_arr = <span style='font-weight:bold;color:#D3171B'>{</span>71, 101, 101, 107, 115<span style='font-weight:bold;color:#D3171B'>}</span>;
+		Charset cs = Charset.defaultCharset();
+		String s = <span style='font-weight:bold;color:#7B0052;'>new</span> String(b_arr, 1, 3, cs); <span style='color:#3F7F5F'>// eek
+</span>
+		byte[] b_arr = <span style='font-weight:bold;color:#D3171B'>{</span>71, 101, 101, 107, 115<span style='font-weight:bold;color:#D3171B'>}</span>;
+		String s = <span style='font-weight:bold;color:#7B0052;'>new</span> String(b_arr, 1, 4, <span style='color:#2A00FF'>"US-ASCII"</span>); <span style='color:#3F7F5F'>// eeks
+</span>
+		<span style='font-weight:bold;color:#7B0052;'>char</span> char_arr[] = <span style='font-weight:bold;color:#D3171B'>{</span><span style='color:#2A00FF'>'G'</span>, <span style='color:#2A00FF'>'e'</span>, <span style='color:#2A00FF'>'e'</span>, <span style='color:#2A00FF'>'k'</span>, <span style='color:#2A00FF'>'s'</span><span style='font-weight:bold;color:#D3171B'>}</span>;
+		String s = <span style='font-weight:bold;color:#7B0052;'>new</span> String(char_arr); <span style='color:#3F7F5F'>//Geeks
+</span>
+		<span style='font-weight:bold;color:#7B0052;'>char</span> char_arr[] = <span style='font-weight:bold;color:#D3171B'>{</span><span style='color:#2A00FF'>'G'</span>, <span style='color:#2A00FF'>'e'</span>, <span style='color:#2A00FF'>'e'</span>, <span style='color:#2A00FF'>'k'</span>, <span style='color:#2A00FF'>'s'</span><span style='font-weight:bold;color:#D3171B'>}</span>;
+		String s = <span style='font-weight:bold;color:#7B0052;'>new</span> String(char_arr , 1, 3); <span style='color:#3F7F5F'>//eek
+</span>
+		int[] uni_code = <span style='font-weight:bold;color:#D3171B'>{</span>71, 101, 101, 107, 115<span style='font-weight:bold;color:#D3171B'>}</span>;
+		String s = <span style='font-weight:bold;color:#7B0052;'>new</span> String(uni_code, 1, 3); <span style='color:#3F7F5F'>//eek
+</span>
+		StringBuffer s_buffer = <span style='font-weight:bold;color:#7B0052;'>new</span> StringBuffer(<span style='color:#2A00FF'>"Geeks"</span>);
+		String s = <span style='font-weight:bold;color:#7B0052;'>new</span> String(s_buffer); <span style='color:#3F7F5F'>//Geeks
+</span>
+		StringBuilder s_builder = <span style='font-weight:bold;color:#7B0052;'>new</span> StringBuilder(<span style='color:#2A00FF'>"Geeks"</span>);
+		String s = <span style='font-weight:bold;color:#7B0052;'>new</span> String(s_builder); <span style='color:#3F7F5F'>//Geeks
+</span>
+		String s= <span style='color:#2A00FF'>"GeeksforGeeks"</span>; 
+		<span style='color:#3F7F5F'>// or String s= new String ("GeeksforGeeks"); 
+</span>
+		<span style='color:#3F7F5F'>// Returns the number of characters in the String. 
+</span>		System.out.println(<span style='color:#2A00FF'>"String length = "</span> + s.length()); 
+
+		<span style='color:#3F7F5F'>// Returns the character at ith index. 
+</span>		System.out.println(<span style='color:#2A00FF'>"Character at 3rd position = "</span> + s.charAt(3)); 
+
+		<span style='color:#3F7F5F'>// Return the substring from the ith index character 
+</span>		<span style='color:#3F7F5F'>// to end of string 
+</span>		System.out.println(<span style='color:#2A00FF'>"Substring "</span> + s.substring(3)); 
+
+		<span style='color:#3F7F5F'>// Returns the substring from i to j-1 index. 
+</span>		System.out.println(<span style='color:#2A00FF'>"Substring = "</span> + s.substring(2,5)); 
+
+		<span style='color:#3F7F5F'>// Concatenates string2 to the end of string1. 
+</span>		String s1 = <span style='color:#2A00FF'>"Geeks"</span>; 
+		String s2 = <span style='color:#2A00FF'>"forGeeks"</span>; 
+		System.out.println(<span style='color:#2A00FF'>"Concatenated string = "</span> +  s1.concat(s2)); 
+
+		<span style='color:#3F7F5F'>// Returns the index within the string 
+</span>		<span style='color:#3F7F5F'>// of the first occurrence of the specified string. 
+</span>		String s4 = <span style='color:#2A00FF'>"Learn Share Learn"</span>; 
+		System.out.println(<span style='color:#2A00FF'>"Index of Share "</span> + s4.indexOf(<span style='color:#2A00FF'>"Share"</span>)); 
+
+		<span style='color:#3F7F5F'>// Returns the index within the string of the 
+</span>		<span style='color:#3F7F5F'>// first occurrence of the specified string, 
+</span>		<span style='color:#3F7F5F'>// starting at the specified index. 
+</span>		System.out.println(<span style='color:#2A00FF'>"Index of a = "</span> +  s4.indexOf(<span style='color:#2A00FF'>'a'</span>,3)); 
+
+		<span style='color:#3F7F5F'>// Checking equality of Strings 
+</span>		Boolean out = <span style='color:#2A00FF'>"Geeks"</span>.equals(<span style='color:#2A00FF'>"geeks"</span>); 
+		System.out.println(<span style='color:#2A00FF'>"Checking Equality "</span> + out); 
+		out = <span style='color:#2A00FF'>"Geeks"</span>.equals(<span style='color:#2A00FF'>"Geeks"</span>); 
+		System.out.println(<span style='color:#2A00FF'>"Checking Equality "</span> + out); 
+
+		out = <span style='color:#2A00FF'>"Geeks"</span>.equalsIgnoreCase(<span style='color:#2A00FF'>"gEeks "</span>); 
+		System.out.println(<span style='color:#2A00FF'>"Checking Equality "</span> + out); 
+		
+		<span style='color:#3F7F5F'>//If ASCII difference is zero then the two strings are similar 
+</span>		<span style='font-weight:bold;color:#7B0052;'>int</span> out1 = s1.compareTo(s2); 
+		System.out.println(<span style='color:#2A00FF'>"the difference between ASCII value is="</span>+out1); 
+		<span style='color:#3F7F5F'>// Converting cases 
+</span>		String word1 = <span style='color:#2A00FF'>"GeeKyMe"</span>; 
+		System.out.println(<span style='color:#2A00FF'>"Changing to lower Case "</span> + word1.toLowerCase()); 
+
+		<span style='color:#3F7F5F'>// Converting cases 
+</span>		String word2 = <span style='color:#2A00FF'>"GeekyME"</span>; 
+		System.out.println(<span style='color:#2A00FF'>"Changing to UPPER Case "</span> + word2.toUpperCase()); 
+
+		<span style='color:#3F7F5F'>// Trimming the word 
+</span>		String word4 = <span style='color:#2A00FF'>" Learn Share Learn "</span>; 
+		System.out.println(<span style='color:#2A00FF'>"Trim the word "</span> + word4.trim()); 
+
+		<span style='color:#3F7F5F'>// Replacing characters 
+</span>		String str1 = <span style='color:#2A00FF'>"feeksforfeeks"</span>; 
+		System.out.println(<span style='color:#2A00FF'>"Original String "</span> + str1); 
+		String str2 = <span style='color:#2A00FF'>"feeksforfeeks"</span>.replace(<span style='color:#2A00FF'>'f'</span> ,<span style='color:#2A00FF'>'g'</span>) ; 
+		System.out.println(<span style='color:#2A00FF'>"Replaced f with g -&gt; "</span> + str2); 
+	<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
 
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
@@ -490,15 +644,15 @@
                 <nav class="nav-wrapper" aria-label="Page navigation">
                     <!-- Mobile navigation buttons -->
                     <!-- ----------------------------------------------- DIGANTI PREV NEXT ----------------------------------------------- -->
-                    <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter"
+
+                    <!-- sebelum -->
+                    <a rel="prev" href="pbojavgen.html" class="mobile-nav-chapters previous" title="Previous chapter"
                         aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-
-
-
-                    <a rel="next" href="inf.html" class="mobile-nav-chapters next"
-                        title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <!-- sesudah -->
+                    <a rel="next" href="pboreg.html" class="mobile-nav-chapters next" title="Next chapter"
+                        aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                     <!-- ----------------------------------------------# DIGANTI PREV NEXT #---------------------------------------------- -->
@@ -510,13 +664,14 @@
 
         <nav class="nav-wide-wrapper" aria-label="Page navigation">
             <!-- ----------------------------------------------- DIGANTI PREV NEXT 2 ----------------------------------------------- -->
-            <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter"
+            <!-- sebelum -->
+            <a rel="prev" href="pbojavgen.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
             </a>
-
-            <a rel="next" href="inf.html" class="nav-chapters next" title="Next chapter"
-                aria-label="Next chapter" aria-keyshortcuts="Right">
+            <!-- sesudah -->
+            <a rel="next" href="pboreg.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+                aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
             </a>
             <!-- ----------------------------------------------# DIGANTI PREV NEXT 2 #---------------------------------------------- -->
