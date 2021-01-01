@@ -132,8 +132,8 @@
                                     <li class="chapter-item expanded "><a href="../00-intro/pboea.html">1.1.1.4 Exception & Assertion</a></li>
                                     <li class="chapter-item expanded "><a href="../00-intro/pboio.html" style="color: rgb(252, 155, 171);">1.1.1.5 I/O</a></li>
                                     <li class="chapter-item expanded "><a href="../00-intro/pbomu.html">1.1.1.6 Multithreading</a></li>
-                                    <li class="chapter-item expanded "><a href="../00-intro/pboprak6.html">1.1.1.7 Prak 6</a></li>
-                                    <li class="chapter-item expanded "><a href="../00-intro/pboprak7.html">1.1.1.8 Prak 7</a></li>
+                                    <!-- <li class="chapter-item expanded "><a href="../00-intro/pboprak6.html">1.1.1.7 Prak 6</a></li>
+                                    <li class="chapter-item expanded "><a href="../00-intro/pboprak7.html">1.1.1.8 Prak 7</a></li> -->
                                 </ol>
                             </li>
                             <li class="chapter-item expanded "><a href="../00-intro/basdat.html">1.1.2. Basdat</a></li>
@@ -480,14 +480,23 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h4><a class="header" id="io" style="text-decoration: none;">I/O</a></h4>
-                        sumber : <a href="https://docs.oracle.com/javase/tutorial/essential/io/index.html" target="_blank">https://docs.oracle.com/javase/tutorial/essential/io/index.html</a>
-                        <br>
-                        <br>
-                        <ul>
-                            <li>Byte Stream :</li> 
-                        <img src="../gambar/gamb7.png" alt="" style="display: block; margin-left: auto; margin-right: auto;"><br>
-<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.FileInputStream</span><span style="color: #f92672">;</span>
+                    <h1><a class="header" id="io" style="text-decoration: none;">I/O</a></h1>
+                    sumber : <a href="https://docs.oracle.com/javase/tutorial/essential/io/index.html"
+                        target="_blank">https://docs.oracle.com/javase/tutorial/essential/io/index.html</a>
+                    <br>
+                    <br>
+                    <ul>
+                        <li><a class="header" href="#iostream"><strong>I/O Stream</strong></a></li>
+                        <li><a class="header" href="#fileio"><strong>File I/O</strong></a></li>
+                    </ul>
+                    <br>
+                    <hr><br>
+                    <h3><a class="header" id="iostream" style="text-decoration: none;">I/O Stream :</a></h3>
+                    <ul>
+                        <li>Byte Stream :</li>
+                        <img src="../gambar/gamb7.png" alt=""
+                            style="display: block; margin-left: auto; margin-right: auto;"><br>
+                        <pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.FileInputStream</span><span style="color: #f92672">;</span>
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.FileOutputStream</span><span style="color: #f92672">;</span>
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.IOException</span><span style="color: #f92672">;</span>
 
@@ -515,9 +524,9 @@
         <span style="color: #f92672">}</span>
     <span style="color: #f92672">}</span>
 <span style="color: #f92672">}</span></code></pre>
-<br>
-<li>Character Stream :</li> 
-<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.FileReader</span><span style="color: #f92672">;</span>
+                        <br>
+                        <li>Character Stream :</li>
+                        <pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.FileReader</span><span style="color: #f92672">;</span>
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.FileWriter</span><span style="color: #f92672">;</span>
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.IOException</span><span style="color: #f92672">;</span>
 
@@ -546,8 +555,8 @@
     <span style="color: #f92672">}</span>
 <span style="color: #f92672">}</span></code>
 </pre>
-&nbsp;&nbsp;&nbsp;&nbsp; Line Oriented I/O: 
-<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.FileReader</span><span style="color: #f92672">;</span>
+                        &nbsp;&nbsp;&nbsp;&nbsp; Line Oriented I/O:
+                        <pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.FileReader</span><span style="color: #f92672">;</span>
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.FileWriter</span><span style="color: #f92672">;</span>
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.BufferedReader</span><span style="color: #f92672">;</span>
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.PrintWriter</span><span style="color: #f92672">;</span>
@@ -578,12 +587,12 @@
     <span style="color: #f92672">}</span>
 <span style="color: #f92672">}</span></code>    
 </pre>
-<li>Buffered Streams :</li> 
-<pre><code>inputStream = new BufferedReader(new FileReader("xanadu.txt"));
+                        <li>Buffered Streams :</li>
+                        <pre><code>inputStream = new BufferedReader(new FileReader("xanadu.txt"));
 outputStream = new BufferedWriter(new FileWriter("characteroutput.txt"));</code></pre>
-<li>Scanning : </li>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Breaking input into tokens :
-<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.*</span><span style="color: #f92672">;</span>
+                        <li>Scanning : </li>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Breaking input into tokens :
+                        <pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.*</span><span style="color: #f92672">;</span>
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.Scanner</span><span style="color: #f92672">;</span>
 
 <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">ScanXan</span> <span style="color: #f92672">{</span>
@@ -605,8 +614,8 @@ outputStream = new BufferedWriter(new FileWriter("characteroutput.txt"));</code>
     <span style="color: #f92672">}</span>
 <span style="color: #f92672">}</span></code>
 </pre>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Translating Individual Tokens :
-<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.FileReader</span><span style="color: #f92672">;</span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Translating Individual Tokens :
+                        <pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.FileReader</span><span style="color: #f92672">;</span>
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.BufferedReader</span><span style="color: #f92672">;</span>
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.IOException</span><span style="color: #f92672">;</span>
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.Scanner</span><span style="color: #f92672">;</span>
@@ -637,8 +646,8 @@ outputStream = new BufferedWriter(new FileWriter("characteroutput.txt"));</code>
     <span style="color: #f92672">}</span>
 <span style="color: #f92672">}</span></code>
 </pre>
-<li>Formatting : </li> 
-<pre style="margin: 0; line-height: 125%"><code><span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Root</span> <span style="color: #f92672">{</span>
+                        <li>Formatting : </li>
+                        <pre style="margin: 0; line-height: 125%"><code><span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Root</span> <span style="color: #f92672">{</span>
     <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
         <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">2</span><span style="color: #f92672">;</span>
         <span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">r</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Math</span><span style="color: #f92672">.</span><span style="color: #a6e22e">sqrt</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">);</span>
@@ -655,7 +664,7 @@ outputStream = new BufferedWriter(new FileWriter("characteroutput.txt"));</code>
     <span style="color: #f92672">}</span>
 <span style="color: #f92672">}</span></code>
 </pre>
-<pre style="margin: 0; line-height: 125%"><code><span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Root2</span> <span style="color: #f92672">{</span>
+                        <pre style="margin: 0; line-height: 125%"><code><span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Root2</span> <span style="color: #f92672">{</span>
     <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
         <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">2</span><span style="color: #f92672">;</span>
         <span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">r</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Math</span><span style="color: #f92672">.</span><span style="color: #a6e22e">sqrt</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">);</span>
@@ -664,14 +673,14 @@ outputStream = new BufferedWriter(new FileWriter("characteroutput.txt"));</code>
     <span style="color: #f92672">}</span>
 <span style="color: #f92672">}</span></code>
 </pre>
-<pre style="margin: 0; line-height: 125%"><code><span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Format</span> <span style="color: #f92672">{</span>
+                        <pre style="margin: 0; line-height: 125%"><code><span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Format</span> <span style="color: #f92672">{</span>
     <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
         <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">format</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;%f, %1$+020.10f %n&quot;</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">Math</span><span style="color: #f92672">.</span><span style="color: #a6e22e">PI</span><span style="color: #f92672">);</span>
     <span style="color: #f92672">}</span>
 <span style="color: #f92672">}</span></code>
 </pre>
-<li>I/O from the Command Line</li>
-<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.Console</span><span style="color: #f92672">;</span>
+                        <li>I/O from the Command Line</li>
+                        <pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.Console</span><span style="color: #f92672">;</span>
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.Arrays</span><span style="color: #f92672">;</span>
 <span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.io.IOException</span><span style="color: #f92672">;</span>
 
@@ -725,8 +734,130 @@ outputStream = new BufferedWriter(new FileWriter("characteroutput.txt"));</code>
 <span style="color: #f92672">}</span></code>
 </pre>
 
-</ul>
+                    </ul>
+                    <h3><a class="header" id="fileio" style="text-decoration: none;">File I/O :</a></h3>
+                    <ul>
+                        <li>Path Operation</li>
+                        <ul>
+                            <li><a class="header" href="#cap">Creating a Path</a></li>
+                            <li><a class="header" href="#riap">Retrieving Information About a Path</a></li>
+                            <li><a class="header" href="#rrfp">Removing Redundancies from a Path</a></li>
+                            <li><a class="header" href="#cp">Converting a Path</a></li>
+                            <li><a class="header" href="#jtp">Joining Two Paths</a></li>
+                            <li><a class="header" href="#capbtp">Creating a Path Between Two Paths</a></li>
+                            <li><a class="header" href="#ctp">Comparing Two Paths</a></li>
+                        </ul>
+                        <li>Apa lagi</li>
+                    </ul>
+                    <hr width="70%" align="left">
+                    <ul style="list-style: none;">
+                        <li>
+                            <h4><a class="header" id="cap" style="text-decoration: none;">Creating a Path</a></h4>
+                        </li>You can easily create a Path object by using one of the following get methods from the Paths (note the plural) helper class:
+<pre><code>Path p1 = Paths.get("/tmp/foo");
+Path p2 = Paths.get(args[0]);
+Path p3 = Paths.get(URI.create("file:///Users/joe/FileTest.java"));</code></pre>
+The Paths.get method is shorthand for the following code:
+<pre><code>Path p4 = FileSystems.getDefault().getPath("/users/sally");</code></pre>
+The following example creates /u/joe/logs/foo.log assuming your home directory is /u/joe, or C:\joe\logs\foo.log if you are on Windows.
+<pre><code>Path p5 = Paths.get(System.getProperty("user.home"),"logs", "foo.log");</code></pre>
+                        <li>
+                            <h4><a class="header" id="riap" style="text-decoration: none;">Retrieving Information About
+                                    a Path</a></h4>
+                        </li>
+                        The following code snippet defines a Path instance and then invokes several methods to obtain information about the path:
+<pre><code>// None of these methods requires that the file corresponding
+// to the Path exists.
+// Microsoft Windows syntax
+Path path = Paths.get("C:\\home\\joe\\foo");
 
+// Solaris syntax
+Path path = Paths.get("/home/joe/foo");
+
+System.out.format("toString: %s%n", path.toString());
+System.out.format("getFileName: %s%n", path.getFileName());
+System.out.format("getName(0): %s%n", path.getName(0));
+System.out.format("getNameCount: %d%n", path.getNameCount());
+System.out.format("subpath(0,2): %s%n", path.subpath(0,2));
+System.out.format("getParent: %s%n", path.getParent());
+System.out.format("getRoot: %s%n", path.getRoot());</code></pre>
+The previous example shows the output for an absolute path. In the following example, a relative path is specified:
+<pre><code>// Solaris syntax
+Path path = Paths.get("sally/bar");
+// or
+// Microsoft Windows syntax
+Path path = Paths.get("sally\\bar");</code></pre>
+
+                        <li>
+                            <h4><a class="header" id="rrfp" style="text-decoration: none;">Removing Redundancies from a
+                                    Path</a></h4>
+                        </li>
+                        <li>
+                            <h4><a class="header" id="cp" style="text-decoration: none;">Converting a Path</a></h4>
+                        </li>
+                        You can use three methods to convert the <code>Path</code>. If you need to convert the path to a string that can be opened from a browser, you can use <code>toUri</code>. For example:
+<pre><code>Path p1 = Paths.get("/home/logfile");
+// Result is file:///home/logfile
+System.out.format("%s%n", p1.toUri());</code></pre>
+The <code>toAbsolutePath</code> method converts a path to an absolute path. If the passed-in path is already absolute, it returns the same <code>Path</code> object. The <code>toAbsolutePath</code> method can be very helpful when processing user-entered file names. For example:
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">FileTest</span> <span style="color: #f92672">{</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+
+        <span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">args</span><span style="color: #f92672">.</span><span style="color: #a6e22e">length</span> <span style="color: #f92672">&lt;</span> <span style="color: #ae81ff">1</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+            <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;usage: FileTest file&quot;</span><span style="color: #f92672">);</span>
+            <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">exit</span><span style="color: #f92672">(-</span><span style="color: #ae81ff">1</span><span style="color: #f92672">);</span>
+        <span style="color: #f92672">}</span>
+
+        <span style="color: #75715e">// Converts the input string to a Path object.</span>
+        <span style="color: #f8f8f2">Path</span> <span style="color: #f8f8f2">inputPath</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Paths</span><span style="color: #f92672">.</span><span style="color: #a6e22e">get</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">args</span><span style="color: #f92672">[</span><span style="color: #ae81ff">0</span><span style="color: #f92672">]);</span>
+
+        <span style="color: #75715e">// Converts the input Path</span>
+        <span style="color: #75715e">// to an absolute path.</span>
+        <span style="color: #75715e">// Generally, this means prepending</span>
+        <span style="color: #75715e">// the current working</span>
+        <span style="color: #75715e">// directory.  If this example</span>
+        <span style="color: #75715e">// were called like this:</span>
+        <span style="color: #75715e">//     java FileTest foo</span>
+        <span style="color: #75715e">// the getRoot and getParent methods</span>
+        <span style="color: #75715e">// would return null</span>
+        <span style="color: #75715e">// on the original &quot;inputPath&quot;</span>
+        <span style="color: #75715e">// instance.  Invoking getRoot and</span>
+        <span style="color: #75715e">// getParent on the &quot;fullPath&quot;</span>
+        <span style="color: #75715e">// instance returns expected values.</span>
+        <span style="color: #f8f8f2">Path</span> <span style="color: #f8f8f2">fullPath</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">inputPath</span><span style="color: #f92672">.</span><span style="color: #a6e22e">toAbsolutePath</span><span style="color: #f92672">();</span>
+    <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
+
+                        
+                        <li>
+                            <h4><a class="header" id="jtp" style="text-decoration: none;">Joining Two Paths</a></h4>
+                        </li>
+<pre><code>// Solaris
+Path p1 = Paths.get("/home/joe/foo");
+// Result is /home/joe/foo/bar
+System.out.format("%s%n", p1.resolve("bar"));
+
+or
+
+// Microsoft Windows
+Path p1 = Paths.get("C:\\home\\joe\\foo");
+// Result is C:\home\joe\foo\bar
+System.out.format("%s%n", p1.resolve("bar"));</code></pre>
+<pre><code>// Result is /home/joe
+Paths.get("foo").resolve("/home/joe");</code></pre>
+                        <li>
+                            <h4><a class="header" id="capbtp" style="text-decoration: none;">Creating a Path Between Two
+                                    Paths</a></h4>
+                        </li>
+For example, consider two relative paths defined as <code>joe</code> and <code>sally</code>:
+<pre><code>Path p1 = Paths.get("joe");
+Path p2 = Paths.get("sally");</code></pre>
+
+                        <li>
+                            <h4><a class="header" id="ctp" style="text-decoration: none;">Comparing Two Paths</a></h4>
+                        </li>
+                    </ul>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 

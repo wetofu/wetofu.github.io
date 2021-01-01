@@ -46,6 +46,16 @@ for file in listFile:
 	file1.write(bs)
 	file1.write('\n')
 	file1.write(tampungAkhir)
+	file1.close()
+
+	file1 = open(file, "r")
+	repairing = file1.read()
+	file1.close()
+
+	file1 = open(file, "w")
+	repairing = repairing.replace('<a href="../'+file+'">', '<a href="../'+file+'" style="color: rgb(252, 155, 171);">')
+	file1.write(repairing)
+	file1.close()
 
 ind = open("index.html", "r")
 bersihkan = ind.read()
