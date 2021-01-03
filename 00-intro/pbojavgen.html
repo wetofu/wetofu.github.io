@@ -636,10 +636,308 @@ Sequential Program dengan array
     <span style="color: #f92672">}</span>
 <span style="color: #f92672">}</span></code>
 </pre>
+basic array list :
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.ArrayList</span><span style="color: #f92672">;</span>
+
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Main</span> <span style="color: #f92672">{</span>
+  <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+    <span style="color: #f8f8f2">ArrayList</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">cars</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">ArrayList</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">&gt;();</span>
+    <span style="color: #f8f8f2">cars</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Volvo&quot;</span><span style="color: #f92672">);</span>
+    <span style="color: #f8f8f2">cars</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;BMW&quot;</span><span style="color: #f92672">);</span>
+    <span style="color: #f8f8f2">cars</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Ford&quot;</span><span style="color: #f92672">);</span>
+    <span style="color: #f8f8f2">cars</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Mazda&quot;</span><span style="color: #f92672">);</span>
+    <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">cars</span><span style="color: #f92672">);</span>
+
+    <span style="color: #f8f8f2">cars</span><span style="color: #f92672">.</span><span style="color: #a6e22e">get</span><span style="color: #f92672">(</span><span style="color: #ae81ff">0</span><span style="color: #f92672">);</span>
+    <span style="color: #f8f8f2">cars</span><span style="color: #f92672">.</span><span style="color: #a6e22e">set</span><span style="color: #f92672">(</span><span style="color: #ae81ff">0</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;Opel&quot;</span><span style="color: #f92672">);</span>
+    <span style="color: #f8f8f2">cars</span><span style="color: #f92672">.</span><span style="color: #a6e22e">remove</span><span style="color: #f92672">(</span><span style="color: #ae81ff">0</span><span style="color: #f92672">);</span>
+    <span style="color: #f8f8f2">cars</span><span style="color: #f92672">.</span><span style="color: #a6e22e">size</span><span style="color: #f92672">();</span>
+    
+    <span style="color: #66d9ef">for</span> <span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">cars</span><span style="color: #f92672">.</span><span style="color: #a6e22e">size</span><span style="color: #f92672">();</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">++)</span> <span style="color: #f92672">{</span>
+      <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">cars</span><span style="color: #f92672">.</span><span style="color: #a6e22e">get</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">));</span>
+    <span style="color: #f92672">}</span>
+    <span style="color: #66d9ef">for</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">:</span> <span style="color: #f8f8f2">cars</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+      <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">);</span>
+    <span style="color: #f92672">}</span>
+
+    <span style="color: #f8f8f2">cars</span><span style="color: #f92672">.</span><span style="color: #a6e22e">clear</span><span style="color: #f92672">();</span>
+
+
+  <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
 
                             </p>
                         </ul>
+github pak Ardhi :
+<br>
+<ul>
+    <li>List : </li>
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">package</span> <span style="color: #f8f8f2">oop</span><span style="color: #f92672">.</span><span style="color: #a6e22e">java</span><span style="color: #f92672">.</span><span style="color: #a6e22e">list</span><span style="color: #f92672">;</span>
 
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.ArrayList</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.List</span><span style="color: #f92672">;</span>
+
+<span style="color: #75715e">// https://www.geeksforgeeks.org/list-interface-java-examples/</span>
+<span style="color: #75715e">// demo list di Java</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">ListDemo</span> <span style="color: #f92672">{</span>
+	<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+		<span style="color: #75715e">// membuat list</span>
+		<span style="color: #75715e">// Creating a list</span>
+		<span style="color: #f8f8f2">List</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">l1</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">ArrayList</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #f92672">&gt;();</span>
+
+		<span style="color: #75715e">// menambahkan element list</span>
+		<span style="color: #75715e">// Adds 1 at 0 index</span>
+		<span style="color: #f8f8f2">l1</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #ae81ff">0</span><span style="color: #f92672">,</span> <span style="color: #ae81ff">1</span><span style="color: #f92672">);</span>
+
+		<span style="color: #75715e">// Adds 2 at 1 index</span>
+		<span style="color: #f8f8f2">l1</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #ae81ff">1</span><span style="color: #f92672">,</span> <span style="color: #ae81ff">2</span><span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;list l1: &quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">l1</span><span style="color: #f92672">);</span>
+
+		<span style="color: #75715e">// Creating another list</span>
+		<span style="color: #f8f8f2">List</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">l2</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">ArrayList</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #f92672">&gt;();</span>
+
+		<span style="color: #f8f8f2">l2</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #ae81ff">1</span><span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">l2</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #ae81ff">2</span><span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">l2</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #ae81ff">3</span><span style="color: #f92672">);</span>
+
+		<span style="color: #75715e">// menambahkan list l2 ke l1 di index 1</span>
+		<span style="color: #75715e">// Will add list l2 from 1 index</span>
+		<span style="color: #f8f8f2">l1</span><span style="color: #f92672">.</span><span style="color: #a6e22e">addAll</span><span style="color: #f92672">(</span><span style="color: #ae81ff">1</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">l2</span><span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;list l1 after l2 added: &quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">l1</span><span style="color: #f92672">);</span>
+
+		<span style="color: #75715e">// menghapus element l1 di index 1</span>
+		<span style="color: #75715e">// Removes element from index 1</span>
+		<span style="color: #f8f8f2">l1</span><span style="color: #f92672">.</span><span style="color: #a6e22e">remove</span><span style="color: #f92672">(</span><span style="color: #ae81ff">1</span><span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;list l1 after 1 removed: &quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">l1</span><span style="color: #f92672">);</span>
+
+		<span style="color: #75715e">// menampilkan element l1 di index 3</span>
+		<span style="color: #75715e">// Prints element at index 3</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;element of l1 at index 3: &quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">l1</span><span style="color: #f92672">.</span><span style="color: #a6e22e">get</span><span style="color: #f92672">(</span><span style="color: #ae81ff">3</span><span style="color: #f92672">));</span>
+
+		<span style="color: #75715e">// mengganti element l1 di index 0 dengan nilai 5</span>
+		<span style="color: #75715e">// Replace 0th element with 5</span>
+		<span style="color: #f8f8f2">l1</span><span style="color: #f92672">.</span><span style="color: #a6e22e">set</span><span style="color: #f92672">(</span><span style="color: #ae81ff">0</span><span style="color: #f92672">,</span> <span style="color: #ae81ff">5</span><span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;list l1 after 0th element replaced with 5: &quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">l1</span><span style="color: #f92672">);</span>
+	<span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
+<li>List 2 :</li>
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">package</span> <span style="color: #f8f8f2">oop</span><span style="color: #f92672">.</span><span style="color: #a6e22e">java</span><span style="color: #f92672">.</span><span style="color: #a6e22e">list</span><span style="color: #f92672">;</span>
+
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.ArrayList</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.List</span><span style="color: #f92672">;</span>
+
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">ListDemo2</span> <span style="color: #f92672">{</span>
+	<span style="color: #75715e">// creating ArrayList</span>
+	<span style="color: #f8f8f2">List</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">al</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">ArrayList</span><span style="color: #f92672">&lt;&gt;();</span>
+
+	<span style="color: #75715e">// add ArrayList elements</span>
+	<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">addToList</span><span style="color: #f92672">()</span> <span style="color: #f92672">{</span>
+		<span style="color: #f8f8f2">al</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;S1&quot;</span><span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">al</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;UNS&quot;</span><span style="color: #f92672">);</span>
+
+		<span style="color: #75715e">// menambahkan element di index 1</span>
+		<span style="color: #f8f8f2">al</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #ae81ff">1</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;Informatika&quot;</span><span style="color: #f92672">);</span>
+
+		<span style="color: #75715e">// print ArrayList</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">al</span><span style="color: #f92672">);</span>
+	<span style="color: #f92672">}</span>
+
+	<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">changeListElement</span><span style="color: #f92672">()</span> <span style="color: #f92672">{</span>
+		<span style="color: #75715e">// print ArrayList sebelum diubah</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Initial ArrayList &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">al</span><span style="color: #f92672">);</span>
+
+		<span style="color: #75715e">// ubah element index 2</span>
+		<span style="color: #f8f8f2">al</span><span style="color: #f92672">.</span><span style="color: #a6e22e">set</span><span style="color: #f92672">(</span><span style="color: #ae81ff">2</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;Universitas Sebelas Maret&quot;</span><span style="color: #f92672">);</span>
+
+		<span style="color: #75715e">// print ArrayList setelah diubah</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Updated ArrayList &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">al</span><span style="color: #f92672">);</span>
+	<span style="color: #f92672">}</span>
+
+	<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">iterateListELement</span><span style="color: #f92672">()</span> <span style="color: #f92672">{</span>
+		<span style="color: #75715e">// Using the Get method and the</span>
+		<span style="color: #75715e">// for loop</span>
+		<span style="color: #66d9ef">for</span> <span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">al</span><span style="color: #f92672">.</span><span style="color: #a6e22e">size</span><span style="color: #f92672">();</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">++)</span> <span style="color: #f92672">{</span>
+			<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">al</span><span style="color: #f92672">.</span><span style="color: #a6e22e">get</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">)</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot; &quot;</span><span style="color: #f92672">);</span>
+		<span style="color: #f92672">}</span>
+
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">();</span>
+
+		<span style="color: #75715e">// Using the for each loop</span>
+		<span style="color: #66d9ef">for</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">str</span> <span style="color: #f92672">:</span> <span style="color: #f8f8f2">al</span><span style="color: #f92672">)</span>
+			<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">str</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot; &quot;</span><span style="color: #f92672">);</span>
+	<span style="color: #f92672">}</span>
+
+	<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">removingListElement</span><span style="color: #f92672">()</span> <span style="color: #f92672">{</span>
+		<span style="color: #75715e">// print list awal</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Initial ArrayList &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">al</span><span style="color: #f92672">);</span>
+
+		<span style="color: #75715e">// hapus list element index 1</span>
+		<span style="color: #f8f8f2">al</span><span style="color: #f92672">.</span><span style="color: #a6e22e">remove</span><span style="color: #f92672">(</span><span style="color: #ae81ff">1</span><span style="color: #f92672">);</span>
+
+		<span style="color: #75715e">// print list</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;After the 1st Index Removal &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">al</span><span style="color: #f92672">);</span>
+
+		<span style="color: #75715e">// hapus element S1</span>
+		<span style="color: #f8f8f2">al</span><span style="color: #f92672">.</span><span style="color: #a6e22e">remove</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;S1&quot;</span><span style="color: #f92672">);</span>
+
+		<span style="color: #75715e">// print list</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;After the Object Removal &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">al</span><span style="color: #f92672">);</span>
+	<span style="color: #f92672">}</span>
+
+	<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+		<span style="color: #f8f8f2">ListDemo2</span> <span style="color: #f8f8f2">ld2</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">ListDemo2</span><span style="color: #f92672">();</span>
+		<span style="color: #f8f8f2">ld2</span><span style="color: #f92672">.</span><span style="color: #a6e22e">addToList</span><span style="color: #f92672">();</span>
+		<span style="color: #f8f8f2">ld2</span><span style="color: #f92672">.</span><span style="color: #a6e22e">changeListElement</span><span style="color: #f92672">();</span>
+		<span style="color: #f8f8f2">ld2</span><span style="color: #f92672">.</span><span style="color: #a6e22e">iterateListELement</span><span style="color: #f92672">();</span>
+		<span style="color: #f8f8f2">ld2</span><span style="color: #f92672">.</span><span style="color: #a6e22e">removingListElement</span><span style="color: #f92672">();</span>
+	<span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
+<li>Vector :</li>
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">package</span> <span style="color: #f8f8f2">oop</span><span style="color: #f92672">.</span><span style="color: #a6e22e">java</span><span style="color: #f92672">.</span><span style="color: #a6e22e">list</span><span style="color: #f92672">;</span>
+
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.List</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.Vector</span><span style="color: #f92672">;</span>
+
+<span style="color: #75715e">// https://www.geeksforgeeks.org/list-interface-java-examples/</span>
+<span style="color: #75715e">// contoh Vector</span>
+<span style="color: #75715e">// Vector adalah class yang mengimplements interface List</span>
+<span style="color: #75715e">/*</span>
+<span style="color: #75715e"> * Vector is a class which is implemented in the collection framework implements a growable array of objects. </span>
+<span style="color: #75715e"> * Vector implements a dynamic array that means it can grow or shrink as required. </span>
+<span style="color: #75715e"> * Like an array, it contains components that can be accessed using an integer index. */</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">VectorDemo</span> <span style="color: #f92672">{</span>
+	<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+		<span style="color: #75715e">// Size of the vector </span>
+        <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">n</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">5</span><span style="color: #f92672">;</span> 
+  
+        <span style="color: #75715e">// Declaring the List with initial size n </span>
+        <span style="color: #f8f8f2">List</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">v</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Vector</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #f92672">&gt;(</span><span style="color: #f8f8f2">n</span><span style="color: #f92672">);</span> 
+  
+        <span style="color: #75715e">// Appending the new elements </span>
+        <span style="color: #75715e">// at the end of the list </span>
+        <span style="color: #66d9ef">for</span> <span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">n</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">++)</span> 
+            <span style="color: #f8f8f2">v</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">);</span> 
+  
+        <span style="color: #75715e">// Printing elements </span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">v</span><span style="color: #f92672">);</span> 
+  
+        <span style="color: #75715e">// Remove element at index 3 </span>
+        <span style="color: #f8f8f2">v</span><span style="color: #f92672">.</span><span style="color: #a6e22e">remove</span><span style="color: #f92672">(</span><span style="color: #ae81ff">3</span><span style="color: #f92672">);</span> 
+  
+        <span style="color: #75715e">// Displaying the list after deletion </span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">v</span><span style="color: #f92672">);</span> 
+  
+        <span style="color: #75715e">// Printing elements one by one </span>
+        <span style="color: #66d9ef">for</span> <span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">v</span><span style="color: #f92672">.</span><span style="color: #a6e22e">size</span><span style="color: #f92672">();</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">++)</span> 
+            <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">v</span><span style="color: #f92672">.</span><span style="color: #a6e22e">get</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">)</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot; &quot;</span><span style="color: #f92672">);</span> 
+	<span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
+
+<li>Stack :</li>
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">package</span> <span style="color: #f8f8f2">oop</span><span style="color: #f92672">.</span><span style="color: #a6e22e">java</span><span style="color: #f92672">.</span><span style="color: #a6e22e">list</span><span style="color: #f92672">;</span>
+
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.List</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.Stack</span><span style="color: #f92672">;</span>
+
+<span style="color: #75715e">// https://www.geeksforgeeks.org/list-interface-java-examples/</span>
+<span style="color: #75715e">// class ini menunjukkan contoh implementasi Stack</span>
+<span style="color: #75715e">// https://www.geeksforgeeks.org/stack-class-in-java</span>
+<span style="color: #75715e">/*</span>
+<span style="color: #75715e"> * Stack is a class which is implemented in the collection framework and extends the vector class models </span>
+<span style="color: #75715e"> * and implements the Stack data structure. </span>
+<span style="color: #75715e"> * The class is based on the basic principle of last-in-first-out. </span>
+<span style="color: #75715e"> * In addition to the basic push and pop operations, the class provides three more functions of empty, search and peek.*/</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">StackDemo</span> <span style="color: #f92672">{</span>
+	<span style="color: #75715e">// Declaring the List</span>
+	<span style="color: #f8f8f2">List</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">s</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Stack</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #f92672">&gt;();</span>
+
+	<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">createStack</span><span style="color: #f92672">()</span> <span style="color: #f92672">{</span>
+		<span style="color: #75715e">// Size of the stack</span>
+		<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">n</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">5</span><span style="color: #f92672">;</span>
+
+		<span style="color: #75715e">// Appending the new elements</span>
+		<span style="color: #75715e">// at the end of the list</span>
+		<span style="color: #66d9ef">for</span> <span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">n</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">++)</span>
+			<span style="color: #f92672">((</span><span style="color: #f8f8f2">Stack</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #f92672">&gt;)</span> <span style="color: #f8f8f2">s</span><span style="color: #f92672">).</span><span style="color: #a6e22e">push</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">);</span>
+
+		<span style="color: #75715e">// Printing elements</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">s</span><span style="color: #f92672">);</span>
+	<span style="color: #f92672">}</span>
+
+	<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">searchStack</span><span style="color: #f92672">()</span> <span style="color: #f92672">{</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Does the stack contains &#39;5&#39;? &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f92672">((</span><span style="color: #f8f8f2">Stack</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #f92672">&gt;)</span> <span style="color: #f8f8f2">s</span><span style="color: #f92672">).</span><span style="color: #a6e22e">search</span><span style="color: #f92672">(</span><span style="color: #ae81ff">5</span><span style="color: #f92672">));</span>
+
+		<span style="color: #75715e">// Checking for the element &quot;4&quot;</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Does the stack contains &#39;1&#39;? &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f92672">((</span><span style="color: #f8f8f2">Stack</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #f92672">&gt;)</span> <span style="color: #f8f8f2">s</span><span style="color: #f92672">).</span><span style="color: #a6e22e">search</span><span style="color: #f92672">(</span><span style="color: #ae81ff">1</span><span style="color: #f92672">));</span>
+		<span style="color: #75715e">// Checking for the element &quot;Hello&quot;</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Does the stack contains &#39;Hello&#39;? &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f92672">((</span><span style="color: #f8f8f2">Stack</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #f92672">&gt;)</span> <span style="color: #f8f8f2">s</span><span style="color: #f92672">).</span><span style="color: #a6e22e">search</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Hello&quot;</span><span style="color: #f92672">));</span>
+	<span style="color: #f92672">}</span>
+
+	<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">printStack</span><span style="color: #f92672">()</span> <span style="color: #f92672">{</span>
+		<span style="color: #75715e">// Printing elements one by one</span>
+		<span style="color: #66d9ef">for</span> <span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">s</span><span style="color: #f92672">.</span><span style="color: #a6e22e">size</span><span style="color: #f92672">();</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">++)</span>
+			<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">s</span><span style="color: #f92672">.</span><span style="color: #a6e22e">get</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">)</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot; &quot;</span><span style="color: #f92672">);</span>
+	<span style="color: #f92672">}</span>
+
+	<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+		<span style="color: #f8f8f2">StackDemo</span> <span style="color: #f8f8f2">sd</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">StackDemo</span><span style="color: #f92672">();</span>
+		<span style="color: #f8f8f2">sd</span><span style="color: #f92672">.</span><span style="color: #a6e22e">createStack</span><span style="color: #f92672">();</span>
+		<span style="color: #f8f8f2">sd</span><span style="color: #f92672">.</span><span style="color: #a6e22e">searchStack</span><span style="color: #f92672">();</span>
+		<span style="color: #f8f8f2">sd</span><span style="color: #f92672">.</span><span style="color: #a6e22e">printStack</span><span style="color: #f92672">();</span>
+	<span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
+
+<li>Linked List :</li>
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">package</span> <span style="color: #f8f8f2">oop</span><span style="color: #f92672">.</span><span style="color: #a6e22e">java</span><span style="color: #f92672">.</span><span style="color: #a6e22e">list</span><span style="color: #f92672">;</span>
+
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.LinkedList</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.List</span><span style="color: #f92672">;</span>
+
+<span style="color: #75715e">// https://www.geeksforgeeks.org/list-interface-java-examples/</span>
+<span style="color: #75715e">// class ini menunjukkan contoh implementasi LinkedList</span>
+<span style="color: #75715e">/* https://www.geeksforgeeks.org/data-structures/linked-list</span>
+<span style="color: #75715e"> *  LinkedList is a class which is implemented in the collection framework which inherently </span>
+<span style="color: #75715e"> *  implements the linked list data structure. </span>
+<span style="color: #75715e"> *  It is a linear data structure where the elements are not stored in contiguous locations </span>
+<span style="color: #75715e"> *  and every element is a separate object with a data part and address part. </span>
+<span style="color: #75715e"> *  The elements are linked using pointers and addresses. </span>
+<span style="color: #75715e"> *  Each element is known as a node. Due to the dynamicity and ease of insertions and deletions, </span>
+<span style="color: #75715e"> *  they are preferred over the arrays*/</span> 
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">LinkedListDemo</span> <span style="color: #f92672">{</span>
+	<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+		<span style="color: #75715e">// Size of the LinkedList </span>
+        <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">n</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">5</span><span style="color: #f92672">;</span> 
+  
+        <span style="color: #75715e">// Declaring the List with initial size n </span>
+        <span style="color: #f8f8f2">List</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #f92672">&gt;</span> <span style="color: #f8f8f2">ll</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">LinkedList</span><span style="color: #f92672">&lt;</span><span style="color: #f8f8f2">Integer</span><span style="color: #f92672">&gt;();</span> 
+  
+        <span style="color: #75715e">// Appending the new elements </span>
+        <span style="color: #75715e">// at the end of the list </span>
+        <span style="color: #66d9ef">for</span> <span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">1</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;=</span> <span style="color: #f8f8f2">n</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">++)</span> 
+            <span style="color: #f8f8f2">ll</span><span style="color: #f92672">.</span><span style="color: #a6e22e">add</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">);</span> 
+  
+        <span style="color: #75715e">// Printing elements </span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">ll</span><span style="color: #f92672">);</span> 
+  
+        <span style="color: #75715e">// Remove element at index 3 </span>
+        <span style="color: #f8f8f2">ll</span><span style="color: #f92672">.</span><span style="color: #a6e22e">remove</span><span style="color: #f92672">(</span><span style="color: #ae81ff">3</span><span style="color: #f92672">);</span> 
+  
+        <span style="color: #75715e">// Displaying the list after deletion </span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">ll</span><span style="color: #f92672">);</span> 
+  
+        <span style="color: #75715e">// Printing elements one by one </span>
+        <span style="color: #66d9ef">for</span> <span style="color: #f92672">(</span><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">;</span> <span style="color: #f8f8f2">i</span> <span style="color: #f92672">&lt;</span> <span style="color: #f8f8f2">ll</span><span style="color: #f92672">.</span><span style="color: #a6e22e">size</span><span style="color: #f92672">();</span> <span style="color: #f8f8f2">i</span><span style="color: #f92672">++)</span> 
+            <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">ll</span><span style="color: #f92672">.</span><span style="color: #a6e22e">get</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">i</span><span style="color: #f92672">)</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot; &quot;</span><span style="color: #f92672">);</span> 
+	<span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
+
+</ul>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 

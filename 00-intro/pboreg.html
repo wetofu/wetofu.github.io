@@ -489,41 +489,43 @@
                             <li>can be used to perform all types of text search and text replace operation</li>
                         </ul>
                         <a href="https://github.com/ardhiesta/oop_regex" target="_blank">https://github.com/ardhiesta/oop_regex</a>
-<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>package</span> com.oop.regex;
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">package</span> <span style="color: #f8f8f2">com</span><span style="color: #f92672">.</span><span style="color: #a6e22e">oop</span><span style="color: #f92672">.</span><span style="color: #a6e22e">regex</span><span style="color: #f92672">;</span>
 
-<span style='color:#3F7F5F'>// ebook hlm 510
-</span><span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> Example1 <span style='font-weight:bold;color:#D3171B'>{</span>
-	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args) <span style='font-weight:bold;color:#D3171B'>{</span>
-		String s1 = <span style='color:#2A00FF'>"Java"</span>;
-		<span style='color:#3F7F5F'>// pattern matching : mencari ada tidaknya suatu string di dalam string lain 
-</span>		System.out.println(s1+<span style='color:#2A00FF'>" equals Java : "</span>+s1.equals(<span style='color:#2A00FF'>"Java"</span>));
-		System.out.println(s1+<span style='color:#2A00FF'>" matches Java : "</span>+s1.matches(<span style='color:#2A00FF'>"Java"</span>));
-		
-		<span style='color:#3F7F5F'>// equals : parameter string
-</span>		<span style='color:#3F7F5F'>// matches : parameter regex (regular expression)
-</span>		
-		String regex1 = <span style='color:#2A00FF'>"J[a-z][a-z][a-z]"</span>;
-		String regex2 = <span style='color:#2A00FF'>"J[a-z]*"</span>;
-		String regex3 = <span style='color:#2A00FF'>"j[a-z]*"</span>;
-		System.out.println(s1+<span style='color:#2A00FF'>" matches "</span>+regex1+<span style='color:#2A00FF'>": "</span>+s1.matches(regex1));
-		System.out.println(s1+<span style='color:#2A00FF'>" matches "</span>+regex2+<span style='color:#2A00FF'>": "</span>+s1.matches(regex2));
-		System.out.println(s1+<span style='color:#2A00FF'>" matches "</span>+regex3+<span style='color:#2A00FF'>": "</span>+s1.matches(regex3));
-		
-		<span style='color:#3F7F5F'>/*
-		
-		[a-z] : A single lowercase letter that is a, b, c, d, ... or z
-		J[a-z][a-z][a-z] : A string that consists of four characters. 
-		The first character is J.The second character is a, b, c, d, ... or z
-		J[a-z]* : Same as above, * means matches 0 or more occurrences of the preceding expression
-		
-		*/</span>
-		
-		String s2 = <span style='color:#2A00FF'>"3"</span>;
-		String regex4 = <span style='color:#2A00FF'>"[0123]"</span>;
-		System.out.println(s2+<span style='color:#2A00FF'>" matches "</span>+regex4+<span style='color:#2A00FF'>": "</span>+s2.matches(regex4));
-		<span style='color:#3F7F5F'>// [0123] : A single digit 0, 1, 2, or 3
-</span>	<span style='font-weight:bold;color:#D3171B'>}</span>
-<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
+<span style="color: #75715e">// ebook hlm 510</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Example1</span> <span style="color: #f92672">{</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+        <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">s1</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;Java&quot;</span><span style="color: #f92672">;</span>
+        <span style="color: #75715e">// pattern matching : mencari ada tidaknya suatu string di dalam string lain </span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">s1</span><span style="color: #f92672">+</span><span style="color: #e6db74">&quot; equals Java : &quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">s1</span><span style="color: #f92672">.</span><span style="color: #a6e22e">equals</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Java&quot;</span><span style="color: #f92672">));</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">s1</span><span style="color: #f92672">+</span><span style="color: #e6db74">&quot; matches Java : &quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">s1</span><span style="color: #f92672">.</span><span style="color: #a6e22e">matches</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Java&quot;</span><span style="color: #f92672">));</span>
+        
+        <span style="color: #75715e">// equals : parameter string</span>
+        <span style="color: #75715e">// matches : parameter regex (regular expression)</span>
+        
+        <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">regex1</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;J[a-z][a-z][a-z]&quot;</span><span style="color: #f92672">;</span>
+        <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">regex2</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;J[a-z]*&quot;</span><span style="color: #f92672">;</span>
+        <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">regex3</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;j[a-z]*&quot;</span><span style="color: #f92672">;</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">s1</span><span style="color: #f92672">+</span><span style="color: #e6db74">&quot; matches &quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">regex1</span><span style="color: #f92672">+</span><span style="color: #e6db74">&quot;: &quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">s1</span><span style="color: #f92672">.</span><span style="color: #a6e22e">matches</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">regex1</span><span style="color: #f92672">));</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">s1</span><span style="color: #f92672">+</span><span style="color: #e6db74">&quot; matches &quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">regex2</span><span style="color: #f92672">+</span><span style="color: #e6db74">&quot;: &quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">s1</span><span style="color: #f92672">.</span><span style="color: #a6e22e">matches</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">regex2</span><span style="color: #f92672">));</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">s1</span><span style="color: #f92672">+</span><span style="color: #e6db74">&quot; matches &quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">regex3</span><span style="color: #f92672">+</span><span style="color: #e6db74">&quot;: &quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">s1</span><span style="color: #f92672">.</span><span style="color: #a6e22e">matches</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">regex3</span><span style="color: #f92672">));</span>
+        
+        <span style="color: #75715e">/*</span>
+<span style="color: #75715e">        </span>
+<span style="color: #75715e">        [a-z] : A single lowercase letter that is a, b, c, d, ... or z</span>
+<span style="color: #75715e">        J[a-z][a-z][a-z] : A string that consists of four characters. </span>
+<span style="color: #75715e">        The first character is J.The second character is a, b, c, d, ... or z</span>
+<span style="color: #75715e">        J[a-z]* : Same as above, * means matches 0 or more occurrences of the preceding expression</span>
+<span style="color: #75715e">        </span>
+<span style="color: #75715e">        */</span>
+        
+        <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">s2</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;3&quot;</span><span style="color: #f92672">;</span>
+        <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">regex4</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;[0123]&quot;</span><span style="color: #f92672">;</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">s2</span><span style="color: #f92672">+</span><span style="color: #e6db74">&quot; matches &quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">regex4</span><span style="color: #f92672">+</span><span style="color: #e6db74">&quot;: &quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">s2</span><span style="color: #f92672">.</span><span style="color: #a6e22e">matches</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">regex4</span><span style="color: #f92672">));</span>
+        <span style="color: #75715e">// [0123] : A single digit 0, 1, 2, or 3</span>
+    <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
+
                         <br>
 Common regex sintax :
 <table style="width: 80%;">
@@ -748,43 +750,46 @@ grouping :
         <li>$2 is the second group</li>
     </ul>
 </ul>
-<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;''><code><span style='font-weight:bold;color:#7B0052;'>package</span> com.oop.regex;
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">package</span> <span style="color: #f8f8f2">com</span><span style="color: #f92672">.</span><span style="color: #a6e22e">oop</span><span style="color: #f92672">.</span><span style="color: #a6e22e">regex</span><span style="color: #f92672">;</span>
 
-<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> Example2 <span style='font-weight:bold;color:#D3171B'>{</span>
-	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args) <span style='font-weight:bold;color:#D3171B'>{</span>
-		<span style='color:#3F7F5F'>// formatting phone number
-</span>		<span style='color:#3F7F5F'>// mobile phone number, separate each 4 digits
-</span>		String regex = <span style='color:#2A00FF'>"\\b(\\d{4})(\\d{4})(\\d{4})\\b"</span>;
-	    String replacementText = <span style='color:#2A00FF'>"$1-$2-$3"</span>;
-	    System.out.println(<span style='color:#2A00FF'>"085645123123"</span>.replaceAll(regex, replacementText));
-	    
-	    <span style='color:#3F7F5F'>// office phone number, separate between code area and phone number
-</span>	    regex = <span style='color:#2A00FF'>"\\b(\\d{1})(\\d{3})(\\d{6})\\b"</span>;
-	    replacementText = <span style='color:#2A00FF'>"(+62$2)-$3"</span>;
-	    System.out.println(<span style='color:#2A00FF'>"0271646999"</span>.replaceAll(regex, replacementText));
-	<span style='font-weight:bold;color:#D3171B'>}</span>
-<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
-<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>package</span> com.oop.regex;
-
-<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> Example3 <span style='font-weight:bold;color:#D3171B'>{</span>
-	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args) <span style='font-weight:bold;color:#D3171B'>{</span>
-		String EXAMPLE_TEST = <span style='color:#2A00FF'>"This is my small example "</span>
-	            + <span style='color:#2A00FF'>"string which I'm going to "</span> + <span style='color:#2A00FF'>"use for pattern matching."</span>;
-		
-		<span style='color:#3F7F5F'>// matches word character [a-zA-Z_0-9]
-</span>		System.out.println(EXAMPLE_TEST.matches(<span style='color:#2A00FF'>"\\w.*"</span>));
-		
-        <span style='color:#3F7F5F'>// split based on whitespace character [ \t\n\x0b\r\f]
-</span>		String[] splitString = (EXAMPLE_TEST.split(<span style='color:#2A00FF'>"\\s+"</span>));
-        System.out.println(splitString.length);<span style='color:#3F7F5F'>// should be 14
-</span>        <span style='font-weight:bold;color:#7B0052;'>for</span> (String string : splitString) <span style='font-weight:bold;color:#D3171B'>{</span>
-            System.out.println(string);
-        <span style='font-weight:bold;color:#D3171B'>}</span>
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Example2</span> <span style="color: #f92672">{</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+        <span style="color: #75715e">// formatting phone number</span>
+        <span style="color: #75715e">// mobile phone number, separate each 4 digits</span>
+        <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;\\b(\\d{4})(\\d{4})(\\d{4})\\b&quot;</span><span style="color: #f92672">;</span>
+        <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">replacementText</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;$1-$2-$3&quot;</span><span style="color: #f92672">;</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;085645123123&quot;</span><span style="color: #f92672">.</span><span style="color: #a6e22e">replaceAll</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">regex</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">replacementText</span><span style="color: #f92672">));</span>
         
-        <span style='color:#3F7F5F'>// replace all whitespace with tabs
-</span>        System.out.println(EXAMPLE_TEST.replaceAll(<span style='color:#2A00FF'>"\\s+"</span>, <span style='color:#2A00FF'>"\t"</span>));
-	<span style='font-weight:bold;color:#D3171B'>}</span>
-<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
+        <span style="color: #75715e">// office phone number, separate between code area and phone number</span>
+        <span style="color: #f8f8f2">regex</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;\\b(\\d{1})(\\d{3})(\\d{6})\\b&quot;</span><span style="color: #f92672">;</span>
+        <span style="color: #f8f8f2">replacementText</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;(+62$2)-$3&quot;</span><span style="color: #f92672">;</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;0271646999&quot;</span><span style="color: #f92672">.</span><span style="color: #a6e22e">replaceAll</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">regex</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">replacementText</span><span style="color: #f92672">));</span>
+    <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">package</span> <span style="color: #f8f8f2">com</span><span style="color: #f92672">.</span><span style="color: #a6e22e">oop</span><span style="color: #f92672">.</span><span style="color: #a6e22e">regex</span><span style="color: #f92672">;</span>
+
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Example3</span> <span style="color: #f92672">{</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+        <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">EXAMPLE_TEST</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;This is my small example &quot;</span>
+                <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;string which I&#39;m going to &quot;</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;use for pattern matching.&quot;</span><span style="color: #f92672">;</span>
+        
+        <span style="color: #75715e">// matches word character [a-zA-Z_0-9]</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">EXAMPLE_TEST</span><span style="color: #f92672">.</span><span style="color: #a6e22e">matches</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;\\w.*&quot;</span><span style="color: #f92672">));</span>
+        
+        <span style="color: #75715e">// split based on whitespace character [ \t\n\x0b\r\f]</span>
+        <span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">splitString</span> <span style="color: #f92672">=</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">EXAMPLE_TEST</span><span style="color: #f92672">.</span><span style="color: #a6e22e">split</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;\\s+&quot;</span><span style="color: #f92672">));</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">splitString</span><span style="color: #f92672">.</span><span style="color: #a6e22e">length</span><span style="color: #f92672">);</span><span style="color: #75715e">// should be 14</span>
+        <span style="color: #66d9ef">for</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">string</span> <span style="color: #f92672">:</span> <span style="color: #f8f8f2">splitString</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+            <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">string</span><span style="color: #f92672">);</span>
+        <span style="color: #f92672">}</span>
+        
+        <span style="color: #75715e">// replace all whitespace with tabs</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">EXAMPLE_TEST</span><span style="color: #f92672">.</span><span style="color: #a6e22e">replaceAll</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;\\s+&quot;</span><span style="color: #f92672">,</span> <span style="color: #e6db74">&quot;\t&quot;</span><span style="color: #f92672">));</span>
+    <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
+
 Pattern and Matcher :
 <ul>
     <li>Advanced regular expressions</li> 
@@ -793,35 +798,96 @@ Pattern and Matcher :
     <li>pattern object allows to create a matcher object for a given string</li> 
     <li>matcher object then allows to do regex operations on a string</li> 
 </ul>
-<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>package</span> com.oop.regex;
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">package</span> <span style="color: #f8f8f2">com</span><span style="color: #f92672">.</span><span style="color: #a6e22e">oop</span><span style="color: #f92672">.</span><span style="color: #a6e22e">regex</span><span style="color: #f92672">;</span>
 
-<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.regex.Matcher;
-<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.regex.Pattern;
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.regex.Matcher</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.regex.Pattern</span><span style="color: #f92672">;</span>
 
-<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> Example4 <span style='font-weight:bold;color:#D3171B'>{</span>
-	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args) <span style='font-weight:bold;color:#D3171B'>{</span>
-		String EXAMPLE_TEST = <span style='color:#2A00FF'>"This is my small example string which I'm going to use "</span>
-				+ <span style='color:#2A00FF'>"for pattern matching."</span>;
-		Pattern pattern = Pattern.compile(<span style='color:#2A00FF'>"\\w+"</span>);
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Example4</span> <span style="color: #f92672">{</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+        <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">EXAMPLE_TEST</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;This is my small example string which I&#39;m going to use &quot;</span>
+                <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;for pattern matching.&quot;</span><span style="color: #f92672">;</span>
+        <span style="color: #f8f8f2">Pattern</span> <span style="color: #f8f8f2">pattern</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Pattern</span><span style="color: #f92672">.</span><span style="color: #a6e22e">compile</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;\\w+&quot;</span><span style="color: #f92672">);</span>
+        
+        <span style="color: #75715e">// in case you would like to ignore case sensitivity,</span>
+        <span style="color: #75715e">// you could use this statement:</span>
+        <span style="color: #75715e">// Pattern pattern = Pattern.compile(&quot;\\s+&quot;, Pattern.CASE_INSENSITIVE);</span>
+        <span style="color: #f8f8f2">Matcher</span> <span style="color: #f8f8f2">matcher</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">pattern</span><span style="color: #f92672">.</span><span style="color: #a6e22e">matcher</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">EXAMPLE_TEST</span><span style="color: #f92672">);</span>
+        
+        <span style="color: #75715e">// check all occurance</span>
+        <span style="color: #66d9ef">while</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">matcher</span><span style="color: #f92672">.</span><span style="color: #a6e22e">find</span><span style="color: #f92672">())</span> <span style="color: #f92672">{</span>
+            <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Start index: &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">matcher</span><span style="color: #f92672">.</span><span style="color: #a6e22e">start</span><span style="color: #f92672">());</span>
+            <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;, End index: &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">matcher</span><span style="color: #f92672">.</span><span style="color: #a6e22e">end</span><span style="color: #f92672">()</span> <span style="color: #f92672">+</span> <span style="color: #e6db74">&quot; --&gt; &quot;</span><span style="color: #f92672">);</span>
+            <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">matcher</span><span style="color: #f92672">.</span><span style="color: #a6e22e">group</span><span style="color: #f92672">());</span>
+        <span style="color: #f92672">}</span>
+        
+        <span style="color: #75715e">// now create a new pattern and matcher to replace whitespace with tabs</span>
+        <span style="color: #f8f8f2">Pattern</span> <span style="color: #f8f8f2">replace</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">Pattern</span><span style="color: #f92672">.</span><span style="color: #a6e22e">compile</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;\\s+&quot;</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">Matcher</span> <span style="color: #f8f8f2">matcher2</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">replace</span><span style="color: #f92672">.</span><span style="color: #a6e22e">matcher</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">EXAMPLE_TEST</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">matcher2</span><span style="color: #f92672">.</span><span style="color: #a6e22e">replaceAll</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;\t&quot;</span><span style="color: #f92672">));</span>
+    <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
+
+Praktikum 7 :
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #75715e">// Tugas praktikum 7</span>
+
+<span style="color: #75715e">// Tulis sebuah program Java dengan input NIM mahasiswa FMIPA UNS</span>
+<span style="color: #75715e">// Gunakan regular expression untuk mengekstrak asal program studi dan tahun angkatan mahasiswa berdasarkan NIM yang diinputkan!</span>
+
+<span style="color: #75715e">// Misal</span>
+
+<span style="color: #75715e">// M0120001 -&gt; Matematika angkatan 2020 </span>
+<span style="color: #75715e">// M0220001 -&gt; Fisika angkatan 2020</span>
+<span style="color: #75715e">// M0317001 -&gt; Kimia angkatan 2017</span>
+<span style="color: #75715e">// M0418001 -&gt; Biologi angkatan 2018</span>
+<span style="color: #75715e">// M0519001 -&gt; Informatika angkatan 2019</span>
+<span style="color: #75715e">// M0616001 -&gt; Farmasi angkatan 2016</span>
+<span style="color: #75715e">// M0719001 -&gt; Statistika angkatan 2019</span>
+<span style="color: #75715e">// M0819001 -&gt; Ilmu Lingkungan angkatan 2019</span>
+<span style="color: #75715e">// G0017075 -&gt; Bukan mahasiswa FMIPA UNS</span>
+
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Prak7</span> <span style="color: #f92672">{</span>
+
+	<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">cek_jurusan</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">nim</span><span style="color: #f92672">){</span>
 		
-        <span style='color:#3F7F5F'>// in case you would like to ignore case sensitivity,
-</span>        <span style='color:#3F7F5F'>// you could use this statement:
-</span>        <span style='color:#3F7F5F'>// Pattern pattern = Pattern.compile("\\s+", Pattern.CASE_INSENSITIVE);
-</span>        Matcher matcher = pattern.matcher(EXAMPLE_TEST);
-        
-        <span style='color:#3F7F5F'>// check all occurance
-</span>        <span style='font-weight:bold;color:#7B0052;'>while</span> (matcher.find()) <span style='font-weight:bold;color:#D3171B'>{</span>
-            System.out.print(<span style='color:#2A00FF'>"Start index: "</span> + matcher.start());
-            System.out.print(<span style='color:#2A00FF'>", End index: "</span> + matcher.end() + <span style='color:#2A00FF'>" --&gt; "</span>);
-            System.out.println(matcher.group());
-        <span style='font-weight:bold;color:#D3171B'>}</span>
-        
-        <span style='color:#3F7F5F'>// now create a new pattern and matcher to replace whitespace with tabs
-</span>        Pattern replace = Pattern.compile(<span style='color:#2A00FF'>"\\s+"</span>);
-        Matcher matcher2 = replace.matcher(EXAMPLE_TEST);
-        System.out.println(matcher2.replaceAll(<span style='color:#2A00FF'>"\t"</span>));
-	<span style='font-weight:bold;color:#D3171B'>}</span>
-<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
+		<span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">nim</span><span style="color: #f92672">.</span><span style="color: #a6e22e">matches</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;M01[0-9]{6,6}&quot;</span><span style="color: #f92672">)){</span>
+			<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Matematika angkatan &quot;</span><span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;20&quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">nim</span><span style="color: #f92672">.</span><span style="color: #a6e22e">substring</span><span style="color: #f92672">(</span><span style="color: #ae81ff">3</span><span style="color: #f92672">,</span><span style="color: #ae81ff">5</span><span style="color: #f92672">));</span>
+		<span style="color: #f92672">}</span>
+		<span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">nim</span><span style="color: #f92672">.</span><span style="color: #a6e22e">matches</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;M02[0-9]{5,5}&quot;</span><span style="color: #f92672">)){</span>
+			<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Fisika angkatan &quot;</span><span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;20&quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">nim</span><span style="color: #f92672">.</span><span style="color: #a6e22e">substring</span><span style="color: #f92672">(</span><span style="color: #ae81ff">3</span><span style="color: #f92672">,</span><span style="color: #ae81ff">5</span><span style="color: #f92672">));</span>
+		<span style="color: #f92672">}</span>
+		<span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">nim</span><span style="color: #f92672">.</span><span style="color: #a6e22e">matches</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;M03[0-9]{5,5}&quot;</span><span style="color: #f92672">)){</span>
+			<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Kimia angkatan &quot;</span><span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;20&quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">nim</span><span style="color: #f92672">.</span><span style="color: #a6e22e">substring</span><span style="color: #f92672">(</span><span style="color: #ae81ff">3</span><span style="color: #f92672">,</span><span style="color: #ae81ff">5</span><span style="color: #f92672">));</span>
+		<span style="color: #f92672">}</span>
+		<span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">nim</span><span style="color: #f92672">.</span><span style="color: #a6e22e">matches</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;M04[0-9]{5,5}&quot;</span><span style="color: #f92672">)){</span>
+			<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Biologi angkatan &quot;</span><span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;20&quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">nim</span><span style="color: #f92672">.</span><span style="color: #a6e22e">substring</span><span style="color: #f92672">(</span><span style="color: #ae81ff">3</span><span style="color: #f92672">,</span><span style="color: #ae81ff">5</span><span style="color: #f92672">));</span>
+		<span style="color: #f92672">}</span>
+		<span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">nim</span><span style="color: #f92672">.</span><span style="color: #a6e22e">matches</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;M05[0-9]{5,5}&quot;</span><span style="color: #f92672">)){</span>
+			<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Informatika angkatan &quot;</span><span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;20&quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">nim</span><span style="color: #f92672">.</span><span style="color: #a6e22e">substring</span><span style="color: #f92672">(</span><span style="color: #ae81ff">3</span><span style="color: #f92672">,</span><span style="color: #ae81ff">5</span><span style="color: #f92672">));</span>
+		<span style="color: #f92672">}</span>
+		<span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">nim</span><span style="color: #f92672">.</span><span style="color: #a6e22e">matches</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;M06[0-9]{5,5}&quot;</span><span style="color: #f92672">)){</span>
+			<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Farmasi angkatan &quot;</span><span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;20&quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">nim</span><span style="color: #f92672">.</span><span style="color: #a6e22e">substring</span><span style="color: #f92672">(</span><span style="color: #ae81ff">3</span><span style="color: #f92672">,</span><span style="color: #ae81ff">5</span><span style="color: #f92672">));</span>
+		<span style="color: #f92672">}</span>
+		<span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">nim</span><span style="color: #f92672">.</span><span style="color: #a6e22e">matches</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;M07[0-9]{5,5}&quot;</span><span style="color: #f92672">)){</span>
+			<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Statistika angkatan &quot;</span><span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;20&quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">nim</span><span style="color: #f92672">.</span><span style="color: #a6e22e">substring</span><span style="color: #f92672">(</span><span style="color: #ae81ff">3</span><span style="color: #f92672">,</span><span style="color: #ae81ff">5</span><span style="color: #f92672">));</span>
+		<span style="color: #f92672">}</span>
+		<span style="color: #66d9ef">else</span> <span style="color: #a6e22e">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">nim</span><span style="color: #f92672">.</span><span style="color: #a6e22e">matches</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;M08[0-9]{5,5}&quot;</span><span style="color: #f92672">)){</span>
+			<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Ilmu Lingkungan angkatan &quot;</span><span style="color: #f92672">+</span> <span style="color: #e6db74">&quot;20&quot;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">nim</span><span style="color: #f92672">.</span><span style="color: #a6e22e">substring</span><span style="color: #f92672">(</span><span style="color: #ae81ff">3</span><span style="color: #f92672">,</span><span style="color: #ae81ff">5</span><span style="color: #f92672">));</span>
+		<span style="color: #f92672">}</span>
+		<span style="color: #66d9ef">else</span> <span style="color: #f92672">{</span>
+			<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Bukan angkatan  mahasiswa FMIPA UNS&quot;</span><span style="color: #f92672">);</span>
+		<span style="color: #f92672">}</span>
+	<span style="color: #f92672">}</span>  
+	<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+
+		<span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">nim</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;M0519064&quot;</span><span style="color: #f92672">;</span>
+
+		<span style="color: #f8f8f2">cek_jurusan</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">nim</span><span style="color: #f92672">);</span>
+
+  <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
 
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>

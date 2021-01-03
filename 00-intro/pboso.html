@@ -642,6 +642,30 @@
 <span style="color: #f92672">}</span></code>
 </pre>
 
+Praktikum 6 :
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #75715e">// Tugas Praktikum 6</span>
+
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">Prak6</span> <span style="color: #f92672">{</span>
+
+	<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+
+		<span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">teks</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;Program Studi Informatika FMIPA UNS adalah salah satu program studi di Fakultas Matematika dan Ilmu Pengetahuan Alam Universitas Sebelas Maret Surakarta yang berdiri sejak tanggal 29 Januari 2007 dengan nama Program Studi Ilmu Komputer melalui SK Pendirian 163/D/T/2007. Pada tahun 2009 berganti nama menjadi Program Studi Informatika berdasarkan pada surat perpanjangan ijin operasional&quot;</span><span style="color: #f92672">;</span>
+		<span style="color: #75715e">// jumlah karakter (spasi)</span>
+		<span style="color: #75715e">// jumlah karakter (!spasi)</span>
+		<span style="color: #75715e">// jumlah kata</span>
+
+		<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">jml_char_spc</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">teks</span><span style="color: #f92672">.</span><span style="color: #a6e22e">length</span><span style="color: #f92672">();</span>
+		<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">jml_char</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">teks</span><span style="color: #f92672">.</span><span style="color: #a6e22e">replace</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot; &quot;</span><span style="color: #f92672">,</span><span style="color: #e6db74">&quot;&quot;</span><span style="color: #f92672">).</span><span style="color: #a6e22e">length</span><span style="color: #f92672">();</span>
+		<span style="color: #75715e">// ditambah 1 krn agar pas :)</span>
+		<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">jml_kata</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">jml_char_spc</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">jml_char</span> <span style="color: #f92672">+</span> <span style="color: #ae81ff">1</span><span style="color: #f92672">;</span>
+
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">format</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;jumlah karakter (termasuk spasi) : %d%n&quot;</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">jml_char_spc</span><span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">format</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;jumlah karakter (tidak termasuk spasi) : %d%n&quot;</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">jml_char</span><span style="color: #f92672">);</span>
+		<span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;jumlah kata : &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">jml_kata</span><span style="color: #f92672">);</span>
+
+	<span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
 
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
