@@ -539,86 +539,90 @@ TYPE OF ASSERTION
 <br><br>
 SOURCE CODE : <br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;Execption :
-<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>package</span> oop.exceptions;
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">package</span> <span style="color: #f8f8f2">oop</span><span style="color: #f92672">.</span><span style="color: #a6e22e">exceptions</span><span style="color: #f92672">;</span>
 
-<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.Calendar;
-<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.GregorianCalendar;
-<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.Scanner;
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.Calendar</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.GregorianCalendar</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.Scanner</span><span style="color: #f92672">;</span>
 
-<span style='color:#3F7F5F'>// program mencari tahun lahir berdasarkan usia
-</span>
-<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> AgeInput1 <span style='font-weight:bold;color:#D3171B'>{</span>
-	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>int</span> getAge(String prompt, Scanner scanner) <span style='font-weight:bold;color:#D3171B'>{</span>
-		System.out.print(prompt);
-		<span style='font-weight:bold;color:#7B0052;'>int</span> age = scanner.nextInt();
-		<span style='font-weight:bold;color:#7B0052;'>return</span> age;
-	<span style='font-weight:bold;color:#D3171B'>}</span>
+<span style="color: #75715e">// program mencari tahun lahir berdasarkan usia</span>
 
-	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args) <span style='font-weight:bold;color:#D3171B'>{</span>
-		GregorianCalendar today;
-		<span style='font-weight:bold;color:#7B0052;'>int</span> age, thisYear, bornYr;
-		String answer;
-		
-		Scanner scanner = <span style='font-weight:bold;color:#7B0052;'>new</span> Scanner(System.in);
-		AgeInput1 input = <span style='font-weight:bold;color:#7B0052;'>new</span> AgeInput1();
-		age = input.getAge(<span style='color:#2A00FF'>"How old are you? "</span>, scanner);
-		today = <span style='font-weight:bold;color:#7B0052;'>new</span> GregorianCalendar();
-		thisYear = today.get(Calendar.YEAR);
-		bornYr = thisYear - age;
-		
-		System.out.print(<span style='color:#2A00FF'>"Already had your birthday this year? (Y or N)"</span>);
-		answer = scanner.next();
-		<span style='font-weight:bold;color:#7B0052;'>if</span> (answer.equals(<span style='color:#2A00FF'>"N"</span>) || answer.equals(<span style='color:#2A00FF'>"n"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>
-			bornYr--;
-		<span style='font-weight:bold;color:#D3171B'>}</span>
-		System.out.println(<span style='color:#2A00FF'>"\nYou are born in "</span> + bornYr);
-	<span style='font-weight:bold;color:#D3171B'>}</span>
-<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
-<pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>package</span> oop.exceptions;
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">AgeInput1</span> <span style="color: #f92672">{</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">int</span> <span style="color: #a6e22e">getAge</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">prompt</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">Scanner</span> <span style="color: #f8f8f2">scanner</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">prompt</span><span style="color: #f92672">);</span>
+        <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">age</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">scanner</span><span style="color: #f92672">.</span><span style="color: #a6e22e">nextInt</span><span style="color: #f92672">();</span>
+        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">age</span><span style="color: #f92672">;</span>
+    <span style="color: #f92672">}</span>
 
-<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.Calendar;
-<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.GregorianCalendar;
-<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.InputMismatchException;
-<span style='font-weight:bold;color:#7B0052;'>import</span> java.util.Scanner;
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+        <span style="color: #f8f8f2">GregorianCalendar</span> <span style="color: #f8f8f2">today</span><span style="color: #f92672">;</span>
+        <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">age</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">thisYear</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">bornYr</span><span style="color: #f92672">;</span>
+        <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">answer</span><span style="color: #f92672">;</span>
+        
+        <span style="color: #f8f8f2">Scanner</span> <span style="color: #f8f8f2">scanner</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Scanner</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">in</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">AgeInput1</span> <span style="color: #f8f8f2">input</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">AgeInput1</span><span style="color: #f92672">();</span>
+        <span style="color: #f8f8f2">age</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">input</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getAge</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;How old are you? &quot;</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">scanner</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">today</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">GregorianCalendar</span><span style="color: #f92672">();</span>
+        <span style="color: #f8f8f2">thisYear</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">today</span><span style="color: #f92672">.</span><span style="color: #a6e22e">get</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">Calendar</span><span style="color: #f92672">.</span><span style="color: #a6e22e">YEAR</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">bornYr</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">thisYear</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">age</span><span style="color: #f92672">;</span>
+        
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Already had your birthday this year? (Y or N)&quot;</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">answer</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">scanner</span><span style="color: #f92672">.</span><span style="color: #a6e22e">next</span><span style="color: #f92672">();</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">answer</span><span style="color: #f92672">.</span><span style="color: #a6e22e">equals</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;N&quot;</span><span style="color: #f92672">)</span> <span style="color: #f92672">||</span> <span style="color: #f8f8f2">answer</span><span style="color: #f92672">.</span><span style="color: #a6e22e">equals</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;n&quot;</span><span style="color: #f92672">))</span> <span style="color: #f92672">{</span>
+            <span style="color: #f8f8f2">bornYr</span><span style="color: #f92672">--;</span>
+        <span style="color: #f92672">}</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;\nYou are born in &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">bornYr</span><span style="color: #f92672">);</span>
+    <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
 
-<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>class</span> AgeInput2 <span style='font-weight:bold;color:#D3171B'>{</span>
-	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>int</span> getAge(String prompt, Scanner scanner) <span style='font-weight:bold;color:#D3171B'>{</span>
-		<span style='font-weight:bold;color:#7B0052;'>int</span> age = 0;
-		<span style='font-weight:bold;color:#7B0052;'>boolean</span> keepGoing = <span style='font-weight:bold;color:#7B0052;'>true</span>;
-		<span style='font-weight:bold;color:#7B0052;'>while</span> (keepGoing) <span style='font-weight:bold;color:#D3171B'>{</span>
-			System.out.print(prompt);
-			<span style='font-weight:bold;color:#7B0052;'>try</span> <span style='font-weight:bold;color:#D3171B'>{</span>
-				age = scanner.nextInt();
-				keepGoing = <span style='font-weight:bold;color:#7B0052;'>false</span>;
-			<span style='font-weight:bold;color:#D3171B'>}</span> <span style='font-weight:bold;color:#7B0052;'>catch</span> (InputMismatchException e) <span style='font-weight:bold;color:#D3171B'>{</span>
-				scanner.next(); <span style='color:#3F7F5F'>// remove the leftover garbage
-</span>				<span style='color:#3F7F5F'>// from the input buffer
-</span>				System.out.println(<span style='color:#2A00FF'>"Invalid Entry.Please enter digits only."</span>);
-			<span style='font-weight:bold;color:#D3171B'>}</span>
-		<span style='font-weight:bold;color:#D3171B'>}</span>
-		<span style='font-weight:bold;color:#7B0052;'>return</span> age;
-	<span style='font-weight:bold;color:#D3171B'>}</span>
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">package</span> <span style="color: #f8f8f2">oop</span><span style="color: #f92672">.</span><span style="color: #a6e22e">exceptions</span><span style="color: #f92672">;</span>
 
-	<span style='font-weight:bold;color:#7B0052;'>public</span> <span style='font-weight:bold;color:#7B0052;'>static</span> <span style='font-weight:bold;color:#7B0052;'>void</span> main(String[] args) <span style='font-weight:bold;color:#D3171B'>{</span>
-		GregorianCalendar today;
-		<span style='font-weight:bold;color:#7B0052;'>int</span> age, thisYear, bornYr;
-		String answer;
-		
-		Scanner scanner = <span style='font-weight:bold;color:#7B0052;'>new</span> Scanner(System.in);
-		AgeInput2 input = <span style='font-weight:bold;color:#7B0052;'>new</span> AgeInput2();
-		age = input.getAge(<span style='color:#2A00FF'>"How old are you? "</span>, scanner);
-		today = <span style='font-weight:bold;color:#7B0052;'>new</span> GregorianCalendar();
-		thisYear = today.get(Calendar.YEAR);
-		bornYr = thisYear - age;
-		
-		System.out.print(<span style='color:#2A00FF'>"Already had your birthday this year? (Y or N)"</span>);
-		answer = scanner.next();
-		<span style='font-weight:bold;color:#7B0052;'>if</span> (answer.equals(<span style='color:#2A00FF'>"N"</span>) || answer.equals(<span style='color:#2A00FF'>"n"</span>)) <span style='font-weight:bold;color:#D3171B'>{</span>
-			bornYr--;
-		<span style='font-weight:bold;color:#D3171B'>}</span>
-		System.out.println(<span style='color:#2A00FF'>"\nYou are born in "</span> + bornYr);
-	<span style='font-weight:bold;color:#D3171B'>}</span>
-<span style='font-weight:bold;color:#D3171B'>}</span></code></pre>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.Calendar</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.GregorianCalendar</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.InputMismatchException</span><span style="color: #f92672">;</span>
+<span style="color: #f92672">import</span> <span style="color: #f8f8f2">java.util.Scanner</span><span style="color: #f92672">;</span>
+
+<span style="color: #66d9ef">public</span> <span style="color: #66d9ef">class</span> <span style="color: #a6e22e">AgeInput2</span> <span style="color: #f92672">{</span>
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">int</span> <span style="color: #a6e22e">getAge</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">prompt</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">Scanner</span> <span style="color: #f8f8f2">scanner</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+        <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">age</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f92672">;</span>
+        <span style="color: #66d9ef">boolean</span> <span style="color: #f8f8f2">keepGoing</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">true</span><span style="color: #f92672">;</span>
+        <span style="color: #66d9ef">while</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">keepGoing</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+            <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">prompt</span><span style="color: #f92672">);</span>
+            <span style="color: #66d9ef">try</span> <span style="color: #f92672">{</span>
+                <span style="color: #f8f8f2">age</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">scanner</span><span style="color: #f92672">.</span><span style="color: #a6e22e">nextInt</span><span style="color: #f92672">();</span>
+                <span style="color: #f8f8f2">keepGoing</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">false</span><span style="color: #f92672">;</span>
+            <span style="color: #f92672">}</span> <span style="color: #66d9ef">catch</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">InputMismatchException</span> <span style="color: #f8f8f2">e</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+                <span style="color: #f8f8f2">scanner</span><span style="color: #f92672">.</span><span style="color: #a6e22e">next</span><span style="color: #f92672">();</span> <span style="color: #75715e">// remove the leftover garbage</span>
+                <span style="color: #75715e">// from the input buffer</span>
+                <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Invalid Entry.Please enter digits only.&quot;</span><span style="color: #f92672">);</span>
+            <span style="color: #f92672">}</span>
+        <span style="color: #f92672">}</span>
+        <span style="color: #66d9ef">return</span> <span style="color: #f8f8f2">age</span><span style="color: #f92672">;</span>
+    <span style="color: #f92672">}</span>
+
+    <span style="color: #66d9ef">public</span> <span style="color: #66d9ef">static</span> <span style="color: #66d9ef">void</span> <span style="color: #a6e22e">main</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">String</span><span style="color: #f92672">[]</span> <span style="color: #f8f8f2">args</span><span style="color: #f92672">)</span> <span style="color: #f92672">{</span>
+        <span style="color: #f8f8f2">GregorianCalendar</span> <span style="color: #f8f8f2">today</span><span style="color: #f92672">;</span>
+        <span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">age</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">thisYear</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">bornYr</span><span style="color: #f92672">;</span>
+        <span style="color: #f8f8f2">String</span> <span style="color: #f8f8f2">answer</span><span style="color: #f92672">;</span>
+        
+        <span style="color: #f8f8f2">Scanner</span> <span style="color: #f8f8f2">scanner</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">Scanner</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">in</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">AgeInput2</span> <span style="color: #f8f8f2">input</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">AgeInput2</span><span style="color: #f92672">();</span>
+        <span style="color: #f8f8f2">age</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">input</span><span style="color: #f92672">.</span><span style="color: #a6e22e">getAge</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;How old are you? &quot;</span><span style="color: #f92672">,</span> <span style="color: #f8f8f2">scanner</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">today</span> <span style="color: #f92672">=</span> <span style="color: #66d9ef">new</span> <span style="color: #f8f8f2">GregorianCalendar</span><span style="color: #f92672">();</span>
+        <span style="color: #f8f8f2">thisYear</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">today</span><span style="color: #f92672">.</span><span style="color: #a6e22e">get</span><span style="color: #f92672">(</span><span style="color: #f8f8f2">Calendar</span><span style="color: #f92672">.</span><span style="color: #a6e22e">YEAR</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">bornYr</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">thisYear</span> <span style="color: #f92672">-</span> <span style="color: #f8f8f2">age</span><span style="color: #f92672">;</span>
+        
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">print</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;Already had your birthday this year? (Y or N)&quot;</span><span style="color: #f92672">);</span>
+        <span style="color: #f8f8f2">answer</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">scanner</span><span style="color: #f92672">.</span><span style="color: #a6e22e">next</span><span style="color: #f92672">();</span>
+        <span style="color: #66d9ef">if</span> <span style="color: #f92672">(</span><span style="color: #f8f8f2">answer</span><span style="color: #f92672">.</span><span style="color: #a6e22e">equals</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;N&quot;</span><span style="color: #f92672">)</span> <span style="color: #f92672">||</span> <span style="color: #f8f8f2">answer</span><span style="color: #f92672">.</span><span style="color: #a6e22e">equals</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;n&quot;</span><span style="color: #f92672">))</span> <span style="color: #f92672">{</span>
+            <span style="color: #f8f8f2">bornYr</span><span style="color: #f92672">--;</span>
+        <span style="color: #f92672">}</span>
+        <span style="color: #f8f8f2">System</span><span style="color: #f92672">.</span><span style="color: #a6e22e">out</span><span style="color: #f92672">.</span><span style="color: #a6e22e">println</span><span style="color: #f92672">(</span><span style="color: #e6db74">&quot;\nYou are born in &quot;</span> <span style="color: #f92672">+</span> <span style="color: #f8f8f2">bornYr</span><span style="color: #f92672">);</span>
+    <span style="color: #f92672">}</span>
+<span style="color: #f92672">}</span></code>
+</pre>
+
 
 <pre style='text-align: left; line-height: 18px; padding: 15px; font-size: 13px; font-family:'Courier New', Courier, monospace; overflow: auto;'><code><span style='font-weight:bold;color:#7B0052;'>package</span> oop.exceptions;
 
