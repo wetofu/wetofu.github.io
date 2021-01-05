@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>WETOFU</title>
+    <title>Curl</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -344,7 +344,7 @@
                     <li class="chapter-item expanded "><strong aria-hidden="true">3.6.</strong>
                         Miscellaneous </li>
                     <li class="chapter-item expanded ">
-                        <a href="../03-ctf/assembly.html" style="color: rgb(252, 155, 171);"><strong aria-hidden="true">3.7.</strong> Assembly
+                        <a href="../03-ctf/assembly.html"><strong aria-hidden="true">3.7.</strong> Assembly
                         </a>
                     </li>
                     <li class="chapter-item expanded ">
@@ -379,7 +379,7 @@
                         <a href="../06-tools/py.html"><strong aria-hidden="true">4.2.</strong> Python</a>
                     </li>
                     <li class="chapter-item expanded ">
-                        <a href="../06-tools/curl.html"><strong aria-hidden="true">4.3.</strong> Curl</a>
+                        <a href="../06-tools/curl.html" style="color: rgb(252, 155, 171);"><strong aria-hidden="true">4.3.</strong> Curl</a>
                     </li>
                     <li class="chapter-item expanded "><strong aria-hidden="true">4.4.</strong> Ghidra </li>
                     <li class="chapter-item expanded "><strong aria-hidden="true">4.5.</strong> Ida </li>
@@ -442,7 +442,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">Assembly</h1>
+                <h1 class="menu-title">curl</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -483,45 +483,21 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <p>sumber : <br>
-                        <a href="https://www.youtube.com/playlist?list=PLetF-YjXm-sCH6FrTz4AQhfH6INDQvQSn" target="_blank">https://www.youtube.com/playlist?list=PLetF-YjXm-sCH6FrTz4AQhfH6INDQvQSn</a><br>
-                        <a href="https://www.tutorialspoint.com/assembly_programming" target="_blank">https://www.tutorialspoint.com/assembly_programming</a>
-                    </p>
-                    <h1><a class="header" href="#intro" id="intro">Linux</a></h1>
-                    sementara versi 64bit
-                    <p>Contoh kode sederhana beserta penjelasan : (misal nama file hello.asm)<br></p>
-                    <pre><code>section .data
-    text db "Hello world", 10
-
-section .text
-    global _start
-
-_start:
-    mov rax, 1
-    mov rdi, 1
-    mov rsi, text
-    mov rdx, 14
-    syscall
-
-    mov rax, 60
-    mov rdi, 0
-    syscall</code></pre>
-    run :
-<pre><code>sudo apt install nasm
-nasm -f elf64 -o hello.o hello.asm
-ld hello.o -o hello
-./hello</code></pre>
-    <br>
-                    <p>
-                    <code>section .data</code><br>
-                    tempat nyimpan data <br>
-                    </p>
-                    <p>
-                    <code>text db "Hello world", 10</code><br>
-                    nama memory address 'text',<br> 
-                    defining bytes 'db', <br>
-                    berisi "Hello world" dan '10' / newline
-                    </p>
+                    <h1><a class="header" href="#intro" id="intro">Using</a></h1>
+<pre><code>curl [options] [URL...]</code></pre>
+standar :
+<pre><code>curl "http://blablabla.com"</code></pre>
+save to file :
+<pre><code>curl -o tes.txt "http://halo.com"
+curl -O "http://halo.com"</code></pre>
+show header :
+<pre><code>curl -I "http://halo.com"</code></pre>
+ganti user agent :
+<pre><code>curl -A "haloo web browser" -v "http://halo.com"</code></pre>
+kirim form :
+<pre><code>curl -X "POST" -d "username=admin&password=pass" "http://halo.com/index.php?id=10"</code></pre>
+cookie :
+<pre><code>curl --cookie "name=Daniel" http://www.example.com</code></pre>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
@@ -530,12 +506,12 @@ ld hello.o -o hello
                     <!-- ----------------------------------------------- DIGANTI PREV NEXT ----------------------------------------------- -->
 
                     <!-- sebelum -->
-                    <a rel="prev" href="binex-pwnshell.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                    <a rel="prev" href="py.html" class="mobile-nav-chapters previous" title="Previous chapter"
                         aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                     <!-- sesudah -->
-                    <a rel="next" href="johnhmnd.html" class="mobile-nav-chapters next" title="Next chapter"
+                    <a rel="next" href="../04-tips/index.html" class="mobile-nav-chapters next" title="Next chapter"
                         aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -549,12 +525,12 @@ ld hello.o -o hello
         <nav class="nav-wide-wrapper" aria-label="Page navigation">
             <!-- ----------------------------------------------- DIGANTI PREV NEXT 2 ----------------------------------------------- -->
             <!-- sebelum -->
-            <a rel="prev" href="binex-pwnshell.html" class="nav-chapters previous" title="Previous chapter"
+            <a rel="prev" href="py.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
             </a>
             <!-- sesudah -->
-            <a rel="next" href="johnhmnd.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+            <a rel="next" href="../04-tips/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
                 aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
             </a>
