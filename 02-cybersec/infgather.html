@@ -491,6 +491,9 @@
                         <li>
                             <a class="header" href="#dnsen">DNS Enumeration</a>
                         </li>
+                        <li>
+                            <a class="header" href="#port">Port. *Belum ke list (random)</a>
+                        </li>
                     </ul><br>
                     <hr>
                     <h4><a class="header" id="dmitry" style="text-decoration: none;">Dmitry</a></h4>
@@ -661,7 +664,29 @@ local d-opts and servers (after host name) affect only that lookup.
 <pre><code>dig 192.168.43.1 CNAME +short</code></pre>
 <pre><code>for ip in 'dig 192.168.43.1 +short';do nmap $ip; done</code></pre>
 </ul>
-
+<h4><a class="header" id="port" style="text-decoration: none;">Port :</a></h4>
+                    <pre><code>netstat -tulpn</code></pre>
+                    <pre><code>netstat -tulpn | grep LISTEN</code></pre>
+                    <pre><code>netstat --listen</code></pre>
+                    <pre><code>netstat -vaun</code></pre>
+                    <pre><code>netstat -vatn</code></pre>
+                    <pre><code>sudo ss -tulwn | grep LISTEN</code></pre>
+                    <pre><code>ufw allow 80</code></pre>
+                    <pre><code>ufw allow ssh</code></pre>
+                    <pre><code>ufw deny ssh</code></pre>
+                    <pre><code>ufw reload</code></pre>
+                    <pre><code>ufw enable</code></pre>
+                    <pre><code>ufw disable</code></pre>
+                    <pre><code>lsof -i :22</code></pre>
+                    close port :
+                    <ul>
+                        <pre><code>nmap -p- 127.0.0.1</code></pre>
+                        -p- : list all open port <br>
+                        misal tutup port tcp 40217
+                        <pre><code>fuser -k -n tcp 40217</code></pre>
+                        -k : kill <br>
+                        -n : process id <br><br><br>
+                    </ul>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
