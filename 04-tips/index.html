@@ -793,7 +793,7 @@ cek :
                     <br><hr><br>
                     <h4><a class="header" id="https" style="text-decoration: none;">HTTPS in Local Network (Ubuntu Server 20.04) :</a></h4>
 <pre><code>sudo su</code></pre>
-<pre><code>sudo openssl req -x509 -days 1 -newkey rsa:2048 -keyout /home/carloz/localhost.key -out /home/carloz/localhost.crt</code></pre>
+<pre><code>openssl req -x509 -days 1 -newkey rsa:2048 -keyout /home/carloz/localhost.key -out /home/carloz/localhost.crt</code></pre>
 <pre>Enter PEM pass phrase: misal 1234 (antara 4 - 1024 character)
 country name : ID
 state or province : Jawa Tengah
@@ -803,9 +803,10 @@ organizational unit name : AUWO2
 common name : ganteng
 email addr : carloz@ganteng.com</pre>
 <pre><code>vim /etc/apache2/sites-available/https.conf</code></pre>
-isi dengan 
+isi dengan :
+<ul>
 <pre><code>&lt;VirtualHost *:443&gt;
-	ServerName localhost
+	ServerName 127.0.1.1
 	DocumentRoot /var/www/html
 	SSLEngine on
 	SSLCertificateFile "/home/carloz/localhost.crt"
@@ -814,18 +815,22 @@ isi dengan
 		AllowOverride all
 	&lt;/Directory&gt;
 &lt;/VirtualHost&gt;</code></pre>
+</ul>
 <pre><code>a2ensite https.conf
 systemctl reload apache2</code></pre>
 cek status :
 <pre><code>systemctl status apache2.service</code></pre>
 jika ada error, silahkan oprec2 sendiri <br>
-misal error "Invalid command 'SSLEngine', blablablaa...."
+misal error "Invalid command 'SSLEngine', blablablaa....", seperti gambar :
+<img src="../gambar/gamb8.png" alt="">
 maka dpt dengan :
 <pre><code>a2enmod ssl</code></pre>
 lalu setelah error hilang :
 <pre><code>systemctl restart apache2</code></pre>
 <ul>enter passphrase : 1234</ul>
-                    <br><hr><br>
+done <pre><code>systemctl status apache2.service</code></pre> buka web browser, masukkan <code>https://localhost/</code> atau <code>https://ip/</code><br>
+jika ada warning, tinggal klik <code>advanced...</code>, <code>accept the risk and continue</code>
+                    <br><br><hr><br>
                     <h4><a class="header" id="random" style="text-decoration: none;">Random</a></h4>
                     <pre><code>import sys
 for i in range(0,16):
