@@ -484,7 +484,30 @@
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
                     <br><br><br>
-                    Mikrotik :
+                    Port :
+                    <pre><code>netstat -tulpn</code></pre>
+                    <pre><code>netstat -tulpn | grep LISTEN</code></pre>
+                    <pre><code>netstat --listen</code></pre>
+                    <pre><code>netstat -vaun</code></pre>
+                    <pre><code>netstat -vatn</code></pre>
+                    <pre><code>sudo ss -tulwn | grep LISTEN</code></pre>
+                    <pre><code>ufw allow 80</code></pre>
+                    <pre><code>ufw allow ssh</code></pre>
+                    <pre><code>ufw deny ssh</code></pre>
+                    <pre><code>ufw reload</code></pre>
+                    <pre><code>ufw enable</code></pre>
+                    <pre><code>ufw disable</code></pre>
+                    <pre><code>lsof -i :22</code></pre>
+                    close port :
+                    <ul>
+                        <pre><code>nmap -p- 127.0.0.1</code></pre>
+                        -p- : list all open port <br>
+                        misal tutup port tcp 40217
+                        <pre><code>fuser -k -n tcp 40217</code></pre>
+                        -k : kill <br>
+                        -n : process id <br><br><br><hr><hr>
+                    </ul>
+                        Mikrotik :
                     <ul>
                         <li><a class="header" href="#setup">Setup (basic)</a></li>
                         <li><a class="header" href="#setuppass">Ganti user password</a></li>
