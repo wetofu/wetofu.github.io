@@ -187,28 +187,30 @@
                         database SQL </li>
                     <li class="chapter-item expanded "><a href="../02-cybersec/mitm.html"><strong
                                 aria-hidden="true">2.13.</strong> MITM </a></li>
-                    <li class="chapter-item expanded "><strong aria-hidden="true">2.14.</strong> DNS &
+                    <li class="chapter-item expanded "><a href="../02-cybersec/msf.html"><strong
+                                aria-hidden="true">2.14.</strong> Metasploit </a></li>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.15.</strong> DNS &
                         Deface WEB </li>
-                    <li class="chapter-item expanded "><strong aria-hidden="true">2.15.</strong> Attack
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.16.</strong> Attack
                         File Sharing </li>
-                    <li class="chapter-item expanded "><strong aria-hidden="true">2.16.</strong>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.17.</strong>
                         Vulnerability Analysis </li>
-                    <li class="chapter-item expanded "><strong aria-hidden="true">2.17.</strong> Dasar
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.18.</strong> Dasar
                         Pengamanan Server </li>
-                    <li class="chapter-item expanded "><strong aria-hidden="true">2.18.</strong>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.19.</strong>
                         Firewall </li>
-                    <li class="chapter-item expanded "><strong aria-hidden="true">2.19.</strong> VPN
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.20.</strong> VPN
                     </li>
-                    <li class="chapter-item expanded "><strong aria-hidden="true">2.20.</strong> Web
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.21.</strong> Web
                         Application Firewall </li>
-                    <li class="chapter-item expanded "><strong aria-hidden="true">2.21.</strong>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.22.</strong>
                         Pertahanan Host </li>
-                    <li class="chapter-item expanded "><strong aria-hidden="true">2.22.</strong> Basic
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.23.</strong> Basic
                         Data Security </li>
-                    <li class="chapter-item expanded "><strong aria-hidden="true">2.23.</strong>
+                    <li class="chapter-item expanded "><strong aria-hidden="true">2.24.</strong>
                         Forensic </li>
                     <li class="chapter-item expanded "><a href="../02-cybersec/deepweeb.html"><strong
-                                aria-hidden="true">2.24.</strong> Deep Web </a></li>
+                                aria-hidden="true">2.25.</strong> Deep Web </a></li>
 
                     <!-- <li>
                         <ol class="section">
@@ -497,6 +499,8 @@
                         <li><a class="header" href="#ipstatic">Setting IP Static</a></li>
                         <li><a class="header" href="#https">HTTPS in Local Network (Ubuntu Server 20.04)</a></li>
                         <li><a class="header" href="#resize">Resize memory virtualbox</a></li>
+                        <li><a class="header" href="#setting">Setting mendadak rusak saat hapus package</a></li>
+                        <li><a class="header" href="#fileshare">Membuat file sharing virtualbox</a></li>
                         <hr>
                         <li><a class="header" href="#random">Random</a></li>
                     </ul>
@@ -750,15 +754,16 @@ GO
                     <hr><br>
                     <h4><a class="header" id="fcrackzip" style="text-decoration: none;">fcrackzip :</a></h4>
                     <pre><code>fcrackzip -v -D -u -p rockyou.txt file.zip</code></pre>
-                    <br><hr><br>
+                    <br>
+                    <hr><br>
                     <h4><a class="header" id="ipstatic" style="text-decoration: none;">Setting IP Static :</a></h4>
-periksa interface :
-<pre><code>ifonfig</code></pre>
-misal interfacenya enp0s3
-<pre><code>sudo su
+                    periksa interface :
+                    <pre><code>ifonfig</code></pre>
+                    misal interfacenya enp0s3
+                    <pre><code>sudo su
 nano /etc/netplan/00-installer-config.yaml</code></pre>
-ganti isinya dengan :
-<pre><code># ini utk ip dinamis
+                    ganti isinya dengan :
+                    <pre><code># ini utk ip dinamis
 # network:
 #   ethernets:
 #     enp0s3:
@@ -776,15 +781,17 @@ network:
       gateway4: 192.168.43.1		 # gateway / ip server (HP :v)
       nameservers:
         addresses: [8.8.8.8,8.8.4.4,1.1.1.1]	# server dns, persis gini jg gpp</code></pre>
-tinggal reboot :
-<pre><code>shutdown -r now</code></pre>
-cek :
-<pre><code>ifconfig</code></pre>
-                    <br><hr><br>
-                    <h4><a class="header" id="https" style="text-decoration: none;">HTTPS in Local Network (Ubuntu Server 20.04) :</a></h4>
-<pre><code>sudo su</code></pre>
-<pre><code>openssl req -x509 -days 1 -newkey rsa:2048 -keyout /home/carloz/localhost.key -out /home/carloz/localhost.crt</code></pre>
-<pre>Enter PEM pass phrase: misal 1234 (antara 4 - 1024 character)
+                    tinggal reboot :
+                    <pre><code>shutdown -r now</code></pre>
+                    cek :
+                    <pre><code>ifconfig</code></pre>
+                    <br>
+                    <hr><br>
+                    <h4><a class="header" id="https" style="text-decoration: none;">HTTPS in Local Network (Ubuntu
+                            Server 20.04) :</a></h4>
+                    <pre><code>sudo su</code></pre>
+                    <pre><code>openssl req -x509 -days 1 -newkey rsa:2048 -keyout /home/carloz/localhost.key -out /home/carloz/localhost.crt</code></pre>
+                    <pre>Enter PEM pass phrase: misal 1234 (antara 4 - 1024 character)
 country name : ID
 state or province : Jawa Tengah
 locality name : Kudus
@@ -792,10 +799,10 @@ organization name : AUWO
 organizational unit name : AUWO2
 common name : ganteng
 email addr : carloz@ganteng.com</pre>
-<pre><code>vim /etc/apache2/sites-available/https.conf</code></pre>
-isi dengan :
-<ul>
-<pre><code>&lt;VirtualHost *:443&gt;
+                    <pre><code>vim /etc/apache2/sites-available/https.conf</code></pre>
+                    isi dengan :
+                    <ul>
+                        <pre><code>&lt;VirtualHost *:443&gt;
 	ServerName 127.0.1.1
 	DocumentRoot /var/www/html
 	SSLEngine on
@@ -805,30 +812,114 @@ isi dengan :
 		AllowOverride all
 	&lt;/Directory&gt;
 &lt;/VirtualHost&gt;</code></pre>
-</ul>
-<pre><code>a2ensite https.conf
+                    </ul>
+                    <pre><code>a2ensite https.conf
 systemctl reload apache2</code></pre>
-cek status :
-<pre><code>systemctl status apache2.service</code></pre>
-jika ada error, silahkan oprec2 sendiri <br>
-misal error "Invalid command 'SSLEngine', blablablaa....", seperti gambar :
-<img src="../gambar/gamb8.png" alt="">
-maka dapat dengan :
-<pre><code>a2enmod ssl</code></pre>
-lalu setelah error hilang :
-<pre><code>systemctl restart apache2</code></pre>
-<ul>enter passphrase : 1234</ul>
-done <pre><code>systemctl status apache2.service</code></pre> buka web browser, masukkan <code>https://localhost/</code> atau <code>https://ip/</code><br>
-jika ada warning, tinggal klik <code>advanced...</code>, <code>accept the risk and continue</code>
-<br><br>
-suatu ketika kok terjadi loading lama di web, coba 
-<pre><code>systemctl restart apache2</code></pre> masukkan kode rsa nya '1234'
-<br><br><hr>
-<h4><a class="header" id="resize" style="text-decoration: none;">Resize memory virtualbox :</a></h4>
-<pre><code>VBoxManage clonehd Ubuntu\ Server\ 18.04\ LTS.vdi ubuntu18_04_new4.vdi --format VDI --variant Standard
+                    cek status :
+                    <pre><code>systemctl status apache2.service</code></pre>
+                    jika ada error, silahkan oprec2 sendiri <br>
+                    misal error "Invalid command 'SSLEngine', blablablaa....", seperti gambar :
+                    <img src="../gambar/gamb8.png" alt="">
+                    maka dapat dengan :
+                    <pre><code>a2enmod ssl</code></pre>
+                    lalu setelah error hilang :
+                    <pre><code>systemctl restart apache2</code></pre>
+                    <ul>enter passphrase : 1234</ul>
+                    done
+                    <pre><code>systemctl status apache2.service</code></pre> buka web browser, masukkan
+                    <code>https://localhost/</code> atau <code>https://ip/</code><br>
+                    jika ada warning, tinggal klik <code>advanced...</code>, <code>accept the risk and continue</code>
+                    <br><br>
+                    suatu ketika kok terjadi loading lama di web, coba
+                    <pre><code>systemctl restart apache2</code></pre> masukkan kode rsa nya '1234'
+                    <br><br>
+                    <hr>
+                    <h4><a class="header" id="resize" style="text-decoration: none;">Resize memory virtualbox :</a></h4>
+                    <pre><code>VBoxManage clonehd Ubuntu\ Server\ 18.04\ LTS.vdi ubuntu18_04_new4.vdi --format VDI --variant Standard
 VBoxManage modifyhd ubuntu18_04_new4.vdi --resize 30000</code></pre>
-ganti storage lewat GUI virtualbox
-                    <br><br><hr><br>
+                    ganti storage lewat GUI virtualbox
+                    <br><br>
+                    <hr><br>
+                    <h4><a class="header" id="setting" style="text-decoration: none;">Setting mendadak rusak saat hapus
+                            package :</a></h4>
+                    <pre><code>sudo apt-get remove unity-control-center
+sudo apt-get install unity-control-center</code></pre>
+                    jika ada lagi yg rusak, maka : (jika benar-benar urgent)
+                    <pre><code>sudo apt-get install ubuntu-desktop</code></pre>
+                    <br>
+                    <hr><br>
+                    <h4><a class="header" id="fileshare" style="text-decoration: none;">Membuat file sharing virtualbox
+                            :</a></h4>
+                    connect ssh :
+                    <ul>
+                        pc-target :
+                        <pre><code>sudo service ssh status
+sudo service ssh start</code></pre>
+                        silahkan ssh <br>
+                        namun, jika masih tdk bisa :
+                        <pre><code>sudo iptables -A INPUT -p tcp --dport ssh -j ACCEPT</code></pre>
+                    </ul>
+
+                    host :
+                    <ul>
+                        <pre><code>mkdir -p /mnt/cobafilesharing-public
+mkdir -p /mnt/cobafilesharing-data</code></pre>
+                    </ul>
+                    server :
+                    <ul>
+                        <pre><code>sudo su
+mkdir /home/public
+mkdir /home/data
+apt update
+apt -y install samba cifs-utils
+vi /etc/samba/smb.conf</code></pre>
+                        diisi dengan :
+                        <ul>
+                            <pre><code>workgroup = WORKGROUP
+netbios name = COBAFILESHARING
+
+# dibagian bottom
+[public]
+path = /home/public
+available = yes
+browsable = yes
+public = yes
+writable = yes
+
+[data]
+path = /home/data
+available = yes
+browsable = yes
+public = yes
+writable = no</code></pre>
+                        </ul>
+                        <pre><code>mkdir -p /home/public
+mkdir -p /home/data
+chown -Rf nobody.nogroup /home/public
+chown -Rf nobody.nogroup /home/data
+chmod -Rf 777 /home/public
+chmod -Rf 777 /home/data</code></pre>
+                        <pre><code>smbpasswd -a carloz</code></pre>
+                        misal password : 123456
+
+                        <pre><code>/etc/init.d/smbd restart</code></pre>
+
+                        matikan firewall
+                        <pre><code>ufw disable</code></pre>
+                    </ul>
+                    host :<br>
+                    <ul>
+                        cek sdh mount apa blm :
+                        <ul>
+                            <pre><code>df -h</code></pre>
+                        </ul>
+                        <pre><code>mount -t cifs //192.168.43.207/public/ /mnt/cobafilesharing-public/ -o password=123456,username=carloz</code></pre>
+                    </ul>
+Done, jika ingin sharing file bisa lewat folder tersebut
+
+<br>
+                    <br>
+                    <hr><br>
                     <h4><a class="header" id="random" style="text-decoration: none;">Random</a></h4>
                     <pre><code>import sys
 for i in range(0,16):
