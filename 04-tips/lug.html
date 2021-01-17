@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>TIPS 04</title>
+    <title>TIPS 17</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -68,7 +68,7 @@
             if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
                 localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
             }
-        } catch (e) {}
+        } catch (e) { }
     </script>
 
     <!-- Set the theme before any content is loaded, prevents flash -->
@@ -76,7 +76,7 @@
         var theme;
         try {
             theme = localStorage.getItem('mdbook-theme');
-        } catch (e) {}
+        } catch (e) { }
         if (theme === null || theme === undefined) {
             theme = default_theme;
         }
@@ -94,7 +94,7 @@
         if (document.body.clientWidth >= 1080) {
             try {
                 sidebar = localStorage.getItem('mdbook-sidebar');
-            } catch (e) {}
+            } catch (e) { }
             sidebar = sidebar || 'visible';
         }
         html.classList.remove('sidebar-visible');
@@ -425,7 +425,7 @@
                     <li class="chapter-item expanded "><a href="../04-tips/ingdb.html"><strong aria-hidden="true">5.01.</strong> Input in running GDB</a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/radare2.html"><strong aria-hidden="true">5.02.</strong> Using Radare2</a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/ctflicense.html"><strong aria-hidden="true">5.03.</strong> Contoh cracking CTF licence key</a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/irdeb.html" style="color: rgb(252, 155, 171);"><strong aria-hidden="true">5.04.</strong> Install / Remove .deb in ubuntu</a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/irdeb.html"><strong aria-hidden="true">5.04.</strong> Install / Remove .deb in ubuntu</a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/isqls.html"><strong aria-hidden="true">5.05.</strong> Install sql server ubuntu 18.04</a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/fcrackzip.html"><strong aria-hidden="true">5.06.</strong> fcrackzip</a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/ipstatic.html"><strong aria-hidden="true">5.07.</strong> Setting IP Static</a></li>
@@ -437,7 +437,7 @@
                     <li class="chapter-item expanded "><a href="../04-tips/vbox.html"><strong aria-hidden="true">5.13.</strong> Virtualbox</a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/ptrack.html"><strong aria-hidden="true">5.14.</strong> Packet Tracker</a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/path.html"><strong aria-hidden="true">5.15.</strong> Path variable terminal</a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/lug.html"><strong aria-hidden="true">5.16.</strong> List Users & Groups </a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/lug.html" style="color: rgb(252, 155, 171);"><strong aria-hidden="true">5.16.</strong> List Users & Groups </a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/random.html"><strong aria-hidden="true">5.17.</strong> Random</a></li>
                 </ol>
             </li>
@@ -479,7 +479,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">TIPS 04</h1>
+                <h1 class="menu-title">TIPS 17</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -520,39 +520,29 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1><a class="header" href="#deb" id="deb" style="text-decoration: none;">Install / Remove .deb in ubuntu</a>
-                    </h1>
-                    <ol>
-                        install :
-                        <li>
-                            <pre><code>sudo dpkg -i packagename.deb
-sudo apt-get install -f</code></pre>
-                        </li>
-                        or :
-                        <li>
-                            <pre><code>sudo apt install packagename.deb</code></pre>
-                        </li>
-                        remove :
-                        <li>
-                            <pre><code>sudo dpkg -r packagename</code></pre>
-                        </li>
-                        or :
-                        <li>
-                            <pre><code>sudo apt-get remove packagename</code></pre>
-                        </li>
-                        maksa install :
-                        <li>
-                            <pre><code>sudo aptitude install packagename</code></pre>
-                        </li>
-                        maksa hapus :
-                        <li>
-                            <pre><code>sudo dpkg --purge packagename</code></pre>
-                        </li>
-                    </ol>
+                    <h1><a class="header" href="#intro" id="intro">Intro</a></h1>
+                    <!-- <ul>
+                        <li><a class="header" href="#pengertian">Pengertian</a></li>
+                    </ul>
                     <br>
                     <hr><br>
-                    jika update ada kendala, remove di <code>/etc/apt/sources.list.d/</code><br>
-
+                    <h2><a class="header" id="pengertian" style="text-decoration: none;">Pengertian</a></h2> -->
+                    <h4>Cek User :</h4>
+                    <ul>
+                        <pre><code>cat /etc/passwd</code></pre>
+                        atau
+                        <pre><code>cat /etc/passwd | cut -d: -f1</code></pre>
+                        <pre><code>root :  x   :  0  :  0  :   root  :  /root  : /usr/bin/zsh
+user : pass : uid : gid : comment : homedir :     shell</code></pre>
+                    </ul>
+                    <h4>Cek Group :</h4>
+                    <ul>
+                        <pre><code>cat /etc/group</code></pre>
+                        atau
+                        <pre><code>cat /etc/group | cut -d: -f1</code></pre>
+                        <pre><code>kaboxer :  x   : 146 : syahrul,root
+gname   : pass : GID : 	   users</code></pre>
+                    </ul>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
@@ -561,12 +551,12 @@ sudo apt-get install -f</code></pre>
                     <!-- ----------------------------------------------- DIGANTI PREV NEXT ----------------------------------------------- -->
 
                     <!-- sebelum -->
-                    <a rel="prev" href="ctflicense.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                    <a rel="prev" href="path.html" class="mobile-nav-chapters previous" title="Previous chapter"
                         aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                     <!-- sesudah -->
-                    <a rel="next" href="isqls.html" class="mobile-nav-chapters next" title="Next chapter"
+                    <a rel="next" href="random.html" class="mobile-nav-chapters next" title="Next chapter"
                         aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -580,12 +570,12 @@ sudo apt-get install -f</code></pre>
         <nav class="nav-wide-wrapper" aria-label="Page navigation">
             <!-- ----------------------------------------------- DIGANTI PREV NEXT 2 ----------------------------------------------- -->
             <!-- sebelum -->
-            <a rel="prev" href="ctflicense.html" class="nav-chapters previous" title="Previous chapter"
+            <a rel="prev" href="path.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
             </a>
             <!-- sesudah -->
-            <a rel="next" href="isqls.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+            <a rel="next" href="random.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
                 aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
             </a>
