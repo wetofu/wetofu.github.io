@@ -529,7 +529,24 @@
                     <br>
                     <hr><br>
                     <h2><a class="header" id="ipp" style="text-decoration: none;">Change IP Public</a></h2>
-                    
+                    cek dulu dns leak nya di browser <br>
+misal dapat ip x.x.x.x dan lokasi kudus indonesia
+
+<pre><code>sudo vim /etc/proxychains.conf</code></pre>
+<ul>
+<pre><code>(uncomment dynamic_chain)
+(comment random_chain)
+(uncomment proxy_dns)
+socks4 127.0.0.1 9050
+socks5 127.0.0.1 9050</code></pre>
+</ul>
+<pre><code>service tor status
+service tor stop
+service tor start</code></pre>
+<pre><code>proxychains firefox www.duckduckgo.com</code></pre>
+
+cek dns leak
+maka akan dapat ip y.y.y.y
 
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
