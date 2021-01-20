@@ -2,7 +2,7 @@ import os
 
 # melist SEMUA file ekstensi .html
 listFile = []
-listBase = ["base/baseNav.html", "base/tesbase.html", "base/base.html", "404.html"]
+listBase = ["base/baseNav.html", "base/tesbase.html", "base/base.html"]
 for root, dirs, files in os.walk("."):
     for file in files:
         if file.endswith(".html"):
