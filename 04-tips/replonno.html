@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>WETOFU</title>
+    <title>TIPS 18</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -314,7 +314,7 @@
                         <!--</a>-->
                     </li>
                     <li class="chapter-item expanded ">
-                        <!--<a href="../05-jarkom/nmb.html" style="color: rgb(252, 155, 171);">--><strong aria-hidden="true">3.20.</strong> Network
+                        <!--<a href="../05-jarkom/nmb.html">--><strong aria-hidden="true">3.20.</strong> Network
                         Management & Benchmarking
                         <!--</a>-->
                     </li>
@@ -442,7 +442,7 @@
                     <li class="chapter-item expanded "><a href="../04-tips/ptrack.html"><strong aria-hidden="true">6.14.</strong> Packet Tracker</a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/path.html"><strong aria-hidden="true">6.15.</strong> Path variable terminal</a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/lug.html"><strong aria-hidden="true">6.16.</strong> List Users & Groups </a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/replonno.html"><strong aria-hidden="true">6.17.</strong> Replikasi Onnocenter </a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/replonno.html" style="color: rgb(252, 155, 171);"><strong aria-hidden="true">6.17.</strong> Replikasi Onnocenter </a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/random.html"><strong aria-hidden="true">6.18.</strong> Random</a></li>
                 </ol>
             </li>
@@ -476,15 +476,15 @@
                         <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                     </ul>
 
-                    <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                    <!-- <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
                         aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
                         aria-controls="searchbar">
                         <i class="fa fa-search"></i>
-                    </button>
+                    </button> -->
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">WeTofu</h1>
+                <h1 class="menu-title">TIPS 18</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -525,9 +525,78 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1><a class="header" href="#intro" id="intro">Intro</a></h1>
-                    <p> Kosong.</p>
+                    <h3><a class="header" href="#intro" id="intro">Replikasi Mediawiki <a href="https://lms.onnocenter.or.id/wiki/" target="_blank">https://lms.onnocenter.or.id/wiki/</a> ubuntu 20.04, khusus mediawiki-1.32.0</a></h3>
 
+server :
+    <ul>
+install mediawiki :
+<ul>
+    buat tempat menyimpan keperlannya
+    <pre><code>mkdir /var/data
+mkdir /var/data/library
+mkdir /var/data/library/datawiki</code></pre>
+		<pre><code>sudo apt update
+sudo apt-get install apache2 php php-xmlrpc php-mysql php-gd php-cli php-curl mysql-client mysql-server libphp-adodb libgd-dev php-pear php-common libapache2-mod-php php-fpm php-bz2 php-xml imagemagick git php-mbstring
+service apache2 stop
+service apache2 start
+sudo locale-gen id_ID.UTF-8</code></pre>
+		
+		buat database mediawiki (aku lewat phpmyadmin) -> kasih nama mediawiki <br><br>
+
+        download & install mediawiki :
+        <ul>
+            <pre><code>cd /var/data/library/datawiki/
+wget https://releases.wikimedia.org/mediawiki/1.32/mediawiki-1.32.0.tar.gz
+tar zxvf mediawiki-1.32.0.tar.gz
+mv mediawiki-1.32.0 wiki
+cp wiki /var/www/html/			
+cp -Rf /var/www/html/wiki/mw-config/ /var/www/html/wiki/config			
+chmod a+w /var/www/html/wiki/mw-config			
+chmod a+w /var/www/html/wiki/config			
+chmod -Rf 777 wiki			
+chown -Rf www-data.www-data wiki
+/etc/init.d/apache2 restart</code></pre>
+
+            lanjut install di web :
+            <ul>
+				*catatan : Database Prefix -> wiki_ 
+            </ul>
+            download LocalSettings.php, taruh di file bersama wiki/index.php
+            <pre><code>cd ~/Downloads
+mv LocalSettings.php /var/www/html/wiki/
+chmod 600 /var/www/html/wiki/LocalSettings.php</code></pre>
+
+        </ul>
+        lanjut di terminal
+    <pre><code>cd /var/data/library/datawiki/
+
+# yg kepakai cuman wikidb.sql.tar.gz & images.tar.gz, jadi kyknya cuman download itu aja
+wget http://onnocenter.or.id/pustaka/datawiki/wikidb.sql.tar.gz -O /var/data/library/datawiki/wikidb.sql.tar.gz
+wget http://onnocenter.or.id/pustaka/datawiki/wikidb.sql -O /var/data/library/datawiki/wikidb.sql
+wget http://onnocenter.or.id/pustaka/datawiki/wikidb.xml -O /var/data/library/datawiki/wikidb.xml
+wget http://onnocenter.or.id/pustaka/datawiki/wikidb.xml.tar.gz -O /var/data/library/datawiki/wikidb.xml.tar.gz
+wget http://onnocenter.or.id/pustaka/datawiki/images.tar.gz -O /var/data/library/datawiki/images.tar.gz
+tar zxvf images.tar.gz
+tar zxvf wikidb.sql.tar.gz
+cp -Rf /var/data/library/datawiki/var/www/html/wiki/images /var/www/html/wiki/
+chown -Rf www-data.www-data /var/www/html/wiki
+service mysql stop
+service mysql start
+/usr/bin/mysqladmin --user=root --password=123456 --force drop mediawiki
+/usr/bin/mysqladmin --user=root --password=123456 create mediawiki
+mysql -u root -p123456 mediawiki &lt; /var/www/wiki/maintenance/tables.sql
+mysql -u root -p123456 mediawiki &lt; /var/data/library/datawiki/wikidb.sql
+service mysql stop
+service mysql start
+cd /var/www/wiki/maintenance
+php update.php
+service mysql stop
+service mysql start
+chown -Rf nobody.nogroup /var/data
+chmod -Rf 777 /var/data</code></pre>
+refresh web nya, done
+</ul>
+</ul>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
@@ -536,14 +605,12 @@
                     <!-- ----------------------------------------------- DIGANTI PREV NEXT ----------------------------------------------- -->
 
                     <!-- sebelum -->
-                    <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                    <a rel="prev" href="lug.html" class="mobile-nav-chapters previous" title="Previous chapter"
                         aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-
-
                     <!-- sesudah -->
-                    <a rel="next" href="../index.html" class="mobile-nav-chapters next" title="Next chapter"
+                    <a rel="next" href="random.html" class="mobile-nav-chapters next" title="Next chapter"
                         aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -557,12 +624,12 @@
         <nav class="nav-wide-wrapper" aria-label="Page navigation">
             <!-- ----------------------------------------------- DIGANTI PREV NEXT 2 ----------------------------------------------- -->
             <!-- sebelum -->
-            <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter"
+            <a rel="prev" href="lug.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
             </a>
             <!-- sesudah -->
-            <a rel="next" href="../index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+            <a rel="next" href="random.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
                 aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
             </a>
@@ -588,7 +655,7 @@
 
     <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+    <!-- <script src="../searcher.js" type="text/javascript" charset="utf-8"></script> -->
 
 
     <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
