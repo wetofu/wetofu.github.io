@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>TIPS 10</title>
+    <title>TIPS 19</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -438,7 +438,7 @@
                     <li class="chapter-item expanded "><a href="../04-tips/ipstatic.html"><strong aria-hidden="true">6.07.</strong> Setting IP Static</a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/https.html"><strong aria-hidden="true">6.08.</strong> HTTPS in Local Network (Ubuntu Server 20.04)</a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/resize.html"><strong aria-hidden="true">6.09.</strong> Resize memory virtualbox</a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/fileshare.html" style="color: rgb(252, 155, 171);"><strong aria-hidden="true">6.10.</strong> Membuat file sharing virtualbox</a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/fileshare.html"><strong aria-hidden="true">6.10.</strong> Membuat file sharing virtualbox</a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/itcareer.html"><strong aria-hidden="true">6.11.</strong> IT Career Roadmap</a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/monitor.html"><strong aria-hidden="true">6.12.</strong> Wlan Monitor Mode</a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/vbox.html"><strong aria-hidden="true">6.13.</strong> Virtualbox</a></li>
@@ -446,7 +446,7 @@
                     <li class="chapter-item expanded "><a href="../04-tips/path.html"><strong aria-hidden="true">6.15.</strong> Path variable terminal</a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/lug.html"><strong aria-hidden="true">6.16.</strong> List Users & Groups </a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/replonno.html"><strong aria-hidden="true">6.17.</strong> Replikasi Onnocenter </a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/moodle.html"><strong aria-hidden="true">6.18.</strong> Install Moodle </a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/moodle.html" style="color: rgb(252, 155, 171);"><strong aria-hidden="true">6.18.</strong> Install Moodle </a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/random.html"><strong aria-hidden="true">6.19.</strong> Random</a></li>
                 </ol>
             </li>
@@ -488,7 +488,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">TIPS 10</h1>
+                <h1 class="menu-title">TIPS 19</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -529,78 +529,66 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1><a class="header" href="#fileshare" id="fileshare" style="text-decoration: none;">Membuat file sharing virtualbox
-                        :</a></h1>
-                connect ssh :
-                <ul>
-                    pc-target :
-                    <pre><code>sudo service ssh status
-sudo service ssh start</code></pre>
-                    silahkan ssh <br>
-                    namun, jika masih tdk bisa :
-                    <pre><code>sudo iptables -A INPUT -p tcp --dport ssh -j ACCEPT</code></pre>
-                </ul>
-
-                host :
-                <ul>
-                    <pre><code>mkdir -p /mnt/cobafilesharing-public
-mkdir -p /mnt/cobafilesharing-data</code></pre>
-                </ul>
-                server :
-                <ul>
-                    <pre><code>sudo su
-mkdir /home/public
-mkdir /home/data
+                    <!-- <h1><a class="header" href="#intro" id="intro">Intro</a></h1> -->
+                    <br><br>
+                    <ul>
+                        <li><a class="header" href="#install">Install Moodle Server Lokal</a></li>
+                    </ul>
+                    <br>
+                    <hr>
+                    <h2><a class="header" id="install" style="text-decoration: none;">Install Moodle Server Lokal</a></h2>
+                    masuk server : (asumsi sudah terinstall apache2, mysql, phpmyadmin)
+                    <ul>
+                        <pre><code>sudo su
 apt update
-apt -y install samba cifs-utils
-vi /etc/samba/smb.conf</code></pre>
-                    diisi dengan :
-                    <ul>
-                        <pre><code>workgroup = WORKGROUP
-netbios name = COBAFILESHARING
+apt -y install software-properties-common
+add-apt-repository ppa:ondrej/php
+apt update
+apt -y install php
+apt -y install php-common php-mysql php-xml php-xmlrpc php-curl php-gd php-imagick php-cli php-dev php-imap php-mbstring php-opcache php-soap php-zip php-cli php-intl imagemagick git zip libgd-dev libapache2-mod-php</code></pre>
+<pre><code>vi /etc/php/&lt;versi>/apache2/php.ini</code></pre>
+<ul>
+    <pre><code>upload_max_filesize = 100M
+post_max_size = 48M
+memory_limit = 512M
+max_execution_time = 600
+max_input_vars = 3000
+max_input_time = 1000</code></pre>
+</ul>
+<pre><code>systemctl restart apache2.service</code></pre>
+<pre><code>vi /var/www/html/phpinfo.php</code></pre>
+<ul>
+    <pre><code>&lt;?php phpinfo( ); ?></code></pre>
+</ul>
 
-# dibagian bottom
-[public]
-path = /home/public
-available = yes
-browsable = yes
-public = yes
-writable = yes
+	buat database moodle (aku lwat phpmyadmin)
+<pre><code>cd /usr/local/src
+wget https://download.moodle.org/download.php/direct/langpack/3.8/id.zip
+mkdir -p /var/moodledata/lang
+cp id.zip /var/moodledata/lang
+cd /var/moodledata/lang
+unzip id.zip
+chmod -Rf 777 /var/moodledata/lang/
+chown -Rf www-data: /var/moodledata/lang/
 
-[data]
-path = /home/data
-available = yes
-browsable = yes
-public = yes
-writable = no</code></pre>
+cd /usr/local/src
+# wget https://download.moodle.org/download.php/direct/stable38/moodle-latest-38.tgz
+wget https://download.moodle.org/download.php/stable310/moodle-3.10.1.tgz
+cp moodle-latest-38.tgz /var/www/html/
+cd /var/www/html/
+tar zxvf moodle-latest-38.tgz
+chown -Rf www-data: /var/moodledata/
+chmod -Rf 777 /var/www/html/moodle
+chown -Rf www-data: /var/www/html/moodle</code></pre>
+
+    lanjut instalalsi di web
+    <ul>
+        *catatan : 
+        <ul>
+            Data Directory        /var/moodledata/
+        </ul>
+        </ul>
                     </ul>
-                    <pre><code>mkdir -p /home/public
-mkdir -p /home/data
-chown -Rf nobody.nogroup /home/public
-chown -Rf nobody.nogroup /home/data
-chmod -Rf 777 /home/public
-chmod -Rf 777 /home/data</code></pre>
-                    <pre><code>smbpasswd -a carloz</code></pre>
-                    misal password : 123456
-
-                    <pre><code>/etc/init.d/smbd restart</code></pre>
-
-                    matikan firewall
-                    <pre><code>ufw disable</code></pre>
-                </ul>
-                host :<br>
-                <ul>
-                    cek sdh mount apa blm :
-                    <ul>
-                        <pre><code>df -h</code></pre>
-                    </ul>
-                    <pre><code>mount -t cifs //192.168.43.207/public/ /mnt/cobafilesharing-public/ -o password=123456,username=carloz</code></pre>
-                </ul>
-                Done, jika ingin sharing file bisa lewat folder tersebut
-
-                <br>
-                <br>
-                <hr><br>
 
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
@@ -610,12 +598,12 @@ chmod -Rf 777 /home/data</code></pre>
                     <!-- ----------------------------------------------- DIGANTI PREV NEXT ----------------------------------------------- -->
 
                     <!-- sebelum -->
-                    <a rel="prev" href="resize.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                    <a rel="prev" href="replonno.html" class="mobile-nav-chapters previous" title="Previous chapter"
                         aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                     <!-- sesudah -->
-                    <a rel="next" href="itcareer.html" class="mobile-nav-chapters next" title="Next chapter"
+                    <a rel="next" href="random.html" class="mobile-nav-chapters next" title="Next chapter"
                         aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -629,12 +617,12 @@ chmod -Rf 777 /home/data</code></pre>
         <nav class="nav-wide-wrapper" aria-label="Page navigation">
             <!-- ----------------------------------------------- DIGANTI PREV NEXT 2 ----------------------------------------------- -->
             <!-- sebelum -->
-            <a rel="prev" href="resize.html" class="nav-chapters previous" title="Previous chapter"
+            <a rel="prev" href="replonno.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
             </a>
             <!-- sesudah -->
-            <a rel="next" href="itcareer.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+            <a rel="next" href="random.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
                 aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
             </a>
