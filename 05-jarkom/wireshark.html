@@ -68,7 +68,7 @@
             if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
                 localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
             }
-        } catch (e) {}
+        } catch (e) { }
     </script>
 
     <!-- Set the theme before any content is loaded, prevents flash -->
@@ -76,7 +76,7 @@
         var theme;
         try {
             theme = localStorage.getItem('mdbook-theme');
-        } catch (e) {}
+        } catch (e) { }
         if (theme === null || theme === undefined) {
             theme = default_theme;
         }
@@ -94,7 +94,7 @@
         if (document.body.clientWidth >= 1080) {
             try {
                 sidebar = localStorage.getItem('mdbook-sidebar');
-            } catch (e) {}
+            } catch (e) { }
             sidebar = sidebar || 'visible';
         }
         html.classList.remove('sidebar-visible');
@@ -233,9 +233,10 @@
                     <li class="chapter-item expanded "><a href="../06-tools/nmap.html"><span><strong aria-hidden="true">5.1.</strong> Nmap</span></a></li>
                     <li class="chapter-item expanded "><a href="../06-tools/py.html"><span><strong aria-hidden="true">5.2.</strong> Python</span></a></li>
                     <li class="chapter-item expanded "><a href="../06-tools/curl.html"><span><strong aria-hidden="true">5.3.</strong> Curl</span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">5.4.</strong> Ghidra </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">5.5.</strong> Ida </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">5.6.</strong> Hydra</span></li>
+                    <li class="chapter-item expanded "><a href="../06-tools/tcpdump.html"><span><strong aria-hidden="true">5.4.</strong> Tcpdump</span></a></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">5.5.</strong> Ghidra </span></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">5.6.</strong> Ida </span></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">5.7.</strong> Hydra</span></li>
                 </ol>
             </li>
             <!-- -------------------- TIPS -------------------- -->
@@ -343,7 +344,8 @@
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
                     <br>
-                    sumber <a href="https://lms.onnocenter.or.id/wiki/index.php/Wireshark" target="_blank">https://lms.onnocenter.or.id/wiki/index.php/Wireshark</a>
+                    sumber <a href="https://lms.onnocenter.or.id/wiki/index.php/Wireshark"
+                        target="_blank">https://lms.onnocenter.or.id/wiki/index.php/Wireshark</a>
                     <br>
                     <ul>
                         <li><a class="header" href="#fitcpip">Filter TCP/IP Packet</a></li>
@@ -359,74 +361,84 @@
                         <li><a class="header" href="#tcps">TCP Sequence</a></li>
                     </ul>
                     <br>
-                    <hr><br>
+                    <hr>
                     <h2><a class="header" id="fitcpip" style="text-decoration: none;">Filter TCP/IP Packet</a></h2>
 
-<h4>Port Filter</h4>
+                    <ul>
+                        <h4>Port Filter</h4>
+                        Mem-filter packet kita perlu menset beberapa parameter. Misalnya, kita ingin menampilkan hanya
+                        traffic ke port 8080,
+                        <pre><code>tcp.port == 8080</code></pre>
 
-Mem-filter packet kita perlu menset beberapa parameter. Misalnya, kita ingin menampilkan hanya traffic ke port 8080,
-<pre><code>tcp.port == 8080</code></pre>
+                        Misalnya, kita ingin melihat hanya packet yang menuju port 8080,
 
-Misalnya, kita ingin melihat hanya packet yang menuju port 8080,
+                        <pre><code>tcp.destport = 8080</code></pre>
 
-<pre><code>tcp.destport = 8080</code></pre> 
+                        Atau di balik, kita ingin melihat data dari server yang bekerja pada port 8080,
 
-Atau di balik, kita ingin melihat data dari server yang bekerja pada port 8080,
+                        <pre><code>tcp.srcport = 8080</code></pre>
 
-<pre><code>tcp.srcport = 8080</code></pre> 
+                        Bisa kita buat misalnya,
 
-Bisa kita buat misalnya,
+                        <pre><code>tcp.port == 8080</code></pre>
 
-<pre><code>tcp.port == 8080</code></pre> 
+                        yang artinya sama dengan
 
-yang artinya sama dengan
+                        <pre><code>tcp.srcport == 8080 || tcp.dstport == 8080</code></pre>
 
-<pre><code>tcp.srcport == 8080 || tcp.dstport == 8080</code></pre> 
+                        <h4>IP address Filter</h4>
 
-------------
+                        Jika kita ingin menangkap hanya packet yang dikirim dari IP tertentu saja,
 
-IP address Filter
+                        <pre><code>ip.src == 80.80.80.80</code></pre>
 
-Jika kita ingin menangkap hanya packet yang dikirim dari IP tertentu saja,
+                        Atau IP address tujuan tertentu saja,
 
-ip.src == 80.80.80.80
+                        <pre><code>ip.dst == 80.80.80.80</code></pre>
 
-Atau IP address tujuan tertentu saja,
+                        atau jika kita tidak peduli arah yag dituju,
 
-ip.dst == 80.80.80.80
+                        <pre><code>ip.addr == 80.80.80.80</code></pre>
 
-atau jika kita tidak peduli arah yag dituju,
+                        <h4>Filter Data Tertentu</h4>
 
-ip.addr == 80.80.80.80
+                        Biasanya ada banyak paket yang dikirim. Agar hanya packet yang berisi data saja yang di
+                        tampilkan, kita dapat mem-filter,
 
+                        <pre><code>tcp.len > 0</code></pre>
 
-Filter Data Tertentu
+                        Atau jika kita ingin hanya menampilkan data yang berisi byte tertentu,
 
-Biasanya ada banyak paket yang dikirim. Agar hanya packet yang berisi data saja yang di tampilkan, kita dapat mem-filter,
+                        <pre><code>data[0] == A0</code></pre>
 
-tcp.len > 0
+                        Atau jika kita ingin menampilkan hanya data pada selang waktu tertentu saja,
 
-Atau jika kita ingin hanya menampilkan data yang berisi byte tertentu,
+                        <pre><code>frame.time >= 'Feb 1, 2011 11:00:00' && frame.time &lt; 'Feb 1, 2011 11:05:00'</code></pre>
 
-data[0] == A0
+                        <h4>Kombinasi Filter</h4>
 
-Atau jika kita ingin menampilkan hanya data pada selang waktu tertentu saja,
+                        Kita bisa mengkombinasikan berbagai filter tersebut dengan tanda &&, misalnya,
 
-frame.time >= 'Feb 1, 2011 11:00:00' && frame.time < 'Feb 1, 2011 11:05:00'
-
-Kombinasi Filter
-
-Kita bisa mengkombinasikan berbagai filter tersebut dengan tanda &&, misalnya,
-
-tcp.destport == 8080 &&
+                        <pre><code>tcp.destport == 8080 &&
 frame.time >= 'Feb 1, 2011 11:00:00' &&
-frame.time < 'Feb 1, 2011 11:05:00' &&
+frame.time &lt; 'Feb 1, 2011 11:05:00' &&
 ip.src == 80.80.80.80 &&
 tcp.len > 0 &&
-data[0] == A0
+data[0] == A0</code></pre>
 
-Kita dapat mengeksport data tersebut untuk di analisa lebih lanjut. 
-
+                        Kita dapat mengeksport data tersebut untuk di analisa lebih lanjut.
+                    </ul>
+                    <h2><a class="header" id="fitcpip" style="text-decoration: none;">Filter TCP/IP Packet</a></h2>
+                    <h2><a class="header" id="fisqt" style="text-decoration: none;">Filter SQL Traffic</a></h2>
+                    <h2><a class="header" id="apdat" style="text-decoration: none;">Capture Traffic Antara Apps dan Database</a></h2>
+                    <h2><a class="header" id="capsqlt" style="text-decoration: none;">Capture SQL Traffic</a></h2>
+                    <h2><a class="header" id="netr" style="text-decoration: none;">Mengukur Network Traffic</a></h2>
+                    <h2><a class="header" id="vsd" style="text-decoration: none;">Mengukur Video Streaming Delay</a></h2>
+                    <h2><a class="header" id="rtt" style="text-decoration: none;">Mengukur RTT</a></h2>
+                    <h2><a class="header" id="voip" style="text-decoration: none;">Menyadap VoIP</a></h2>
+                    <h2><a class="header" id="ukd" style="text-decoration: none;">Ubah kolom display</a></h2>
+                    <h2><a class="header" id="df" style="text-decoration: none;">Display Filter</a></h2>
+                    <h2><a class="header" id="tcps" style="text-decoration: none;">TCP Sequence</a></h2>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
@@ -459,8 +471,8 @@ Kita dapat mengeksport data tersebut untuk di analisa lebih lanjut.
                 <i class="fa fa-angle-left"></i>
             </a>
             <!-- sesudah -->
-            <a rel="next" href="networking.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
-                aria-keyshortcuts="Right">
+            <a rel="next" href="networking.html" class="nav-chapters next" title="Next chapter"
+                aria-label="Next chapter" aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
             </a>
             <!-- ----------------------------------------------# DIGANTI PREV NEXT 2 #---------------------------------------------- -->
