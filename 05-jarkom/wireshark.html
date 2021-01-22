@@ -190,7 +190,7 @@
                     <li class="chapter-item expanded "><a href="../05-jarkom/networking.html"><span><strong aria-hidden="true">3.04.</strong> Networking</span></a></li>
                     <li class="chapter-item expanded "><a href="../05-jarkom/pkjdll.html"><span><strong aria-hidden="true">3.05.</strong> Perangkat Keras Jaringan & Data Link Layer</span></a></li>
                     <li class="chapter-item expanded "><a href="../05-jarkom/pwwi.html"><span><strong aria-hidden="true">3.06.</strong> Perangkat WiFi / Wireless Internet</span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.07.</strong> Network Layer IPv4</a></span></li>
+                    <li class="chapter-item expanded "><a href="../05-jarkom/nlipv4.html"><span><strong aria-hidden="true">3.07.</strong> Network Layer IPv4</a></span></a></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">3.08.</strong> Transport Layer</a></span></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">3.09.</strong> Domain Name System & Pengaturan Internet</a></span></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">3.10.</strong> Routing & NAT</a></span></li>
@@ -349,16 +349,7 @@
                     <br>
                     <ul>
                         <li><a class="header" href="#fitcpip">Filter TCP/IP Packet</a></li>
-                        <li><a class="header" href="#fisqt">Filter SQL Traffic</a></li>
-                        <li><a class="header" href="#apdat">Capture Traffic Antara Apps dan Database</a></li>
                         <li><a class="header" href="#capsqlt">Capture SQL Traffic</a></li>
-                        <li><a class="header" href="#netr">Mengukur Network Traffic</a></li>
-                        <li><a class="header" href="#vsd">Mengukur Video Streaming Delay</a></li>
-                        <li><a class="header" href="#rtt">Mengukur RTT</a></li>
-                        <li><a class="header" href="#voip">Menyadap VoIP</a></li>
-                        <li><a class="header" href="#ukd">ubah kolom display</a></li>
-                        <li><a class="header" href="#df">Display Filter</a></li>
-                        <li><a class="header" href="#tcps">TCP Sequence</a></li>
                     </ul>
                     <br>
                     <hr>
@@ -428,17 +419,20 @@ data[0] == A0</code></pre>
 
                         Kita dapat mengeksport data tersebut untuk di analisa lebih lanjut.
                     </ul>
-                    <h2><a class="header" id="fitcpip" style="text-decoration: none;">Filter TCP/IP Packet</a></h2>
-                    <h2><a class="header" id="fisqt" style="text-decoration: none;">Filter SQL Traffic</a></h2>
-                    <h2><a class="header" id="apdat" style="text-decoration: none;">Capture Traffic Antara Apps dan Database</a></h2>
                     <h2><a class="header" id="capsqlt" style="text-decoration: none;">Capture SQL Traffic</a></h2>
-                    <h2><a class="header" id="netr" style="text-decoration: none;">Mengukur Network Traffic</a></h2>
-                    <h2><a class="header" id="vsd" style="text-decoration: none;">Mengukur Video Streaming Delay</a></h2>
-                    <h2><a class="header" id="rtt" style="text-decoration: none;">Mengukur RTT</a></h2>
-                    <h2><a class="header" id="voip" style="text-decoration: none;">Menyadap VoIP</a></h2>
-                    <h2><a class="header" id="ukd" style="text-decoration: none;">Ubah kolom display</a></h2>
-                    <h2><a class="header" id="df" style="text-decoration: none;">Display Filter</a></h2>
-                    <h2><a class="header" id="tcps" style="text-decoration: none;">TCP Sequence</a></h2>
+<ul>
+Kadang kala kita perlu menangkap komunikasi antara server Web dengan database server. Melalui wireshark kita data memfilter
+<pre><code>Capture Options (ctrl-K).</code></pre>
+
+Untuk mem-filter komunikasi ke SQL server, kita butuh informasi
+<pre><code>host &lt;sql-server-ip>
+port &lt;sql-server-port></code></pre>
+
+Filter yang diberikan dapat menggunakan format,
+<pre><code>ip.addr == &lt;sql-server-ip> && tcp.port == &lt;sql-server-port></code></pre>
+
+Biasanya SQL Server port adalah 1433 
+</ul>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 

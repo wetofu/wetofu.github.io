@@ -190,7 +190,7 @@
                     <li class="chapter-item expanded "><a href="../05-jarkom/networking.html"><span><strong aria-hidden="true">3.04.</strong> Networking</span></a></li>
                     <li class="chapter-item expanded "><a href="../05-jarkom/pkjdll.html"><span><strong aria-hidden="true">3.05.</strong> Perangkat Keras Jaringan & Data Link Layer</span></a></li>
                     <li class="chapter-item expanded "><a href="../05-jarkom/pwwi.html"><span><strong aria-hidden="true">3.06.</strong> Perangkat WiFi / Wireless Internet</span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.07.</strong> Network Layer IPv4</a></span></li>
+                    <li class="chapter-item expanded "><a href="../05-jarkom/nlipv4.html"><span><strong aria-hidden="true">3.07.</strong> Network Layer IPv4</a></span></a></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">3.08.</strong> Transport Layer</a></span></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">3.09.</strong> Domain Name System & Pengaturan Internet</a></span></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">3.10.</strong> Routing & NAT</a></span></li>
@@ -343,14 +343,45 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1><a class="header" href="#intro" id="intro">Intro</a></h1>
+                    <br>
+                    sumber <a href="https://lms.onnocenter.or.id/wiki/index.php/Tcpdump" target="_blank">https://lms.onnocenter.or.id/wiki/index.php/Tcpdump</a>
+                    
+                    <h1><a class="header" href="#intro" id="intro">Tcpdump</a></h1>
                     <!-- <ul>
                         <li><a class="header" href="#pengertian">Pengertian</a></li>
                     </ul>
                     <br>
                     <hr><br>
                     <h2><a class="header" id="pengertian" style="text-decoration: none;">Pengertian</a></h2> -->
-                    <p> Kosong.</p>
+                    <pre><code>apt-get install tcpdump</code></pre>
+                    Perintah yang menangkap packet, misalnya:
+<pre><code>tcpdump -i eth0</code></pre>
+
+Perintah yang perlu dijalankan untuk menangkap paket IPv6 yang melalui eth5 adalah
+
+<pre><code>tcpdump -i eth5 -vv ip6</code></pre>
+
+Untuk melakukan capture packet, dapat di jalankan perintah
+
+<pre><code># tcpdump -t -n -i eth0 -vv</code></pre>
+
+Untuk melakukan capture packet IPv6, dapat di jalankan perintah
+
+<pre><code># tcpdump -t -n -i eth0 -s 512 -vv ip6 or proto ipv6 </code></pre>
+
+Dimana:
+<pre><code>-s 512 : menaikan panjang snap saat menangkap paket 512 bytes 
+-vv : output lebih verbose 
+-n : jangan resolve address ke hostname. Ini terutama bermanfaat jika reverse DNS tidak berjalan baik.</code></pre>
+
+Tcpdump: capture paket dalam format pcap utk wireshark
+
+<pre><code>tcpdump -ni eth0 -s0 -w /var/tmp/capture.pcap
+tcpdump -i eth0 -s 0 -w ./dump.pcap</code></pre>
+
+dan lain-lain &#128523;
+
+
 
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
