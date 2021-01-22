@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>WETOFU</title>
+    <title>Wireshark</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -185,7 +185,7 @@
             <li>
                 <ol class="section">
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">3.01.</strong> Pendahuluan</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.02.</strong> Command Line & Wireshark </span></li>
+                    <li class="chapter-item expanded "><a href="../05-jarkom/wireshark.html" style="color: rgb(252, 155, 171);"><span><strong aria-hidden="true">3.02.</strong> Wireshark </span></a></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">3.03.</strong> Simulator Jaringan </span></li>
                     <li class="chapter-item expanded "><a href="../05-jarkom/networking.html"><span><strong aria-hidden="true">3.04.</strong> Networking</span></a></li>
                     <li class="chapter-item expanded "><a href="../05-jarkom/pkjdll.html"><span><strong aria-hidden="true">3.05.</strong> Perangkat Keras Jaringan & Data Link Layer</span></a></li>
@@ -236,7 +236,6 @@
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">5.4.</strong> Ghidra </span></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">5.5.</strong> Ida </span></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">5.6.</strong> Hydra</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">5.7.</strong> Wireshark</span></li>
                 </ol>
             </li>
             <!-- -------------------- TIPS -------------------- -->
@@ -294,15 +293,15 @@
                         <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                     </ul>
 
-                    <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                    <!-- <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
                         aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
                         aria-controls="searchbar">
                         <i class="fa fa-search"></i>
-                    </button>
+                    </button> -->
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">WeTofu</h1>
+                <h1 class="menu-title">Wireshark</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -343,8 +342,90 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1><a class="header" href="#intro" id="intro">Intro</a></h1>
-                    <p> Kosong.</p>
+                    <br>
+                    sumber <a href="https://lms.onnocenter.or.id/wiki/index.php/Wireshark" target="_blank">https://lms.onnocenter.or.id/wiki/index.php/Wireshark</a>
+                    <br>
+                    <ul>
+                        <li><a class="header" href="#fitcpip">Filter TCP/IP Packet</a></li>
+                        <li><a class="header" href="#fisqt">Filter SQL Traffic</a></li>
+                        <li><a class="header" href="#apdat">Capture Traffic Antara Apps dan Database</a></li>
+                        <li><a class="header" href="#capsqlt">Capture SQL Traffic</a></li>
+                        <li><a class="header" href="#netr">Mengukur Network Traffic</a></li>
+                        <li><a class="header" href="#vsd">Mengukur Video Streaming Delay</a></li>
+                        <li><a class="header" href="#rtt">Mengukur RTT</a></li>
+                        <li><a class="header" href="#voip">Menyadap VoIP</a></li>
+                        <li><a class="header" href="#ukd">ubah kolom display</a></li>
+                        <li><a class="header" href="#df">Display Filter</a></li>
+                        <li><a class="header" href="#tcps">TCP Sequence</a></li>
+                    </ul>
+                    <br>
+                    <hr><br>
+                    <h2><a class="header" id="fitcpip" style="text-decoration: none;">Filter TCP/IP Packet</a></h2>
+
+<h4>Port Filter</h4>
+
+Mem-filter packet kita perlu menset beberapa parameter. Misalnya, kita ingin menampilkan hanya traffic ke port 8080,
+<pre><code>tcp.port == 8080</code></pre>
+
+Misalnya, kita ingin melihat hanya packet yang menuju port 8080,
+
+<pre><code>tcp.destport = 8080</code></pre> 
+
+Atau di balik, kita ingin melihat data dari server yang bekerja pada port 8080,
+
+<pre><code>tcp.srcport = 8080</code></pre> 
+
+Bisa kita buat misalnya,
+
+<pre><code>tcp.port == 8080</code></pre> 
+
+yang artinya sama dengan
+
+<pre><code>tcp.srcport == 8080 || tcp.dstport == 8080</code></pre> 
+
+------------
+
+IP address Filter
+
+Jika kita ingin menangkap hanya packet yang dikirim dari IP tertentu saja,
+
+ip.src == 80.80.80.80
+
+Atau IP address tujuan tertentu saja,
+
+ip.dst == 80.80.80.80
+
+atau jika kita tidak peduli arah yag dituju,
+
+ip.addr == 80.80.80.80
+
+
+Filter Data Tertentu
+
+Biasanya ada banyak paket yang dikirim. Agar hanya packet yang berisi data saja yang di tampilkan, kita dapat mem-filter,
+
+tcp.len > 0
+
+Atau jika kita ingin hanya menampilkan data yang berisi byte tertentu,
+
+data[0] == A0
+
+Atau jika kita ingin menampilkan hanya data pada selang waktu tertentu saja,
+
+frame.time >= 'Feb 1, 2011 11:00:00' && frame.time < 'Feb 1, 2011 11:05:00'
+
+Kombinasi Filter
+
+Kita bisa mengkombinasikan berbagai filter tersebut dengan tanda &&, misalnya,
+
+tcp.destport == 8080 &&
+frame.time >= 'Feb 1, 2011 11:00:00' &&
+frame.time < 'Feb 1, 2011 11:05:00' &&
+ip.src == 80.80.80.80 &&
+tcp.len > 0 &&
+data[0] == A0
+
+Kita dapat mengeksport data tersebut untuk di analisa lebih lanjut. 
 
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
@@ -354,14 +435,12 @@
                     <!-- ----------------------------------------------- DIGANTI PREV NEXT ----------------------------------------------- -->
 
                     <!-- sebelum -->
-                    <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                    <a rel="prev" href="index.html" class="mobile-nav-chapters previous" title="Previous chapter"
                         aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-
-
                     <!-- sesudah -->
-                    <a rel="next" href="../index.html" class="mobile-nav-chapters next" title="Next chapter"
+                    <a rel="next" href="networking.html" class="mobile-nav-chapters next" title="Next chapter"
                         aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -375,12 +454,12 @@
         <nav class="nav-wide-wrapper" aria-label="Page navigation">
             <!-- ----------------------------------------------- DIGANTI PREV NEXT 2 ----------------------------------------------- -->
             <!-- sebelum -->
-            <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter"
+            <a rel="prev" href="index.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
             </a>
             <!-- sesudah -->
-            <a rel="next" href="../index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+            <a rel="next" href="networking.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
                 aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
             </a>
