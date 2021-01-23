@@ -67,7 +67,8 @@
 
     --links: #2b79a2;
 
-    --inline-code-color: #c5c8c6;;
+    /* --inline-code-color: #c5c8c6; */
+    --inline-code-color: #ffb454;
 
     --theme-popup-bg: #141617;
     --theme-popup-border: #43484d;
@@ -107,7 +108,8 @@
 
     --links: #4183c4;
 
-    --inline-code-color: #6e6b5e;
+    /* --inline-code-color: #6e6b5e; */
+    --inline-code-color: #ffb454;
 
     --theme-popup-bg: #fafafa;
     --theme-popup-border: #cccccc;
@@ -147,7 +149,8 @@
 
     --links: #2b79a2;
 
-    --inline-code-color: #c5c8c6;;
+    /* --inline-code-color: #c5c8c6; */
+    --inline-code-color: #ffb454;
 
     --theme-popup-bg: #161923;
     --theme-popup-border: #737480;
@@ -187,7 +190,8 @@
 
     --links: #2b79a2;
 
-    --inline-code-color: #6e6b5e;
+    /* --inline-code-color: #6e6b5e; */
+    --inline-code-color: #ffb454;
 
     --theme-popup-bg: #e1e1db;
     --theme-popup-border: #b38f6b;
@@ -228,7 +232,8 @@
 
         --links: #2b79a2;
 
-        --inline-code-color: #c5c8c6;;
+        /* --inline-code-color: #c5c8c6; */
+        --inline-code-color: #ffb454;
 
         --theme-popup-bg: #141617;
         --theme-popup-border: #43484d;

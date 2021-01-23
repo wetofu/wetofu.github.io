@@ -52,11 +52,26 @@
   color: #b854d4;
 }
 
-.hljs {
+/* .hljs {
   display: block;
   overflow-x: auto;
   background: #f1f1f1;
   color: #6e6b5e;
+  padding: 0.5em;
+}
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: #1d1f21;
+  color: #c5c8c6;
+  padding: 0.5em;
+  -webkit-text-size-adjust: none;
+} */
+.hljs {
+  display: block;
+  overflow-x: auto;
+  background: #222222;
+  color: #ffffff;
   padding: 0.5em;
 }
 
