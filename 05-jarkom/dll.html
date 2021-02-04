@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>WETOFU</title>
+    <title>Link Layer</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -68,7 +68,7 @@
             if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
                 localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
             }
-        } catch (e) {}
+        } catch (e) { }
     </script>
 
     <!-- Set the theme before any content is loaded, prevents flash -->
@@ -76,7 +76,7 @@
         var theme;
         try {
             theme = localStorage.getItem('mdbook-theme');
-        } catch (e) {}
+        } catch (e) { }
         if (theme === null || theme === undefined) {
             theme = default_theme;
         }
@@ -94,7 +94,7 @@
         if (document.body.clientWidth >= 1080) {
             try {
                 sidebar = localStorage.getItem('mdbook-sidebar');
-            } catch (e) {}
+            } catch (e) { }
             sidebar = sidebar || 'visible';
         }
         html.classList.remove('sidebar-visible');
@@ -188,31 +188,40 @@
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">3.01.</strong> Pendahuluan</span></li>
                     <li class="chapter-item expanded "><a href="../05-jarkom/wireshark.html"><span><strong aria-hidden="true">3.02.</strong> Wireshark </span></a></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">3.03.</strong> Simulator Jaringan </span></li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/networking.html"><span><strong aria-hidden="true">3.04.</strong> Networking</span></a></li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/pkjdll.html"><span><strong aria-hidden="true">3.05.</strong> Perangkat Keras Jaringan & Data Link Layer</span></a></li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/pwwi.html"><span><strong aria-hidden="true">3.06.</strong> Perangkat WiFi / Wireless Internet</span></a></li>
+                    <li class="chapter-item expanded "><a href="../05-jarkom/pkjdll.html"><span><strong aria-hidden="true">3.04.</strong> Perangkat Keras Jaringan & Data Link Layer</span></a></li>
                     <li>
                         <ol class="section">
-                            <li class="chapter-item expanded "><a href="../05-jarkom/dll.html" style="color: rgb(252, 155, 171);"><span>3.06.1 Data Link Layer</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/ldll.html"><span>3.06.2 Lebih Detail Data Link Layer</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/ethernet.html"><span>3.06.3 Ethernet</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/wrin.html"><span>3.06.4 Wireless Internet</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/mac.html"><span>3.06.5 MAC Address</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/adsl.html"><span>3.06.6 Teknologi ADSL</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/wifi.html"><span>3.06.7 Wireless Internet Wifi</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/mod.html"><span>3.06.8 Teknik Modulasi</span></a></li>
+                            <li class="chapter-item expanded "><a href="../05-jarkom/dll.html" style="color: rgb(255, 115, 138);"><span>3.04.1 Data Link Layer</span></a></li>
+                            <li class="chapter-item expanded "><a href="../05-jarkom/ldll.html"><span>3.04.2 Lebih Detail Data Link Layer</span></a></li>
+                            <li class="chapter-item expanded "><a href="../05-jarkom/ethernet.html"><span>3.04.3 Ethernet</span></a></li>
+                            <li class="chapter-item expanded "><a href="../05-jarkom/wrin.html"><span>3.04.4 Wireless Internet</span></a></li>
+                            <li class="chapter-item expanded "><a href="../05-jarkom/mac.html"><span>3.04.5 MAC Address</span></a></li>
+                            <li class="chapter-item expanded "><a href="../05-jarkom/adsl.html"><span>3.04.6 Teknologi ADSL</span></a></li>
+                            <li class="chapter-item expanded "><a href="../05-jarkom/wifi.html"><span>3.04.7 Wireless Internet Wifi</span></a></li>
+                            <li class="chapter-item expanded "><a href="../05-jarkom/mod.html"><span>3.04.8 Teknik Modulasi</span></a></li>
                         </ol>
                     </li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/nlipv4.html"><span><strong aria-hidden="true">3.07.</strong> Network Layer IPv4</a></span></a></li>
+                    <li class="chapter-item expanded "><a href="../05-jarkom/pwwi.html"><span><strong aria-hidden="true">3.05.</strong> Perangkat WiFi / Wireless Internet</span></a></li>
+                    <li class="chapter-item expanded "><a href="../05-jarkom/nlipv4.html"><span><strong aria-hidden="true">3.06.</strong> Network Layer IPv4</a></span></a></li>
                     <li>
                         <ol class="section">
-                            <li class="chapter-item expanded "><a href="../05-jarkom/nl.html"><span>3.07.1. Network Layer</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/ipv4.html"><span>3.07.2. IPv4</span></a></li>
+                            <li class="chapter-item expanded "><a href="../05-jarkom/nl.html"><span>3.06.1. Network Layer</span></a></li>
+                            <li class="chapter-item expanded "><a href="../05-jarkom/ipv4.html"><span>3.06.2. IPv4</span></a></li>
                         </ol>
                     </li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.08.</strong> Transport Layer</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.09.</strong> Domain Name System & Pengaturan Internet</span></li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/rnat.html"><span><strong aria-hidden="true">3.10.</strong> Routing & NAT</a></span></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.07.</strong> Transport Layer</span></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.08.</strong> Domain Name System & Pengaturan Internet</span></li>
+                    <li class="chapter-item expanded "><a href="../05-jarkom/rnat.html"><span><strong aria-hidden="true">3.9.</strong> Routing & NAT</a></span></li>
+                    <li class="chapter-item expanded "><a href="../05-jarkom/mikrotik.html"><span><strong aria-hidden="true">3.10.</strong> Mikrotik</a></span></li>
+                    <li>
+                        <ol class="section">
+                            <li class="chapter-item expanded "><a href="../05-jarkom/mikbasic.html"><span>3.10.1. Basic Networking</span></a></li>
+                            <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnpptp.html"><span>3.10.2. VPN-PPTP</span></a></li>
+                            <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnsstp.html"><span>3.10.3. VPN-SSTP</span></a></li>
+                            <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnl2tp.html"><span>3.10.4. VPN-L2TP</span></a></li>
+                            <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnopen.html"><span>3.10.5. VPN-OpenVPN</span></a></li>
+                        </ol>
+                    </li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">3.11.</strong> Web / Content Management System</span></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">3.12.</strong> e-mail / SMTP / POP3 / IMAP / Webmail</span></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">3.13.</strong> VoIP / Internet Telepon</span></li>
@@ -321,7 +330,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">WeTofu</h1>
+                <h1 class="menu-title">Link Layer</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -362,15 +371,38 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1><a class="header" href="#intro" id="intro">Intro</a></h1>
+                    <h1><a class="header" href="#intro" id="intro">Link Layer</a></h1>
                     <!-- <ul>
                         <li><a class="header" href="#pengertian">Pengertian</a></li>
+                    </ul> -->
+                    Lapisan Link biasanya di implementasikan di dalam firmware di LAN card, akan menentukan bagaimana
+                    frame data dikirim.
+                    Termasuk bagaimana pemotongan / fragmentasi paket di kabel dengan <strong>Maximum Transmission Unit
+                        (MTU)</strong> yang lebih kecil,
+                    atau menggabungkan beberapa potongan (fragmen) frame menjadi sebuah frame dengan MTU yang lebih
+                    besar.
+                    Lapisan link juga menentukan komputer mana yang harus menerima frame di jaringan LAN untuk
+                    meneruskan frame ke tujuan yang benar.
+                    <br><br>
+                    Lapisan link akan memberikan enkapsulasi datagram dari lapisan network ke dalam frame yang akan di
+                    kirim melalui jaringan.
+                    Dalam frame akan dimasuk alamat Ethernet, atau MAC address, dari komputer sumber dan komputer
+                    selanjutnya (next hop) untuk
+                    mencapai tujuan. Alamat-alamat ini akan ditulis ulang untuk setiap hop yang dilewati.
+                    <br><br>
+                    <ul>
+                        *<strong>Maximum Transmission Unit</strong> disingkat <strong>MTU</strong> adalah istilah bahasa
+                        Inggris dalam teknologi informasi yang merujuk kepada ukuran
+                        paket data terbesar yang dapat ditransmisikan melalui sebuah media jaringan. Ukuran MTU adalah
+                        bervariasi,
+                        tergantung teknologi jaringan yang digunakan. Contohnya adalah dalam jaringan berbasis teknologi
+                        Ethernet,
+                        ukuran MTU maksimum adalah 1500 bita. <strong>Adalah tugas lapisan data-link yang harus menentukan
+                        ukuran MTU.</strong> 
+                        Ketika paket-paket ditransmisikan melalui jaringan, Path MTU (PMTU), merepresentasikan ukuran
+                        paket terkecil di antara
+                        semua jaringan yang terlibat dalam jaringan yang sama.
                     </ul>
-                    <br>
-                    <hr><br>
-                    <h2><a class="header" id="pengertian" style="text-decoration: none;">Pengertian</a></h2> -->
-                    <p> Kosong.</p>
-
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 

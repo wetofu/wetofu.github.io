@@ -58,13 +58,13 @@ for file in listFile:
 	file1.write(tampungAkhir)
 	file1.close()
 
-	# menambah highlight warna rgb(252, 155, 171)
+	# menambah highlight warna rgb(255, 115, 138)
 	file1 = open(file, "r")
 	repairing = file1.read()
 	file1.close()
 
 	file1 = open(file, "w")
-	repairing = repairing.replace('<a href="../'+file+'">', '<a href="../'+file+'" style="color: rgb(252, 155, 171);">')
+	repairing = repairing.replace('<a href="../'+file+'">', '<a href="../'+file+'" style="color: rgb(255, 115, 138);">')
 	file1.write(repairing)
 	file1.close()
 
