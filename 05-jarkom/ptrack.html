@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>M-VPN_PPTP</title>
+    <title>Packet Tracker</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -217,7 +217,7 @@
                     <li>
                         <ol class="section">
                             <li class="chapter-item expanded "><a href="../05-jarkom/mikbasic.html"><span>3.11.1. Basic Networking</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnpptp.html" style="color: rgb(255, 115, 138);"><span>3.11.2. VPN-PPTP</span></a></li>
+                            <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnpptp.html"><span>3.11.2. VPN-PPTP</span></a></li>
                             <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnsstp.html"><span>3.11.3. VPN-SSTP</span></a></li>
                             <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnl2tp.html"><span>3.11.4. VPN-L2TP</span></a></li>
                             <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnopen.html"><span>3.11.5. VPN-OpenVPN</span></a></li>
@@ -226,7 +226,7 @@
                     <li class="chapter-item expanded "><a href="../05-jarkom/cisco.html"><span><strong aria-hidden="true">3.12.</strong> Cisco</span></a></li>
                     <li>
                         <ol class="section">
-                            <li class="chapter-item expanded "><a href="../05-jarkom/ptrack.html"><span><strong aria-hidden="true">3.12.01</strong> Cisco Packet Tracker</span></a></li>
+                            <li class="chapter-item expanded "><a href="../05-jarkom/ptrack.html" style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">3.12.01</strong> Cisco Packet Tracker</span></a></li>
                         </ol>
                     </li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">3.13.</strong> Web / Content Management System</span></li>
@@ -336,7 +336,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">Mikrotik - VPN_PPTP</h1>
+                <h1 class="menu-title">Cisco Packet Tracker</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -377,112 +377,127 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1>VPN-PPTP</h1>
-
-                    <p style="text-align:center">topologi :</p>
-
-                    <p style="margin-left:200px">gambar 1.</p>
-
-                    <p><img src="../gambar/gamb11.jpg"
-                            style="display:block; margin-left:auto; margin-right:auto; width:60%" /></p>
-
-                    <p style="margin-left:200px">gambar 2.</p>
-
-                    <p><img src="../gambar/gamb10.jpg"
-                            style="display:block; margin-left:auto; margin-right:auto; width:60%" /></p>
-
-                    <p style="margin-left:40px">misal didapat</p>
-
-                    <ul>
-                        <li>ip mikrotik A : 192.168.43.229</li>
-                        <li>ip mikrotik B : 192.168.43.12</li>
-                        <li>LAN mikrotik A : 120.32.98.1</li>
-                        <li>LAN mikrotik B : 123.123.123.1</li>
-                    </ul>
-
-                    <p>pertama harus men-set interface untuk WAN dan LAN dikedua mikrotik (caranya ada di <a
-                            href="mikrotik.html">jarkom/networking</a>)</p>
-                    <p>dan juga untuk gambar 2, network PC set bridged adapter</p>
-
-                    <h3>Percobaan gambar 1</h3>
-                    <ul>
-                        <p>dikisahkan kantor pusat punya server, lalu kita dari luar kantor ingin mengakses server
-                            kantor dengan model side-to-side / pakai sambungan dengan mikrotik</p>
-
-                        <p style="margin-left:40px">konfigurasi server :</p>
-
-                        <ol>
-                            <li>login mikrotilk</li>
-                            <li>mengaktifkan pptp server : ppp &gt; pptp server &gt; enabled &gt; default-profile :
-                                default-encryption</li>
-                            <img src="../gambar/pptpserver.png"
-                                style="display:block; margin-left:auto; margin-right:auto; width:100%" />
-                            <br>
-                            <li>membuat akun client untuk connect pptp</li>
-                            <img src="../gambar/pptpclient.png"
-                                style="display:block; margin-left:auto; margin-right:auto; width:100%" />
-                        </ol>
-                        <br>
-                        <p style="margin-left:40px">konfigurasi client :</p>
-
-                        <img src="../gambar/pptpclient1.png" style="display:block; margin-left:auto; margin-right:auto;"
-                            alt="">
-                        <img src="../gambar/pptpclient2.png" style="display:block; margin-left:auto; margin-right:auto;"
-                            alt="">
-                        <img src="../gambar/pptpclient3new.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <br><br>
-                        <p style="margin-left:40px">konfigurasi routes :</p>
+                    <br>
+                    <h1><a class="header" href="#intro" id="intro">Cisco Packet Tracker</a></h1>
+                    <h3>Install Cisco Packet Tracker Linux</h3>
+                    <ol type="1">
+                        <li>buka web, cisco packet tracker</li>
+                        <li>register akun</li>
+                        <li>ikuti kelas cisco packet tracker</li>
+                        <li>resources > download packet tracer, *kyknya, intinya download dari title bar</li>
                         <ul>
-                            <ul>
-                                sisi server :
-                            </ul>
+                            <li>atau pakai link download <a
+                                    href="https://drive.google.com/file/d/1SDEgfeQcImJULxrT8s1ZmLgltAHObfh7/view?usp=sharing"
+                                    target="_blank">ini</a></li>
                         </ul>
-                        <img src="../gambar/pptpclient35.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpclient4.png" style="display:block; margin-left:auto; margin-right:auto;"
-                            alt="">
+                        <li><code>sudo apt update</code></li>
+                        <li><code>sudo dkpg -i PacketTracer_800_amd64_build212_final.deb</code></li>
                         <ul>
-                            <ul>
-                                sisi client :
-                            </ul>
+                            <li>ok yes</li>
                         </ul>
-                        <img src="../gambar/pptpclient5.png" style="display:block; margin-left:auto; margin-right:auto;"
-                            alt="">
-                        <img src="../gambar/pptpclient6.png" style="display:block; margin-left:auto; margin-right:auto;"
-                            alt="">
-                    </ul>
-                    <h3>Percobaan gambar 2</h3>
+                        <li><code>sudo apt install -f</code></li>
+                        <li><code>sudo dkpg -i PacketTracer_800_amd64_build212_final.deb</code></li>
+                        <ul>
+                            <li>ok yes</li>
+                        </ul>
+                        <li><code>packettracker</code></li>
+                        <li>login</li>
+                        <li>selesai</li>
+                    </ol>
+                    <br><br>
+                    <hr>
+                    <h3>Basic Setup Router</h3>
                     <ul>
-                        *lanjutan konfigurasi sebelumnya <br><br>
-                        konfigurasi server :
-                        <img src="../gambar/pptpserver21.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver22.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver23.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver24.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver25.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <br>
-                        konfigurasi client :
-                        <img src="../gambar/pptpserver26.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver27.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver28.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver29.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver291.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver292.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver293.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-
+                        <img src="../gambar/ciscopt001.png" alt=""
+                            style="display: block; margin-left: auto; margin-right: auto;"><br>
+                        <img src="../gambar/ciscopt002.png" alt=""
+                            style="display: block; margin-left: auto; margin-right: auto;"><br>
+                        <img src="../gambar/ciscopt003.png" alt=""
+                            style="display: block; margin-left: auto; margin-right: auto;"><br>
+                        <img src="../gambar/ciscopt004.png" alt=""
+                            style="display: block; margin-left: auto; margin-right: auto;"><br>
+                        <img src="../gambar/ciscopt005.png" alt=""
+                            style="display: block; margin-left: auto; margin-right: auto;"><br>
+                        <img src="../gambar/ciscopt006.png" alt=""
+                            style="display: block; margin-left: auto; margin-right: auto;"><br><br>
+                        Jadi beberapa commandnya adalah : <br>
+                        <pre><code><span style="color: #a6e22e">Router></span> enable
+<span style="color: #66d9ef">Router#</span> configure terminal
+<span style="color: #f92672">Router(config)#</span> hostname ROUTERKU
+<span style="color: #f92672">Router(config)#</span> enable password 12345
+<span style="color: #f92672">Router(config)#</span> line console 0
+<span style="color: #f92672">Router(config-line)#</span> password 123456789
+<span style="color: #f92672">Router(config-line)#</span> login
+<span style="color: #f92672">Router(config-line)#</span> enable secret belajar
+<span style="color: #f92672">Router(config)#</span> banner motd &TEST&
+<span style="color: #f92672">Router(config)#</span> exit
+<span style="color: #66d9ef">Router#</span> show running-config
+<span style="color: #66d9ef">Router#</span> show startup-config
+<span style="color: #66d9ef">Router#</span> show ip route
+<span style="color: #66d9ef">Router#</span> show version
+<span style="color: #66d9ef">Router#</span> show flash
+<span style="color: #66d9ef">Router#</span> delete vlan.dat
+<span style="color: #66d9ef">Router#</span> erase startup-config
+<span style="color: #66d9ef">Router#</span> reload</code></pre>
+Menyimpan konfigurasi
+<pre><code><span style="color: #66d9ef">Router#</span> copy running-config startup-config</code></pre>
+                    </ul>
+                    <br><br>
+                    <hr>
+                    <h3>Random</h3>
+                    <img src="../gambar/Routing.png" alt=""
+                        style="display: block; margin-left: auto; margin-right: auto;">
+                    1. Setting pc
+                    <ul>
+                        ip address : <code>192.168.43.x</code> (kiri), <code>192.168.1.x</code> (kanan) <br>
+                        subnetmask : <code>255.255.255.0</code> <br>
+                        gateway : <code>192.168.43.254</code> (kiri), <code>192.168.1.254</code> (kanan)
+                    </ul>
+                    2. Setting Router
+                    <ul>
+                        Router Kiri :
+                        <ul>
+                            <pre><code><span style="color: #f92672">Router(config)#</span> interface FastEthernet0/0
+<span style="color: #f92672">Router(config-fi)#</span> ip address 192.168.43.254 255.255.255.0
+<span style="color: #f92672">Router(config-fi)#</span> no shutdown
+<span style="color: #f92672">Router(config-fi)#</span> exit
+<span style="color: #f92672">Router(config)#</span> interface FastEthernet1/0
+<span style="color: #f92672">Router(config-fi)#</span> ip address 192.168.10.1 255.255.255.0
+<span style="color: #f92672">Router(config-fi)#</span> no shutdown
+<span style="color: #f92672">Router(config-fi)#</span> exit
+<span style="color: #f92672">Router(config)#</span> ip route 192.168.2.0 255.255.255.0 192.168.10.2</code></pre>
+                        </ul>
+                        Router Kanan :
+                        <ul>
+                            <pre><code><span style="color: #f92672">Router(config)#</span> interface FastEthernet0/0
+<span style="color: #f92672">Router(config-fi)#</span> ip address 192.168.1.254 255.255.255.0
+<span style="color: #f92672">Router(config-fi)#</span> no shutdown
+<span style="color: #f92672">Router(config-fi)#</span> exit
+<span style="color: #f92672">Router(config)#</span> interface FastEthernet1/0
+<span style="color: #f92672">Router(config-fi)#</span> ip address 192.168.10.2 255.255.255.0
+<span style="color: #f92672">Router(config-fi)#</span> no shutdown
+<span style="color: #f92672">Router(config-fi)#</span> exit
+<span style="color: #f92672">Router(config)#</span> ip route 192.168.43.0 255.255.255.0 192.168.10.1</code></pre>
+                        </ul>
+                        Menghapus ip route di Router
+                        <ul>
+                            Router kanan : <code>no ip route 192.168.43.0 255.255.255.0</code>
+                        </ul>
+                    </ul><br>
+                    3. RIP : Routing Information Protocol (bentuk ringkas dari no.2) (?) :)
+                    <ul>
+                        Router Kiri :
+                        <ul>
+<pre><code><span style="color: #f92672">Router(config)#</span> router rip
+<span style="color: #f92672">Router(config-router)#</span> network 192.168.43.0
+<span style="color: #f92672">Router(config-router)#</span> network 192.168.10.0</code></pre>
+                        </ul>
+                        Router Kanan :
+                        <ul>
+<pre><code><span style="color: #f92672">Router(config)#</span> router rip
+<span style="color: #f92672">Router(config-router)#</span> network 192.168.1.0
+<span style="color: #f92672">Router(config-router)#</span> network 192.168.10.0</code></pre>
+                        </ul>
                     </ul>
 
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
@@ -493,12 +508,12 @@
                     ----------------------------------------------- DIGANTI PREV NEXT -----------------------------------------------
 
                     sebelum
-                    <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                    <a rel="prev" href="vbox.html" class="mobile-nav-chapters previous" title="Previous chapter"
                         aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                     sesudah
-                    <a rel="next" href="../index.html" class="mobile-nav-chapters next" title="Next chapter"
+                    <a rel="next" href="path.html" class="mobile-nav-chapters next" title="Next chapter"
                         aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -512,12 +527,12 @@
         <!-- <nav class="nav-wide-wrapper" aria-label="Page navigation">
             ----------------------------------------------- DIGANTI PREV NEXT 2 -----------------------------------------------
             sebelum
-            <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter"
+            <a rel="prev" href="vbox.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
             </a>
             sesudah
-            <a rel="next" href="../index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+            <a rel="next" href="path.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
                 aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
             </a>

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>M-VPN_PPTP</title>
+    <title>Cisco</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -68,7 +68,7 @@
             if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
                 localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
             }
-        } catch (e) { }
+        } catch (e) {}
     </script>
 
     <!-- Set the theme before any content is loaded, prevents flash -->
@@ -76,7 +76,7 @@
         var theme;
         try {
             theme = localStorage.getItem('mdbook-theme');
-        } catch (e) { }
+        } catch (e) {}
         if (theme === null || theme === undefined) {
             theme = default_theme;
         }
@@ -94,7 +94,7 @@
         if (document.body.clientWidth >= 1080) {
             try {
                 sidebar = localStorage.getItem('mdbook-sidebar');
-            } catch (e) { }
+            } catch (e) {}
             sidebar = sidebar || 'visible';
         }
         html.classList.remove('sidebar-visible');
@@ -217,13 +217,13 @@
                     <li>
                         <ol class="section">
                             <li class="chapter-item expanded "><a href="../05-jarkom/mikbasic.html"><span>3.11.1. Basic Networking</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnpptp.html" style="color: rgb(255, 115, 138);"><span>3.11.2. VPN-PPTP</span></a></li>
+                            <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnpptp.html"><span>3.11.2. VPN-PPTP</span></a></li>
                             <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnsstp.html"><span>3.11.3. VPN-SSTP</span></a></li>
                             <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnl2tp.html"><span>3.11.4. VPN-L2TP</span></a></li>
                             <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnopen.html"><span>3.11.5. VPN-OpenVPN</span></a></li>
                         </ol>
                     </li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/cisco.html"><span><strong aria-hidden="true">3.12.</strong> Cisco</span></a></li>
+                    <li class="chapter-item expanded "><a href="../05-jarkom/cisco.html" style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">3.12.</strong> Cisco</span></a></li>
                     <li>
                         <ol class="section">
                             <li class="chapter-item expanded "><a href="../05-jarkom/ptrack.html"><span><strong aria-hidden="true">3.12.01</strong> Cisco Packet Tracker</span></a></li>
@@ -336,7 +336,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">Mikrotik - VPN_PPTP</h1>
+                <h1 class="menu-title">Cisco</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -377,114 +377,8 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1>VPN-PPTP</h1>
-
-                    <p style="text-align:center">topologi :</p>
-
-                    <p style="margin-left:200px">gambar 1.</p>
-
-                    <p><img src="../gambar/gamb11.jpg"
-                            style="display:block; margin-left:auto; margin-right:auto; width:60%" /></p>
-
-                    <p style="margin-left:200px">gambar 2.</p>
-
-                    <p><img src="../gambar/gamb10.jpg"
-                            style="display:block; margin-left:auto; margin-right:auto; width:60%" /></p>
-
-                    <p style="margin-left:40px">misal didapat</p>
-
-                    <ul>
-                        <li>ip mikrotik A : 192.168.43.229</li>
-                        <li>ip mikrotik B : 192.168.43.12</li>
-                        <li>LAN mikrotik A : 120.32.98.1</li>
-                        <li>LAN mikrotik B : 123.123.123.1</li>
-                    </ul>
-
-                    <p>pertama harus men-set interface untuk WAN dan LAN dikedua mikrotik (caranya ada di <a
-                            href="mikrotik.html">jarkom/networking</a>)</p>
-                    <p>dan juga untuk gambar 2, network PC set bridged adapter</p>
-
-                    <h3>Percobaan gambar 1</h3>
-                    <ul>
-                        <p>dikisahkan kantor pusat punya server, lalu kita dari luar kantor ingin mengakses server
-                            kantor dengan model side-to-side / pakai sambungan dengan mikrotik</p>
-
-                        <p style="margin-left:40px">konfigurasi server :</p>
-
-                        <ol>
-                            <li>login mikrotilk</li>
-                            <li>mengaktifkan pptp server : ppp &gt; pptp server &gt; enabled &gt; default-profile :
-                                default-encryption</li>
-                            <img src="../gambar/pptpserver.png"
-                                style="display:block; margin-left:auto; margin-right:auto; width:100%" />
-                            <br>
-                            <li>membuat akun client untuk connect pptp</li>
-                            <img src="../gambar/pptpclient.png"
-                                style="display:block; margin-left:auto; margin-right:auto; width:100%" />
-                        </ol>
-                        <br>
-                        <p style="margin-left:40px">konfigurasi client :</p>
-
-                        <img src="../gambar/pptpclient1.png" style="display:block; margin-left:auto; margin-right:auto;"
-                            alt="">
-                        <img src="../gambar/pptpclient2.png" style="display:block; margin-left:auto; margin-right:auto;"
-                            alt="">
-                        <img src="../gambar/pptpclient3new.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <br><br>
-                        <p style="margin-left:40px">konfigurasi routes :</p>
-                        <ul>
-                            <ul>
-                                sisi server :
-                            </ul>
-                        </ul>
-                        <img src="../gambar/pptpclient35.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpclient4.png" style="display:block; margin-left:auto; margin-right:auto;"
-                            alt="">
-                        <ul>
-                            <ul>
-                                sisi client :
-                            </ul>
-                        </ul>
-                        <img src="../gambar/pptpclient5.png" style="display:block; margin-left:auto; margin-right:auto;"
-                            alt="">
-                        <img src="../gambar/pptpclient6.png" style="display:block; margin-left:auto; margin-right:auto;"
-                            alt="">
-                    </ul>
-                    <h3>Percobaan gambar 2</h3>
-                    <ul>
-                        *lanjutan konfigurasi sebelumnya <br><br>
-                        konfigurasi server :
-                        <img src="../gambar/pptpserver21.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver22.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver23.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver24.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver25.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <br>
-                        konfigurasi client :
-                        <img src="../gambar/pptpserver26.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver27.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver28.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver29.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver291.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver292.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-                        <img src="../gambar/pptpserver293.png"
-                            style="display:block; margin-left:auto; margin-right:auto;" alt="">
-
-                    </ul>
-
+                    <h1><a class="header" href="#intro" id="intro">Cisco</a></h1>
+                    <p> Materi dari <a href="https://www.netacad.com/" target="_blank">https://www.netacad.com/</a></p>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
