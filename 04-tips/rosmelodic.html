@@ -293,14 +293,14 @@
                     <li class="chapter-item expanded "><a href="../04-tips/lug.html"><span><strong aria-hidden="true">6.10.</strong> List Users & Groups </span></a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/replonno.html"><span><strong aria-hidden="true">6.11.</strong> Replikasi Onnocenter </span></a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/moodle.html"><span><strong aria-hidden="true">6.12.</strong> Install Moodle </span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/rosopencv.html"><span><strong aria-hidden="true">6.13.</strong> Install ROS & Opencv</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/ros.html"><span><strong aria-hidden="true">6.14.</strong> Install ROS</span></a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/ros.html"><span><strong aria-hidden="true">6.13.</strong> Install ROS</span></a></li>
                     <li>
                         <ol class="section">
-                            <li class="chapter-item expanded "><a href="../04-tips/rosmelodic.html" style="color: rgb(255, 115, 138);"><span>6.14.1. ROS Melodic</span></a></li>
-                            <li class="chapter-item expanded "><a href="../04-tips/rosnoetic.html"><span>6.14.2. ROS Noetic</span></a></li>
+                            <li class="chapter-item expanded "><a href="../04-tips/rosmelodic.html" style="color: rgb(255, 115, 138);"><span>6.13.1. ROS Melodic</span></a></li>
+                            <li class="chapter-item expanded "><a href="../04-tips/rosnoetic.html"><span>6.13.2. ROS Noetic</span></a></li>
                         </ol>
                     </li>
+                    <li class="chapter-item expanded "><a href="../04-tips/rosopencv.html"><span><strong aria-hidden="true">6.14.</strong> Install ROS & Opencv</span></a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/random.html"><span><strong aria-hidden="true">6.15.</strong> Random</span></a></li>
                 </ol>
             </li>
@@ -383,6 +383,9 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
+                    <br>
+                    full course : <a href="http://wiki.ros.org" target="_blank">http://wiki.ros.org</a>
+                    <br><br>
                     <h1><a class="header" href="#intro" id="intro">ROS Melodic Ubuntu 18.04</a></h1>
                     <h4>Installasi</h4>
 <pre><code>sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
@@ -395,6 +398,26 @@ sudo apt install python-rosdep python-rosinstall python-rosinstall-generator pyt
 sudo rosdep init
 rosdep update
 </code></pre>
+<h4>ROS Tutorial</h4>
+Managing Environtment :
+<pre><code>printenv | grep ROS
+
+# dijalankan setiap open terminal
+source /opt/ros/melodic/setup.bash
+</code></pre>
+Create ROS Workspace :
+<pre><code>mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws/
+
+catkin_make
+# jika akan menggunakan python
+catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
+
+source devel/setup.bash</code></pre>
+cek apakah shell path sudah termuat :
+<pre><code>$ echo $ROS_PACKAGE_PATH
+# /home/youruser/catkin_ws/src:/opt/ros/kinetic/share</code></pre>
+
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
