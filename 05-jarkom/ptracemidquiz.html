@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>Packet Tracer</title>
+    <title>PT Basic Quiz</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -68,7 +68,7 @@
             if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
                 localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
             }
-        } catch (e) { }
+        } catch (e) {}
     </script>
 
     <!-- Set the theme before any content is loaded, prevents flash -->
@@ -76,7 +76,7 @@
         var theme;
         try {
             theme = localStorage.getItem('mdbook-theme');
-        } catch (e) { }
+        } catch (e) {}
         if (theme === null || theme === undefined) {
             theme = default_theme;
         }
@@ -94,7 +94,7 @@
         if (document.body.clientWidth >= 1080) {
             try {
                 sidebar = localStorage.getItem('mdbook-sidebar');
-            } catch (e) { }
+            } catch (e) {}
             sidebar = sidebar || 'visible';
         }
         html.classList.remove('sidebar-visible');
@@ -226,7 +226,13 @@
                     <li class="chapter-item expanded "><a href="../05-jarkom/cisco.html"><span><strong aria-hidden="true">3.12.</strong> Cisco</span></a></li>
                     <li>
                         <ol class="section">
-                            <li class="chapter-item expanded "><a href="../05-jarkom/ptrack.html" style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">3.12.01</strong> Cisco Packet Tracer</span></a></li>
+                            <li class="chapter-item expanded "><a href="../05-jarkom/ptrace.html"><span>3.12.01 Cisco Packet Tracer</span></a></li>
+                            <li>
+                                <ol class="section">
+                                    <li class="chapter-item expanded "><a href="../05-jarkom/ptracemidquiz.html" style="color: rgb(255, 115, 138);"><span>3.12.01.1 Basic Quiz</span></a></li>
+                                    <li class="chapter-item expanded "><a href="../05-jarkom/ptracequiz.html"><span>3.12.01.2 IoT Basic Quiz</span></a></li>
+                                </ol>
+                            </li>
                         </ol>
                     </li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">3.13.</strong> Web / Content Management System</span></li>
@@ -342,7 +348,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">Cisco Packet Tracer</h1>
+                <h1 class="menu-title">Packet Tracer Basic Quiz</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -383,128 +389,14 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
+                    <h1><a class="header" href="#intro" id="intro">Intro</a></h1>
+                    <!-- <ul>
+                        <li><a class="header" href="#pengertian">Pengertian</a></li>
+                    </ul>
                     <br>
-                    <h1><a class="header" href="#intro" id="intro">Cisco Packet Tracer</a></h1>
-                    <h3>Install Cisco Packet Tracer Ubuntu 20.04</h3>
-                    <ol type="1">
-                        <li>buka web, cisco packet tracer</li>
-                        <li>register akun</li>
-                        <li>ikuti kelas cisco packet tracer</li>
-                        <li>resources > download packet tracer, *kyknya, intinya download dari title bar</li>
-                        <ul>
-                            <li>atau pakai link download <a
-                                    href="https://drive.google.com/file/d/1SDEgfeQcImJULxrT8s1ZmLgltAHObfh7/view?usp=sharing"
-                                    target="_blank">ini</a></li>
-                        </ul>
-                        <li><code>sudo apt update</code></li>
-                        <li><code>sudo dkpg -i PacketTracer_800_amd64_build212_final.deb</code></li>
-                        <ul>
-                            <li>ok yes</li>
-                        </ul>
-                        <li><code>sudo apt install -f</code></li>
-                        <li><code>sudo dkpg -i PacketTracer_800_amd64_build212_final.deb</code></li>
-                        <ul>
-                            <li>ok yes</li>
-                        </ul>
-                        <li><code>packettracer</code></li>
-                        <li>login</li>
-                        <li>selesai</li>
-                    </ol>
-                    <br><br>
-                    <hr>
-                    <h3>Basic Setup Router</h3>
-                    <ul>
-                        <img src="../gambar/ciscopt001.png" alt=""
-                            style="display: block; margin-left: auto; margin-right: auto;"><br>
-                        <img src="../gambar/ciscopt002.png" alt=""
-                            style="display: block; margin-left: auto; margin-right: auto;"><br>
-                        <img src="../gambar/ciscopt003.png" alt=""
-                            style="display: block; margin-left: auto; margin-right: auto;"><br>
-                        <img src="../gambar/ciscopt004.png" alt=""
-                            style="display: block; margin-left: auto; margin-right: auto;"><br>
-                        <img src="../gambar/ciscopt005.png" alt=""
-                            style="display: block; margin-left: auto; margin-right: auto;"><br>
-                        <img src="../gambar/ciscopt006.png" alt=""
-                            style="display: block; margin-left: auto; margin-right: auto;"><br><br>
-                        Jadi beberapa commandnya adalah : <br>
-                        <pre><code><span style="color: #a6e22e">Router></span> enable
-<span style="color: #66d9ef">Router#</span> configure terminal
-<span style="color: #f92672">Router(config)#</span> hostname ROUTERKU
-<span style="color: #f92672">Router(config)#</span> enable password 12345
-<span style="color: #f92672">Router(config)#</span> line console 0
-<span style="color: #f92672">Router(config-line)#</span> password 123456789
-<span style="color: #f92672">Router(config-line)#</span> login
-<span style="color: #f92672">Router(config-line)#</span> enable secret belajar
-<span style="color: #f92672">Router(config)#</span> banner motd &TEST&
-<span style="color: #f92672">Router(config)#</span> exit
-<span style="color: #66d9ef">Router#</span> show running-config
-<span style="color: #66d9ef">Router#</span> show startup-config
-<span style="color: #66d9ef">Router#</span> show ip route
-<span style="color: #66d9ef">Router#</span> show version
-<span style="color: #66d9ef">Router#</span> show flash
-<span style="color: #66d9ef">Router#</span> delete vlan.dat
-<span style="color: #66d9ef">Router#</span> erase startup-config
-<span style="color: #66d9ef">Router#</span> reload</code></pre>
-Menyimpan konfigurasi
-<pre><code><span style="color: #66d9ef">Router#</span> copy running-config startup-config</code></pre>
-                    </ul>
-                    <br><br>
-                    <hr>
-                    <h3>Random</h3>
-                    <img src="../gambar/Routing.png" alt=""
-                        style="display: block; margin-left: auto; margin-right: auto;">
-                    1. Setting pc
-                    <ul>
-                        ip address : <code>192.168.43.x</code> (kiri), <code>192.168.1.x</code> (kanan) <br>
-                        subnetmask : <code>255.255.255.0</code> <br>
-                        gateway : <code>192.168.43.254</code> (kiri), <code>192.168.1.254</code> (kanan)
-                    </ul>
-                    2. Setting Router
-                    <ul>
-                        Router Kiri :
-                        <ul>
-                            <pre><code><span style="color: #f92672">Router(config)#</span> interface FastEthernet0/0
-<span style="color: #f92672">Router(config-fi)#</span> ip address 192.168.43.254 255.255.255.0
-<span style="color: #f92672">Router(config-fi)#</span> no shutdown
-<span style="color: #f92672">Router(config-fi)#</span> exit
-<span style="color: #f92672">Router(config)#</span> interface FastEthernet1/0
-<span style="color: #f92672">Router(config-fi)#</span> ip address 192.168.10.1 255.255.255.0
-<span style="color: #f92672">Router(config-fi)#</span> no shutdown
-<span style="color: #f92672">Router(config-fi)#</span> exit
-<span style="color: #f92672">Router(config)#</span> ip route 192.168.2.0 255.255.255.0 192.168.10.2</code></pre>
-                        </ul>
-                        Router Kanan :
-                        <ul>
-                            <pre><code><span style="color: #f92672">Router(config)#</span> interface FastEthernet0/0
-<span style="color: #f92672">Router(config-fi)#</span> ip address 192.168.1.254 255.255.255.0
-<span style="color: #f92672">Router(config-fi)#</span> no shutdown
-<span style="color: #f92672">Router(config-fi)#</span> exit
-<span style="color: #f92672">Router(config)#</span> interface FastEthernet1/0
-<span style="color: #f92672">Router(config-fi)#</span> ip address 192.168.10.2 255.255.255.0
-<span style="color: #f92672">Router(config-fi)#</span> no shutdown
-<span style="color: #f92672">Router(config-fi)#</span> exit
-<span style="color: #f92672">Router(config)#</span> ip route 192.168.43.0 255.255.255.0 192.168.10.1</code></pre>
-                        </ul>
-                        Menghapus ip route di Router
-                        <ul>
-                            Router kanan : <code>no ip route 192.168.43.0 255.255.255.0</code>
-                        </ul>
-                    </ul><br>
-                    3. RIP : Routing Information Protocol (bentuk ringkas dari no.2) (?) :)
-                    <ul>
-                        Router Kiri :
-                        <ul>
-<pre><code><span style="color: #f92672">Router(config)#</span> router rip
-<span style="color: #f92672">Router(config-router)#</span> network 192.168.43.0
-<span style="color: #f92672">Router(config-router)#</span> network 192.168.10.0</code></pre>
-                        </ul>
-                        Router Kanan :
-                        <ul>
-<pre><code><span style="color: #f92672">Router(config)#</span> router rip
-<span style="color: #f92672">Router(config-router)#</span> network 192.168.1.0
-<span style="color: #f92672">Router(config-router)#</span> network 192.168.10.0</code></pre>
-                        </ul>
-                    </ul>
+                    <hr><br>
+                    <h2><a class="header" id="pengertian" style="text-decoration: none;">Pengertian</a></h2> -->
+                    <p> Kosong.</p>
 
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
@@ -514,12 +406,12 @@ Menyimpan konfigurasi
                     ----------------------------------------------- DIGANTI PREV NEXT -----------------------------------------------
 
                     sebelum
-                    <a rel="prev" href="vbox.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                    <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter"
                         aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                     sesudah
-                    <a rel="next" href="path.html" class="mobile-nav-chapters next" title="Next chapter"
+                    <a rel="next" href="../index.html" class="mobile-nav-chapters next" title="Next chapter"
                         aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -533,12 +425,12 @@ Menyimpan konfigurasi
         <!-- <nav class="nav-wide-wrapper" aria-label="Page navigation">
             ----------------------------------------------- DIGANTI PREV NEXT 2 -----------------------------------------------
             sebelum
-            <a rel="prev" href="vbox.html" class="nav-chapters previous" title="Previous chapter"
+            <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
             </a>
             sesudah
-            <a rel="next" href="path.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+            <a rel="next" href="../index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
                 aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
             </a>

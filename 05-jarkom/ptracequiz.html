@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>TIPS 13</title>
+    <title>WETOFU</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -230,7 +230,7 @@
                             <li>
                                 <ol class="section">
                                     <li class="chapter-item expanded "><a href="../05-jarkom/ptracemidquiz.html"><span>3.12.01.1 Basic Quiz</span></a></li>
-                                    <li class="chapter-item expanded "><a href="../05-jarkom/ptracequiz.html"><span>3.12.01.2 IoT Basic Quiz</span></a></li>
+                                    <li class="chapter-item expanded "><a href="../05-jarkom/ptracequiz.html" style="color: rgb(255, 115, 138);"><span>3.12.01.2 IoT Basic Quiz</span></a></li>
                                 </ol>
                             </li>
                         </ol>
@@ -294,7 +294,7 @@
                     <li class="chapter-item expanded "><a href="../04-tips/https.html"><span><strong aria-hidden="true">6.05.</strong> HTTPS in Local Network (Ubuntu Server 20.04)</span></a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/itcareer.html"><span><strong aria-hidden="true">6.06.</strong> IT Career Roadmap</span></a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/monitor.html"><span><strong aria-hidden="true">6.07.</strong> Wlan Monitor Mode</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/vbox.html" style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">6.08.</strong> Virtualbox</span></a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/vbox.html"><span><strong aria-hidden="true">6.08.</strong> Virtualbox</span></a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/path.html"><span><strong aria-hidden="true">6.09.</strong> Path variable terminal</span></a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/lug.html"><span><strong aria-hidden="true">6.10.</strong> List Users & Groups </span></a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/replonno.html"><span><strong aria-hidden="true">6.11.</strong> Replikasi Onnocenter </span></a></li>
@@ -348,7 +348,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">TIPS 13</h1>
+                <h1 class="menu-title">WeTofu</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -389,103 +389,15 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1><a class="header" href="#intro" id="intro">Tambahan Virtualbox</a></h1>
-                    download extension pack agar mode usb nambah banyak
-                    <br><br>
-                    agar usb tampak :
-                    <ol type="1">
-                        <li>lihat nama user : (opsional)</li>
-                        <pre><code>echo $USER</code></pre>
-                        <li>cek list group, biasanya grup utk virtualbox adalah <code>vboxusers</code> :</li> 
-                        <pre><code>compgen -g</code></pre>
-                        <li>add group :</li> 
-                        <pre><code>sudo usermod -a -G vboxusers $USER</code></pre>
-                        <li>kyknya perlu di reboot</li> 
-                    </ol>
-                    <h3>Copy file dari host luar</h3>
-                    <pre><code>scp -P&lt;port> &lt;user>@&lt;ip>:&lt;file_yg_mau_diambil> &lt;directorymu></code></pre>
-                    <h3>Windows ISO</h3>
-                    <ul>
-                        <a href="https://drive.google.com/drive/folders/1QsrVL9KEAQ_3R_6HctR-ZmV-BpFefvtO?usp=sharing" target="_blank">drive</a>
-                    </ul><hr>
-                    <h1><a class="header" href="#fileshare" id="fileshare" style="text-decoration: none;">Membuat file sharing virtualbox
-                        :</a></h1>
-                connect ssh :
-                <ul>
-                    pc-target :
-                    <pre><code>sudo service ssh status
-sudo service ssh start</code></pre>
-                    silahkan ssh <br>
-                    namun, jika masih tdk bisa :
-                    <pre><code>sudo iptables -A INPUT -p tcp --dport ssh -j ACCEPT</code></pre>
-                </ul>
-
-                host :
-                <ul>
-                    <pre><code>mkdir -p /mnt/cobafilesharing-public
-mkdir -p /mnt/cobafilesharing-data</code></pre>
-                </ul>
-                server :
-                <ul>
-                    <pre><code>sudo su
-mkdir /home/public
-mkdir /home/data
-apt update
-apt -y install samba cifs-utils
-vi /etc/samba/smb.conf</code></pre>
-                    diisi dengan :
-                    <ul>
-                        <pre><code>workgroup = WORKGROUP
-netbios name = COBAFILESHARING
-
-# dibagian bottom
-[public]
-path = /home/public
-available = yes
-browsable = yes
-public = yes
-writable = yes
-
-[data]
-path = /home/data
-available = yes
-browsable = yes
-public = yes
-writable = no</code></pre>
+                    <h1><a class="header" href="#intro" id="intro">Intro</a></h1>
+                    <!-- <ul>
+                        <li><a class="header" href="#pengertian">Pengertian</a></li>
                     </ul>
-                    <pre><code>mkdir -p /home/public
-mkdir -p /home/data
-chown -Rf nobody.nogroup /home/public
-chown -Rf nobody.nogroup /home/data
-chmod -Rf 777 /home/public
-chmod -Rf 777 /home/data</code></pre>
-                    <pre><code>smbpasswd -a carloz</code></pre>
-                    misal password : 123456
+                    <br>
+                    <hr><br>
+                    <h2><a class="header" id="pengertian" style="text-decoration: none;">Pengertian</a></h2> -->
+                    <p> Kosong.</p>
 
-                    <pre><code>/etc/init.d/smbd restart</code></pre>
-
-                    matikan firewall
-                    <pre><code>ufw disable</code></pre>
-                </ul>
-                host :<br>
-                <ul>
-                    cek sdh mount apa blm :
-                    <ul>
-                        <pre><code>df -h</code></pre>
-                    </ul>
-                    <pre><code>mount -t cifs //192.168.43.207/public/ /mnt/cobafilesharing-public/ -o password=123456,username=carloz</code></pre>
-                </ul>
-                Done, jika ingin sharing file bisa lewat folder tersebut
-
-                <br>
-                <br>
-                <hr>
-                <h3><a class="header" href="#resize" id="resize" style="text-decoration: none;">Resize memory virtualbox :</a></h3>
-                <pre><code>VBoxManage clonehd Ubuntu\ Server\ 18.04\ LTS.vdi ubuntu18_04_new4.vdi --format VDI --variant Standard
-VBoxManage modifyhd ubuntu18_04_new4.vdi --resize 30000</code></pre>
-                ganti storage lewat GUI virtualbox
-                <br><br>
-                <hr><br>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
@@ -494,12 +406,12 @@ VBoxManage modifyhd ubuntu18_04_new4.vdi --resize 30000</code></pre>
                     ----------------------------------------------- DIGANTI PREV NEXT -----------------------------------------------
 
                     sebelum
-                    <a rel="prev" href="monitor.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                    <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter"
                         aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    sesudah/
-                    <a rel="next" href="ptrack.html" class="mobile-nav-chapters next" title="Next chapter"
+                    sesudah
+                    <a rel="next" href="../index.html" class="mobile-nav-chapters next" title="Next chapter"
                         aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -513,12 +425,12 @@ VBoxManage modifyhd ubuntu18_04_new4.vdi --resize 30000</code></pre>
         <!-- <nav class="nav-wide-wrapper" aria-label="Page navigation">
             ----------------------------------------------- DIGANTI PREV NEXT 2 -----------------------------------------------
             sebelum
-            <a rel="prev" href="monitor.html" class="nav-chapters previous" title="Previous chapter"
+            <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
             </a>
             sesudah
-            <a rel="next" href="ptrack.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+            <a rel="next" href="../index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
                 aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
             </a>
