@@ -1,6 +1,6 @@
 import os
 
-# melist SEMUA file ekstensi .html
+# melist SEMUA file ekstensi .html kecuali listBase
 listFile = []
 listBase = ["base/baseNav.html", "base/tesbase.html", "base/base.html"]
 for root, dirs, files in os.walk("."):
@@ -11,7 +11,7 @@ for root, dirs, files in os.walk("."):
              if tmp not in listBase:
 	             listFile.append(tmp)
 
-# jika ada file < 10byte (kosong/baru), maka akan diisi file base/base.html
+# jika ada file < 10byte (kosong/baru), maka akan diisi base/base.html
 FileBase = open("base/base.html", "r")
 isi_fileBase = FileBase.read()
 FileBase.close()
@@ -21,28 +21,29 @@ for file in listFile:
 		isi.write(isi_fileBase)
 		isi.close()
 
-# mengisi NAV ke file yg belum ada NAV-nya			
+# mengisi &/ mengganti NAV ke listFile
 baseFile = "base/baseNav.html"
 firstTextLooking = "<!-- ---------------------------------------- NAV ---------------------------------------- -->"
 endTextLooking = "<!-- ---------------------------------------# NAV #--------------------------------------- -->"
 for file in listFile:
-	# membuka akhir teks file yg akan diganti, lalu truncate sblm nav
+	# mengambil isi mulai batas bawah nav, sampai akhir isi file
 	file1 = open(file, "rw+")
 	tmp = 0
 	for x in file1:
 		tmp += len(x)
-		if endTextLooking in x:	# ini diganti
+		if endTextLooking in x:
 			global cari_seek
 			cari_seek = tmp
 	file1.seek(cari_seek)
 	tampungAkhir = file1.read()
 
+	# mencari batas atas nav, lalu menghapus isi file mulai dari batas atas nav sampai akhir isi file 
 	cari_seek = 0
 	file1.seek(cari_seek)
 	cari_truncate = 0
 	for x in file1:
 		cari_truncate += len(x)
-		if firstTextLooking in x:		# ini diganti
+		if firstTextLooking in x:		
 			file1.truncate(cari_truncate)
 
 	file1.close()

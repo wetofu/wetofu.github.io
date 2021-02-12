@@ -392,19 +392,20 @@
                         <h1><a class="header" href="#guide" id="guide" style="text-decoration: none;">Guide for this website :</a>
                         </h1>
                         <ol type="1">
-                            <li>buat file.html di sembarang directory .</li>
+                            <li>buat &lt;file>.html di sembarang directory wetofu</li>
                             <li>ubah base/baseNav.html</li>
                             <li>run <code>python2 importNav.py</code></li>
-                            <li>edit judul & konten file.html</li>
+                            <li>edit judul & konten &lt;file>.html</li>
                         </ol>
                         begitu jg kalau menghapus <br><br>
 
                         isi source code importNav.py :
-                        <pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">os</span>
 
-<span style="color: #75715e"># melist SEMUA file ekstensi .html</span>
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #f92672">import</span> <span style="color: #f8f8f2">os</span>
+
+<span style="color: #75715e"># melist SEMUA file ekstensi .html kecuali listBase</span>
 <span style="color: #f8f8f2">listFile</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[]</span>
-<span style="color: #f8f8f2">listBase</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[</span><span style="color: #e6db74">&quot;base/baseNav.html&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;base/tesbase.html&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;base/base.html&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;404.html&quot;</span><span style="color: #f8f8f2">]</span>
+<span style="color: #f8f8f2">listBase</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">[</span><span style="color: #e6db74">&quot;base/baseNav.html&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;base/tesbase.html&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;base/base.html&quot;</span><span style="color: #f8f8f2">]</span>
 <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">root,</span> <span style="color: #f8f8f2">dirs,</span> <span style="color: #f8f8f2">files</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">os</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">walk(</span><span style="color: #e6db74">&quot;.&quot;</span><span style="color: #f8f8f2">):</span>
     <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">file</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">files:</span>
         <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">file</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">endswith(</span><span style="color: #e6db74">&quot;.html&quot;</span><span style="color: #f8f8f2">):</span>
@@ -413,7 +414,7 @@
              <span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">tmp</span> <span style="color: #f92672">not</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">listBase:</span>
 	             <span style="color: #f8f8f2">listFile</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">append(tmp)</span>
 
-<span style="color: #75715e"># jika ada file &lt; 10byte (kosong/baru), maka akan diisi file base/base.html</span>
+<span style="color: #75715e"># jika ada file &lt; 10byte (kosong/baru), maka akan diisi base/base.html</span>
 <span style="color: #f8f8f2">FileBase</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">open(</span><span style="color: #e6db74">&quot;base/base.html&quot;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&quot;r&quot;</span><span style="color: #f8f8f2">)</span>
 <span style="color: #f8f8f2">isi_fileBase</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">FileBase</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">read()</span>
 <span style="color: #f8f8f2">FileBase</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">close()</span>
@@ -423,28 +424,29 @@
 		<span style="color: #f8f8f2">isi</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">write(isi_fileBase)</span>
 		<span style="color: #f8f8f2">isi</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">close()</span>
 
-<span style="color: #75715e"># mengisi NAV ke file yg belum ada NAV-nya			</span>
+<span style="color: #75715e"># mengisi &amp;/ mengganti NAV ke listFile</span>
 <span style="color: #f8f8f2">baseFile</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;base/baseNav.html&quot;</span>
 <span style="color: #f8f8f2">firstTextLooking</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;&lt;!-- ---------------------------------------- NAV ---------------------------------------- --&gt;&quot;</span>
 <span style="color: #f8f8f2">endTextLooking</span> <span style="color: #f92672">=</span> <span style="color: #e6db74">&quot;&lt;!-- ---------------------------------------# NAV #--------------------------------------- --&gt;&quot;</span>
 <span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">file</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">listFile:</span>
-	<span style="color: #75715e"># membuka akhir teks file yg akan diganti, lalu truncate sblm nav</span>
+	<span style="color: #75715e"># mengambil isi mulai batas bawah nav, sampai akhir isi file</span>
 	<span style="color: #f8f8f2">file1</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">open(file,</span> <span style="color: #e6db74">&quot;rw+&quot;</span><span style="color: #f8f8f2">)</span>
 	<span style="color: #f8f8f2">tmp</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span>
 	<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">x</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">file1:</span>
 		<span style="color: #f8f8f2">tmp</span> <span style="color: #f92672">+=</span> <span style="color: #f8f8f2">len(x)</span>
-		<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">endTextLooking</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">x:</span>	<span style="color: #75715e"># ini diganti</span>
+		<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">endTextLooking</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">x:</span>
 			<span style="color: #66d9ef">global</span> <span style="color: #f8f8f2">cari_seek</span>
 			<span style="color: #f8f8f2">cari_seek</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">tmp</span>
 	<span style="color: #f8f8f2">file1</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">seek(cari_seek)</span>
 	<span style="color: #f8f8f2">tampungAkhir</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">file1</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">read()</span>
 
+	<span style="color: #75715e"># mencari batas atas nav, lalu menghapus isi file mulai dari batas atas nav sampai akhir isi file </span>
 	<span style="color: #f8f8f2">cari_seek</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span>
 	<span style="color: #f8f8f2">file1</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">seek(cari_seek)</span>
 	<span style="color: #f8f8f2">cari_truncate</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span>
 	<span style="color: #66d9ef">for</span> <span style="color: #f8f8f2">x</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">file1:</span>
 		<span style="color: #f8f8f2">cari_truncate</span> <span style="color: #f92672">+=</span> <span style="color: #f8f8f2">len(x)</span>
-		<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">firstTextLooking</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">x:</span>		<span style="color: #75715e"># ini diganti</span>
+		<span style="color: #66d9ef">if</span> <span style="color: #f8f8f2">firstTextLooking</span> <span style="color: #f92672">in</span> <span style="color: #f8f8f2">x:</span>		
 			<span style="color: #f8f8f2">file1</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">truncate(cari_truncate)</span>
 
 	<span style="color: #f8f8f2">file1</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">close()</span>
@@ -460,13 +462,13 @@
 	<span style="color: #f8f8f2">file1</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">write(tampungAkhir)</span>
 	<span style="color: #f8f8f2">file1</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">close()</span>
 
-	<span style="color: #75715e"># menambah highlight warna rgb(252, 155, 171)</span>
+	<span style="color: #75715e"># menambah highlight warna rgb(255, 115, 138)</span>
 	<span style="color: #f8f8f2">file1</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">open(file,</span> <span style="color: #e6db74">&quot;r&quot;</span><span style="color: #f8f8f2">)</span>
 	<span style="color: #f8f8f2">repairing</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">file1</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">read()</span>
 	<span style="color: #f8f8f2">file1</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">close()</span>
 
 	<span style="color: #f8f8f2">file1</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">open(file,</span> <span style="color: #e6db74">&quot;w&quot;</span><span style="color: #f8f8f2">)</span>
-	<span style="color: #f8f8f2">repairing</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">repairing</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">replace(</span><span style="color: #e6db74">&#39;&lt;a href=&quot;../&#39;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">file</span><span style="color: #f92672">+</span><span style="color: #e6db74">&#39;&quot;&gt;&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;&lt;a href=&quot;../&#39;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">file</span><span style="color: #f92672">+</span><span style="color: #e6db74">&#39;&quot; style=&quot;color: rgb(252, 155, 171);&quot;&gt;&#39;</span><span style="color: #f8f8f2">)</span>
+	<span style="color: #f8f8f2">repairing</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">repairing</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">replace(</span><span style="color: #e6db74">&#39;&lt;a href=&quot;../&#39;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">file</span><span style="color: #f92672">+</span><span style="color: #e6db74">&#39;&quot;&gt;&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #e6db74">&#39;&lt;a href=&quot;../&#39;</span><span style="color: #f92672">+</span><span style="color: #f8f8f2">file</span><span style="color: #f92672">+</span><span style="color: #e6db74">&#39;&quot; style=&quot;color: rgb(255, 115, 138);&quot;&gt;&#39;</span><span style="color: #f8f8f2">)</span>
 	<span style="color: #f8f8f2">file1</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">write(repairing)</span>
 	<span style="color: #f8f8f2">file1</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">close()</span>
 
@@ -482,7 +484,6 @@
 	<span style="color: #f8f8f2">ind</span><span style="color: #f92672">.</span><span style="color: #f8f8f2">close()</span></code>
 </pre>
 
-                
                     
                    
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
