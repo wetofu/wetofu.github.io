@@ -413,11 +413,11 @@ sudo locale-gen id_ID.UTF-8</code></pre>
 wget https://releases.wikimedia.org/mediawiki/1.32/mediawiki-1.32.0.tar.gz
 tar zxvf mediawiki-1.32.0.tar.gz
 mv mediawiki-1.32.0 wiki
-cp wiki /var/www/html/			
-cp -Rf /var/www/html/wiki/mw-config/ /var/www/html/wiki/config			
-chmod a+w /var/www/html/wiki/mw-config			
-chmod a+w /var/www/html/wiki/config			
-chmod -Rf 777 wiki			
+cp wiki /var/www/html/
+cp -Rf /var/www/html/wiki/mw-config/ /var/www/html/wiki/config
+chmod a+w /var/www/html/wiki/mw-config
+chmod a+w /var/www/html/wiki/config
+chmod -Rf 777 wiki
 chown -Rf www-data.www-data wiki
 /etc/init.d/apache2 restart</code></pre>
 
@@ -428,7 +428,7 @@ chown -Rf www-data.www-data wiki
             download LocalSettings.php, taruh di file bersama wiki/index.php
             <pre><code>cd ~/Downloads
 mv LocalSettings.php /var/www/html/wiki/
-chmod 600 /var/www/html/wiki/LocalSettings.php</code></pre>
+chmod 777 /var/www/html/wiki/LocalSettings.php</code></pre>
 
         </ul>
         lanjut di terminal
@@ -448,11 +448,11 @@ service mysql stop
 service mysql start
 /usr/bin/mysqladmin --user=root --password=123456 --force drop mediawiki
 /usr/bin/mysqladmin --user=root --password=123456 create mediawiki
-mysql -u root -p123456 mediawiki &lt; /var/www/wiki/maintenance/tables.sql
-mysql -u root -p123456 mediawiki &lt; /var/data/library/datawiki/wikidb.sql
+mysql -u root -p123456 mediawiki &lt; /var/www/wiki/html/maintenance/tables.sql
+mysql -u root -p123456 mediawiki &lt; /var/data/library/datawiki/var/www/html/pustaka/datawiki/wikidb.sql
 service mysql stop
 service mysql start
-cd /var/www/wiki/maintenance
+cd /var/www/html/wiki/maintenance
 php update.php
 service mysql stop
 service mysql start

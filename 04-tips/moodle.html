@@ -405,7 +405,8 @@ apt -y install software-properties-common
 add-apt-repository ppa:ondrej/php
 apt update
 apt -y install php
-apt -y install php-common php-mysql php-xml php-xmlrpc php-curl php-gd php-imagick php-cli php-dev php-imap php-mbstring php-opcache php-soap php-zip php-cli php-intl imagemagick git zip libgd-dev libapache2-mod-php</code></pre>
+apt -y install php-common php-mysql php-xml php-xmlrpc php-curl php-gd php-imagick php-cli php-dev php-imap php-mbstring php-opcache php-soap php-zip php-cli php-intl imagemagick git zip libgd-dev libapache2-mod-php
+# sudo apt -y install php7.4-common php7.4-mysql php7.4-xml php7.4-xmlrpc php7.4-curl php7.4-gd php7.4-imagick php7.4-cli php7.4-dev php7.4-imap php7.4-mbstring php7.4-opcache php7.4-soap php7.4-zip php7.4-cli php7.4-intl imagemagick git zip libgd-dev libapache2-mod-php</code></pre>
 <pre><code>vi /etc/php/&lt;versi>/apache2/php.ini</code></pre>
 <ul>
     <pre><code>upload_max_filesize = 100M
@@ -422,21 +423,19 @@ max_input_time = 1000</code></pre>
 </ul>
 
 	buat database moodle (aku lwat phpmyadmin)
-<pre><code>cd /usr/local/src
-wget https://download.moodle.org/download.php/direct/langpack/3.8/id.zip
-mkdir -p /var/moodledata/lang
-cp id.zip /var/moodledata/lang
+<pre><code>mkdir -p /var/moodledata/lang
 cd /var/moodledata/lang
+wget https://download.moodle.org/download.php/direct/langpack/3.8/id.zip
 unzip id.zip
 chmod -Rf 777 /var/moodledata/lang/
 chown -Rf www-data: /var/moodledata/lang/
 
-cd /usr/local/src
+cd /home/user/
 # wget https://download.moodle.org/download.php/direct/stable38/moodle-latest-38.tgz
 wget https://download.moodle.org/download.php/stable310/moodle-3.10.1.tgz
-cp moodle-latest-38.tgz /var/www/html/
+tar zxvf moodle-3.10.1.tgz
+mv moodle /var/www/html/
 cd /var/www/html/
-tar zxvf moodle-latest-38.tgz
 chown -Rf www-data: /var/moodledata/
 chmod -Rf 777 /var/www/html/moodle
 chown -Rf www-data: /var/www/html/moodle</code></pre>
