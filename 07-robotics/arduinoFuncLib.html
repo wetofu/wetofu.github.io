@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>WETOFU</title>
+    <title>Arduino Func Lib</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -68,7 +68,7 @@
             if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
                 localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
             }
-        } catch (e) {}
+        } catch (e) { }
     </script>
 
     <!-- Set the theme before any content is loaded, prevents flash -->
@@ -76,7 +76,7 @@
         var theme;
         try {
             theme = localStorage.getItem('mdbook-theme');
-        } catch (e) {}
+        } catch (e) { }
         if (theme === null || theme === undefined) {
             theme = default_theme;
         }
@@ -94,7 +94,7 @@
         if (document.body.clientWidth >= 1080) {
             try {
                 sidebar = localStorage.getItem('mdbook-sidebar');
-            } catch (e) {}
+            } catch (e) { }
             sidebar = sidebar || 'visible';
         }
         html.classList.remove('sidebar-visible');
@@ -102,236 +102,378 @@
     </script>
 
     <!-- ---------------------------------------- NAV ---------------------------------------- -->
-<nav id="sidebar" class="sidebar" aria-label="Table of contents">
-    <div class="sidebar-scrollbox">
-        <div class="search_box">
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Topik..." title="Type in a name">
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <div class="sidebar-scrollbox">
+            <div class="search_box">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Topik..."
+                    title="Type in a name">
+            </div>
+            <ol class="chapter" id="myUL">
+                <!-- -------------------- KENALAN -------------------- -->
+                <li class="chapter-item expanded affix "><a href="../index.html"><span><strong
+                                aria-hidden="true">KENALAN</strong></span></a></li>
+                <!-- -------------------- KULIAH -------------------- -->
+                <li class="chapter-item expanded "><a href="../00-intro/index.html"><span><strong aria-hidden="true">1.
+                                Mata Kuliah </strong></span></a>
+                </li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded "><a href="../00-intro/inf.html"><span><strong
+                                        aria-hidden="true">1.1.</strong> Informatika </span></a></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="../00-intro/pbo.html"><span>1.1.1.
+                                            PBO</span></a></li>
+                                <li>
+                                    <ol class="section">
+                                        <li class="chapter-item expanded "><a
+                                                href="../00-intro/pbojavgen.html"><span>1.1.1.1 Java Generics</span></a>
+                                        </li>
+                                        <li class="chapter-item expanded "><a
+                                                href="../00-intro/pboso.html"><span>1.1.1.2 String Operation</span></a>
+                                        </li>
+                                        <li class="chapter-item expanded "><a
+                                                href="../00-intro/pboreg.html"><span>1.1.1.3 Regex</span></a></li>
+                                        <li class="chapter-item expanded "><a
+                                                href="../00-intro/pboea.html"><span>1.1.1.4 Exception &
+                                                    Assertion</span></a></li>
+                                        <li class="chapter-item expanded "><a
+                                                href="../00-intro/pboio.html"><span>1.1.1.5 I/O</span></a></li>
+                                    </ol>
+                                </li>
+                                <li class="chapter-item expanded "><a href="../00-intro/basdat.html"><span>1.1.2.
+                                            Basdat</span></a></li>
+                                <li class="chapter-item expanded "><a href="../05-jarkom/index.html"><span>1.1.3.
+                                            Jarkom</span></a></li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><a href="../00-intro/kimia.html"><span>
+                                    <strongaria-hidden="true">1.2.</strong> Kimia
+                                </span></a></li>
+                    </ol>
+                </li>
+                <!-- -------------------- CYBER SECURITY -------------------- -->
+                <li class="chapter-item expanded ">
+                    <a href="../02-cybersec/index.html"><span>
+                            <strong aria-hidden="true">2. Cyber Security </strong></span>
+                    </a>
+                </li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded "><a href="../02-cybersec/tcpip.html"><span><strong
+                                        aria-hidden="true">2.01.</strong> Konsep TCP/IP</span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.02.</strong> IPv6</span>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.03.</strong>
+                                Routing</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.04.</strong>
+                                Network</span> Programming </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.05.</strong> Persiapan
+                                Hacking</span></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/footprinting.html"><span><strong
+                                        aria-hidden="true">2.06.</strong> Footprinting </span></a></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/infgather.html"><span><strong
+                                        aria-hidden="true">2.07.</strong> Information Gathering </span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.08.</strong> Sniffing
+                            </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.09.</strong> Spoffing
+                            </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.10.</strong> Hacking
+                                Wireless </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.11.</strong> Attack
+                                password </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.12.</strong> Attack
+                                database SQL </span></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/mitm.html"><span><strong
+                                        aria-hidden="true">2.13.</strong> MITM </span></a></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/msf.html"><span><strong
+                                        aria-hidden="true">2.14.</strong> Metasploit </span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.15.</strong> DNS & Deface
+                                WEB </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.16.</strong> Attack File
+                                Sharing </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.17.</strong> Vulnerability
+                                Analysis </span></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/dvwa.html"><span><strong
+                                        aria-hidden="true">2.18.</strong> DVWA </span></a></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="../02-cybersec/dvwaci.html"><span>2.18.1.
+                                            Command Injection</span></a></li>
+                                <li class="chapter-item expanded "><a href="../02-cybersec/dvwasqli.html"><span>2.18.2.
+                                            SQL Injection</span></a></li>
+                                <li class="chapter-item expanded "><a href="../02-cybersec/dvwaupv.html"><span>2.18.3.
+                                            Upload Vuln</span></a></li>
+                                <li class="chapter-item expanded "><a href="../02-cybersec/dvwaxss.html"><span>2.18.4.
+                                            XSS</span></a></li>
+                                <li class="chapter-item expanded "><a href="../02-cybersec/dvwaxsrf.html"><span>2.18.4.
+                                            XSRF</span></a></li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.19.</strong> Dasar
+                                Pengamanan Server </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.20.</strong> Firewall
+                            </span></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/vpn.html"><span><strong
+                                        aria-hidden="true">2.21.</strong> VPN </span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.22.</strong> Web
+                                Application Firewall </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.23.</strong> Pertahanan
+                                Host </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.24.</strong> Basic Data
+                                Security </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.25.</strong> Forensic
+                            </span></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/anonim.html"><span><strong
+                                        aria-hidden="true">2.26.</strong> Stay Anonymous </span></a></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/deepweeb.html"><span><strong
+                                        aria-hidden="true">2.27.</strong> Deep Web </span></a></li>
+                    </ol>
+                </li>
+                <!-- -------------------- JARKOM -------------------- -->
+                <li class="chapter-item expanded "><a href="../05-jarkom/index.html"><span><strong aria-hidden="true">3.
+                                Jaringan Komputer </strong></span></a></li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.01.</strong>
+                                Pendahuluan</span></li>
+                        <li class="chapter-item expanded "><a href="../05-jarkom/wireshark.html"><span><strong
+                                        aria-hidden="true">3.02.</strong> Wireshark </span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.03.</strong> Simulator
+                                Jaringan </span></li>
+                        <li class="chapter-item expanded "><a href="../05-jarkom/pkjdll.html"><span><strong
+                                        aria-hidden="true">3.04.</strong> Perangkat Keras Jaringan & Data Link
+                                    Layer</span></a></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="../05-jarkom/dll.html"><span>3.04.1 Data
+                                            Link Layer</span></a></li>
+                                <li class="chapter-item expanded "><a href="../05-jarkom/ldll.html"><span>3.04.2 Lebih
+                                            Detail Data Link Layer</span></a></li>
+                                <li class="chapter-item expanded "><a href="../05-jarkom/ethernet.html"><span>3.04.3
+                                            Ethernet</span></a></li>
+                                <li class="chapter-item expanded "><span>3.04.4 Wireless Internet</span></li>
+                                <li class="chapter-item expanded "><span>3.04.5 MAC Address</span></li>
+                                <li class="chapter-item expanded "><span>3.04.6 Teknologi ADSL</span></li>
+                                <li class="chapter-item expanded "><span>3.04.7 Wireless Internet Wifi</span></li>
+                                <li class="chapter-item expanded "><span>3.04.8 Teknik Modulasi</span></li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.05.</strong> Perangkat
+                                WiFi / Wireless Internet</span></li>
+                        <li class="chapter-item expanded "><a href="../05-jarkom/swthub.html"><span><strong
+                                        aria-hidden="true">3.06.</strong> Switch & Hub</span></a></li>
+                        <li class="chapter-item expanded "><a href="../05-jarkom/nlipv4.html"><span><strong
+                                        aria-hidden="true">3.07.</strong> Network Layer IPv4</span></a></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="../05-jarkom/nl.html"><span>3.07.1. Network
+                                            Layer</span></a></li>
+                                <li class="chapter-item expanded "><span>3.07.2. IPv4</span></li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.08.</strong> Transport
+                                Layer</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.09.</strong> Domain Name
+                                System & Pengaturan Internet</span></li>
+                        <li class="chapter-item expanded "><a href="../05-jarkom/rnat.html"><span><strong
+                                        aria-hidden="true">3.10.</strong> Routing & NAT</a></span></li>
+                        <li class="chapter-item expanded "><a href="../05-jarkom/mikrotik.html"><span><strong
+                                        aria-hidden="true">3.11.</strong> Mikrotik</a></span></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="../05-jarkom/mikbasic.html"><span>3.11.1.
+                                            Basic Networking</span></a></li>
+                                <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnpptp.html"><span>3.11.2.
+                                            VPN-PPTP</span></a></li>
+                                <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnsstp.html"><span>3.11.3.
+                                            VPN-SSTP</span></a></li>
+                                <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnl2tp.html"><span>3.11.4.
+                                            VPN-L2TP</span></a></li>
+                                <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnopen.html"><span>3.11.5.
+                                            VPN-OpenVPN</span></a></li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><a href="../05-jarkom/cisco.html"><span><strong
+                                        aria-hidden="true">3.12.</strong> Cisco</span></a></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="../05-jarkom/ptrace.html"><span>3.12.01
+                                            Cisco Packet Tracer</span></a></li>
+                                <li>
+                                    <ol class="section">
+                                        <li class="chapter-item expanded "><a
+                                                href="../05-jarkom/ptracemidquiz.html"><span>3.12.01.1 Basic
+                                                    Quiz</span></a></li>
+                                        <li class="chapter-item expanded "><a
+                                                href="../05-jarkom/ptracequiz.html"><span>3.12.01.2 IoT Basic
+                                                    Quiz</span></a></li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.13.</strong> Web / Content
+                                Management System</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.14.</strong> e-mail / SMTP
+                                / POP3 / IMAP / Webmail</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.15.</strong> VoIP /
+                                Internet Telepon</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.16.</strong> Streaming
+                                Multimedia</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.17.</strong> IPv6 </span>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.18.</strong>
+                                Hacking</span></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/index.html"><span><strong
+                                        aria-hidden="true">3.19.</strong> Cyber Security</span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.20.</strong> BasicData
+                                Security</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.21.</strong> Pemrograman
+                                Jaringan & IoT</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.22.</strong> Network
+                                Management & Benchmarking</span></li>
+                    </ol>
+                </li>
+                <!-- -------------------- Robotics -------------------- -->
+                <li class="chapter-item expanded "><a href="../07-robotics/index.html"><span><strong
+                                aria-hidden="true">4. Robotics</strong></span></a></li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded "><a href="../07-robotics/arduino.html"><span><strong
+                                        aria-hidden="true">4.1.</strong> Arduino</span></a></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a
+                                        href="../07-robotics/arduinoBoard.html"><span>4.01. Arduino Board</span></a>
+                                </li>
+                                <li class="chapter-item expanded "><a
+                                        href="../07-robotics/arduinoDataType.html"><span>4.02. Arduino Data
+                                            Types</span></a></li>
+                                <li class="chapter-item expanded "><a
+                                        href="../07-robotics/arduinoCoding.html"><span>4.03. Arduino Coding</span></a>
+                                </li>
+                                <li class="chapter-item expanded "><a href="../07-robotics/arduinoFuncLib.html"
+                                        style="color: rgb(255, 115, 138);"><span>4.04. Arduino Function
+                                            Lbraries</span></a></li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><a href="../07-robotics/andstdio.html"><span><strong
+                                        aria-hidden="true">4.2.</strong> Android Studio</span></a></li>
+                    </ol>
+                </li>
+                <!-- -------------------- CTF -------------------- -->
+                <li class="chapter-item expanded "><a href="../03-ctf/index.html"><span><strong aria-hidden="true">5.
+                                Capture The Flag </strong></span></a></li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded "><a href="../03-ctf/binex.html"><span><strong
+                                        aria-hidden="true">5.1.</strong> Binary Exploitation</span></a></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="../03-ctf/binex-pwnshell.html"><span>5.10.
+                                            Pwn & Shellcode</span></a></li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">5.2.</strong> Cryptography
+                            </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">5.3.</strong> Reverse
+                                Engineering </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">5.4.</strong> Web</span>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">5.5.</strong>
+                                Forensic</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">5.6.</strong> Miscellaneous
+                            </span></li>
+                        <li class="chapter-item expanded "><a href="../03-ctf/assembly.html"><span><strong
+                                        aria-hidden="true">5.7.</strong> Assembly</span></a></li>
+                        <li class="chapter-item expanded "><a href="../03-ctf/johnhmnd.html"><span><strong
+                                        aria-hidden="true">5.8.</strong> John-Hammond</span></a></li>
+                        <li class="chapter-item expanded "><a href="../03-ctf/random.html"><span><strong
+                                        aria-hidden="true">5.9.</strong> Random</span></a></li>
+                    </ol>
+                </li>
+                <!-- -------------------- TOOLS -------------------- -->
+                <li class="chapter-item expanded "><a href="../06-tools/index.html"><span><strong aria-hidden="true">6.
+                                Tools </strong></span></a></li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded "><a href="../06-tools/nmap.html"><span><strong
+                                        aria-hidden="true">6.01.</strong> Nmap</span></a></li>
+                        <li class="chapter-item expanded "><a href="../06-tools/py.html"><span><strong
+                                        aria-hidden="true">6.02.</strong> Python</span></a></li>
+                        <li class="chapter-item expanded "><a href="../06-tools/curl.html"><span><strong
+                                        aria-hidden="true">6.03.</strong> Curl</span></a></li>
+                        <li class="chapter-item expanded "><a href="../06-tools/tcpdump.html"><span><strong
+                                        aria-hidden="true">6.04.</strong> Tcpdump</span></a></li>
+                        <li class="chapter-item expanded "><a href="../06-tools/ingdb.html"><span><strong
+                                        aria-hidden="true">6.05.</strong> GDB</span></a></li>
+                        <li class="chapter-item expanded "><a href="../06-tools/radare2.html"><span><strong
+                                        aria-hidden="true">6.06.</strong> Using Radare2</span></a></li>
+                        <li class="chapter-item expanded "><a href="../06-tools/fcrackzip.html"><span><strong
+                                        aria-hidden="true">6.07.</strong> fcrackzip</span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">6.08.</strong> Ghidra
+                            </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">6.09.</strong> Ida </span>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">6.10.</strong> Hydra</span>
+                        </li>
+                    </ol>
+                </li>
+                <!-- -------------------- TIPS -------------------- -->
+                <li class="chapter-item expanded "><a href="../04-tips/index.html"><span><strong aria-hidden="true">7.
+                                TIPS </strong></span></a></li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded "><a href="../04-tips/ctflicense.html"><span><strong
+                                        aria-hidden="true">7.01.</strong> Contoh cracking CTF licence key</span></a>
+                        </li>
+                        <li class="chapter-item expanded "><a href="../04-tips/irdeb.html"><span><strong
+                                        aria-hidden="true">7.02.</strong> Install / Remove .deb in ubuntu</span></a>
+                        </li>
+                        <li class="chapter-item expanded "><a href="../04-tips/isqls.html"><span><strong
+                                        aria-hidden="true">7.03.</strong> Install sql server ubuntu 20.04</span></a>
+                        </li>
+                        <li class="chapter-item expanded "><a href="../04-tips/ipstatic.html"><span><strong
+                                        aria-hidden="true">7.04.</strong> Setting IP Static</span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/https.html"><span><strong
+                                        aria-hidden="true">7.05.</strong> HTTPS in Local Network (Ubuntu Server
+                                    20.04)</span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/itcareer.html"><span><strong
+                                        aria-hidden="true">7.06.</strong> IT Career Roadmap</span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/monitor.html"><span><strong
+                                        aria-hidden="true">7.07.</strong> Wlan Monitor Mode</span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/vbox.html"><span><strong
+                                        aria-hidden="true">7.08.</strong> Virtualbox</span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/path.html"><span><strong
+                                        aria-hidden="true">7.09.</strong> Path variable terminal</span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/lug.html"><span><strong
+                                        aria-hidden="true">7.10.</strong> List Users & Groups </span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/replonno.html"><span><strong
+                                        aria-hidden="true">7.11.</strong> Replikasi Onnocenter </span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/moodle.html"><span><strong
+                                        aria-hidden="true">7.12.</strong> Install Moodle </span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/ros.html"><span><strong
+                                        aria-hidden="true">7.13.</strong> Install ROS</span></a></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="../04-tips/rosmelodic.html"><span>7.13.1.
+                                            ROS Melodic</span></a></li>
+                                <li class="chapter-item expanded "><a href="../04-tips/rosnoetic.html"><span>7.13.2. ROS
+                                            Noetic</span></a></li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><a href="../04-tips/rosopencv.html"><span><strong
+                                        aria-hidden="true">7.14.</strong> Install ROS & Opencv</span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/random.html"><span><strong
+                                        aria-hidden="true">7.15.</strong> Random</span></a></li>
+                    </ol>
+                </li>
+                <!-- -------------------- Akhir -------------------- -->
+            </ol>
         </div>
-        <ol class="chapter" id="myUL">
-            <!-- -------------------- KENALAN -------------------- -->
-            <li class="chapter-item expanded affix "><a href="../index.html"><span><strong aria-hidden="true">KENALAN</strong></span></a></li>
-            <!-- -------------------- KULIAH -------------------- -->
-            <li class="chapter-item expanded "><a href="../00-intro/index.html"><span><strong aria-hidden="true">1. Mata Kuliah </strong></span></a>
-            </li>
-            <li>
-                <ol class="section">
-                    <li class="chapter-item expanded "><a href="../00-intro/inf.html"><span><strong aria-hidden="true">1.1.</strong> Informatika </span></a></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="../00-intro/pbo.html"><span>1.1.1. PBO</span></a></li>
-                            <li>
-                                <ol class="section">
-                                    <li class="chapter-item expanded "><a href="../00-intro/pbojavgen.html"><span>1.1.1.1 Java Generics</span></a></li>
-                                    <li class="chapter-item expanded "><a href="../00-intro/pboso.html"><span>1.1.1.2 String Operation</span></a></li>
-                                    <li class="chapter-item expanded "><a href="../00-intro/pboreg.html"><span>1.1.1.3 Regex</span></a></li>
-                                    <li class="chapter-item expanded "><a href="../00-intro/pboea.html"><span>1.1.1.4 Exception & Assertion</span></a></li>
-                                    <li class="chapter-item expanded "><a href="../00-intro/pboio.html"><span>1.1.1.5 I/O</span></a></li>
-                                </ol>
-                            </li>
-                            <li class="chapter-item expanded "><a href="../00-intro/basdat.html"><span>1.1.2. Basdat</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/index.html"><span>1.1.3. Jarkom</span></a></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><a href="../00-intro/kimia.html"><span><strongaria-hidden="true">1.2.</strong> Kimia</span></a></li>
-                </ol>
-            </li>
-            <!-- -------------------- CYBER SECURITY -------------------- -->
-            <li class="chapter-item expanded ">
-                <a href="../02-cybersec/index.html"><span>
-                    <strong aria-hidden="true">2. Cyber Security </strong></span>
-                </a>
-            </li>
-            <li>
-                <ol class="section">
-                    <li class="chapter-item expanded "><a href="../02-cybersec/tcpip.html"><span><strong aria-hidden="true">2.01.</strong> Konsep TCP/IP</span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.02.</strong> IPv6</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.03.</strong> Routing</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.04.</strong> Network</span> Programming </li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.05.</strong> Persiapan Hacking</span></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/footprinting.html"><span><strong aria-hidden="true">2.06.</strong> Footprinting </span></a></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/infgather.html"><span><strong aria-hidden="true">2.07.</strong> Information Gathering </span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.08.</strong> Sniffing </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.09.</strong> Spoffing </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.10.</strong> Hacking Wireless </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.11.</strong> Attack password </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.12.</strong> Attack database SQL </span></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/mitm.html"><span><strong aria-hidden="true">2.13.</strong> MITM </span></a></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/msf.html"><span><strong aria-hidden="true">2.14.</strong> Metasploit </span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.15.</strong> DNS & Deface WEB </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.16.</strong> Attack File Sharing </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.17.</strong> Vulnerability Analysis </span></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/dvwa.html"><span><strong aria-hidden="true">2.18.</strong> DVWA </span></a></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="../02-cybersec/dvwaci.html"><span>2.18.1. Command Injection</span></a></li>
-                            <li class="chapter-item expanded "><a href="../02-cybersec/dvwasqli.html"><span>2.18.2. SQL Injection</span></a></li>
-                            <li class="chapter-item expanded "><a href="../02-cybersec/dvwaupv.html"><span>2.18.3. Upload Vuln</span></a></li>
-                            <li class="chapter-item expanded "><a href="../02-cybersec/dvwaxss.html"><span>2.18.4. XSS</span></a></li>
-                            <li class="chapter-item expanded "><a href="../02-cybersec/dvwaxsrf.html"><span>2.18.4. XSRF</span></a></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.19.</strong> Dasar Pengamanan Server </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.20.</strong> Firewall </span></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/vpn.html"><span><strong aria-hidden="true">2.21.</strong> VPN </span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.22.</strong> Web Application Firewall </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.23.</strong> Pertahanan Host </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.24.</strong> Basic Data Security </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.25.</strong> Forensic </span></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/anonim.html"><span><strong aria-hidden="true">2.26.</strong> Stay Anonymous </span></a></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/deepweeb.html"><span><strong aria-hidden="true">2.27.</strong> Deep Web </span></a></li>
-                </ol>
-            </li>
-            <!-- -------------------- JARKOM -------------------- -->
-            <li class="chapter-item expanded "><a href="../05-jarkom/index.html"><span><strong aria-hidden="true">3. Jaringan Komputer </strong></span></a></li>
-            <li>
-                <ol class="section">
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.01.</strong> Pendahuluan</span></li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/wireshark.html"><span><strong aria-hidden="true">3.02.</strong> Wireshark </span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.03.</strong> Simulator Jaringan </span></li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/pkjdll.html"><span><strong aria-hidden="true">3.04.</strong> Perangkat Keras Jaringan & Data Link Layer</span></a></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="../05-jarkom/dll.html"><span>3.04.1 Data Link Layer</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/ldll.html"><span>3.04.2 Lebih Detail Data Link Layer</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/ethernet.html"><span>3.04.3 Ethernet</span></a></li>
-                            <li class="chapter-item expanded "><span>3.04.4 Wireless Internet</span></li>
-                            <li class="chapter-item expanded "><span>3.04.5 MAC Address</span></li>
-                            <li class="chapter-item expanded "><span>3.04.6 Teknologi ADSL</span></li>
-                            <li class="chapter-item expanded "><span>3.04.7 Wireless Internet Wifi</span></li>
-                            <li class="chapter-item expanded "><span>3.04.8 Teknik Modulasi</span></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.05.</strong> Perangkat WiFi / Wireless Internet</span></li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/swthub.html"><span><strong aria-hidden="true">3.06.</strong> Switch & Hub</span></a></li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/nlipv4.html"><span><strong aria-hidden="true">3.07.</strong> Network Layer IPv4</span></a></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="../05-jarkom/nl.html"><span>3.07.1. Network Layer</span></a></li>
-                            <li class="chapter-item expanded "><span>3.07.2. IPv4</span></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.08.</strong> Transport Layer</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.09.</strong> Domain Name System & Pengaturan Internet</span></li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/rnat.html"><span><strong aria-hidden="true">3.10.</strong> Routing & NAT</a></span></li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/mikrotik.html"><span><strong aria-hidden="true">3.11.</strong> Mikrotik</a></span></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="../05-jarkom/mikbasic.html"><span>3.11.1. Basic Networking</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnpptp.html"><span>3.11.2. VPN-PPTP</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnsstp.html"><span>3.11.3. VPN-SSTP</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnl2tp.html"><span>3.11.4. VPN-L2TP</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnopen.html"><span>3.11.5. VPN-OpenVPN</span></a></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/cisco.html"><span><strong aria-hidden="true">3.12.</strong> Cisco</span></a></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="../05-jarkom/ptrace.html"><span>3.12.01 Cisco Packet Tracer</span></a></li>
-                            <li>
-                                <ol class="section">
-                                    <li class="chapter-item expanded "><a href="../05-jarkom/ptracemidquiz.html"><span>3.12.01.1 Basic Quiz</span></a></li>
-                                    <li class="chapter-item expanded "><a href="../05-jarkom/ptracequiz.html"><span>3.12.01.2 IoT Basic Quiz</span></a></li>
-                                </ol>
-                            </li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.13.</strong> Web / Content Management System</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.14.</strong> e-mail / SMTP / POP3 / IMAP / Webmail</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.15.</strong> VoIP / Internet Telepon</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.16.</strong> Streaming Multimedia</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.17.</strong> IPv6 </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.18.</strong> Hacking</span></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/index.html"><span><strong aria-hidden="true">3.19.</strong> Cyber Security</span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.20.</strong> BasicData Security</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.21.</strong> Pemrograman Jaringan & IoT</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.22.</strong> Network Management & Benchmarking</span></li>
-                </ol>
-            </li>
-            <!-- -------------------- Robotics -------------------- -->
-            <li class="chapter-item expanded "><a href="../07-robotics/index.html"><span><strong aria-hidden="true">4. Robotics</strong></span></a></li>
-            <li>
-                <ol class="section">
-                    <li class="chapter-item expanded "><a href="../07-robotics/arduino.html"><span><strong aria-hidden="true">4.1.</strong> Arduino</span></a></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="../07-robotics/arduinoBoard.html"><span>4.01. Arduino Board</span></a></li>
-                            <li class="chapter-item expanded "><a href="../07-robotics/arduinoDataType.html"><span>4.02. Arduino Data Types</span></a></li>
-                            <li class="chapter-item expanded "><a href="../07-robotics/arduinoCoding.html"><span>4.03. Arduino Coding</span></a></li>
-                            <li class="chapter-item expanded "><a href="../07-robotics/arduinoFuncLib.html" style="color: rgb(255, 115, 138);"><span>4.04. Arduino Function Lbraries</span></a></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><a href="../07-robotics/andstdio.html"><span><strong aria-hidden="true">4.2.</strong> Android Studio</span></a></li>
-                </ol>
-            </li>
-            <!-- -------------------- CTF -------------------- -->
-            <li class="chapter-item expanded "><a href="../03-ctf/index.html"><span><strong aria-hidden="true">5. Capture The Flag </strong></span></a></li>
-            <li>
-                <ol class="section">
-                    <li class="chapter-item expanded "><a href="../03-ctf/binex.html"><span><strong aria-hidden="true">5.1.</strong> Binary Exploitation</span></a></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="../03-ctf/binex-pwnshell.html"><span>5.10. Pwn & Shellcode</span></a></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">5.2.</strong> Cryptography </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">5.3.</strong> Reverse Engineering </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">5.4.</strong> Web</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">5.5.</strong> Forensic</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">5.6.</strong> Miscellaneous </span></li>
-                    <li class="chapter-item expanded "><a href="../03-ctf/assembly.html"><span><strong aria-hidden="true">5.7.</strong> Assembly</span></a></li>
-                    <li class="chapter-item expanded "><a href="../03-ctf/johnhmnd.html"><span><strong aria-hidden="true">5.8.</strong> John-Hammond</span></a></li>
-                    <li class="chapter-item expanded "><a href="../03-ctf/random.html"><span><strong aria-hidden="true">5.9.</strong> Random</span></a></li>
-                </ol>
-            </li>
-            <!-- -------------------- TOOLS -------------------- -->
-            <li class="chapter-item expanded "><a href="../06-tools/index.html"><span><strong aria-hidden="true">6. Tools </strong></span></a></li>
-            <li>
-                <ol class="section">
-                    <li class="chapter-item expanded "><a href="../06-tools/nmap.html"><span><strong aria-hidden="true">6.01.</strong> Nmap</span></a></li>
-                    <li class="chapter-item expanded "><a href="../06-tools/py.html"><span><strong aria-hidden="true">6.02.</strong> Python</span></a></li>
-                    <li class="chapter-item expanded "><a href="../06-tools/curl.html"><span><strong aria-hidden="true">6.03.</strong> Curl</span></a></li>
-                    <li class="chapter-item expanded "><a href="../06-tools/tcpdump.html"><span><strong aria-hidden="true">6.04.</strong> Tcpdump</span></a></li>
-                    <li class="chapter-item expanded "><a href="../06-tools/ingdb.html"><span><strong aria-hidden="true">6.05.</strong> GDB</span></a></li>
-                    <li class="chapter-item expanded "><a href="../06-tools/radare2.html"><span><strong aria-hidden="true">6.06.</strong> Using Radare2</span></a></li>
-                    <li class="chapter-item expanded "><a href="../06-tools/fcrackzip.html"><span><strong aria-hidden="true">6.07.</strong> fcrackzip</span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">6.08.</strong> Ghidra </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">6.09.</strong> Ida </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">6.10.</strong> Hydra</span></li>
-                </ol>
-            </li>
-            <!-- -------------------- TIPS -------------------- -->
-            <li class="chapter-item expanded "><a href="../04-tips/index.html"><span><strong aria-hidden="true">7. TIPS </strong></span></a></li>
-            <li>
-                <ol class="section">
-                    <li class="chapter-item expanded "><a href="../04-tips/ctflicense.html"><span><strong aria-hidden="true">7.01.</strong> Contoh cracking CTF licence key</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/irdeb.html"><span><strong aria-hidden="true">7.02.</strong> Install / Remove .deb in ubuntu</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/isqls.html"><span><strong aria-hidden="true">7.03.</strong> Install sql server ubuntu 20.04</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/ipstatic.html"><span><strong aria-hidden="true">7.04.</strong> Setting IP Static</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/https.html"><span><strong aria-hidden="true">7.05.</strong> HTTPS in Local Network (Ubuntu Server 20.04)</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/itcareer.html"><span><strong aria-hidden="true">7.06.</strong> IT Career Roadmap</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/monitor.html"><span><strong aria-hidden="true">7.07.</strong> Wlan Monitor Mode</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/vbox.html"><span><strong aria-hidden="true">7.08.</strong> Virtualbox</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/path.html"><span><strong aria-hidden="true">7.09.</strong> Path variable terminal</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/lug.html"><span><strong aria-hidden="true">7.10.</strong> List Users & Groups </span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/replonno.html"><span><strong aria-hidden="true">7.11.</strong> Replikasi Onnocenter </span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/moodle.html"><span><strong aria-hidden="true">7.12.</strong> Install Moodle </span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/ros.html"><span><strong aria-hidden="true">7.13.</strong> Install ROS</span></a></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="../04-tips/rosmelodic.html"><span>7.13.1. ROS Melodic</span></a></li>
-                            <li class="chapter-item expanded "><a href="../04-tips/rosnoetic.html"><span>7.13.2. ROS Noetic</span></a></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><a href="../04-tips/rosopencv.html"><span><strong aria-hidden="true">7.14.</strong> Install ROS & Opencv</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/random.html"><span><strong aria-hidden="true">7.15.</strong> Random</span></a></li>
-                </ol>
-            </li>
-            <!-- -------------------- Akhir -------------------- -->
-        </ol>
-    </div>
-    <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
-</nav>
-<!-- ---------------------------------------# NAV #--------------------------------------- -->
+        <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+    <!-- ---------------------------------------# NAV #--------------------------------------- -->
 
     <div id="page-wrapper" class="page-wrapper">
 
@@ -364,7 +506,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">WeTofu</h1>
+                <h1 class="menu-title">Arduino Function Libraries</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -405,15 +547,160 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1><a class="header" href="#intro" id="intro">Intro</a></h1>
-                    <!-- <ul>
-                        <li><a class="header" href="#pengertian">Pengertian</a></li>
-                    </ul>
-                    <br>
-                    <hr><br>
-                    <h2><a class="header" id="pengertian" style="text-decoration: none;">Pengertian</a></h2> -->
-                    <p> Kosong.</p>
+                    <h3>I/O Function</h3>
+                    <ul>
+                        <pre style="margin: 0; line-height: 125%"><code><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">button</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">5</span> <span style="color: #f8f8f2">;</span> <span style="color: #75715e">// button connected to pin 5</span>
+<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">LED</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">6</span><span style="color: #f8f8f2">;</span> <span style="color: #75715e">// LED connected to pin 6</span>
 
+<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span> <span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+   <span style="color: #f8f8f2">pinMode(button</span> <span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">INPUT_PULLUP);</span> 
+   <span style="color: #75715e">// set the digital pin as input with pull-up resistor</span>
+   <span style="color: #f8f8f2">pinMode(button</span> <span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">OUTPUT);</span> <span style="color: #75715e">// set the digital pin as output</span>
+<span style="color: #f8f8f2">}</span>
+
+<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span> <span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+   <span style="color: #f8f8f2">If</span> <span style="color: #f8f8f2">(digitalRead(button</span> <span style="color: #f8f8f2">)</span> <span style="color: #f92672">==</span> <span style="color: #f8f8f2">LOW)</span> <span style="color: #75715e">// if button pressed {</span>
+      <span style="color: #f8f8f2">digitalWrite(LED,HIGH);</span> <span style="color: #75715e">// turn on led</span>
+      <span style="color: #f8f8f2">delay(</span><span style="color: #ae81ff">500</span><span style="color: #f8f8f2">);</span> <span style="color: #75715e">// delay for 500 ms</span>
+      <span style="color: #f8f8f2">digitalWrite(LED,LOW);</span> <span style="color: #75715e">// turn off led</span>
+      <span style="color: #f8f8f2">delay(</span><span style="color: #ae81ff">500</span><span style="color: #f8f8f2">);</span> <span style="color: #75715e">// delay for 500 ms</span>
+   <span style="color: #f8f8f2">}</span>
+<span style="color: #f8f8f2">}</span></code>
+</pre>
+
+                        <pre style="margin: 0; line-height: 125%"><code><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">LED</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">6</span><span style="color: #f8f8f2">;</span> <span style="color: #75715e">// LED connected to pin 6</span>
+
+<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span> <span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+   <span style="color: #f8f8f2">pinMode(LED,</span> <span style="color: #f8f8f2">OUTPUT);</span> <span style="color: #75715e">// set the digital pin as output</span>
+<span style="color: #f8f8f2">}</span>
+
+<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span> <span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span> 
+   <span style="color: #f8f8f2">digitalWrite(LED,HIGH);</span> <span style="color: #75715e">// turn on led</span>
+   <span style="color: #f8f8f2">delay(</span><span style="color: #ae81ff">500</span><span style="color: #f8f8f2">);</span> <span style="color: #75715e">// delay for 500 ms</span>
+   <span style="color: #f8f8f2">digitalWrite(LED,LOW);</span> <span style="color: #75715e">// turn off led</span>
+   <span style="color: #f8f8f2">delay(</span><span style="color: #ae81ff">500</span><span style="color: #f8f8f2">);</span> <span style="color: #75715e">// delay for 500 ms</span>
+<span style="color: #f8f8f2">}</span></code>
+</pre>
+
+                        <pre style="margin: 0; line-height: 125%"><code><span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">analogPin</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">3</span><span style="color: #f8f8f2">;</span><span style="color: #75715e">//potentiometer wiper (middle terminal) </span>
+   <span style="color: #75715e">// connected to analog pin 3 </span>
+<span style="color: #66d9ef">int</span> <span style="color: #f8f8f2">val</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">0</span><span style="color: #f8f8f2">;</span> <span style="color: #75715e">// variable to store the value read</span>
+
+<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+   <span style="color: #f8f8f2">Serial.begin(</span><span style="color: #ae81ff">9600</span><span style="color: #f8f8f2">);</span> <span style="color: #75715e">// setup serial</span>
+<span style="color: #f8f8f2">}</span> 
+
+<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">loop</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+   <span style="color: #f8f8f2">val</span> <span style="color: #f92672">=</span> <span style="color: #f8f8f2">analogRead(analogPin);</span> <span style="color: #75715e">// read the input pin</span>
+   <span style="color: #f8f8f2">Serial.println(val);</span> <span style="color: #75715e">// debug value</span>
+<span style="color: #f8f8f2">}</span></code>
+</pre>
+                    </ul>
+
+                    <h3>Advanced I/O Function</h3>
+                    <ul>
+                        <iframe src="../arduino/arduino_advanced_io_function.pdf"
+                            style="width: 100%;height: 750px;border: none;"></iframe>
+                    </ul>
+                    <h3>Character Function</h3>
+                    <ul>
+                        <pre style="margin: 0; line-height: 125%"><code><span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span> <span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+   <span style="color: #f8f8f2">Serial.begin</span> <span style="color: #f8f8f2">(</span><span style="color: #ae81ff">9600</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;According to isdigit:</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(isdigit(</span> <span style="color: #e6db74">&#39;8&#39;</span> <span style="color: #f8f8f2">)</span> <span style="color: #f92672">?</span> <span style="color: #e6db74">&quot;8 is a&quot;</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&quot;8 is not a&quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot; digit</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">&quot;</span> <span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(isdigit(</span> <span style="color: #e6db74">&#39;8&#39;</span> <span style="color: #f8f8f2">)</span> <span style="color: #f92672">?</span><span style="color: #e6db74">&quot;# is a&quot;</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&quot;# is not a&quot;</span><span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">;</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot; digit</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">According to isalpha:</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">&quot;</span> <span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(isalpha(</span><span style="color: #e6db74">&#39;A&#39;</span> <span style="color: #f8f8f2">)</span> <span style="color: #f92672">?</span><span style="color: #e6db74">&quot;A is a&quot;</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&quot;A is not a&quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot; letter</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(isalpha(</span><span style="color: #e6db74">&#39;A&#39;</span> <span style="color: #f8f8f2">)</span> <span style="color: #f92672">?</span><span style="color: #e6db74">&quot;b is a&quot;</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&quot;b is not a&quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot; letter</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(isalpha(</span><span style="color: #e6db74">&#39;A&#39;</span><span style="color: #f8f8f2">)</span> <span style="color: #f92672">?</span><span style="color: #e6db74">&quot;&amp; is a&quot;</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&quot;&amp; is not a&quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot; letter</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(isalpha(</span> <span style="color: #e6db74">&#39;A&#39;</span> <span style="color: #f8f8f2">)</span> <span style="color: #f92672">?</span><span style="color: #e6db74">&quot;4 is a&quot;</span><span style="color: #f92672">:</span><span style="color: #e6db74">&quot;4 is not a&quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot; letter</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">According to isalnum:</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(isalnum(</span> <span style="color: #e6db74">&#39;A&#39;</span> <span style="color: #f8f8f2">)</span> <span style="color: #f92672">?</span><span style="color: #e6db74">&quot;A is a&quot;</span> <span style="color: #f92672">:</span> <span style="color: #e6db74">&quot;A is not a&quot;</span> <span style="color: #f8f8f2">);</span>
+
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot; digit or a letter</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">&quot;</span> <span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(isalnum(</span> <span style="color: #e6db74">&#39;8&#39;</span> <span style="color: #f8f8f2">)</span> <span style="color: #f92672">?</span><span style="color: #e6db74">&quot;8 is a&quot;</span> <span style="color: #f92672">:</span> <span style="color: #e6db74">&quot;8 is not a&quot;</span> <span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">;</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot; digit or a letter</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(isalnum(</span> <span style="color: #e6db74">&#39;#&#39;</span> <span style="color: #f8f8f2">)</span> <span style="color: #f92672">?</span><span style="color: #e6db74">&quot;# is a&quot;</span> <span style="color: #f92672">:</span> <span style="color: #e6db74">&quot;# is not a&quot;</span> <span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot; digit or a letter</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot;</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">According to isxdigit:</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">&quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(isxdigit(</span> <span style="color: #e6db74">&#39;F&#39;</span> <span style="color: #f8f8f2">)</span> <span style="color: #f92672">?</span><span style="color: #e6db74">&quot;F is a&quot;</span> <span style="color: #f92672">:</span> <span style="color: #e6db74">&quot;F is not a&quot;</span> <span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot; hexadecimal digit</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">&quot;</span> <span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(isxdigit(</span> <span style="color: #e6db74">&#39;J&#39;</span> <span style="color: #f8f8f2">)</span> <span style="color: #f92672">?</span><span style="color: #e6db74">&quot;J is a&quot;</span> <span style="color: #f92672">:</span> <span style="color: #e6db74">&quot;J is not a&quot;</span> <span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">;</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot; hexadecimal digit</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">&quot;</span> <span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(isxdigit(</span> <span style="color: #e6db74">&#39;7&#39;</span> <span style="color: #f8f8f2">)</span> <span style="color: #f92672">?</span><span style="color: #e6db74">&quot;7 is a&quot;</span> <span style="color: #f92672">:</span> <span style="color: #e6db74">&quot;7 is not a&quot;</span> <span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">;</span>
+
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot; hexadecimal digit</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">&quot;</span> <span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(isxdigit(</span> <span style="color: #e6db74">&#39;$&#39;</span> <span style="color: #f8f8f2">)</span> <span style="color: #f92672">?</span> <span style="color: #e6db74">&quot;$ is a&quot;</span> <span style="color: #f92672">:</span> <span style="color: #e6db74">&quot;$ is not a&quot;</span> <span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(</span><span style="color: #e6db74">&quot; hexadecimal digit</span><span style="color: #ae81ff">\r</span><span style="color: #e6db74">&quot;</span> <span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print</span> <span style="color: #f8f8f2">(isxdigit(</span> <span style="color: #e6db74">&#39;f&#39;</span> <span style="color: #f8f8f2">)</span> <span style="color: #f92672">?</span> <span style="color: #960050; background-color: #1e0010">“</span><span style="color: #f8f8f2">f</span> <span style="color: #f8f8f2">is</span> <span style="color: #f8f8f2">a</span><span style="color: #e6db74">&quot; : &quot;</span><span style="color: #f8f8f2">f</span> <span style="color: #f8f8f2">is</span> <span style="color: #f8f8f2">not</span> <span style="color: #f8f8f2">a</span><span style="color: #e6db74">&quot;);</span>
+   
+<span style="color: #f8f8f2">}</span>
+
+<span style="color: #66d9ef">void</span> <span style="color: #f8f8f2">loop</span> <span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+
+<span style="color: #f8f8f2">}</span></code>
+</pre>
+
+                    </ul>
+                    <h3>Math Library</h3>
+                    <ul>
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">double__x</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">45.45</span> <span style="color: #f8f8f2">;</span>
+<span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">double__y</span> <span style="color: #f92672">=</span> <span style="color: #ae81ff">30.20</span> <span style="color: #f8f8f2">;</span>
+
+<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">setup</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+   <span style="color: #f8f8f2">Serial.begin(</span><span style="color: #ae81ff">9600</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.print(</span><span style="color: #e6db74">&quot;cos num = &quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.println</span> <span style="color: #f8f8f2">(cos</span> <span style="color: #f8f8f2">(double__x)</span> <span style="color: #f8f8f2">);</span> <span style="color: #75715e">// returns cosine of x</span>
+   <span style="color: #f8f8f2">Serial.print(</span><span style="color: #e6db74">&quot;absolute value of num = &quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.println</span> <span style="color: #f8f8f2">(fabs</span> <span style="color: #f8f8f2">(double__x)</span> <span style="color: #f8f8f2">);</span> <span style="color: #75715e">// absolute value of a float</span>
+   <span style="color: #f8f8f2">Serial.print(</span><span style="color: #e6db74">&quot;floating point modulo = &quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.println</span> <span style="color: #f8f8f2">(fmod</span> <span style="color: #f8f8f2">(double__x,</span> <span style="color: #f8f8f2">double__y));</span> <span style="color: #75715e">// floating point modulo</span>
+   <span style="color: #f8f8f2">Serial.print(</span><span style="color: #e6db74">&quot;sine of num = &quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.println</span> <span style="color: #f8f8f2">(sin</span> <span style="color: #f8f8f2">(double__x)</span> <span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">;</span><span style="color: #75715e">// returns sine of x</span>
+   <span style="color: #f8f8f2">Serial.print(</span><span style="color: #e6db74">&quot;square root of num : &quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.println</span> <span style="color: #f8f8f2">(</span> <span style="color: #f8f8f2">sqrt</span> <span style="color: #f8f8f2">(double__x)</span> <span style="color: #f8f8f2">);</span><span style="color: #75715e">// returns square root of x</span>
+   <span style="color: #f8f8f2">Serial.print(</span><span style="color: #e6db74">&quot;tangent of num : &quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.println</span> <span style="color: #f8f8f2">(</span> <span style="color: #f8f8f2">tan</span> <span style="color: #f8f8f2">(double__x)</span> <span style="color: #f8f8f2">);</span> <span style="color: #75715e">// returns tangent of x</span>
+   <span style="color: #f8f8f2">Serial.print(</span><span style="color: #e6db74">&quot;exponential value of num : &quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.println</span> <span style="color: #f8f8f2">(</span> <span style="color: #f8f8f2">exp</span> <span style="color: #f8f8f2">(double__x)</span> <span style="color: #f8f8f2">);</span> <span style="color: #75715e">// function returns the exponential value of x.</span>
+   <span style="color: #f8f8f2">Serial.print(</span><span style="color: #e6db74">&quot;cos num : &quot;</span><span style="color: #f8f8f2">);</span>
+
+   <span style="color: #f8f8f2">Serial.println</span> <span style="color: #f8f8f2">(atan</span> <span style="color: #f8f8f2">(double__x)</span> <span style="color: #f8f8f2">);</span> <span style="color: #75715e">// arc tangent of x</span>
+   <span style="color: #f8f8f2">Serial.print(</span><span style="color: #e6db74">&quot;tangent of num : &quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.println</span> <span style="color: #f8f8f2">(atan2</span> <span style="color: #f8f8f2">(double__y,</span> <span style="color: #f8f8f2">double__x)</span> <span style="color: #f8f8f2">);</span><span style="color: #75715e">// arc tangent of y/x</span>
+   <span style="color: #f8f8f2">Serial.print(</span><span style="color: #e6db74">&quot;arc tangent of num : &quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.println</span> <span style="color: #f8f8f2">(log</span> <span style="color: #f8f8f2">(double__x)</span> <span style="color: #f8f8f2">)</span> <span style="color: #f8f8f2">;</span> <span style="color: #75715e">// natural logarithm of x</span>
+   <span style="color: #f8f8f2">Serial.print(</span><span style="color: #e6db74">&quot;cos num : &quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.println</span> <span style="color: #f8f8f2">(</span> <span style="color: #f8f8f2">log10</span> <span style="color: #f8f8f2">(double__x));</span> <span style="color: #75715e">// logarithm of x to base 10.</span>
+   <span style="color: #f8f8f2">Serial.print(</span><span style="color: #e6db74">&quot;logarithm of num to base 10 : &quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.println</span> <span style="color: #f8f8f2">(pow</span> <span style="color: #f8f8f2">(double__x,</span> <span style="color: #f8f8f2">double__y)</span> <span style="color: #f8f8f2">);</span><span style="color: #75715e">// x to power of y</span>
+   <span style="color: #f8f8f2">Serial.print(</span><span style="color: #e6db74">&quot;power of num : &quot;</span><span style="color: #f8f8f2">);</span>
+   <span style="color: #f8f8f2">Serial.println</span> <span style="color: #f8f8f2">(square</span> <span style="color: #f8f8f2">(double__x));</span> <span style="color: #75715e">// square of x</span>
+<span style="color: #f8f8f2">}</span>
+
+<span style="color: #66d9ef">void</span> <span style="color: #a6e22e">loop</span><span style="color: #f8f8f2">()</span> <span style="color: #f8f8f2">{</span>
+
+<span style="color: #f8f8f2">}</span></code>
+</pre>
+
+                    </ul>
+                    <h3>Trigono</h3>
+                    <ul>
+<pre style="margin: 0; line-height: 125%"><code><span style="color: #66d9ef">double</span> <span style="color: #a6e22e">sin</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">x);</span> <span style="color: #75715e">//returns sine of x radians</span>
+<span style="color: #66d9ef">double</span> <span style="color: #a6e22e">cos</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">y);</span> <span style="color: #75715e">//returns cosine of y radians</span>
+<span style="color: #66d9ef">double</span> <span style="color: #a6e22e">tan</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">x);</span> <span style="color: #75715e">//returns the tangent of x radians</span>
+<span style="color: #66d9ef">double</span> <span style="color: #a6e22e">acos</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">x);</span> <span style="color: #75715e">//returns A, the angle corresponding to cos (A) = x</span>
+<span style="color: #66d9ef">double</span> <span style="color: #a6e22e">asin</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">x);</span> <span style="color: #75715e">//returns A, the angle corresponding to sin (A) = x</span>
+<span style="color: #66d9ef">double</span> <span style="color: #a6e22e">atan</span><span style="color: #f8f8f2">(</span><span style="color: #66d9ef">double</span> <span style="color: #f8f8f2">x);</span> <span style="color: #75715e">//returns A, the angle corresponding to tan (A) = x</span></code>
+</pre>
+
+                    </ul>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
