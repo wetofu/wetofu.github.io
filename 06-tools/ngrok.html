@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>404-NotFound</title>
+    <title>Ngrok</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -295,7 +295,7 @@
                     <li class="chapter-item expanded "><a href="../06-tools/ingdb.html"><span><strong aria-hidden="true">6.05.</strong> GDB</span></a></li>
                     <li class="chapter-item expanded "><a href="../06-tools/radare2.html"><span><strong aria-hidden="true">6.06.</strong> Using Radare2</span></a></li>
                     <li class="chapter-item expanded "><a href="../06-tools/fcrackzip.html"><span><strong aria-hidden="true">6.07.</strong> fcrackzip</span></a></li>
-                    <li class="chapter-item expanded "><a href="../06-tools/ngrok.html"><span><strong aria-hidden="true">6.08.</strong> ngrok</span></a></li>
+                    <li class="chapter-item expanded "><a href="../06-tools/ngrok.html" style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">6.08.</strong> ngrok</span></a></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">6.09.</strong> Ghidra </span></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">6.10.</strong> Ida </span></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">6.11.</strong> Hydra</span></li>
@@ -367,7 +367,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">404-NotFound</h1>
+                <h1 class="menu-title">Ngrok</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -408,47 +408,77 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                        <h1><a class="header" href="#document-not-found-404" id="document-not-found-404">Document not found
-                                (404)</a></h1>
-                        <p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
+                    <h1><a class="header" href="#intro" id="intro">Ngrok</a></h1>
+                    sign in <a href="https://ngrok.com/" target="_blank">https://ngrok.com/</a> untuk mendapat token
+<br><br>
+Install 
+<ul>
+    proses menggunakan <code>./ngrok</code> 
+    <pre><code>sudo apt update
+sudo apt -y install snapd
+sudo snap install ngrok</code></pre>
+
+	atau
+    <br><br>
+    proses menggunakan <code>/path/to/ngrok</code>
+<pre><code>wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip
+unzip /path/to/ngrok.zip</code></pre>
+</ul>
+Running
+<ul>
+    <pre><code>/snap/bin/ngrok authtoken &lt;your_auth_token>
+/snap/bin/ngrok help
+/snap/bin/ngrok http 80
+
+/snap/bin/ngrok http 80                    # secure public URL for port 80 web server
+/snap/bin/ngrok http -subdomain=baz 8080   # port 8080 available at baz.ngrok.io
+/snap/bin/ngrok http foo.dev:80            # tunnel to host:port instead of localhost
+/snap/bin/ngrok http https://localhost     # expose a local https server
+/snap/bin/ngrok tcp 22                     # tunnel arbitrary TCP traffic to port 22
+/snap/bin/ngrok tls -hostname=foo.com 443  # TLS traffic for foo.com to port 443
+/snap/bin/ngrok start foo bar baz          # start tunnels from the configuration file</code></pre>
+</ul>
+
+	
+
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
-                <!-- <nav class="nav-wrapper" aria-label="Page navigation"> -->
-                    <!-- Mobile navigation buttons -->
-                    <!-- ----------------------------------------------- DIGANTI PREV NEXT ----------------------------------------------- -->
+                <!-- <nav class="nav-wrapper" aria-label="Page navigation">
+                    Mobile navigation buttons
+                    ----------------------------------------------- DIGANTI PREV NEXT -----------------------------------------------
 
-                    <!-- sebelum -->
-                    <!-- <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                    sebelum
+                    <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter"
                         aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
-                    </a> -->
-                    <!-- sesudah -->
-                    <!-- <a rel="next" href="../index.html" class="mobile-nav-chapters next" title="Next chapter"
+                    </a>
+                    sesudah
+                    <a rel="next" href="../index.html" class="mobile-nav-chapters next" title="Next chapter"
                         aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
-                    </a> -->
-                    <!-- ----------------------------------------------# DIGANTI PREV NEXT #---------------------------------------------- -->
+                    </a>
+                    ----------------------------------------------# DIGANTI PREV NEXT #----------------------------------------------
 
-                    <!-- <div style="clear: both"></div> -->
-                <!-- </nav> -->
+                    <div style="clear: both"></div>
+                </nav> -->
             </div>
         </div>
 
-        <!-- <nav class="nav-wide-wrapper" aria-label="Page navigation"> -->
-            <!-- ----------------------------------------------- DIGANTI PREV NEXT 2 ----------------------------------------------- -->
-            <!-- sebelum -->
-            <!-- <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter"
+        <!-- <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            ----------------------------------------------- DIGANTI PREV NEXT 2 -----------------------------------------------
+            sebelum
+            <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
-            </a> -->
-            <!-- sesudah -->
-            <!-- <a rel="next" href="../index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+            </a>
+            sesudah
+            <a rel="next" href="../index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
                 aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
-            </a> -->
-            <!-- ----------------------------------------------# DIGANTI PREV NEXT 2 #---------------------------------------------- -->
-        <!-- </nav> -->
+            </a>
+            ----------------------------------------------# DIGANTI PREV NEXT 2 #----------------------------------------------
+        </nav> -->
 
     </div>
 

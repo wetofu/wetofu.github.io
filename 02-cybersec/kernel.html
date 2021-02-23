@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>404-NotFound</title>
+    <title>Kernel</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -146,7 +146,7 @@
                     <li class="chapter-item expanded "><a href="../02-cybersec/tcpip.html"><span><strong aria-hidden="true">2.01.</strong> Konsep TCP/IP</span></a></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">2.02.</strong> IPv6</span></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">2.03.</strong> Routing</span></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/kernel.html"><span><strong aria-hidden="true">2.04.</strong> Kernel</span></a></li>
+                    <li class="chapter-item expanded "><a href="../02-cybersec/kernel.html" style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">2.04.</strong> Kernel</span></a></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">2.05.</strong> Network Programming</span></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">2.06.</strong> Persiapan Hacking</span></li>
                     <li class="chapter-item expanded "><a href="../02-cybersec/footprinting.html"><span><strong aria-hidden="true">2.07.</strong> Footprinting </span></a></li>
@@ -367,7 +367,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">404-NotFound</h1>
+                <h1 class="menu-title">Kernel</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -408,47 +408,106 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                        <h1><a class="header" href="#document-not-found-404" id="document-not-found-404">Document not found
-                                (404)</a></h1>
-                        <p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
+                    <h1><a class="header" href="#intro" id="intro">Kernel</a></h1>
+                    <!-- <ul>
+                        <li><a class="header" href="#pengertian">Pengertian</a></li>
+                    </ul>
+                    <br>
+                    <hr><br>
+                    <h2><a class="header" id="pengertian" style="text-decoration: none;">Pengertian</a></h2> -->
+                    <h3>KERNEL / Daleman sistem operasi</h3>
+adalah jembatan software
+<br>
+<pre><code>
+			 Aplikasi
+			    |
+			  Kernel
+		 -------|---------
+		 |	|	 |
+		CPU   Memory  Devices(printer,modem,dsb)	
+		( H a r d w a r e )
+
+</code></pre>
+
+melihat kernel
+<pre><code>ps ax</code></pre>
+<br>
+monolitic kernel vs microkernel
+
+<h3>MEMBUAT KERNEL</h3>  		<strong>*jangan dicoba dulu, masih hancur :) </strong> <br><br>
+
+Compile Kernel
+<pre><code>sudo su</code></pre>
+install keperluan :
+<pre><code>apt-get update
+apt-get install kernel-package libncurses5-dev fakeroot wget bzip2 kernel-wedge build-essential makedumpfile libncurses5 libssl-dev flex bison libelf-dev</code></pre>
+		pilih no
+<br>
+<pre><code>what do you want to do about modified configuration file kernel-img.conf
+    jika tidak ingin menghapus konfigurasi asal :
+		keep file local version currently installed</code></pre>
+<pre><code>sudo su
+cd /usr/src
+rm -Rf /usr/src/linux
+wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.7.2.tar.xz
+tar xJf linux-5.7.2.tar.xz -C /usr/src
+ln -s /usr/src/linux-5.7.2 /usr/src/linux</code></pre>
+
+	letak sistem operasinya ada di
+    <pre><code>/usr/src/linux/</code></pre>
+
+	konfigurasi kernel
+    <pre><code>cd /usr/src/linux
+cp -vi /boot/config-`uname -r` ./.config
+make menuconfig</code></pre>
+
+		setting2 yang membingungkan
+<br><br>
+		save dengan nama default (.config)
+
+        <pre><code>make all</code></pre>
+
+		jika ingin dikonfigurasi ulang
+        <pre><code>make-kpkg clean</code></pre>
+
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
-                <!-- <nav class="nav-wrapper" aria-label="Page navigation"> -->
-                    <!-- Mobile navigation buttons -->
-                    <!-- ----------------------------------------------- DIGANTI PREV NEXT ----------------------------------------------- -->
+                <!-- <nav class="nav-wrapper" aria-label="Page navigation">
+                    Mobile navigation buttons
+                    ----------------------------------------------- DIGANTI PREV NEXT -----------------------------------------------
 
-                    <!-- sebelum -->
-                    <!-- <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                    sebelum
+                    <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter"
                         aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
-                    </a> -->
-                    <!-- sesudah -->
-                    <!-- <a rel="next" href="../index.html" class="mobile-nav-chapters next" title="Next chapter"
+                    </a>
+                    sesudah
+                    <a rel="next" href="../index.html" class="mobile-nav-chapters next" title="Next chapter"
                         aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
-                    </a> -->
-                    <!-- ----------------------------------------------# DIGANTI PREV NEXT #---------------------------------------------- -->
+                    </a>
+                    ----------------------------------------------# DIGANTI PREV NEXT #----------------------------------------------
 
-                    <!-- <div style="clear: both"></div> -->
-                <!-- </nav> -->
+                    <div style="clear: both"></div>
+                </nav> -->
             </div>
         </div>
 
-        <!-- <nav class="nav-wide-wrapper" aria-label="Page navigation"> -->
-            <!-- ----------------------------------------------- DIGANTI PREV NEXT 2 ----------------------------------------------- -->
-            <!-- sebelum -->
-            <!-- <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter"
+        <!-- <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            ----------------------------------------------- DIGANTI PREV NEXT 2 -----------------------------------------------
+            sebelum
+            <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
-            </a> -->
-            <!-- sesudah -->
-            <!-- <a rel="next" href="../index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+            </a>
+            sesudah
+            <a rel="next" href="../index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
                 aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
-            </a> -->
-            <!-- ----------------------------------------------# DIGANTI PREV NEXT 2 #---------------------------------------------- -->
-        <!-- </nav> -->
+            </a>
+            ----------------------------------------------# DIGANTI PREV NEXT 2 #----------------------------------------------
+        </nav> -->
 
     </div>
 

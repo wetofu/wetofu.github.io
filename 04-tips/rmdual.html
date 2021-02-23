@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>404-NotFound</title>
+    <title>WETOFU</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -325,7 +325,7 @@
                         </ol>
                     </li>
                     <li class="chapter-item expanded "><a href="../04-tips/rosopencv.html"><span><strong aria-hidden="true">7.14.</strong> Install ROS & Opencv</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/rmdual.html"><span><strong aria-hidden="true">7.15.</strong> Hapus Dual Boot </span></a></li>
+                    <li class="chapter-item expanded "><a href="../04-tips/rmdual.html" style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">7.15.</strong> Hapus Dual Boot </span></a></li>
                     <li class="chapter-item expanded "><a href="../04-tips/random.html"><span><strong aria-hidden="true">7.16.</strong> Random</span></a></li>
                 </ol>
             </li>
@@ -367,7 +367,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">404-NotFound</h1>
+                <h1 class="menu-title">Hapus Dual/Triple/dst Boot dari Windows</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -408,47 +408,80 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                        <h1><a class="header" href="#document-not-found-404" id="document-not-found-404">Document not found
-                                (404)</a></h1>
-                        <p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
+                    <h2><a class="header" href="#intro" id="intro">Hapus Dual/Triple/dst Boot dari Windows</a></h2>
+                    <!-- <ul>
+                        <li><a class="header" href="#pengertian">Pengertian</a></li>
+                    </ul>
+                    <br>
+                    <hr><br>
+                    <h2><a class="header" id="pengertian" style="text-decoration: none;">Pengertian</a></h2> -->
+! pastikan hapus dulu disk partisi dari pc manager
+<br><br>
+<ol type="1">
+    <li>buka cmd as administrator</li>
+    <li><code>diskpart</code></li>
+    <li><code>list disk</code></li>
+    jika cuman masang 1 disk, maka pilih disk 0 <br>
+    jika masang >1 disk, maka pilih disk yg sub bagiannya mau dihapus
+    <li><code>select disk 0</code></li> 
+    <li><code>list volume</code></li> 
+    pilih yg infonya 'system' <br>
+    misal didapat info system pada volume 4
+    <li><code>select volume 4</code></li> 
+    <li><code>assign letter=z</code></li> 
+    <li><code>exit</code></li> 
+    <li><code>z:</code></li> 
+    <li><code>dir</code></li> 
+    <li><code>cd efi</code></li> 
+    <li><code>dir</code></li> 
+    <li><code>rmdir /S &lt;yg_mau_dihapus></code></li> 
+        misal : <code>rmdir /S ubuntu</code>
+    <li><code>exit</code></li> 
+    <li>(restart PC)</li> 
+</ol>
+
+
+
+
+
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
-                <!-- <nav class="nav-wrapper" aria-label="Page navigation"> -->
-                    <!-- Mobile navigation buttons -->
-                    <!-- ----------------------------------------------- DIGANTI PREV NEXT ----------------------------------------------- -->
+                <!-- <nav class="nav-wrapper" aria-label="Page navigation">
+                    Mobile navigation buttons
+                    ----------------------------------------------- DIGANTI PREV NEXT -----------------------------------------------
 
-                    <!-- sebelum -->
-                    <!-- <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                    sebelum
+                    <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter"
                         aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
-                    </a> -->
-                    <!-- sesudah -->
-                    <!-- <a rel="next" href="../index.html" class="mobile-nav-chapters next" title="Next chapter"
+                    </a>
+                    sesudah
+                    <a rel="next" href="../index.html" class="mobile-nav-chapters next" title="Next chapter"
                         aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
-                    </a> -->
-                    <!-- ----------------------------------------------# DIGANTI PREV NEXT #---------------------------------------------- -->
+                    </a>
+                    ----------------------------------------------# DIGANTI PREV NEXT #----------------------------------------------
 
-                    <!-- <div style="clear: both"></div> -->
-                <!-- </nav> -->
+                    <div style="clear: both"></div>
+                </nav> -->
             </div>
         </div>
 
-        <!-- <nav class="nav-wide-wrapper" aria-label="Page navigation"> -->
-            <!-- ----------------------------------------------- DIGANTI PREV NEXT 2 ----------------------------------------------- -->
-            <!-- sebelum -->
-            <!-- <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter"
+        <!-- <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            ----------------------------------------------- DIGANTI PREV NEXT 2 -----------------------------------------------
+            sebelum
+            <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
-            </a> -->
-            <!-- sesudah -->
-            <!-- <a rel="next" href="../index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+            </a>
+            sesudah
+            <a rel="next" href="../index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
                 aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
-            </a> -->
-            <!-- ----------------------------------------------# DIGANTI PREV NEXT 2 #---------------------------------------------- -->
-        <!-- </nav> -->
+            </a>
+            ----------------------------------------------# DIGANTI PREV NEXT 2 #----------------------------------------------
+        </nav> -->
 
     </div>
 
