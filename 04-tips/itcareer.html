@@ -68,7 +68,7 @@
             if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
                 localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
             }
-        } catch (e) {}
+        } catch (e) { }
     </script>
 
     <!-- Set the theme before any content is loaded, prevents flash -->
@@ -76,7 +76,7 @@
         var theme;
         try {
             theme = localStorage.getItem('mdbook-theme');
-        } catch (e) {}
+        } catch (e) { }
         if (theme === null || theme === undefined) {
             theme = default_theme;
         }
@@ -94,7 +94,7 @@
         if (document.body.clientWidth >= 1080) {
             try {
                 sidebar = localStorage.getItem('mdbook-sidebar');
-            } catch (e) {}
+            } catch (e) { }
             sidebar = sidebar || 'visible';
         }
         html.classList.remove('sidebar-visible');
@@ -102,239 +102,385 @@
     </script>
 
     <!-- ---------------------------------------- NAV ---------------------------------------- -->
-<nav id="sidebar" class="sidebar" aria-label="Table of contents">
-    <div class="sidebar-scrollbox">
-        <div class="search_box">
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Topik..." title="Type in a name">
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <div class="sidebar-scrollbox">
+            <div class="search_box">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Topik..."
+                    title="Type in a name">
+            </div>
+            <ol class="chapter" id="myUL">
+                <!-- -------------------- KENALAN -------------------- -->
+                <li class="chapter-item expanded affix "><a href="../index.html"><span><strong
+                                aria-hidden="true">KENALAN</strong></span></a></li>
+                <!-- -------------------- KULIAH -------------------- -->
+                <li class="chapter-item expanded "><a href="../00-intro/index.html"><span><strong aria-hidden="true">1.
+                                Mata Kuliah </strong></span></a>
+                </li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded "><a href="../00-intro/inf.html"><span><strong
+                                        aria-hidden="true">1.1.</strong> Informatika </span></a></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="../00-intro/pbo.html"><span>1.1.1.
+                                            PBO</span></a></li>
+                                <li>
+                                    <ol class="section">
+                                        <li class="chapter-item expanded "><a
+                                                href="../00-intro/pbojavgen.html"><span>1.1.1.1 Java Generics</span></a>
+                                        </li>
+                                        <li class="chapter-item expanded "><a
+                                                href="../00-intro/pboso.html"><span>1.1.1.2 String Operation</span></a>
+                                        </li>
+                                        <li class="chapter-item expanded "><a
+                                                href="../00-intro/pboreg.html"><span>1.1.1.3 Regex</span></a></li>
+                                        <li class="chapter-item expanded "><a
+                                                href="../00-intro/pboea.html"><span>1.1.1.4 Exception &
+                                                    Assertion</span></a></li>
+                                        <li class="chapter-item expanded "><a
+                                                href="../00-intro/pboio.html"><span>1.1.1.5 I/O</span></a></li>
+                                    </ol>
+                                </li>
+                                <li class="chapter-item expanded "><a href="../00-intro/basdat.html"><span>1.1.2.
+                                            Basdat</span></a></li>
+                                <li class="chapter-item expanded "><a href="../05-jarkom/index.html"><span>1.1.3.
+                                            Jarkom</span></a></li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><a href="../00-intro/kimia.html"><span>
+                                    <strongaria-hidden="true">1.2.</strong> Kimia
+                                </span></a></li>
+                    </ol>
+                </li>
+                <!-- -------------------- CYBER SECURITY -------------------- -->
+                <li class="chapter-item expanded ">
+                    <a href="../02-cybersec/index.html"><span>
+                            <strong aria-hidden="true">2. Cyber Security </strong></span>
+                    </a>
+                </li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded "><a href="../02-cybersec/tcpip.html"><span><strong
+                                        aria-hidden="true">2.01.</strong> Konsep TCP/IP</span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.02.</strong> IPv6</span>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.03.</strong>
+                                Routing</span></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/kernel.html"><span><strong
+                                        aria-hidden="true">2.04.</strong> Kernel</span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.05.</strong> Network
+                                Programming</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.06.</strong> Persiapan
+                                Hacking</span></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/footprinting.html"><span><strong
+                                        aria-hidden="true">2.07.</strong> Footprinting </span></a></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/infgather.html"><span><strong
+                                        aria-hidden="true">2.08.</strong> Information Gathering </span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.09.</strong> Sniffing
+                            </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.10.</strong> Spoffing
+                            </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.11.</strong> Hacking
+                                Wireless </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.12.</strong> Attack
+                                password </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.13.</strong> Attack
+                                database SQL </span></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/mitm.html"><span><strong
+                                        aria-hidden="true">2.14.</strong> MITM </span></a></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/msf.html"><span><strong
+                                        aria-hidden="true">2.15.</strong> Metasploit </span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.16.</strong> DNS & Deface
+                                WEB </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.17.</strong> Attack File
+                                Sharing </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.18.</strong> Vulnerability
+                                Analysis </span></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/dvwa.html"><span><strong
+                                        aria-hidden="true">2.19.</strong> DVWA </span></a></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="../02-cybersec/dvwaci.html"><span>2.19.1.
+                                            Command Injection</span></a></li>
+                                <li class="chapter-item expanded "><a href="../02-cybersec/dvwasqli.html"><span>2.19.2.
+                                            SQL Injection</span></a></li>
+                                <li class="chapter-item expanded "><a href="../02-cybersec/dvwaupv.html"><span>2.19.3.
+                                            Upload Vuln</span></a></li>
+                                <li class="chapter-item expanded "><a href="../02-cybersec/dvwaxss.html"><span>2.19.4.
+                                            XSS</span></a></li>
+                                <li class="chapter-item expanded "><a href="../02-cybersec/dvwaxsrf.html"><span>2.19.4.
+                                            XSRF</span></a></li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.20.</strong> Dasar
+                                Pengamanan Server </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.21.</strong> Firewall
+                            </span></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/vpn.html"><span><strong
+                                        aria-hidden="true">2.22.</strong> VPN </span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.23.</strong> Web
+                                Application Firewall </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.24.</strong> Pertahanan
+                                Host </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.25.</strong> Basic Data
+                                Security </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.26.</strong> Forensic
+                            </span></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/anonim.html"><span><strong
+                                        aria-hidden="true">2.27.</strong> Stay Anonymous </span></a></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/deepweeb.html"><span><strong
+                                        aria-hidden="true">2.28.</strong> Deep Web </span></a></li>
+                    </ol>
+                </li>
+                <!-- -------------------- JARKOM -------------------- -->
+                <li class="chapter-item expanded "><a href="../05-jarkom/index.html"><span><strong aria-hidden="true">3.
+                                Jaringan Komputer </strong></span></a></li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.01.</strong>
+                                Pendahuluan</span></li>
+                        <li class="chapter-item expanded "><a href="../05-jarkom/wireshark.html"><span><strong
+                                        aria-hidden="true">3.02.</strong> Wireshark </span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.03.</strong> Simulator
+                                Jaringan </span></li>
+                        <li class="chapter-item expanded "><a href="../05-jarkom/pkjdll.html"><span><strong
+                                        aria-hidden="true">3.04.</strong> Perangkat Keras Jaringan & Data Link
+                                    Layer</span></a></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="../05-jarkom/dll.html"><span>3.04.1 Data
+                                            Link Layer</span></a></li>
+                                <li class="chapter-item expanded "><a href="../05-jarkom/ldll.html"><span>3.04.2 Lebih
+                                            Detail Data Link Layer</span></a></li>
+                                <li class="chapter-item expanded "><a href="../05-jarkom/ethernet.html"><span>3.04.3
+                                            Ethernet</span></a></li>
+                                <li class="chapter-item expanded "><span>3.04.4 Wireless Internet</span></li>
+                                <li class="chapter-item expanded "><span>3.04.5 MAC Address</span></li>
+                                <li class="chapter-item expanded "><span>3.04.6 Teknologi ADSL</span></li>
+                                <li class="chapter-item expanded "><span>3.04.7 Wireless Internet Wifi</span></li>
+                                <li class="chapter-item expanded "><span>3.04.8 Teknik Modulasi</span></li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.05.</strong> Perangkat
+                                WiFi / Wireless Internet</span></li>
+                        <li class="chapter-item expanded "><a href="../05-jarkom/swthub.html"><span><strong
+                                        aria-hidden="true">3.06.</strong> Switch & Hub</span></a></li>
+                        <li class="chapter-item expanded "><a href="../05-jarkom/nlipv4.html"><span><strong
+                                        aria-hidden="true">3.07.</strong> Network Layer IPv4</span></a></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="../05-jarkom/nl.html"><span>3.07.1. Network
+                                            Layer</span></a></li>
+                                <li class="chapter-item expanded "><span>3.07.2. IPv4</span></li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.08.</strong> Transport
+                                Layer</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.09.</strong> Domain Name
+                                System & Pengaturan Internet</span></li>
+                        <li class="chapter-item expanded "><a href="../05-jarkom/rnat.html"><span><strong
+                                        aria-hidden="true">3.10.</strong> Routing & NAT</a></span></li>
+                        <li class="chapter-item expanded "><a href="../05-jarkom/mikrotik.html"><span><strong
+                                        aria-hidden="true">3.11.</strong> Mikrotik</a></span></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="../05-jarkom/mikbasic.html"><span>3.11.1.
+                                            Basic Networking</span></a></li>
+                                <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnpptp.html"><span>3.11.2.
+                                            VPN-PPTP</span></a></li>
+                                <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnsstp.html"><span>3.11.3.
+                                            VPN-SSTP</span></a></li>
+                                <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnl2tp.html"><span>3.11.4.
+                                            VPN-L2TP</span></a></li>
+                                <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnopen.html"><span>3.11.5.
+                                            VPN-OpenVPN</span></a></li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><a href="../05-jarkom/cisco.html"><span><strong
+                                        aria-hidden="true">3.12.</strong> Cisco</span></a></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="../05-jarkom/ptrace.html"><span>3.12.01
+                                            Cisco Packet Tracer</span></a></li>
+                                <li>
+                                    <ol class="section">
+                                        <li class="chapter-item expanded "><a
+                                                href="../05-jarkom/ptracemidquiz.html"><span>3.12.01.1 Basic
+                                                    Quiz</span></a></li>
+                                        <li class="chapter-item expanded "><a
+                                                href="../05-jarkom/ptracequiz.html"><span>3.12.01.2 IoT Basic
+                                                    Quiz</span></a></li>
+                                    </ol>
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.13.</strong> Web / Content
+                                Management System</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.14.</strong> e-mail / SMTP
+                                / POP3 / IMAP / Webmail</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.15.</strong> VoIP /
+                                Internet Telepon</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.16.</strong> Streaming
+                                Multimedia</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.17.</strong> IPv6 </span>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.18.</strong>
+                                Hacking</span></li>
+                        <li class="chapter-item expanded "><a href="../02-cybersec/index.html"><span><strong
+                                        aria-hidden="true">3.19.</strong> Cyber Security</span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.20.</strong> BasicData
+                                Security</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.21.</strong> Pemrograman
+                                Jaringan & IoT</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">3.22.</strong> Network
+                                Management & Benchmarking</span></li>
+                    </ol>
+                </li>
+                <!-- -------------------- Robotics -------------------- -->
+                <li class="chapter-item expanded "><a href="../07-robotics/index.html"><span><strong
+                                aria-hidden="true">4. Robotics</strong></span></a></li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded "><a href="../07-robotics/arduino.html"><span><strong
+                                        aria-hidden="true">4.1.</strong> Arduino</span></a></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a
+                                        href="../07-robotics/arduinoBoard.html"><span>4.01. Arduino Board</span></a>
+                                </li>
+                                <li class="chapter-item expanded "><a
+                                        href="../07-robotics/arduinoDataType.html"><span>4.02. Arduino Data
+                                            Types</span></a></li>
+                                <li class="chapter-item expanded "><a
+                                        href="../07-robotics/arduinoCoding.html"><span>4.03. Arduino Coding</span></a>
+                                </li>
+                                <li class="chapter-item expanded "><a
+                                        href="../07-robotics/arduinoFuncLib.html"><span>4.04. Arduino Function
+                                            Lbraries</span></a></li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><a href="../07-robotics/andstdio.html"><span><strong
+                                        aria-hidden="true">4.2.</strong> Android Studio</span></a></li>
+                    </ol>
+                </li>
+                <!-- -------------------- CTF -------------------- -->
+                <li class="chapter-item expanded "><a href="../03-ctf/index.html"><span><strong aria-hidden="true">5.
+                                Capture The Flag </strong></span></a></li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded "><a href="../03-ctf/binex.html"><span><strong
+                                        aria-hidden="true">5.1.</strong> Binary Exploitation</span></a></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="../03-ctf/binex-pwnshell.html"><span>5.10.
+                                            Pwn & Shellcode</span></a></li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">5.2.</strong> Cryptography
+                            </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">5.3.</strong> Reverse
+                                Engineering </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">5.4.</strong> Web</span>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">5.5.</strong>
+                                Forensic</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">5.6.</strong> Miscellaneous
+                            </span></li>
+                        <li class="chapter-item expanded "><a href="../03-ctf/assembly.html"><span><strong
+                                        aria-hidden="true">5.7.</strong> Assembly</span></a></li>
+                        <li class="chapter-item expanded "><a href="../03-ctf/johnhmnd.html"><span><strong
+                                        aria-hidden="true">5.8.</strong> John-Hammond</span></a></li>
+                        <li class="chapter-item expanded "><a href="../03-ctf/random.html"><span><strong
+                                        aria-hidden="true">5.9.</strong> Random</span></a></li>
+                    </ol>
+                </li>
+                <!-- -------------------- TOOLS -------------------- -->
+                <li class="chapter-item expanded "><a href="../06-tools/index.html"><span><strong aria-hidden="true">6.
+                                Tools </strong></span></a></li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded "><a href="../06-tools/nmap.html"><span><strong
+                                        aria-hidden="true">6.01.</strong> Nmap</span></a></li>
+                        <li class="chapter-item expanded "><a href="../06-tools/py.html"><span><strong
+                                        aria-hidden="true">6.02.</strong> Python</span></a></li>
+                        <li class="chapter-item expanded "><a href="../06-tools/curl.html"><span><strong
+                                        aria-hidden="true">6.03.</strong> Curl</span></a></li>
+                        <li class="chapter-item expanded "><a href="../06-tools/tcpdump.html"><span><strong
+                                        aria-hidden="true">6.04.</strong> Tcpdump</span></a></li>
+                        <li class="chapter-item expanded "><a href="../06-tools/ingdb.html"><span><strong
+                                        aria-hidden="true">6.05.</strong> GDB</span></a></li>
+                        <li class="chapter-item expanded "><a href="../06-tools/radare2.html"><span><strong
+                                        aria-hidden="true">6.06.</strong> Using Radare2</span></a></li>
+                        <li class="chapter-item expanded "><a href="../06-tools/fcrackzip.html"><span><strong
+                                        aria-hidden="true">6.07.</strong> fcrackzip</span></a></li>
+                        <li class="chapter-item expanded "><a href="../06-tools/ngrok.html"><span><strong
+                                        aria-hidden="true">6.08.</strong> ngrok</span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">6.09.</strong> Ghidra
+                            </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">6.10.</strong> Ida </span>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">6.11.</strong> Hydra</span>
+                        </li>
+                    </ol>
+                </li>
+                <!-- -------------------- TIPS -------------------- -->
+                <li class="chapter-item expanded "><a href="../04-tips/index.html"><span><strong aria-hidden="true">7.
+                                TIPS </strong></span></a></li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded "><a href="../04-tips/ctflicense.html"><span><strong
+                                        aria-hidden="true">7.01.</strong> Contoh cracking CTF licence key</span></a>
+                        </li>
+                        <li class="chapter-item expanded "><a href="../04-tips/irdeb.html"><span><strong
+                                        aria-hidden="true">7.02.</strong> Install / Remove .deb in ubuntu</span></a>
+                        </li>
+                        <li class="chapter-item expanded "><a href="../04-tips/isqls.html"><span><strong
+                                        aria-hidden="true">7.03.</strong> Install sql server ubuntu 20.04</span></a>
+                        </li>
+                        <li class="chapter-item expanded "><a href="../04-tips/ipstatic.html"><span><strong
+                                        aria-hidden="true">7.04.</strong> Setting IP Static</span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/https.html"><span><strong
+                                        aria-hidden="true">7.05.</strong> HTTPS in Local Network (Ubuntu Server
+                                    20.04)</span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/itcareer.html"
+                                style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">7.06.</strong> IT
+                                    Career Roadmap</span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/monitor.html"><span><strong
+                                        aria-hidden="true">7.07.</strong> Wlan Monitor Mode</span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/vbox.html"><span><strong
+                                        aria-hidden="true">7.08.</strong> Virtualbox</span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/path.html"><span><strong
+                                        aria-hidden="true">7.09.</strong> Path variable terminal</span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/lug.html"><span><strong
+                                        aria-hidden="true">7.10.</strong> List Users & Groups </span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/replonno.html"><span><strong
+                                        aria-hidden="true">7.11.</strong> Replikasi Onnocenter </span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/moodle.html"><span><strong
+                                        aria-hidden="true">7.12.</strong> Install Moodle </span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/ros.html"><span><strong
+                                        aria-hidden="true">7.13.</strong> Install ROS</span></a></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="../04-tips/rosmelodic.html"><span>7.13.1.
+                                            ROS Melodic</span></a></li>
+                                <li class="chapter-item expanded "><a href="../04-tips/rosnoetic.html"><span>7.13.2. ROS
+                                            Noetic</span></a></li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><a href="../04-tips/rosopencv.html"><span><strong
+                                        aria-hidden="true">7.14.</strong> Install ROS & Opencv</span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/rmdual.html"><span><strong
+                                        aria-hidden="true">7.15.</strong> Hapus Dual Boot </span></a></li>
+                        <li class="chapter-item expanded "><a href="../04-tips/random.html"><span><strong
+                                        aria-hidden="true">7.16.</strong> Random</span></a></li>
+                    </ol>
+                </li>
+                <!-- -------------------- Akhir -------------------- -->
+            </ol>
         </div>
-        <ol class="chapter" id="myUL">
-            <!-- -------------------- KENALAN -------------------- -->
-            <li class="chapter-item expanded affix "><a href="../index.html"><span><strong aria-hidden="true">KENALAN</strong></span></a></li>
-            <!-- -------------------- KULIAH -------------------- -->
-            <li class="chapter-item expanded "><a href="../00-intro/index.html"><span><strong aria-hidden="true">1. Mata Kuliah </strong></span></a>
-            </li>
-            <li>
-                <ol class="section">
-                    <li class="chapter-item expanded "><a href="../00-intro/inf.html"><span><strong aria-hidden="true">1.1.</strong> Informatika </span></a></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="../00-intro/pbo.html"><span>1.1.1. PBO</span></a></li>
-                            <li>
-                                <ol class="section">
-                                    <li class="chapter-item expanded "><a href="../00-intro/pbojavgen.html"><span>1.1.1.1 Java Generics</span></a></li>
-                                    <li class="chapter-item expanded "><a href="../00-intro/pboso.html"><span>1.1.1.2 String Operation</span></a></li>
-                                    <li class="chapter-item expanded "><a href="../00-intro/pboreg.html"><span>1.1.1.3 Regex</span></a></li>
-                                    <li class="chapter-item expanded "><a href="../00-intro/pboea.html"><span>1.1.1.4 Exception & Assertion</span></a></li>
-                                    <li class="chapter-item expanded "><a href="../00-intro/pboio.html"><span>1.1.1.5 I/O</span></a></li>
-                                </ol>
-                            </li>
-                            <li class="chapter-item expanded "><a href="../00-intro/basdat.html"><span>1.1.2. Basdat</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/index.html"><span>1.1.3. Jarkom</span></a></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><a href="../00-intro/kimia.html"><span><strongaria-hidden="true">1.2.</strong> Kimia</span></a></li>
-                </ol>
-            </li>
-            <!-- -------------------- CYBER SECURITY -------------------- -->
-            <li class="chapter-item expanded ">
-                <a href="../02-cybersec/index.html"><span>
-                    <strong aria-hidden="true">2. Cyber Security </strong></span>
-                </a>
-            </li>
-            <li>
-                <ol class="section">
-                    <li class="chapter-item expanded "><a href="../02-cybersec/tcpip.html"><span><strong aria-hidden="true">2.01.</strong> Konsep TCP/IP</span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.02.</strong> IPv6</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.03.</strong> Routing</span></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/kernel.html"><span><strong aria-hidden="true">2.04.</strong> Kernel</span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.05.</strong> Network Programming</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.06.</strong> Persiapan Hacking</span></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/footprinting.html"><span><strong aria-hidden="true">2.07.</strong> Footprinting </span></a></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/infgather.html"><span><strong aria-hidden="true">2.08.</strong> Information Gathering </span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.09.</strong> Sniffing </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.10.</strong> Spoffing </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.11.</strong> Hacking Wireless </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.12.</strong> Attack password </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.13.</strong> Attack database SQL </span></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/mitm.html"><span><strong aria-hidden="true">2.14.</strong> MITM </span></a></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/msf.html"><span><strong aria-hidden="true">2.15.</strong> Metasploit </span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.16.</strong> DNS & Deface WEB </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.17.</strong> Attack File Sharing </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.18.</strong> Vulnerability Analysis </span></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/dvwa.html"><span><strong aria-hidden="true">2.19.</strong> DVWA </span></a></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="../02-cybersec/dvwaci.html"><span>2.19.1. Command Injection</span></a></li>
-                            <li class="chapter-item expanded "><a href="../02-cybersec/dvwasqli.html"><span>2.19.2. SQL Injection</span></a></li>
-                            <li class="chapter-item expanded "><a href="../02-cybersec/dvwaupv.html"><span>2.19.3. Upload Vuln</span></a></li>
-                            <li class="chapter-item expanded "><a href="../02-cybersec/dvwaxss.html"><span>2.19.4. XSS</span></a></li>
-                            <li class="chapter-item expanded "><a href="../02-cybersec/dvwaxsrf.html"><span>2.19.4. XSRF</span></a></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.20.</strong> Dasar Pengamanan Server </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.21.</strong> Firewall </span></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/vpn.html"><span><strong aria-hidden="true">2.22.</strong> VPN </span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.23.</strong> Web Application Firewall </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.24.</strong> Pertahanan Host </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.25.</strong> Basic Data Security </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.26.</strong> Forensic </span></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/anonim.html"><span><strong aria-hidden="true">2.27.</strong> Stay Anonymous </span></a></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/deepweeb.html"><span><strong aria-hidden="true">2.28.</strong> Deep Web </span></a></li>
-                </ol>
-            </li>
-            <!-- -------------------- JARKOM -------------------- -->
-            <li class="chapter-item expanded "><a href="../05-jarkom/index.html"><span><strong aria-hidden="true">3. Jaringan Komputer </strong></span></a></li>
-            <li>
-                <ol class="section">
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.01.</strong> Pendahuluan</span></li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/wireshark.html"><span><strong aria-hidden="true">3.02.</strong> Wireshark </span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.03.</strong> Simulator Jaringan </span></li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/pkjdll.html"><span><strong aria-hidden="true">3.04.</strong> Perangkat Keras Jaringan & Data Link Layer</span></a></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="../05-jarkom/dll.html"><span>3.04.1 Data Link Layer</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/ldll.html"><span>3.04.2 Lebih Detail Data Link Layer</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/ethernet.html"><span>3.04.3 Ethernet</span></a></li>
-                            <li class="chapter-item expanded "><span>3.04.4 Wireless Internet</span></li>
-                            <li class="chapter-item expanded "><span>3.04.5 MAC Address</span></li>
-                            <li class="chapter-item expanded "><span>3.04.6 Teknologi ADSL</span></li>
-                            <li class="chapter-item expanded "><span>3.04.7 Wireless Internet Wifi</span></li>
-                            <li class="chapter-item expanded "><span>3.04.8 Teknik Modulasi</span></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.05.</strong> Perangkat WiFi / Wireless Internet</span></li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/swthub.html"><span><strong aria-hidden="true">3.06.</strong> Switch & Hub</span></a></li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/nlipv4.html"><span><strong aria-hidden="true">3.07.</strong> Network Layer IPv4</span></a></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="../05-jarkom/nl.html"><span>3.07.1. Network Layer</span></a></li>
-                            <li class="chapter-item expanded "><span>3.07.2. IPv4</span></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.08.</strong> Transport Layer</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.09.</strong> Domain Name System & Pengaturan Internet</span></li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/rnat.html"><span><strong aria-hidden="true">3.10.</strong> Routing & NAT</a></span></li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/mikrotik.html"><span><strong aria-hidden="true">3.11.</strong> Mikrotik</a></span></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="../05-jarkom/mikbasic.html"><span>3.11.1. Basic Networking</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnpptp.html"><span>3.11.2. VPN-PPTP</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnsstp.html"><span>3.11.3. VPN-SSTP</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnl2tp.html"><span>3.11.4. VPN-L2TP</span></a></li>
-                            <li class="chapter-item expanded "><a href="../05-jarkom/mikvpnopen.html"><span>3.11.5. VPN-OpenVPN</span></a></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><a href="../05-jarkom/cisco.html"><span><strong aria-hidden="true">3.12.</strong> Cisco</span></a></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="../05-jarkom/ptrace.html"><span>3.12.01 Cisco Packet Tracer</span></a></li>
-                            <li>
-                                <ol class="section">
-                                    <li class="chapter-item expanded "><a href="../05-jarkom/ptracemidquiz.html"><span>3.12.01.1 Basic Quiz</span></a></li>
-                                    <li class="chapter-item expanded "><a href="../05-jarkom/ptracequiz.html"><span>3.12.01.2 IoT Basic Quiz</span></a></li>
-                                </ol>
-                            </li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.13.</strong> Web / Content Management System</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.14.</strong> e-mail / SMTP / POP3 / IMAP / Webmail</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.15.</strong> VoIP / Internet Telepon</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.16.</strong> Streaming Multimedia</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.17.</strong> IPv6 </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.18.</strong> Hacking</span></li>
-                    <li class="chapter-item expanded "><a href="../02-cybersec/index.html"><span><strong aria-hidden="true">3.19.</strong> Cyber Security</span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.20.</strong> BasicData Security</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.21.</strong> Pemrograman Jaringan & IoT</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">3.22.</strong> Network Management & Benchmarking</span></li>
-                </ol>
-            </li>
-            <!-- -------------------- Robotics -------------------- -->
-            <li class="chapter-item expanded "><a href="../07-robotics/index.html"><span><strong aria-hidden="true">4. Robotics</strong></span></a></li>
-            <li>
-                <ol class="section">
-                    <li class="chapter-item expanded "><a href="../07-robotics/arduino.html"><span><strong aria-hidden="true">4.1.</strong> Arduino</span></a></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="../07-robotics/arduinoBoard.html"><span>4.01. Arduino Board</span></a></li>
-                            <li class="chapter-item expanded "><a href="../07-robotics/arduinoDataType.html"><span>4.02. Arduino Data Types</span></a></li>
-                            <li class="chapter-item expanded "><a href="../07-robotics/arduinoCoding.html"><span>4.03. Arduino Coding</span></a></li>
-                            <li class="chapter-item expanded "><a href="../07-robotics/arduinoFuncLib.html"><span>4.04. Arduino Function Lbraries</span></a></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><a href="../07-robotics/andstdio.html"><span><strong aria-hidden="true">4.2.</strong> Android Studio</span></a></li>
-                </ol>
-            </li>
-            <!-- -------------------- CTF -------------------- -->
-            <li class="chapter-item expanded "><a href="../03-ctf/index.html"><span><strong aria-hidden="true">5. Capture The Flag </strong></span></a></li>
-            <li>
-                <ol class="section">
-                    <li class="chapter-item expanded "><a href="../03-ctf/binex.html"><span><strong aria-hidden="true">5.1.</strong> Binary Exploitation</span></a></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="../03-ctf/binex-pwnshell.html"><span>5.10. Pwn & Shellcode</span></a></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">5.2.</strong> Cryptography </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">5.3.</strong> Reverse Engineering </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">5.4.</strong> Web</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">5.5.</strong> Forensic</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">5.6.</strong> Miscellaneous </span></li>
-                    <li class="chapter-item expanded "><a href="../03-ctf/assembly.html"><span><strong aria-hidden="true">5.7.</strong> Assembly</span></a></li>
-                    <li class="chapter-item expanded "><a href="../03-ctf/johnhmnd.html"><span><strong aria-hidden="true">5.8.</strong> John-Hammond</span></a></li>
-                    <li class="chapter-item expanded "><a href="../03-ctf/random.html"><span><strong aria-hidden="true">5.9.</strong> Random</span></a></li>
-                </ol>
-            </li>
-            <!-- -------------------- TOOLS -------------------- -->
-            <li class="chapter-item expanded "><a href="../06-tools/index.html"><span><strong aria-hidden="true">6. Tools </strong></span></a></li>
-            <li>
-                <ol class="section">
-                    <li class="chapter-item expanded "><a href="../06-tools/nmap.html"><span><strong aria-hidden="true">6.01.</strong> Nmap</span></a></li>
-                    <li class="chapter-item expanded "><a href="../06-tools/py.html"><span><strong aria-hidden="true">6.02.</strong> Python</span></a></li>
-                    <li class="chapter-item expanded "><a href="../06-tools/curl.html"><span><strong aria-hidden="true">6.03.</strong> Curl</span></a></li>
-                    <li class="chapter-item expanded "><a href="../06-tools/tcpdump.html"><span><strong aria-hidden="true">6.04.</strong> Tcpdump</span></a></li>
-                    <li class="chapter-item expanded "><a href="../06-tools/ingdb.html"><span><strong aria-hidden="true">6.05.</strong> GDB</span></a></li>
-                    <li class="chapter-item expanded "><a href="../06-tools/radare2.html"><span><strong aria-hidden="true">6.06.</strong> Using Radare2</span></a></li>
-                    <li class="chapter-item expanded "><a href="../06-tools/fcrackzip.html"><span><strong aria-hidden="true">6.07.</strong> fcrackzip</span></a></li>
-                    <li class="chapter-item expanded "><a href="../06-tools/ngrok.html"><span><strong aria-hidden="true">6.08.</strong> ngrok</span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">6.09.</strong> Ghidra </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">6.10.</strong> Ida </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">6.11.</strong> Hydra</span></li>
-                </ol>
-            </li>
-            <!-- -------------------- TIPS -------------------- -->
-            <li class="chapter-item expanded "><a href="../04-tips/index.html"><span><strong aria-hidden="true">7. TIPS </strong></span></a></li>
-            <li>
-                <ol class="section">
-                    <li class="chapter-item expanded "><a href="../04-tips/ctflicense.html"><span><strong aria-hidden="true">7.01.</strong> Contoh cracking CTF licence key</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/irdeb.html"><span><strong aria-hidden="true">7.02.</strong> Install / Remove .deb in ubuntu</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/isqls.html"><span><strong aria-hidden="true">7.03.</strong> Install sql server ubuntu 20.04</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/ipstatic.html"><span><strong aria-hidden="true">7.04.</strong> Setting IP Static</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/https.html"><span><strong aria-hidden="true">7.05.</strong> HTTPS in Local Network (Ubuntu Server 20.04)</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/itcareer.html" style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">7.06.</strong> IT Career Roadmap</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/monitor.html"><span><strong aria-hidden="true">7.07.</strong> Wlan Monitor Mode</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/vbox.html"><span><strong aria-hidden="true">7.08.</strong> Virtualbox</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/path.html"><span><strong aria-hidden="true">7.09.</strong> Path variable terminal</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/lug.html"><span><strong aria-hidden="true">7.10.</strong> List Users & Groups </span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/replonno.html"><span><strong aria-hidden="true">7.11.</strong> Replikasi Onnocenter </span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/moodle.html"><span><strong aria-hidden="true">7.12.</strong> Install Moodle </span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/ros.html"><span><strong aria-hidden="true">7.13.</strong> Install ROS</span></a></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="../04-tips/rosmelodic.html"><span>7.13.1. ROS Melodic</span></a></li>
-                            <li class="chapter-item expanded "><a href="../04-tips/rosnoetic.html"><span>7.13.2. ROS Noetic</span></a></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><a href="../04-tips/rosopencv.html"><span><strong aria-hidden="true">7.14.</strong> Install ROS & Opencv</span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/rmdual.html"><span><strong aria-hidden="true">7.15.</strong> Hapus Dual Boot </span></a></li>
-                    <li class="chapter-item expanded "><a href="../04-tips/random.html"><span><strong aria-hidden="true">7.16.</strong> Random</span></a></li>
-                </ol>
-            </li>
-            <!-- -------------------- Akhir -------------------- -->
-        </ol>
-    </div>
-    <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
-</nav>
-<!-- ---------------------------------------# NAV #--------------------------------------- -->
+        <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+    <!-- ---------------------------------------# NAV #--------------------------------------- -->
 
     <div id="page-wrapper" class="page-wrapper">
 
@@ -408,138 +554,161 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1><a class="header" href="#career" id="career" style="text-decoration: none;">IT Career Roadmap :</a>
+                    <h1><a class="header" href="#career" id="career" style="text-decoration: none;">IT Career Roadmap
+                            :</a>
                     </h1>
-                    sumber : <a href="https://www.comptia.org" target="_blank">https://www.comptia.org</a><br><br>
                     <img src="../gambar/itroadmap2.png" alt="">
                     <img src="../gambar/itroadmap.png" alt="">
+                    <br><br>
+                    <h2>CompTIA</h2>    
+                    sumber : <a href="https://www.comptia.org" target="_blank">https://www.comptia.org</a><br><br>
+                    <div style="background-color: #1d1f21; border: solid rgb(112, 112, 112) 2px; padding: 20px;">
+                        <strong>Beginer :</strong>
+                        <ul>
+                            $80251/thn <br>
+                            18709 looking <br><br>
+
+                            Job Titles :
+                            <ul>
+                                <li>System/s Administrator</li>
+                                <li>Network Engineer</li>
+                                <li>System/s Engineer</li>
+                            </ul>
+
+                            Required skills at this level :
+                            <ul>
+                                <li>Scan and assess network for vulnerabilities</li>
+                                <li>Monitor network traffic for unusual activity</li>
+                                <li>Investigate a violation when a breach occurs</li>
+                                <li>Install and use software to protect sensitive information</li>
+                                <li>Prepare reports that document security breaches</li>
+                                <li>Research new security technology</li>
+                                <li>Help end-users when they need to install or learn about new products and procedures
+                                </li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <br><br>
+                    <div style="background-color: #1d1f21; border: solid rgb(112, 112, 112) 2px; padding: 20px;">
+                        <strong>Intermediate :</strong>
+                        <ul>
+                            $94,379 <br>
+                            53,739 looking <br><br>
+
+                            Job Titles :
+                            <ul>
+                                <li>Security Analyst</li>
+                                <li>Security Engineer</li>
+                                <li>Pen Tester</li>
+                            </ul>
+
+                            Required skills at this level :
+                            <ul>
+                                <li>Manage and configure tools to monitor network activity</li>
+                                <li>Conduct penetration testing</li>
+                                <li>Analyze reports from tools to identify unusual network behavior</li>
+                                <li>Plan and recommend changes to increase the security of the network</li>
+                                <li>Apply security patches to protect the network</li>
+                                <li>Help end-users when they need to install or learn about new products and procedures
+                                </li>
+                                <li>Train beginner cybersecurity professionals</li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <br><br>
+                    <div style="background-color: #1d1f21; border: solid rgb(112, 112, 112) 2px; padding: 20px;">
+                        <strong>Advance :</strong>
+                        <ul>
+                            $105,033 <br>
+                            44,331 looking <br><br>
+
+                            Job Titles :
+                            <ul>
+                                <li>Senior Security Engineer</li>
+                                <li>Senior Security Analyst</li>
+                                <li>CISO</li>
+                            </ul>
+
+                            Required skills at this level :
+                            <ul>
+                                <li>Manage and configure tools to monitor network activity</li>
+                                <li>Research the latest IT security trends</li>
+                                <li>Develop security standards and best practices for the organization</li>
+                                <li>Recommend security enhancements to management or senior staff</li>
+                                <li>Develop and update business continuity and disaster recovery protocols</li>
+                                <li>Help end-users when they need to install or learn about new products and procedures
+                                </li>
+                                <li>Manage and train team</li>
+                            </ul>
+                        </ul>
+                    </div>
+                    <br><br>
+                    <div style="background-color: #1d1f21; border: solid rgb(112, 112, 112) 2px; padding: 20px;">
+                        <strong>Certifications :</strong>
+                        <ul>
+                            <li>Beginer</li>
+                            <ul>
+                                <li>CompTIA Network+</li>
+                                <li>CompTIA Security+</li>
+                                <li>Partner Certifications</li>
+                            </ul>
+                            <li>Intermediate</li>
+                            <ul>
+                                <li>CompTIA Project+</li>
+                                <li>CompTIA CySA+</li>
+                                <li>CompTIA PenTest+</li>
+                                <li>Partner Certifications</li>
+                            </ul>
+                            <li>Advance</li>
+                            <ul>
+                                <li>CompTIA CASP+</li>
+                                <li>Partner Certifications</li>
+                            </ul>
+                        </ul>
+                    </div>
                     <br>
-                    Certifications :
+                    <p>
+                    <h3>Desc Certification :</h3>
                     <ul>
-                        <li>Beginer</li>
-                        <ul>
-                            <li>CompTIA Network+</li>
-                            <li>CompTIA Security+</li>
-                            <li>Partner Certifications</li>
-                        </ul>
-                        <li>Intermediate</li>
-                        <ul>
-                            <li>CompTIA Project+</li>
-                            <li>CompTIA CySA+</li>
-                            <li>CompTIA PenTest+</li>
-                            <li>Partner Certifications</li>
-                        </ul>
-                        <li>Advance</li>
-                        <ul>
-                            <li>CompTIA CASP+</li>
-                            <li>Partner Certifications</li>
-                        </ul>
-                    </ul>
-                    Beginer :
-                    <ul>
-                        $80251/thn <br>
-                        18709 looking <br><br>
-
-                        Job Titles :
-                        <ul>
-                            <li>System/s Administrator</li>
-                            <li>Network Engineer</li>
-                            <li>System/s Engineer</li>
-                        </ul>
-
-                        Required skills at this level :
-                        <ul>
-                            <li>Scan and assess network for vulnerabilities</li>
-                            <li>Monitor network traffic for unusual activity</li>
-                            <li>Investigate a violation when a breach occurs</li>
-                            <li>Install and use software to protect sensitive information</li>
-                            <li>Prepare reports that document security breaches</li>
-                            <li>Research new security technology</li>
-                            <li>Help end-users when they need to install or learn about new products and procedures</li>
-                        </ul>
-                    </ul>
-                    Intermediate :
-                    <ul>
-                        $94,379 <br>
-                        53,739 looking <br><br>
-
-                        Job Titles :
-                        <ul>
-                            <li>Security Analyst</li>
-                            <li>Security Engineer</li>
-                            <li>Pen Tester</li>
-                        </ul>
-
-                        Required skills at this level :
-                        <ul>
-                            <li>Manage and configure tools to monitor network activity</li>
-                            <li>Conduct penetration testing</li>
-                            <li>Analyze reports from tools to identify unusual network behavior</li>
-                            <li>Plan and recommend changes to increase the security of the network</li>
-                            <li>Apply security patches to protect the network</li>
-                            <li>Help end-users when they need to install or learn about new products and procedures</li>
-                            <li>Train beginner cybersecurity professionals</li>
-                        </ul>
-                    </ul>
-                    Advance :
-                    <ul>
-                        $105,033 <br>
-                        44,331 looking <br><br>
-
-                        Job Titles :
-                        <ul>
-                            <li>Senior Security Engineer</li>
-                            <li>Senior Security Analyst</li>
-                            <li>CISO</li>
-                        </ul>
-
-                        Required skills at this level :
-                        <ul>
-                            <li>Manage and configure tools to monitor network activity</li>
-                            <li>Research the latest IT security trends</li>
-                            <li>Develop security standards and best practices for the organization</li>
-                            <li>Recommend security enhancements to management or senior staff</li>
-                            <li>Develop and update business continuity and disaster recovery protocols</li>
-                            <li>Help end-users when they need to install or learn about new products and procedures</li>
-                            <li>Manage and train team</li>
-                        </ul>
-                    </ul>
-                    <br>
-                    <p>Certification :
-                        <ul>
-                            <li>CompTIA It Network+ certification :</li>
+                        <div style="background-color: #1d1f21; border: solid rgb(112, 112, 112) 2px; padding: 20px;">
+                            CompTIA It Network+ Certification :
                             <ul>
                                 The table below lists the domains measured by the full examination and the extent to
                                 which they are
                                 represented.<br><br>
 
                                 Domain and percentage of examination :
-                                <ol type="1">
+                                <ul>
                                     <li>Networking Concepts 23%</li>
-                                    <li>2.0 Infrastructure 18%</li>
-                                    <li>3.0 Network Operations 17%</li>
-                                    <li>4.0 Network Security 20%</li>
-                                    <li>5.0 Network Troubleshooting and Tools 22%</li>
+                                    <li>Infrastructure 18%</li>
+                                    <li>Network Operations 17%</li>
+                                    <li>Network Security 20%</li>
+                                    <li>Network Troubleshooting and Tools 22%</li>
                                     <li>Total 100%</li>
                                 </ol>
-                            </ul><br>
-                            <li>CompTIA Security+Certification :</li>
+                            </ul>
+                        </div>
+                        <br><br>
+                        <div style="background-color: #1d1f21; border: solid rgb(112, 112, 112) 2px; padding: 20px;">
+                            CompTIA Security+ Certification :
                             <ul>
                                 The table below lists the domains measured by the full examination and the extent to
                                 which they are represented.
                                 <br><br>Domain and percentage of examination :
                                 <ul>
-                                    <li>1.0 Threats, Attacks and Vulnerabilities 21%</li>
-                                    <li>2.0 Technologies and Tools 22%</li>
-                                    <li>3.0 Architecture and Design 15%</li>
-                                    <li>4.0 Identity and Access Management 16%</li>
-                                    <li>5.0 Risk Management 14%</li>
-                                    <li>6.0 Cryptography and PKI 12%</li>
+                                    <li>Threats, Attacks and Vulnerabilities 21%</li>
+                                    <li>Technologies and Tools 22%</li>
+                                    <li>Architecture and Design 15%</li>
+                                    <li>Identity and Access Management 16%</li>
+                                    <li>Risk Management 14%</li>
+                                    <li>Cryptography and PKI 12%</li>
                                     <li>Total 100%</li>
                                 </ul>
                             </ul>
-                            <br><br>----------------------------------------------------<br><br>
-                            <li>CompTIA CySA+ Certification :</li>
+                        </div>
+                        <br><br>----------------------------------------------------<br><br>
+                        <div style="background-color: #1d1f21; border: solid rgb(112, 112, 112) 2px; padding: 20px;">
+                            CompTIA CySA+ Certification :
                             <ul>
                                 The table below lists the domains measured by the full examination and the
                                 extent to which they are represented.
@@ -548,16 +717,18 @@
                                 <br> Core 1 (220-1001)
                                 <br>
                                 <ul>
-                                    <li>1.0 Threat and Vulnerability Management 22%</li>
-                                    <li>2.0 Software and Systems Security 18%</li>
-                                    <li>3.0 Security Operations and Monitoring 25%</li>
-                                    <li>4.0 Incident Response 22%</li>
-                                    <li>5.0 Compliance and Assessment 13%</li>
+                                    <li>Threat and Vulnerability Management 22%</li>
+                                    <li>Software and Systems Security 18%</li>
+                                    <li>Security Operations and Monitoring 25%</li>
+                                    <li>Incident Response 22%</li>
+                                    <li>Compliance and Assessment 13%</li>
                                     <li>Total 100%</li>
                                 </ul>
-                            </ul><br><br>
-
-                            <li>CompTIA Project+ Certification :</li>
+                            </ul>
+                        </div>
+                        <br><br>
+                        <div style="background-color: #1d1f21; border: solid rgb(112, 112, 112) 2px; padding: 20px;">
+                            CompTIA Project+ Certification :
                             <ul>
                                 The table below lists the domains measured by the full examination and the extent to
                                 which
@@ -567,15 +738,17 @@
                                 Domain and percentage of examination :<br>
                                 Core 1 (220-1001)
                                 <ul>
-                                    <li>1.0 Project Basics 36%</li>
-                                    <li>2.0 Project Constraints 17%</li>
-                                    <li>3.0 Communication and Change Management 26%</li>
-                                    <li>4.0 Project Tools and Documentation 21%</li>
+                                    <li>Project Basics 36%</li>
+                                    <li>Project Constraints 17%</li>
+                                    <li>Communication and Change Management 26%</li>
+                                    <li>Project Tools and Documentation 21%</li>
                                     <li>Total 100%</li>
                                 </ul>
                             </ul>
-                            <br><br>
-                            <li>CompTIA PenTest+ Certification :</li>
+                        </div>
+                        <br><br>
+                        <div style="background-color: #1d1f21; border: solid rgb(112, 112, 112) 2px; padding: 20px;">
+                            CompTIA PenTest+ Certification :
                             <ul>
                                 The table below lists the domains measured by the full examination and the
                                 extent to which they are represented.
@@ -583,15 +756,18 @@
                                 Domain and percentage of examination :<br>Core 1
                                 (220-1001)
                                 <ul>
-                                    <li>1.0 Planning and Scoping 15%</li>
-                                    <li>2.0 Information Gathering and Vulnerability Identification 22%</li>
-                                    <li>3.0 Attacks and Exploits 30%</li>
-                                    <li>4.0 Penetration Testing Tools 17%</li>
-                                    <li>5.0 Reporting and Communication 16%</li>
+                                    <li>Planning and Scoping 15%</li>
+                                    <li>Information Gathering and Vulnerability Identification 22%</li>
+                                    <li>Attacks and Exploits 30%</li>
+                                    <li>Penetration Testing Tools 17%</li>
+                                    <li>Reporting and Communication 16%</li>
                                     <li>Total 100%</li>
                                 </ul>
-                            </ul><br><br>
-                            <li>ISACA</li>
+                            </ul>
+                        </div>
+                        <br><br>
+                        <div style="background-color: #1d1f21; border: solid rgb(112, 112, 112) 2px; padding: 20px;">
+                            ISACA
                             <ul>
                                 Validate skills in IT audit, security, governance and risk. ISACA certifications are
                                 based on primary responsibility,
@@ -600,15 +776,21 @@
                                 <li>Certified in Risk and Information Systems Control (CRISC)</li>
                                 <li>Certified Information Security Manager (CISM)</li>
                                 <li>Certified in the Governance of Enterprise IT (CGEIT)</li>
-                            </ul><br><br>
-                            <li>SANS/GIAC</li>
+                            </ul>
+                        </div>
+                        <br><br>
+                        <div style="background-color: #1d1f21; border: solid rgb(112, 112, 112) 2px; padding: 20px;">
+                            SANS/GIAC
                             <ul>
                                 Validate skills in security administration, management, audit, and software security;
                                 offering more
                                 than 30 specialized information security certifications that correspond to specific job
                                 duties.
-                            </ul><br><br>
-                            <li>Cisco (CCT, CCNA, CCIE)</li>
+                            </ul>
+                        </div>
+                        <br><br>
+                        <div style="background-color: #1d1f21; border: solid rgb(112, 112, 112) 2px; padding: 20px;">
+                            Cisco (CCT, CCNA, CCIE)
                             <ul>Validates networking skills using Cisco equipment
                                 and technologies. Cisco organizes their certifications across 5 levels:<br><br>
                                 <li>Entry (CCT)</li>
@@ -617,19 +799,96 @@
                                 <li>Expert (CCIE)</li>
                                 <li>Architect (CCAr)</li>
                             </ul>
-                            <br><br>-----------------------------------------------<br><br>CompTIA
-                            CASP+<br><br>CASP+
+                        </div>
+                        <br><br>-----------------------------------------------<br><br>
+                        <div style="background-color: #1d1f21; border: solid rgb(112, 112, 112) 2px; padding: 20px;">
+                            CompTIA CASP+<br><br>CASP+
                             is an advanced certification that validates critical thinking and judgment across a spectrum
                             of
-                            security disciplines in complex environments<br><br><br>ISC2 CISSP<br><br>ISC2 is best
+                            security disciplines in complex environments
+                        </div>
+                        <br><br>
+                        <div style="background-color: #1d1f21; border: solid rgb(112, 112, 112) 2px; padding: 20px;">
+                            ISC2 CISSP<br><br>ISC2 is best
                             recognized for its CISSP credential. CISSP recognizes information security leaders who
-                            understand cybersecurity strategy.<br><br><br>
-                        </ul>
+                            understand cybersecurity strategy.
+                        </div>
+                    </ul>
                     </p>
 
                     <br>
-                    <hr><br>
+                    <hr>
+                    <h3>Other Certifications</h3>
+                    <ul>
+                        Certifications :
+                        <ul>
+                            <li>Jaringan : CCNA, MTCNA, MTCRE, MTCUME, MTCTCE</li>
+                            <li>Hacking : CEH, OSCP</li>
+                            <li>Forensic : CHFI</li>
+                            <li>Information Security (ISO27001) : CISSCP, CISA, CSCP</li>
+                        </ul>
+                        <br>
+                        <a href="https://www.offensive-security.com/" target="_blank">Offensive Security</a>
+                    </ul>
+<h2>Conclusion</h2>
+<ul>
+<strong>IT Certification :</strong>
+<ul>
+    <a href="https://www.offensive-security.com" target="_blank">offensive-security.com</a><br>
+    <a href="https://www.comptia.org" target="_blank">comptia.org</a><br>
+    <a href="https://www.netacad.com" target="_blank">netacad.com</a><br>
+    <a href="https://www.eccouncil.org" target="_blank">eccouncil.org</a><br>
+    <a href="https://www.isc2.org" target="_blank">isc2.org</a><br>
+    <a href="https://www.pmi.org" target="_blank">pmi.org</a><br>
+    <a href="https://aws.amazon.com/certification" target="_blank">aws.amazon.com/certification</a><br>
+    <a href="https://docs.microsoft.com/en-us/learn/certifications/" target="_blank">docs.microsoft.com/en-us/learn/certification</a>
+</ul>
+<br>
 
+<strong>hardest cert :</strong>
+<ul>
+	<li>CISSP</li>
+	<li>CCIE</li>
+	<li>OSCP &lt; Cisco</li>
+	<li>GSE	&lt; GCIH &lt; GCIA &lt; GSEC</li>
+</ul>
+<br>
+<strong>Entry Level :</strong>
+<ul>    
+    <li>GPEN</li>
+	<li>GWAPT</li>
+	<li>GCIH</li>
+	<li>CySA+</li>
+	<li>CompTIA Sec+</li>
+	<li>A+</li>
+</ul>
+<br>
+<strong>Free Certification :</strong>
+<ul>    
+    <li><a href="https://www.netacad.com/courses/security" target="_blank">Cisco Cybersecurity course</a></li>
+    <ul>
+        <li>Introduction to Cyber Security</li>    
+        <li>Cyber Security Essential</li>
+    </ul>
+	<li><a href="https://training.fortinet.com/local/staticpage/view.php?page=certifications" target="_blank">FORTINET</a></li>
+	<li><a href="https://ics-cert-training.inl.gov/learn" target="_blank">CISA ICS-CERT VLP</a></li>
+	<li><a href="https://www.cyberaces.org/courses.html" target="_blank">SANS CYBER ACES</a></li>
+	<li><a href="https://www.tenable.com/education" target="_blank">tenable</a></li>
+	<li><a href="https://www.paloaltonetworks.com/services/education/digital-learning" target="_blank">paloalto</a></li>
+	<li><a href="https://www.coursera.org/browse/information-technology/cloud-computing" target="_blank">coursera</a></li>
+	<li><a href="https://info.microsoft.com/US-AzureApp-CATALOG-FY20-05May-12-TrainingAzure900fundamentalsforeducation-SRDEM15957_CatalogDisplayPage.html?fbclid=IwAR0E3ahbcZfbyiTLhHMS_AAYGUTULGetPLfSb55eLRQMZVobgnBeronXTY0" target="_blank">microsoft azure</a></li>
+	<li><a href="https://www.cybrary.it/catalog/cybersecurity/" target="_blank">cybrary</a></li>
+	<li>edx</li>
+	<li><a href="https://www.udemy.com/courses/search/?price=price-free&q=cyber+security&sort=relevance" target="_blank">udemy</a></li>
+</ul>
+<br>
+<strong>Sertifikat Indonesia :</strong>
+<ul>
+    <li><a href="https://bpptik.kominfo.go.id" target="_blank">bpptik.kominfo.go.id</a></li>
+	<li><a href="https://lms.onnocenter.or.id/moodle" target="_blank">lms.onnocenter.or.id/moodle</a></li>
+	<li><a href="https://www.mdamastel.id" target="_blank">mdamastel.id</a></li>
+</ul>
+</ul>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
