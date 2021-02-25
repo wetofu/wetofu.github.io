@@ -1,0 +1,466 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js navy">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+
+    <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
+    <title>Torrent</title>
+    <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
+
+
+
+    <!-- Custom HTML head -->
+
+
+
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="Wetofu : belajar suka-suka aee">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+
+    <link rel="icon" href="../favicon.svg">
+
+
+    <link rel="shortcut icon" href="../favicon.png">
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+
+
+
+</head>
+
+<body>
+    <!-- Provide site root to javascript -->
+    <script type="text/javascript">
+        var path_to_root = "../";
+        var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+            var theme = localStorage.getItem('mdbook-theme');
+            var sidebar = localStorage.getItem('mdbook-sidebar');
+
+            if (theme.startsWith('"') && theme.endsWith('"')) {
+                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+            }
+
+            if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+            }
+        } catch (e) { }
+    </script>
+
+    <!-- Set the theme before any content is loaded, prevents flash -->
+    <script type="text/javascript">
+        var theme;
+        try {
+            theme = localStorage.getItem('mdbook-theme');
+        } catch (e) { }
+        if (theme === null || theme === undefined) {
+            theme = default_theme;
+        }
+        var html = document.querySelector('html');
+        html.classList.remove('no-js')
+        html.classList.remove('navy')
+        html.classList.add(theme);
+        html.classList.add('js');
+    </script>
+
+    <!-- Hide / unhide sidebar before it is displayed -->
+    <script type="text/javascript">
+        var html = document.querySelector('html');
+        var sidebar = 'hidden';
+        if (document.body.clientWidth >= 1080) {
+            try {
+                sidebar = localStorage.getItem('mdbook-sidebar');
+            } catch (e) { }
+            sidebar = sidebar || 'visible';
+        }
+        html.classList.remove('sidebar-visible');
+        html.classList.add("sidebar-" + sidebar);
+    </script>
+
+    <!-- ---------------------------------------- NAV ---------------------------------------- -->
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <div class="sidebar-scrollbox">
+            <div class="search_box">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Topik..."
+                    title="Type in a name">
+            </div>
+            <ol class="chapter" id="myUL">
+                <!-- -------------------- KENALAN -------------------- -->
+                <li class="chapter-item expanded affix "><a href="../index.html"><span><strong
+                                aria-hidden="true">KENALAN</strong></span></a></li>
+                <!-- -------------------- CYBER SECURITY -------------------- -->
+                <li class="chapter-item expanded ">
+                    <a href="index.html"><span>
+                            <strong aria-hidden="true">2. Cyber Security </strong></span>
+                    </a>
+                </li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded "><a href="tcpip.html"><span><strong
+                                        aria-hidden="true">2.01.</strong> Konsep TCP/IP</span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.02.</strong> IPv6</span>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.03.</strong>
+                                Routing</span></li>
+                        <li class="chapter-item expanded "><a href="kernel.html"><span><strong
+                                        aria-hidden="true">2.04.</strong> Kernel</span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.05.</strong> Network
+                                Programming</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.06.</strong> Persiapan
+                                Hacking</span></li>
+                        <li class="chapter-item expanded "><a href="footprinting.html"><span><strong
+                                        aria-hidden="true">2.07.</strong> Footprinting </span></a></li>
+                        <li class="chapter-item expanded "><a href="infgather.html"><span><strong
+                                        aria-hidden="true">2.08.</strong> Information Gathering </span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.09.</strong> Sniffing
+                            </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.10.</strong> Spoffing
+                            </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.11.</strong> Hacking
+                                Wireless </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.12.</strong> Attack
+                                password </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.13.</strong> Attack
+                                database SQL </span></li>
+                        <li class="chapter-item expanded "><a href="mitm.html"><span><strong
+                                        aria-hidden="true">2.14.</strong> MITM </span></a></li>
+                        <li class="chapter-item expanded "><a href="msf.html"><span><strong
+                                        aria-hidden="true">2.15.</strong> Metasploit </span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.16.</strong> DNS & Deface
+                                WEB </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.17.</strong> Attack File
+                                Sharing </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.18.</strong> Vulnerability
+                                Analysis </span></li>
+                        <li class="chapter-item expanded "><a href="dvwa.html"><span><strong
+                                        aria-hidden="true">2.19.</strong> DVWA </span></a></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="dvwaci.html"><span>2.19.1. Command
+                                            Injection</span></a></li>
+                                <li class="chapter-item expanded "><a href="dvwasqli.html"><span>2.19.2. SQL
+                                            Injection</span></a></li>
+                                <li class="chapter-item expanded "><a href="dvwaupv.html"><span>2.19.3. Upload
+                                            Vuln</span></a></li>
+                                <li class="chapter-item expanded "><a href="dvwaxss.html"><span>2.19.4. XSS</span></a>
+                                </li>
+                                <li class="chapter-item expanded "><a href="dvwaxsrf.html"><span>2.19.4. XSRF</span></a>
+                                </li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.20.</strong> Dasar
+                                Pengamanan Server </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.21.</strong> Firewall
+                            </span></li>
+                        <li class="chapter-item expanded "><a href="vpn.html"><span><strong
+                                        aria-hidden="true">2.22.</strong> VPN </span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.23.</strong> Web
+                                Application Firewall </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.24.</strong> Pertahanan
+                                Host </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.25.</strong> Basic Data
+                                Security </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.26.</strong> Forensic
+                            </span></li>
+                        <li class="chapter-item expanded "><a href="anonim.html"><span><strong
+                                        aria-hidden="true">2.27.</strong> Stay Anonymous </span></a></li>
+                        <li class="chapter-item expanded "><a href="deepweeb.html"><span><strong
+                                        aria-hidden="true">2.28.</strong> Deep Web </span></a></li>
+                        <li class="chapter-item expanded "><a href="torrent.html"
+                                style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">2.29.</strong>
+                                    Torrent</span></a></li>
+                    </ol>
+                </li>
+                <!-- -------------------- Akhir -------------------- -->
+            </ol>
+        </div>
+        <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+    <!-- ---------------------------------------# NAV #--------------------------------------- -->
+
+    <div id="page-wrapper" class="page-wrapper">
+
+        <div class="page">
+
+            <div id="menu-bar-hover-placeholder"></div>
+            <div id="menu-bar" class="menu-bar sticky bordered">
+                <div class="left-buttons">
+                    <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                        aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                        aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                        <i class="fa fa-paint-brush"></i>
+                    </button>
+                    <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                        <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="navy">Navy (default)</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                    </ul>
+
+                    <!-- <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                        aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                        aria-controls="searchbar">
+                        <i class="fa fa-search"></i>
+                    </button> -->
+
+                </div>
+                <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
+                <h1 class="menu-title">Torrent</h1>
+                <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
+
+                <div class="right-buttons">
+                    <a href="../print.html" title="Print this book" aria-label="Print this book">
+                        <i id="print-button" class="fa fa-print"></i>
+                    </a>
+
+                    <a href="https://github.com/syahrolus" title="Git repository" aria-label="Git repository">
+                        <i id="git-repository-button" class="fa fa-github"></i>
+                    </a>
+                </div>
+            </div>
+
+
+            <div id="search-wrapper" class="hidden">
+                <form id="searchbar-outer" class="searchbar-outer">
+                    <input type="search" name="search" id="searchbar" name="searchbar"
+                        placeholder="Search this book ..." aria-controls="searchresults-outer"
+                        aria-describedby="searchresults-header">
+                </form>
+                <div id="searchresults-outer" class="searchresults-outer hidden">
+                    <div id="searchresults-header" class="searchresults-header"></div>
+                    <ul id="searchresults">
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+            <script type="text/javascript">
+                document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                    link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                });
+            </script>
+
+            <div id="content" class="content">
+                <main>
+                    <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
+                    <h1><a class="header" href="#intro" id="intro">Torrent</a></h1>
+
+                    secara umum ada 2 cara download, biasa & torrent
+                    <br><br>
+                    download biasa : download langsung dari server pusat <br>
+                    download torrent : sharing antar downloader, bisa download particular package
+                    <br><br>
+                    extensi .torrent
+                    <br><br>
+                    penggunaan :
+                    <ul>
+                        <li>bisa pakai desktop -> utorrent web, transmission</li>
+                        <li>bisa pakai server -> utorrent web</li>
+                    </ul>
+
+                    <h2>install utorrent ubuntu server :</h2>
+
+                    <h3>download file :</h3>
+                    <ul>
+                        64 bits
+                        <pre><code>cd /usr/local/src
+wget http://download-hr.utorrent.com/track/beta/endpoint/utserver/os/linux-x64-ubuntu-13-04 -O utserver.tar.gz</code></pre>
+
+                        32 bits
+                        <pre><code>cd /usr/local/src
+wget http://download-hr.utorrent.com/track/beta/endpoint/utserver/os/linux-i386-ubuntu-13-04 -O utserver.tar.gz</code></pre>
+                    </ul>
+
+                    <h3>install :</h3>
+<pre><code>sudo su
+cd /usr/local/src
+sudo tar xvf utserver.tar.gz -C /opt/
+
+cd /usr/local/src
+sudo apt install libssl-dev
+wget http://archive.ubuntu.com/ubuntu/pool/main/o/openssl1.0/libssl1.0.0_1.0.2n-1ubuntu5.5_amd64.deb
+sudo apt install ./libssl1.0.0_1.0.2n-1ubuntu5.5_amd64.deb
+
+sudo ln -s /opt/utorrent-server-alpha-v3_3/utserver /usr/bin/utserver</code></pre>
+
+                    <h3>run :</h3>
+<pre><code>utserver -settingspath /opt/utorrent-server-alpha-v3_3/ -daemon</code></pre>
+
+                    *uTorrent akan listen pada 0.0.0.0:8080, -daemon akan menjalankan uTorrent di background.
+
+                    <h3>akses web :</h3>
+                    <pre><code>http://ip-torrent-server:8080/gui
+http://192.168.0.7:8080/gui</code></pre>
+
+                    username admin <br>
+                    password "dikosongkan" (tanpa password)
+
+                    <h3>konfigurasi :</h3>
+
+                    Klik Settings (roda gigi) 
+                    
+                    <pre><code>Directories
+
+Location of Downloaded Files
+Put new downloads in: /home/share/bittorent/_actives
+Move completed downloads to: /home/share/bittorent
+
+Location of .torrents
+Store .torrents in: /home/share/bittorent/_torrents
+Move .torrents for finished jobs to: /home/share/bittorent/_torrents
+Automatically load .torrents from: /home/share/bittorent/_torrents
+
+                    Web UI
+
+                    Authentication
+                    username admin
+                    password 123456789
+
+                    Connectivity 9090</code></pre>
+
+
+                    <h3>Buat folder di shell</h3>
+<pre><code>mkdir -p /home/share/bittorent/_torrents
+mkdir -p /home/share/bittorent/_actives
+chmod -Rf 777 /home/share
+chown -Rf nobody: /home/share</code></pre>
+
+
+
+
+                    <h2>mencari file torrent :</h2>
+                    search -> torrent search engine
+                    <ul>
+                    <a href="https://snowfl.com/" target="_blank">https://snowfl.com/</a><br>
+                    <a href="http://veoble.com/torrent/" target="_blank">http://veoble.com/torrent/</a><br>
+                    <a href="https://torrents.io/" target="_blank">https://torrents.io/</a><br>
+                    <a href="https://solidtorrents.net/" target="_blank">https://solidtorrents.net/</a><br>
+                    <a href="https://torrentseeker.com/" target="_blank">https://torrentseeker.com/</a><br>
+                    <a href="https://torrent-paradise.ml/" target="_blank">https://torrent-paradise.ml/</a><br>
+                    <a href="https://www.torrentzeta.com/" target="_blank">https://www.torrentzeta.com/</a><br>
+                    <a href="https://btdig.com/" target="_blank">https://btdig.com/</a><br>
+                    <a href="https://www.aiosearch.com/" target="_blank">https://www.aiosearch.com/</a><br>
+                    <a href="https://www.xtorx.com/" target="_blank">https://www.xtorx.com/</a><br>
+                    <a href="http://www.toorgle.com/" target="_blank">http://www.toorgle.com/</a><br>
+                    <a href="https://www.torrentdownload.info/" target="_blank">https://www.torrentdownload.info/</a><br>
+                    <a href="https://bitcq.com/" target="_blank">https://bitcq.com/</a><br>
+                    <a href="https://academictorrents.com/" target="_blank">https://academictorrents.com/</a><br>
+                    <a href="https://thepiratebay10.org/" target="_blank">https://thepiratebay10.org/</a><br>
+                    <a href="https://tpb.party/" target="_blank">https://tpb.party/</a><br>
+                    <a href="https://rarbg.to/index70.php" target="_blank">https://rarbg.to/index70.php</a><br>
+                    <a href="https://1337x.to/" target="_blank">https://1337x.to/</a><br>
+                    <a href="https://www.torlock.com/movies/1/size/desc.html" target="_blank">https://www.torlock.com/movies/1/size/desc.html</a><br>
+                    <a href="https://torrentz2eu.org/" target="_blank">https://torrentz2eu.org/</a><br>
+                    <a href="http://www.yts.am/" target="_blank">http://www.yts.am/</a><br>
+                    <a href="https://eztv.re/" target="_blank">https://eztv.re/</a><br>
+                    <a href="https://zooqle.com/" target="_blank">https://zooqle.com/</a><br>
+                    <a href="https://torrentdownloads.mrunblock.xyz/" target="_blank">https://torrentdownloads.mrunblock.xyz/</a><br>
+                    <a href="https://www.limetorrents.info/" target="_blank">https://www.limetorrents.info/</a><br>
+                </ul>
+                    <strong>sebelum download, ganti IP dulu <br></strong>
+                        (dapat dipelajari dari play list <a href="anonim.html">stay anonymous</a>)
+
+                    <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
+                </main>
+
+                <!-- <nav class="nav-wrapper" aria-label="Page navigation">
+                    Mobile navigation buttons
+                    ----------------------------------------------- DIGANTI PREV NEXT -----------------------------------------------
+
+                    sebelum
+                    <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                        aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    sesudah
+                    <a rel="next" href="../index.html" class="mobile-nav-chapters next" title="Next chapter"
+                        aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                    ----------------------------------------------# DIGANTI PREV NEXT #----------------------------------------------
+
+                    <div style="clear: both"></div>
+                </nav> -->
+            </div>
+        </div>
+
+        <!-- <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            ----------------------------------------------- DIGANTI PREV NEXT 2 -----------------------------------------------
+            sebelum
+            <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter"
+                aria-label="Previous chapter" aria-keyshortcuts="Left">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            sesudah
+            <a rel="next" href="../index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+                aria-keyshortcuts="Right">
+                <i class="fa fa-angle-right"></i>
+            </a>
+            ----------------------------------------------# DIGANTI PREV NEXT 2 #----------------------------------------------
+        </nav> -->
+
+    </div>
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        window.playground_copyable = true;
+    </script>
+
+
+
+
+
+    <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Custom JS scripts -->
+
+
+
+
+</body>
+
+</html>
