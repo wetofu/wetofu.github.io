@@ -1,0 +1,7 @@
+cd 00-intro/; python importNav.py; cd ../
+cd 02-cybersec/; python importNav.py; cd ../
+cd 03-ctf/; python importNav.py; cd ../
+cd 04-tips/; python importNav.py; cd ../
+cd 05-jarkom/; python importNav.py; cd ../
+cd 06-tools/; python importNav.py; cd ../
+cd 07-robotics/; python importNav.py; cd ../
