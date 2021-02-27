@@ -5,3 +5,5 @@ cd 04-tips/; python importNav.py; cd ../
 cd 05-jarkom/; python importNav.py; cd ../
 cd 06-tools/; python importNav.py; cd ../
 cd 07-robotics/; python importNav.py; cd ../
+cd 08-ujian/; python importNav.py; cd ../
+cd cari/; python importNav.py; cd ../

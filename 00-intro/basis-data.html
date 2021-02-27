@@ -1,0 +1,352 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js navy">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+
+    <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
+    <title>Basdat</title>
+    <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
+
+
+
+    <!-- Custom HTML head -->
+
+
+
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="Wetofu : belajar suka-suka aee">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+
+    <link rel="icon" href="../favicon.svg">
+
+
+    <link rel="shortcut icon" href="../favicon.png">
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+
+
+
+</head>
+
+<body>
+    <!-- Provide site root to javascript -->
+    <script type="text/javascript">
+        var path_to_root = "../";
+        var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+            var theme = localStorage.getItem('mdbook-theme');
+            var sidebar = localStorage.getItem('mdbook-sidebar');
+
+            if (theme.startsWith('"') && theme.endsWith('"')) {
+                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+            }
+
+            if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+            }
+        } catch (e) {}
+    </script>
+
+    <!-- Set the theme before any content is loaded, prevents flash -->
+    <script type="text/javascript">
+        var theme;
+        try {
+            theme = localStorage.getItem('mdbook-theme');
+        } catch (e) {}
+        if (theme === null || theme === undefined) {
+            theme = default_theme;
+        }
+        var html = document.querySelector('html');
+        html.classList.remove('no-js')
+        html.classList.remove('navy')
+        html.classList.add(theme);
+        html.classList.add('js');
+    </script>
+
+    <!-- Hide / unhide sidebar before it is displayed -->
+    <script type="text/javascript">
+        var html = document.querySelector('html');
+        var sidebar = 'hidden';
+        if (document.body.clientWidth >= 1080) {
+            try {
+                sidebar = localStorage.getItem('mdbook-sidebar');
+            } catch (e) {}
+            sidebar = sidebar || 'visible';
+        }
+        html.classList.remove('sidebar-visible');
+        html.classList.add("sidebar-" + sidebar);
+    </script>
+
+    <!-- ---------------------------------------- NAV ---------------------------------------- -->
+<nav id="sidebar" class="sidebar" aria-label="Table of contents">
+    <div class="sidebar-scrollbox">
+        <div class="search_box">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Topik..." title="Type in a name">
+        </div>
+        <ol class="chapter" id="myUL">
+            <!-- -------------------- KENALAN -------------------- -->
+            <li class="chapter-item expanded affix "><a href="../index.html"><span><strong aria-hidden="true">KENALAN</strong></span></a></li>
+            <!-- -------------------- Cari -------------------- -->
+            <li class="chapter-item expanded "><a href="../cari/index.html"><span><strong aria-hidden="true">List Topik </strong></span></a></li>
+            <!-- -------------------- KULIAH -------------------- -->
+            <li class="chapter-item expanded "><a href="index.html"><span><strong aria-hidden="true">1. Mata Kuliah </strong></span></a>
+            </li>
+            <li>
+                <ol class="section">
+                    <li class="chapter-item expanded "><a href="informatika.html"><span><strong aria-hidden="true">1.1.</strong> Informatika </span></a></li>
+                    <li>
+                        <ol class="section">
+                            <li class="chapter-item expanded "><a href="pbo.html"><span>1.1.1. PBO</span></a></li>
+                            <li>
+                                <ol class="section">
+                                    <li class="chapter-item expanded "><a href="pbo-java-generic.html"><span>1.1.1.1 Java Generics</span></a></li>
+                                    <li class="chapter-item expanded "><a href="pbo-string-operation.html"><span>1.1.1.2 String Operation</span></a></li>
+                                    <li class="chapter-item expanded "><a href="pbo-regex.html"><span>1.1.1.3 Regex</span></a></li>
+                                    <li class="chapter-item expanded "><a href="pbo-exception-assertion.html"><span>1.1.1.4 Exception & Assertion</span></a></li>
+                                    <li class="chapter-item expanded "><a href="pbo-input-output.html"><span>1.1.1.5 I/O</span></a></li>
+                                </ol>
+                            </li>
+                            <li class="chapter-item expanded "><a href="basis-data.html" style="color: rgb(255, 115, 138);"><span>1.1.2. Basdat</span></a></li>
+                            <li class="chapter-item expanded "><a href="../05-jarkom/index.html"><span>1.1.3. Jarkom</span></a></li>
+                        </ol>
+                    </li>
+                    <li class="chapter-item expanded "><a href="kimia.html"><span><strong aria-hidden="true">1.2.</strong> Kimia</span></a></li>
+                </ol>
+            </li>
+            <!-- -------------------- Akhir -------------------- -->
+        </ol>
+    </div>
+    <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+</nav>
+<!-- ---------------------------------------# NAV #--------------------------------------- -->
+
+    <div id="page-wrapper" class="page-wrapper">
+
+        <div class="page">
+
+            <div id="menu-bar-hover-placeholder"></div>
+            <div id="menu-bar" class="menu-bar sticky bordered">
+                <div class="left-buttons">
+                    <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                        aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                        aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                        <i class="fa fa-paint-brush"></i>
+                    </button>
+                    <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                        <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="navy">Navy (default)</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                    </ul>
+
+                    <!-- <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                        aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                        aria-controls="searchbar">
+                        <i class="fa fa-search"></i>
+                    </button> -->
+
+                </div>
+                <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
+                <h1 class="menu-title">Basis Data</h1>
+                <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
+
+                <div class="right-buttons">
+                    <a href="../print.html" title="Print this book" aria-label="Print this book">
+                        <i id="print-button" class="fa fa-print"></i>
+                    </a>
+
+                    <a href="https://github.com/syahrolus" title="Git repository" aria-label="Git repository">
+                        <i id="git-repository-button" class="fa fa-github"></i>
+                    </a>
+                </div>
+            </div>
+
+
+            <div id="search-wrapper" class="hidden">
+                <form id="searchbar-outer" class="searchbar-outer">
+                    <input type="search" name="search" id="searchbar" name="searchbar"
+                        placeholder="Search this book ..." aria-controls="searchresults-outer"
+                        aria-describedby="searchresults-header">
+                </form>
+                <div id="searchresults-outer" class="searchresults-outer hidden">
+                    <div id="searchresults-header" class="searchresults-header"></div>
+                    <ul id="searchresults">
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+            <script type="text/javascript">
+                document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                    link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                });
+            </script>
+
+            <div id="content" class="content">
+                <main>
+                    <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
+                    <p>
+                        <h2><a class="header" id="bd" style="text-decoration: none;">Basis Data</a></h2>
+                        <strong>perintah umum</strong> 
+                        <pre><code>SELECT * FROM table_name;
+SELECT col1_name[, col2_name[, ...]] FROM table_name;
+SELECT col_name AS alias FROM table_name;
+SELECT TOP(50) * FROM table_name;</code></pre>
+distinct = nampikan yg tdk doble
+<pre><code>SELECT DISTINCT * FROM table_name;
+SELECT DISTINCT col1_name[, col2_name[, ...]] FROM table_name;</code></pre>
+<pre><code>SELECT * FROM table WHERE col1 > col2;
+SELECT * FROM table WHERE col > 50 OR col &lt; 20;
+SELECT * FROM table WHERE col > 90 AND col &lt;= 100;
+SELECT * FROM table WHERE col [NOT] BETWEEN 90 AND 100;
+SELECT * FROM table WHERE col [NOT] IN ('Solo', 'Palu');
+SELECT * FROM table WHERE col IS [NOT] NULL;
+SELECT * FROM table WHERE col LIKE '%budi%';
+SELECT * FROM table WHERE col LIKE '%budi';
+SELECT * FROM table WHERE col LIKE 'budi%';
+SELECT * FROM table WHERE col LIKE '_i%a';</code></pre>
+pengurutan
+<pre><code>SELECT * FROM table_name ORDER BY col ASC;
+SELECT * FROM table_name ORDER BY col DESC;
+SELECT * FROM table_name ORDER BY col1 ASC, col2 DESC;
+SELECT TOP(50) * FROM table_name ORDER BY col ASC;</code></pre>
+<strong>Agregasi baris</strong>
+<pre><code>SELECT * FROM table_name GROUP BY col;
+SELECT * FROM table_name GROUP BY col1, col2;
+SELECT COUNT(*) FROM table_name;
+SELECT SUM(col) FROM table_name;
+SELECT AVG(col) FROM table_name;
+SELECT MIN(col) FROM table_name;
+SELECT MAX(col) FROM table_name;
+SELECT COUNT(*) FROM table WHERE conditions;
+SELECT SUM(col1) FROM table GROUP BY col2;
+SELECT MIN(col1) FROM table WHERE col2 > 10;
+SELECT col1, SUM(col2) FROM table GROUP BY col3 HAVING SUM(col2) > 100;</code></pre>
+<strong>Perintah banyak baris</strong> 
+<pre><code>SELECT * FROM A CROSS JOIN B;
+SELECT * FROM A LEFT JOIN B ON A.k = B.k;
+SELECT * FROM A INNER JOIN B ON A.k = B.k;
+SELECT * FROM A RIGHT JOIN B ON A.k = B.k;
+SELECT * FROM A FULL OUTER JOIN B ON A.k = B.k;
+SELECT * FROM A UNION SELECT * FROM B;
+SELECT * FROM A UNION ALL SELECT * FROM B;</code></pre>
+<img src="../gambar/gamb5.png" alt=""><br><br>
+<strong>Query lain-lain</strong> 
+<pre><code>CREATE VIEW view_name AS SELECT * FROM table; CREATE VIEW view_name AS SELECT col1, SUM(col2) AS sum FROM table_name GROUP BY col3;
+SELECT * FROM view_name;
+SELECT REPLACE(text, search, replace);
+SELECT REPLACE(col, s, r) FROM table;
+CASE var
+    WHEN val1 THEN expr1
+    WHEN val2 THEN expr2
+    ELSE expr3
+END
+COALESCE(expr1, [expr2[, ...]])</code></pre>
+                    </p>
+
+                    <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
+                </main>
+                
+                <!-- <nav class="nav-wrapper" aria-label="Page navigation">
+                    Mobile navigation buttons
+                    ----------------------------------------------- DIGANTI PREV NEXT -----------------------------------------------
+
+                    sebelum
+                    <a rel="prev" href="pboio.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                        aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+
+                    sesudah
+                    <a rel="next" href="kimia.html" class="mobile-nav-chapters next" title="Next chapter"
+                        aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                    ----------------------------------------------# DIGANTI PREV NEXT #----------------------------------------------
+
+                    <div style="clear: both"></div>
+                </nav> -->
+            </div>
+        </div>
+
+        <!-- <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            ----------------------------------------------- DIGANTI PREV NEXT 2 -----------------------------------------------
+            sebelum
+            <a rel="prev" href="pboio.html" class="nav-chapters previous" title="Previous chapter"
+                aria-label="Previous chapter" aria-keyshortcuts="Left">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            sesudah
+            <a rel="next" href="kimia.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+                aria-keyshortcuts="Right">
+                <i class="fa fa-angle-right"></i>
+            </a>
+            ----------------------------------------------# DIGANTI PREV NEXT 2 #----------------------------------------------
+        </nav> -->
+
+    </div>
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        window.playground_copyable = true;
+    </script>
+
+
+
+
+
+    <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Custom JS scripts -->
+
+
+
+
+</body>
+
+</html>
