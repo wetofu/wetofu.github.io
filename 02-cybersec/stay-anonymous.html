@@ -68,7 +68,7 @@
             if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
                 localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
             }
-        } catch (e) {}
+        } catch (e) { }
     </script>
 
     <!-- Set the theme before any content is loaded, prevents flash -->
@@ -76,7 +76,7 @@
         var theme;
         try {
             theme = localStorage.getItem('mdbook-theme');
-        } catch (e) {}
+        } catch (e) { }
         if (theme === null || theme === undefined) {
             theme = default_theme;
         }
@@ -94,7 +94,7 @@
         if (document.body.clientWidth >= 1080) {
             try {
                 sidebar = localStorage.getItem('mdbook-sidebar');
-            } catch (e) {}
+            } catch (e) { }
             sidebar = sidebar || 'visible';
         }
         html.classList.remove('sidebar-visible');
@@ -102,70 +102,108 @@
     </script>
 
     <!-- ---------------------------------------- NAV ---------------------------------------- -->
-<nav id="sidebar" class="sidebar" aria-label="Table of contents">
-    <div class="sidebar-scrollbox">
-        <div class="search_box">
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Topik..." title="Type in a name">
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <div class="sidebar-scrollbox">
+            <div class="search_box">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Topik..."
+                    title="Type in a name">
+            </div>
+            <ol class="chapter" id="myUL">
+                <!-- -------------------- KENALAN -------------------- -->
+                <li class="chapter-item expanded affix "><a href="../index.html"><span><strong
+                                aria-hidden="true">KENALAN</strong></span></a></li>
+                <!-- -------------------- Cari -------------------- -->
+                <li class="chapter-item expanded "><a href="../cari/index.html"><span><strong aria-hidden="true">List
+                                Topik </strong></span></a></li>
+                <!-- -------------------- CYBER SECURITY -------------------- -->
+                <li class="chapter-item expanded ">
+                    <a href="index.html"><span>
+                            <strong aria-hidden="true">2. Cyber Security </strong></span>
+                    </a>
+                </li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded "><a href="konsep-tcp-ip.html"><span><strong
+                                        aria-hidden="true">2.01.</strong> Konsep TCP/IP</span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.02.</strong> IPv6</span>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.03.</strong>
+                                Routing</span></li>
+                        <li class="chapter-item expanded "><a href="kernel.html"><span><strong
+                                        aria-hidden="true">2.04.</strong> Kernel</span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.05.</strong> Network
+                                Programming</span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.06.</strong> Persiapan
+                                Hacking</span></li>
+                        <li class="chapter-item expanded "><a href="footprinting.html"><span><strong
+                                        aria-hidden="true">2.07.</strong> Footprinting </span></a></li>
+                        <li class="chapter-item expanded "><a href="information-gathering.html"><span><strong
+                                        aria-hidden="true">2.08.</strong> Information Gathering </span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.09.</strong> Sniffing
+                            </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.10.</strong> Spoffing
+                            </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.11.</strong> Hacking
+                                Wireless </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.12.</strong> Attack
+                                password </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.13.</strong> Attack
+                                database SQL </span></li>
+                        <li class="chapter-item expanded "><a href="mitm.html"><span><strong
+                                        aria-hidden="true">2.14.</strong> MITM </span></a></li>
+                        <li class="chapter-item expanded "><a href="metasploit.html"><span><strong
+                                        aria-hidden="true">2.15.</strong> Metasploit </span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.16.</strong> DNS & Deface
+                                WEB </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.17.</strong> Attack File
+                                Sharing </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.18.</strong> Vulnerability
+                                Analysis </span></li>
+                        <li class="chapter-item expanded "><a href="dvwa.html"><span><strong
+                                        aria-hidden="true">2.19.</strong> DVWA </span></a></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="dvwa-command-injection.html"><span>2.19.1.
+                                            Command Injection</span></a></li>
+                                <li class="chapter-item expanded "><a href="dvwa-sql-injection.html"><span>2.19.2. SQL
+                                            Injection</span></a></li>
+                                <li class="chapter-item expanded "><a href="dvwa-upload-vuln.html"><span>2.19.3. Upload
+                                            Vuln</span></a></li>
+                                <li class="chapter-item expanded "><a href="dvwa-xss.html"><span>2.19.4. XSS</span></a>
+                                </li>
+                                <li class="chapter-item expanded "><a href="dvwa-xsrf.html"><span>2.19.4.
+                                            XSRF</span></a></li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.20.</strong> Dasar
+                                Pengamanan Server </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.21.</strong> Firewall
+                            </span></li>
+                        <li class="chapter-item expanded "><a href="vpn.html"><span><strong
+                                        aria-hidden="true">2.22.</strong> VPN </span></a></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.23.</strong> Web
+                                Application Firewall </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.24.</strong> Pertahanan
+                                Host </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.25.</strong> Basic Data
+                                Security </span></li>
+                        <li class="chapter-item expanded "><span><strong aria-hidden="true">2.26.</strong> Forensic
+                            </span></li>
+                        <li class="chapter-item expanded "><a href="stay-anonymous.html"
+                                style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">2.27.</strong> Stay
+                                    Anonymous </span></a></li>
+                        <li class="chapter-item expanded "><a href="deepweeb.html"><span><strong
+                                        aria-hidden="true">2.28.</strong> Deep Web </span></a></li>
+                        <li class="chapter-item expanded "><a href="torrent.html"><span><strong
+                                        aria-hidden="true">2.29.</strong> Torrent</span></a></li>
+                    </ol>
+                </li>
+                <!-- -------------------- Akhir -------------------- -->
+            </ol>
         </div>
-        <ol class="chapter" id="myUL">
-            <!-- -------------------- KENALAN -------------------- -->
-            <li class="chapter-item expanded affix "><a href="../index.html"><span><strong aria-hidden="true">KENALAN</strong></span></a></li>
-            <!-- -------------------- Cari -------------------- -->
-            <li class="chapter-item expanded "><a href="../cari/index.html"><span><strong aria-hidden="true">List Topik </strong></span></a></li>
-            <!-- -------------------- CYBER SECURITY -------------------- -->
-            <li class="chapter-item expanded ">
-                <a href="index.html"><span>
-                    <strong aria-hidden="true">2. Cyber Security </strong></span>
-                </a>
-            </li>
-            <li>
-                <ol class="section">
-                    <li class="chapter-item expanded "><a href="konsep-tcp-ip.html"><span><strong aria-hidden="true">2.01.</strong> Konsep TCP/IP</span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.02.</strong> IPv6</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.03.</strong> Routing</span></li>
-                    <li class="chapter-item expanded "><a href="kernel.html"><span><strong aria-hidden="true">2.04.</strong> Kernel</span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.05.</strong> Network Programming</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.06.</strong> Persiapan Hacking</span></li>
-                    <li class="chapter-item expanded "><a href="footprinting.html"><span><strong aria-hidden="true">2.07.</strong> Footprinting </span></a></li>
-                    <li class="chapter-item expanded "><a href="information-gathering.html"><span><strong aria-hidden="true">2.08.</strong> Information Gathering </span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.09.</strong> Sniffing </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.10.</strong> Spoffing </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.11.</strong> Hacking Wireless </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.12.</strong> Attack password </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.13.</strong> Attack database SQL </span></li>
-                    <li class="chapter-item expanded "><a href="mitm.html"><span><strong aria-hidden="true">2.14.</strong> MITM </span></a></li>
-                    <li class="chapter-item expanded "><a href="metasploit.html"><span><strong aria-hidden="true">2.15.</strong> Metasploit </span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.16.</strong> DNS & Deface WEB </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.17.</strong> Attack File Sharing </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.18.</strong> Vulnerability Analysis </span></li>
-                    <li class="chapter-item expanded "><a href="dvwa.html"><span><strong aria-hidden="true">2.19.</strong> DVWA </span></a></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="dvwa-command-injection.html"><span>2.19.1. Command Injection</span></a></li>
-                            <li class="chapter-item expanded "><a href="dvwa-sql-injection.html"><span>2.19.2. SQL Injection</span></a></li>
-                            <li class="chapter-item expanded "><a href="dvwa-upload-vuln.html"><span>2.19.3. Upload Vuln</span></a></li>
-                            <li class="chapter-item expanded "><a href="dvwa-xss.html"><span>2.19.4. XSS</span></a></li>
-                            <li class="chapter-item expanded "><a href="dvwa-xsrf.html"><span>2.19.4. XSRF</span></a></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.20.</strong> Dasar Pengamanan Server </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.21.</strong> Firewall </span></li>
-                    <li class="chapter-item expanded "><a href="vpn.html"><span><strong aria-hidden="true">2.22.</strong> VPN </span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.23.</strong> Web Application Firewall </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.24.</strong> Pertahanan Host </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.25.</strong> Basic Data Security </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.26.</strong> Forensic </span></li>
-                    <li class="chapter-item expanded "><a href="stay-anonymous.html" style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">2.27.</strong> Stay Anonymous </span></a></li>
-                    <li class="chapter-item expanded "><a href="deepweeb.html"><span><strong aria-hidden="true">2.28.</strong> Deep Web </span></a></li>
-                    <li class="chapter-item expanded "><a href="torrent.html"><span><strong aria-hidden="true">2.29.</strong> Torrent</span></a></li>
-                </ol>
-            </li>
-            <!-- -------------------- Akhir -------------------- -->
-        </ol>
-    </div>
-    <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
-</nav>
-<!-- ---------------------------------------# NAV #--------------------------------------- -->
+        <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+    <!-- ---------------------------------------# NAV #--------------------------------------- -->
 
     <div id="page-wrapper" class="page-wrapper">
 
@@ -239,42 +277,58 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
+                    <br><br>
                     <ul>
                         <li><a class="header" href="#proxc">Proxychains </a></li>
                         <li><a class="header" href="#ipp">Change IP Public</a></li>
                         <li><a class="header" href="#mac">Change Mac Address</a></li>
                     </ul>
                     <br>
-                    <hr><br>
+                    <hr>
                     <h2><a class="header" id="ipp" style="text-decoration: none;">Change IP Public</a></h2>
                     cek dulu dns leak nya di browser <br>
-misal dapat ip x.x.x.x dan lokasi kudus indonesia
+                    misal dapat ip x.x.x.x dan lokasi kudus indonesia
 
-<pre><code>sudo vim /etc/proxychains.conf</code></pre>
-<ul>
-<pre><code>(uncomment dynamic_chain)
+                    <pre><code>sudo vim /etc/proxychains.conf</code></pre>
+                    <ul>
+                        <pre><code>(uncomment dynamic_chain)
 (comment random_chain)
 (uncomment proxy_dns)
 socks4 127.0.0.1 9050
 socks5 127.0.0.1 9050</code></pre>
-</ul>
-<pre><code>service tor status
+                    </ul>
+                    <pre><code>service tor status
 service tor stop
 service tor start</code></pre>
-<pre><code>proxychains firefox www.duckduckgo.com</code></pre>
+                    <pre><code>proxychains firefox www.duckduckgo.com</code></pre>
 
-cek dns leak
-maka akan dapat ip y.y.y.y
-<h2><a class="header" id="mac" style="text-decoration: none;">Change Mac Address</a></h2>
-<pre><code>macchanger --help</code></pre>
-show :
-<pre><code>macchanger -s wlan0</code></pre>
-another :
-<pre><code>macchanger -a wlan0</code></pre>
-permanent mac (kembali) :
-<pre><code>macchanger -p wlan0</code></pre>
-list mac :
-<pre><code>macchanger -l</code></pre>
+                    cek dns leak
+                    maka akan dapat ip y.y.y.y
+                    <h2><a class="header" id="mac" style="text-decoration: none;">Change Mac Address</a></h2>
+                    <pre><code>macchanger --help</code></pre>
+                    show :
+                    <pre><code>macchanger -s wlan0</code></pre>
+                    another :
+                    <pre><code>macchanger -a wlan0</code></pre>
+                    permanent mac (kembali) :
+                    <pre><code>macchanger -p wlan0</code></pre>
+                    list mac :
+                    <pre><code>macchanger -l</code></pre>
+
+                    <h3>untuk cek lokasi menggunakan IP Public :</h3>
+                    <ul>
+                        <pre><code>curl ifconfig.io</code></pre>
+                        <a href="https://www.ipfingerprints.com/" target="_blank">https://www.ipfingerprints.com/</a>
+                    </ul>
+                    <h3>untuk cek distributor Mac Address :</h3>
+                    <ul>
+                        <pre><code>macchanger -s wlp2s0</code></pre>
+                        <a href="https://dnschecker.org/mac-lookup.php" target="_blank">https://dnschecker.org/mac-lookup.php</a>
+                    </ul>
+                    <h3>cek kebocoran DNS</h3>
+                    <ul>
+                        <a href="https://www.dnsleaktest.com/" target="_blank">https://www.dnsleaktest.com/</a>
+                    </ul>
 
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
