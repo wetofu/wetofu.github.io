@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>TIPS 12</title>
+    <title>ISO</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -68,7 +68,7 @@
             if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
                 localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
             }
-        } catch (e) {}
+        } catch (e) { }
     </script>
 
     <!-- Set the theme before any content is loaded, prevents flash -->
@@ -76,7 +76,7 @@
         var theme;
         try {
             theme = localStorage.getItem('mdbook-theme');
-        } catch (e) {}
+        } catch (e) { }
         if (theme === null || theme === undefined) {
             theme = default_theme;
         }
@@ -94,7 +94,7 @@
         if (document.body.clientWidth >= 1080) {
             try {
                 sidebar = localStorage.getItem('mdbook-sidebar');
-            } catch (e) {}
+            } catch (e) { }
             sidebar = sidebar || 'visible';
         }
         html.classList.remove('sidebar-visible');
@@ -102,52 +102,80 @@
     </script>
 
     <!-- ---------------------------------------- NAV ---------------------------------------- -->
-<nav id="sidebar" class="sidebar" aria-label="Table of contents">
-    <div class="sidebar-scrollbox">
-        <div class="search_box">
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Topik..." title="Type in a name">
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <div class="sidebar-scrollbox">
+            <div class="search_box">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Topik..."
+                    title="Type in a name">
+            </div>
+            <ol class="chapter" id="myUL">
+                <!-- -------------------- KENALAN -------------------- -->
+                <li class="chapter-item expanded affix "><a href="../index.html"><span><strong
+                                aria-hidden="true">KENALAN</strong></span></a></li>
+                <!-- -------------------- Cari -------------------- -->
+                <li class="chapter-item expanded "><a href="../cari/index.html"><span><strong aria-hidden="true">List
+                                Topik </strong></span></a></li>
+                <!-- -------------------- TIPS -------------------- -->
+                <li class="chapter-item expanded "><a href="index.html"><span><strong aria-hidden="true">7. TIPS
+                            </strong></span></a></li>
+                <li>
+                    <ol class="section">
+                        <li class="chapter-item expanded "><a href="guide-this-website.html"><span><strong
+                                        aria-hidden="true">7.01.</strong> Guide This Web</span></a></li>
+                        <li class="chapter-item expanded "><a href="mdbook.html"><span><strong
+                                        aria-hidden="true">7.02.</strong> Mdbook</span></a></li>
+                        <li class="chapter-item expanded "><a href="deb-file.html"><span><strong
+                                        aria-hidden="true">7.03.</strong> Install / Remove .deb in ubuntu</span></a>
+                        </li>
+                        <li class="chapter-item expanded "><a href="sql-server.html"><span><strong
+                                        aria-hidden="true">7.04.</strong> Install sql server ubuntu 20.04</span></a>
+                        </li>
+                        <li class="chapter-item expanded "><a href="set-ip-static.html"><span><strong
+                                        aria-hidden="true">7.05.</strong> Setting IP Static</span></a></li>
+                        <li class="chapter-item expanded "><a href="set-https.html"><span><strong
+                                        aria-hidden="true">7.06.</strong> HTTPS in Local Network (Ubuntu Server
+                                    20.04)</span></a></li>
+                        <li class="chapter-item expanded "><a href="itcareer.html"><span><strong
+                                        aria-hidden="true">7.07.</strong> IT Career Roadmap</span></a></li>
+                        <li class="chapter-item expanded "><a href="wlan-monitor-mode.html"><span><strong
+                                        aria-hidden="true">7.08.</strong> Wlan Monitor Mode</span></a></li>
+                        <li class="chapter-item expanded "><a href="virtualbox.html"><span><strong
+                                        aria-hidden="true">7.09.</strong> Virtualbox</span></a></li>
+                        <li class="chapter-item expanded "><a href="terminal-path.html"><span><strong
+                                        aria-hidden="true">7.10.</strong> Path variable terminal</span></a></li>
+                        <li class="chapter-item expanded "><a href="list-user-group.html"><span><strong
+                                        aria-hidden="true">7.11.</strong> List Users & Groups </span></a></li>
+                        <li class="chapter-item expanded "><a href="replikasi-onnocenter.html"><span><strong
+                                        aria-hidden="true">7.12.</strong> Replikasi Onnocenter </span></a></li>
+                        <li class="chapter-item expanded "><a href="moodle.html"><span><strong
+                                        aria-hidden="true">7.13.</strong> Install Moodle </span></a></li>
+                        <li class="chapter-item expanded "><a href="ros.html"><span><strong
+                                        aria-hidden="true">7.14.</strong> Install ROS</span></a></li>
+                        <li>
+                            <ol class="section">
+                                <li class="chapter-item expanded "><a href="ros-melodic.html"><span>7.14.1. ROS
+                                            Melodic</span></a></li>
+                                <li class="chapter-item expanded "><a href="ros-noetic.html"><span>7.14.2. ROS
+                                            Noetic</span></a></li>
+                                <li class="chapter-item expanded "><a href="ros-opencv.html"><span>7.14.3. Install ROS &
+                                            Opencv</span></a></li>
+                            </ol>
+                        </li>
+                        <li class="chapter-item expanded "><a href="hapus-dualboot.html"><span><strong
+                                        aria-hidden="true">7.15.</strong> Hapus Dual Boot </span></a></li>
+                        <li class="chapter-item expanded "><a href="membuat-file-iso.html"
+                                style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">7.16.</strong>
+                                    Membuat File ISO</span></a></li>
+                        <li class="chapter-item expanded "><a href="tips-random.html"><span><strong
+                                        aria-hidden="true">7.17.</strong> Random</span></a></li>
+                    </ol>
+                </li>
+                <!-- -------------------- Akhir -------------------- -->
+            </ol>
         </div>
-        <ol class="chapter" id="myUL">
-            <!-- -------------------- KENALAN -------------------- -->
-            <li class="chapter-item expanded affix "><a href="../index.html"><span><strong aria-hidden="true">KENALAN</strong></span></a></li>
-            <!-- -------------------- Cari -------------------- -->
-            <li class="chapter-item expanded "><a href="../cari/index.html"><span><strong aria-hidden="true">List Topik </strong></span></a></li>
-            <!-- -------------------- TIPS -------------------- -->
-            <li class="chapter-item expanded "><a href="index.html"><span><strong aria-hidden="true">7. TIPS </strong></span></a></li>
-            <li>
-                <ol class="section">
-                    <li class="chapter-item expanded "><a href="guide-this-website.html"><span><strong aria-hidden="true">7.01.</strong> Guide This Web</span></a></li>
-                    <li class="chapter-item expanded "><a href="mdbook.html"><span><strong aria-hidden="true">7.02.</strong> Mdbook</span></a></li>
-                    <li class="chapter-item expanded "><a href="deb-file.html"><span><strong aria-hidden="true">7.03.</strong> Install / Remove .deb in ubuntu</span></a></li>
-                    <li class="chapter-item expanded "><a href="sql-server.html"><span><strong aria-hidden="true">7.04.</strong> Install sql server ubuntu 20.04</span></a></li>
-                    <li class="chapter-item expanded "><a href="set-ip-static.html"><span><strong aria-hidden="true">7.05.</strong> Setting IP Static</span></a></li>
-                    <li class="chapter-item expanded "><a href="set-https.html"><span><strong aria-hidden="true">7.06.</strong> HTTPS in Local Network (Ubuntu Server 20.04)</span></a></li>
-                    <li class="chapter-item expanded "><a href="itcareer.html"><span><strong aria-hidden="true">7.07.</strong> IT Career Roadmap</span></a></li>
-                    <li class="chapter-item expanded "><a href="wlan-monitor-mode.html" style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">7.08.</strong> Wlan Monitor Mode</span></a></li>
-                    <li class="chapter-item expanded "><a href="virtualbox.html"><span><strong aria-hidden="true">7.09.</strong> Virtualbox</span></a></li>
-                    <li class="chapter-item expanded "><a href="terminal-path.html"><span><strong aria-hidden="true">7.10.</strong> Path variable terminal</span></a></li>
-                    <li class="chapter-item expanded "><a href="list-user-group.html"><span><strong aria-hidden="true">7.11.</strong> List Users & Groups </span></a></li>
-                    <li class="chapter-item expanded "><a href="replikasi-onnocenter.html"><span><strong aria-hidden="true">7.12.</strong> Replikasi Onnocenter </span></a></li>
-                    <li class="chapter-item expanded "><a href="moodle.html"><span><strong aria-hidden="true">7.13.</strong> Install Moodle </span></a></li>
-                    <li class="chapter-item expanded "><a href="ros.html"><span><strong aria-hidden="true">7.14.</strong> Install ROS</span></a></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="ros-melodic.html"><span>7.14.1. ROS Melodic</span></a></li>
-                            <li class="chapter-item expanded "><a href="ros-noetic.html"><span>7.14.2. ROS Noetic</span></a></li>
-                            <li class="chapter-item expanded "><a href="ros-opencv.html"><span>7.14.3. Install ROS & Opencv</span></a></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><a href="hapus-dualboot.html"><span><strong aria-hidden="true">7.15.</strong> Hapus Dual Boot </span></a></li>
-                    <li class="chapter-item expanded "><a href="membuat-file-iso.html"><span><strong aria-hidden="true">7.16.</strong> Membuat File ISO</span></a></li>
-                    <li class="chapter-item expanded "><a href="tips-random.html"><span><strong aria-hidden="true">7.17.</strong> Random</span></a></li>
-                </ol>
-            </li>
-            <!-- -------------------- Akhir -------------------- -->
-        </ol>
-    </div>
-    <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
-</nav>
-<!-- ---------------------------------------# NAV #--------------------------------------- -->
+        <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+    <!-- ---------------------------------------# NAV #--------------------------------------- -->
 
     <div id="page-wrapper" class="page-wrapper">
 
@@ -180,7 +208,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">TIPS 12</h1>
+                <h1 class="menu-title">ISO</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -221,127 +249,65 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1><a class="header" href="#intro" id="intro">Wlan Monitor Mode</a></h1>
-                    (!) Masih gagal, kyknya krn adapter wifi krng gahar <br><br>
-                    cek interface wifi :
+                    <h1><a class="header" href="#intro" id="intro">Membuat File ISO</a></h1>
+                    <h1>Hello</h1>
                     <ul>
-                        <pre><code>iwconfig</code></pre>
-                        atau
-                        <pre><code>airmon-ng</code></pre>
+                        <li>siapa</li>
+                        <li>
+                            <p>kamu</p>
+                            <ul>
+                                <li>itu</li>
+                                <li>hahh</li>
+                            </ul>
+                            <p>asdasdsdasd</p>
+                        </li>
+                    </ul>
+                    <p><code>java
+                    class Main () {
+                        lupa wes;
+                    }</code></p>
+
+
+                    Misalnya,
+                    <ul>
+                        CD atau DVD terdapat di /media/cdrom atau /dev/cdrom <br>
+                        File iso akan di simpan di folder /folder/ <br>
+                        Nama file iso adalah file.iso
+                    </ul>
+                    Perintah yang perlu di jalankan adalah
+                    <pre><code>dd if=/dev/cdrom of=/folder/file.iso</code></pre>
+
+                    Kalau ingin ada progress bar
+                    <pre><code>dd bs=4M if=path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync</code></pre>
+
+                    File iso tampaknya tidak peduli format yang digunakan sebelum-nya. Kita dapat dengan mudah membuat
+                    file iso dari,
+                    <ul>
+                        CD / DVD Installer Linux
+                        CD / DVD Installer Windows atau Aplikasi Windows
+                        CD lagu
+                        DVD film
                     </ul>
 
-                    punyaku pakai wlp2s0
-                    <br><br>
-                    Change Mac Address :
+                    Teknik ini menjadi sangat baik untuk mem-backup CD atau DVD
+                     
+
+                    <h3>Menempelkan file iso ke sebuah folder</h3>
+
+                    Jika anda mempunyai file iso dan ingin menempelkan (mount) ke file system. Misalnya,
                     <ul>
-                        <pre><code>ifconfig wlp2s0 down</code></pre>
-                        <pre><code>macchanger --random wlp2s0</code></pre>
-                        <pre><code>ifconfig wlp2s0 up</code></pre>
+                        File iso akan di simpan di folder /folder/ <br>
+                        Nama file iso adalah file.iso <br>
+                        Folder tempat menempelkan adalah /mnt/tempel
                     </ul>
+                    
+                    <pre><code>mkdir /mnt/tempel
+mount -t iso9660 -o loop /folder/file.iso /mnt/tempel</code></pre>
 
-                    connect wifi dulu
-                    <br><br>
-                    wifi monitor mode :
-                    <ul>
-                        cara 1 :
-                        <ul>
-                            mode monitor :
-                            <pre><code>airmon-ng start wlp2s0</code></pre>
+                    Untuk melihat apakah sudah ter-mount-ing dengan baik, lakukan
 
-                            gambar wifi hilang, tdk bs buat internetan, santuy emg gitu
-                            <br><br>
-                            cek mode :
-                            <pre><code>iwconfig wlp2s0mon</code></pre>
-
-                            jika sudahan :
-                            <pre><code>airmon-ng stop wlp2s0mon</code></pre>
-
-                            cek :
-                            iwconfig wlp2s0
-                        </ul><br>
-                        cara 2 :
-                        <ul>
-                            men-down wlp2s0 :
-                            <pre><code>ifconfig wlp2s0 down</code></pre>
-
-                            mode monitor :
-                            <pre><code>airmon-ng start wlp2s0</code></pre>
-
-                            cek :
-                            <pre><code>iwconfig wlp2s0mon</code></pre>
-
-                            men-up : # gunanya apa?
-                            <pre><code>ifconfig wlp2s0mon up</code></pre>
-
-                            men-down :
-                            <pre><code>airmon-ng stop wlp2s0mon</code></pre>
-
-                            kill all process airmon-ng :
-                            <pre><code>airmon-ng check kill</code></pre>
-                        </ul><br>
-                        cara 3 :
-                        <ul>
-                            mode monitor :
-                            <pre><code>airmon-ng start wlp2s0</code></pre>
-
-                            meng-up :
-                            <pre><code>ifconfig wlp2s0mon up</code></pre>
-
-                            mendisable :
-                            <pre><code>airmon-ng stop wlp2s0
-airmon-ng stop wlp2s0mon</code></pre>
-                        </ul><br>
-                        cara 4 :
-                        <ul>
-                            mode monitor :
-                            <pre><code>iwconfig wlp2s0 mode monitor</code></pre>
-
-                            cek :
-                            <pre><code>iwconfig wlp2s0</code></pre>
-
-                            mode managed :
-                            <pre><code>iwconfig wlp2s0 mode managed</code></pre>
-                        </ul>
-                    </ul>
-                    intinya :
-                    <br>
-                    <ul>
-                        cara sistem :
-                        <pre><code>airmon-ng start wlp2s0
-airmon-ng stop wlp2s0mon</code></pre>
-
-                        cara manual :
-                        <pre><code>iwconfig wlp2s0 mode monitor
-iwconfig wlp2s0 mode managed</code></pre>
-                    </ul>
-                    tracking :
-                    <pre><code>airodump-ng wlp2s0mon</code></pre>
-
-                    <br>
-                    (*)Note
-                    <br>
-                    jika setelah airomon-ng check kill terjadi problem, seperti wifi tidak muncul lagi,
-                    <pre><code>service NetworkManager restart</code></pre>
-                    jangan lupa mengubah mode menjadi managed :
-                    <ul>
-                        <pre><code>airmon-ng stop wlp2s0mon</code></pre>
-                        atau
-                        <pre><code>iwconfig wlp2s0 mode managed</code></pre>
-                    </ul>
-                    cek :
-                    <pre><code>iwconfig</code></pre>
-
-                    mungkin jika perlu
-                    <pre><code>ifconfig wlp2s0 up</code></pre>
-
-                    alternatif airomon-ng check kill (not recommended) :
-                    <pre><code>ifconfig wlp2s0 down
-iwconfig wlp2s0 mode monitor
-ifconfig wlp2s0 up
-aireplay-ng wlp2s0 # ga bisa </code></pre>
-
-
-                    <code>ifconfig wlp2s0 down</code> : wifi emg masih nyala, tp sebetulnya mati/ga nyambung internet
+                    <pre><code>ls /mnt/tempel
+dir /mnt/tempel</code></pre>
 
 
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
@@ -352,12 +318,12 @@ aireplay-ng wlp2s0 # ga bisa </code></pre>
                     ----------------------------------------------- DIGANTI PREV NEXT -----------------------------------------------
 
                     sebelum
-                    <a rel="prev" href="itcareer.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                    <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter"
                         aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                     sesudah
-                    <a rel="next" href="vbox.html" class="mobile-nav-chapters next" title="Next chapter"
+                    <a rel="next" href="../index.html" class="mobile-nav-chapters next" title="Next chapter"
                         aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
@@ -371,12 +337,12 @@ aireplay-ng wlp2s0 # ga bisa </code></pre>
         <!-- <nav class="nav-wide-wrapper" aria-label="Page navigation">
             ----------------------------------------------- DIGANTI PREV NEXT 2 -----------------------------------------------
             sebelum
-            <a rel="prev" href="itcareer.html" class="nav-chapters previous" title="Previous chapter"
+            <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter"
                 aria-label="Previous chapter" aria-keyshortcuts="Left">
                 <i class="fa fa-angle-left"></i>
             </a>
             sesudah
-            <a rel="next" href="vbox.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+            <a rel="next" href="../index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
                 aria-keyshortcuts="Right">
                 <i class="fa fa-angle-right"></i>
             </a>
