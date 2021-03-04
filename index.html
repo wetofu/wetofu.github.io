@@ -16,7 +16,7 @@
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
     <meta name="description" content="Wetofu : belajar suka-suka aee">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#ffffff" /> 
+    <meta name="theme-color" content="#ffffff" />
 
 
     <link rel="icon" href="favicon.svg">
@@ -66,7 +66,7 @@
             if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
                 localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
             }
-        } catch (e) {}
+        } catch (e) { }
     </script>
 
     <!-- Set the theme before any content is loaded, prevents flash -->
@@ -74,7 +74,7 @@
         var theme;
         try {
             theme = localStorage.getItem('mdbook-theme');
-        } catch (e) {}
+        } catch (e) { }
         if (theme === null || theme === undefined) {
             theme = default_theme;
         }
@@ -92,7 +92,7 @@
         if (document.body.clientWidth >= 1080) {
             try {
                 sidebar = localStorage.getItem('mdbook-sidebar');
-            } catch (e) {}
+            } catch (e) { }
             sidebar = sidebar || 'visible';
         }
         html.classList.remove('sidebar-visible');
@@ -100,38 +100,50 @@
     </script>
 
     <!-- ---------------------------------------- NAV ---------------------------------------- -->
-<nav id="sidebar" class="sidebar" aria-label="Table of contents">
-    <div class="sidebar-scrollbox">
-        <div class="search_box">
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Topik..." title="Type in a name">
+    <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+        <div class="sidebar-scrollbox">
+            <div class="search_box">
+                <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Topik..."
+                    title="Type in a name">
+            </div>
+            <ol class="chapter" id="myUL">
+                <!-- -------------------- KENALAN -------------------- -->
+                <li class="chapter-item expanded affix "><a href="index.html"
+                        style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">KENALAN</strong></span></a>
+                </li>
+                <!-- -------------------- Cari -------------------- -->
+                <li class="chapter-item expanded "><a href="cari/index.html"><span><strong aria-hidden="true">List Topik
+                            </strong></span></a></li>
+                <!-- -------------------- KULIAH -------------------- -->
+                <li class="chapter-item expanded "><a href="00-intro/index.html"><span><strong aria-hidden="true">1.
+                                Mata Kuliah </strong></span></a></li>
+                <!-- -------------------- CYBER SECURITY -------------------- -->
+                <li class="chapter-item expanded "><a href="02-cybersec/index.html"><span><strong aria-hidden="true">2.
+                                Cyber Security </strong></span></a></li>
+                <!-- -------------------- JARKOM -------------------- -->
+                <li class="chapter-item expanded "><a href="05-jarkom/index.html"><span><strong aria-hidden="true">3.
+                                Jaringan Komputer </strong></span></a></li>
+                <!-- -------------------- Robotics -------------------- -->
+                <li class="chapter-item expanded "><a href="07-robotics/index.html"><span><strong aria-hidden="true">4.
+                                Robotics</strong></span></a></li>
+                <!-- -------------------- CTF -------------------- -->
+                <li class="chapter-item expanded "><a href="03-ctf/index.html"><span><strong aria-hidden="true">5.
+                                Capture The Flag </strong></span></a></li>
+                <!-- -------------------- TOOLS -------------------- -->
+                <li class="chapter-item expanded "><a href="06-tools/index.html"><span><strong aria-hidden="true">6.
+                                Tools </strong></span></a></li>
+                <!-- -------------------- TIPS -------------------- -->
+                <li class="chapter-item expanded "><a href="04-tips/index.html"><span><strong aria-hidden="true">7. TIPS
+                            </strong></span></a></li>
+                <!-- -------------------- Ujian -------------------- -->
+                <li class="chapter-item expanded "><a href="08-ujian/index.html"><span><strong aria-hidden="true">8.
+                                Ujian </strong></span></a></li>
+                <!-- -------------------- Akhir -------------------- -->
+            </ol>
         </div>
-        <ol class="chapter" id="myUL">
-            <!-- -------------------- KENALAN -------------------- -->
-            <li class="chapter-item expanded affix "><a href="index.html" style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">KENALAN</strong></span></a></li>
-            <!-- -------------------- Cari -------------------- -->
-            <li class="chapter-item expanded "><a href="cari/index.html"><span><strong aria-hidden="true">List Topik </strong></span></a></li>
-            <!-- -------------------- KULIAH -------------------- -->
-            <li class="chapter-item expanded "><a href="00-intro/index.html"><span><strong aria-hidden="true">1. Mata Kuliah </strong></span></a></li>
-            <!-- -------------------- CYBER SECURITY -------------------- -->
-            <li class="chapter-item expanded "><a href="02-cybersec/index.html"><span><strong aria-hidden="true">2. Cyber Security </strong></span></a></li>
-            <!-- -------------------- JARKOM -------------------- -->
-            <li class="chapter-item expanded "><a href="05-jarkom/index.html"><span><strong aria-hidden="true">3. Jaringan Komputer </strong></span></a></li>
-            <!-- -------------------- Robotics -------------------- -->
-            <li class="chapter-item expanded "><a href="07-robotics/index.html"><span><strong aria-hidden="true">4. Robotics</strong></span></a></li>
-            <!-- -------------------- CTF -------------------- -->
-            <li class="chapter-item expanded "><a href="03-ctf/index.html"><span><strong aria-hidden="true">5. Capture The Flag </strong></span></a></li>
-            <!-- -------------------- TOOLS -------------------- -->
-            <li class="chapter-item expanded "><a href="06-tools/index.html"><span><strong aria-hidden="true">6. Tools </strong></span></a></li>
-            <!-- -------------------- TIPS -------------------- -->
-            <li class="chapter-item expanded "><a href="04-tips/index.html"><span><strong aria-hidden="true">7. TIPS </strong></span></a></li>
-            <!-- -------------------- Ujian -------------------- -->
-            <li class="chapter-item expanded "><a href="08-ujian/index.html"><span><strong aria-hidden="true">8. Ujian </strong></span></a></li>
-            <!-- -------------------- Akhir -------------------- -->
-        </ol>
-    </div>
-    <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
-</nav>
-<!-- ---------------------------------------# NAV #--------------------------------------- -->
+        <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+    </nav>
+    <!-- ---------------------------------------# NAV #--------------------------------------- -->
     <!-- ------------------------------------- Top ------------------------------------- -->
 
     <div id="page-wrapper" class="page-wrapper">
@@ -208,6 +220,8 @@
                 <!-- ------------------------------------# Top #------------------------------------ -->
                 <!-- ------------------------------------- Main ------------------------------------- -->
                 <main>
+                    <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
+
                     <h1 style="text-align: center;"><a class="header" href="#wetofu" id="wetofu">WeTofu</a></h1>
                     <img src="favicon.png" alt="" style="display: block; margin-left: auto; margin-right: auto;">
 
@@ -215,7 +229,8 @@
                     <br>
                     <h3><a class="header" href="#kont" id="kont">Kontributor :</a></h3>
                     <ol>
-                        <li><a href="https://github.com/syahrolus" target="_blank" style="text-decoration: none;">Muhammad Syahrul Aulia</a></li>
+                        <li><a href="https://github.com/syahrolus" target="_blank"
+                                style="text-decoration: none;">Muhammad Syahrul Aulia</a></li>
                     </ol>
                     <br>
                     <hr />
@@ -241,11 +256,12 @@
                     <ul>
                         <li><b><a href="03-ctf/index.html">CTF</a></b></li>
                     </ul>
+                    <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 
                 <!-- ------------------------------------# Main #------------------------------------ -->
-<!-- mini map -->
-<!-- <canvas id="map"></canvas>
+                <!-- mini map -->
+                <!-- <canvas id="map"></canvas>
 <script src="pagemap.min.js"></script>
 <script>
     pagemap(document.querySelector('#map'));
@@ -321,7 +337,7 @@
         //     interval: null
         // });
     </script> -->
-    
+
 
 </body>
 
