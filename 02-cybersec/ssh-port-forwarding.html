@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>Proxy</title>
+    <title>WETOFU</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -68,7 +68,7 @@
             if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
                 localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
             }
-        } catch (e) { }
+        } catch (e) {}
     </script>
 
     <!-- Set the theme before any content is loaded, prevents flash -->
@@ -76,7 +76,7 @@
         var theme;
         try {
             theme = localStorage.getItem('mdbook-theme');
-        } catch (e) { }
+        } catch (e) {}
         if (theme === null || theme === undefined) {
             theme = default_theme;
         }
@@ -94,7 +94,7 @@
         if (document.body.clientWidth >= 1080) {
             try {
                 sidebar = localStorage.getItem('mdbook-sidebar');
-            } catch (e) { }
+            } catch (e) {}
             sidebar = sidebar || 'visible';
         }
         html.classList.remove('sidebar-visible');
@@ -150,13 +150,13 @@
                     </li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">2.20.</strong> Dasar Pengamanan Server </span></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">2.21.</strong> Firewall </span></li>
-                    <li class="chapter-item expanded "><a href="proxy.html" style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">2.22.</strong> Proxy </span></li>
+                    <li class="chapter-item expanded "><a href="proxy.html"><span><strong aria-hidden="true">2.22.</strong> Proxy </span></li>
                     <li class="chapter-item expanded "><a href="ssh.html"><span><strong aria-hidden="true">2.23.</strong> SSH </span></li>
                     <li>
                         <ol class="section">
                             <li class="chapter-item expanded "><a href="ssh-configure.html"><span>2.23.1. Configure SSH</span></a></li>
                             <li class="chapter-item expanded "><a href="ssh-key.html"><span>2.23.2. SSH Key</span></a></li>
-                            <li class="chapter-item expanded "><a href="ssh-port-forwarding.html"><span>2.23.3. SSH Port Forwarding</span></a></li>
+                            <li class="chapter-item expanded "><a href="ssh-port-forwarding.html" style="color: rgb(255, 115, 138);"><span>2.23.3. SSH Port Forwarding</span></a></li>
                         </ol>
                     </li>
                     <li class="chapter-item expanded "><a href="vpn.html"><span><strong aria-hidden="true">2.24.</strong> VPN </span></a></li>
@@ -207,7 +207,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">Proxy</h1>
+                <h1 class="menu-title">WeTofu</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -248,87 +248,15 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <br><br>
-                    sumber : 
-                    <ul>
-                        <li><a href="https://www.niagahoster.co.id/blog/apa-itu-proxy/" target="_blank">https://www.niagahoster.co.id/blog/apa-itu-proxy/</a></li>
-                        <li><a href="https://lms.onnocenter.or.id/wiki/index.php/Proxy" target="_blank">https://lms.onnocenter.or.id/wiki/index.php/Proxy</a></li>
+                    <h1><a class="header" href="#intro" id="intro">Intro</a></h1>
+                    <!-- <ul>
+                        <li><a class="header" href="#pengertian">Pengertian</a></li>
                     </ul>
                     <br>
-                    <h1><a class="header" href="#intro" id="intro">Proxy</a></h1>
-                    <h3>Apa Itu Proxy?</h3>
-                    Proxy adalah suatu sistem yang memungkinkan kita untuk bisa mengakses jaringan internet menggunakan
-                    IP yang
-                    berbeda dengan yang diterima oleh perangkat. Sistem ini menggunakan proxy server untuk dapat
-                    bekerja.
-                    Sedangkan proxy server itu sendiri merupakan perangkat atau komputer yang digunakan untuk
-                    menyediakan layanan proxy.
+                    <hr><br>
+                    <h2><a class="header" id="pengertian" style="text-decoration: none;">Pengertian</a></h2> -->
+                    <p> Kosong.</p>
 
-                    <br><br>
-                    Dalam jaringan komputer, server proxy adalah server (sistem komputer atau program aplikasi) yang bertindak sebagai perantara permintaan dari
-                     klien untuk mencari sumber daya dari server lain. Klien terhubung ke server proxy, meminta beberapa layanan, seperti file, koneksi, halaman web, 
-                     atau sumber lainnya, tersedia dari server yang berbeda. Server proxy mengevaluasi permintaan sesuai dengan aturan penyaringan. Misalnya, 
-                     mungkin filter lalu lintas menurut alamat IP atau protokol. Jika permintaan itu divalidasi oleh filter, proxy menyediakan sumber daya oleh 
-                     relevan menghubungkan ke server dan meminta operator atas nama klien. A proxy server mungkin opsional mengubah klien atau permintaan dari respon server, 
-                     dan kadang-kadang dapat melayani permintaan tanpa menghubungi server yang telah ditentukan. Dalam hal ini, proxy server akan 
-                     meng-"cache" tanggapan dari server jauh, dan kembali setelah permintaan untuk konten yang sama secara langsung.
-<br><br>
-Sebuah proxy server memiliki dua tujuan:
-<ul>
-    <li>Untuk menjaga mesin belakangnya agar menjadi anonymous (terutama untuk keamanan).</li>
-    <li>Untuk mempercepat akses ke sumber daya (via caching). Hal ini biasanya digunakan untuk cache halaman web dari web server.</li>
-</ul>
-Sebuah proxy server yang lolos dan meminta balasan tanpa di modifikasi biasanya disebut gateway atau terkadang tunneling proxy.
-<br><br>
-Sebuah proxy server dapat ditempatkan pada komputer pengguna lokal atau di berbagai titik antara pengguna dan tujuan atau server Internet. Sebuah reverse proxy adalah proxy yang digunakan sebagai front-end untuk mempercepat di-cache dan permintaan sumber daya (seperti halaman web). 
-
-                    <h3>Kenapa Harus Menggunakan Proxy?</h3>
-                    <ul>
-                        <li>Beberapa pengguna tidak ingin identitasnya diketahui: lokasi dan alamat IP yang digunakan,
-                            maka mereka menyembunyikannya dengan menggunakan proxy.</li>
-                        <li>Terkadang beberapa sekolah melakukan pembatasan akses pada website tertentu. Proxy digunakan
-                            oleh siswa untuk menyiasatinya sehingga bisa mengakses website yang diblokir.</li>
-                        <li>Pengguna yang pergi ke luar negeri dan memblokir akses ke negara asal atau rumah Anda.</li>
-                        <li>Kantor atau penyedia layanan internet di rumah memblokir akses ke sosial media atau situs
-                            lainnya.</li>
-                    </ul>
-
-                    <h3>Jenis-jenis Proxy</h3>
-                    <ul>
-                        <li><strong>Transparent Proxy</strong></li>
-
-                        Jenis ini memberikan informasi ke website bahwa koneksi menggunakan proxy server dan tetap akan
-                        meneruskan informasi IP Anda.
-                        <li><strong>Anonymous Proxy</strong></li>
-
-                        Jenis ini akan mengidentifikasi dirinya sebagai proxy, tapi tidak mengirimkan/meneruskan alamat
-                        IP asli yang Anda gunakan.
-                        <li><strong>Distorting Proxy</strong></li>
-
-                        Jenis proxy ini akan memberikan alamat IP yang berbeda dari yang Anda gunakan, tapi tetap
-                        mengidentifikasi dirinya sebagai proxy server.
-                        <li><strong>High Anonymity Proxy</strong></li>
-
-                        Jenis yang terakhir ini adalah jenis proxy yang menyembunyikan identitas proxy server dan alamat
-                        IP yang digunakan oleh pengguna. Website hanya akan melihat alamat IP acak yang
-                        menghubungkannya, bukan alamat IP milik Anda.
-                    </ul>
-
-                    <h3>Bagaimana Cara Kerja Proxy?</h3>
-                    <ul>
-                        Server proxy bertugas untuk meneruskan koneksi Anda ke alamat website yang ingin dibuka. Apa
-                        maksudnya?
-                        <br><br>
-                        Secara normal, ketika Anda mengetikkan alamat website (niagahoster.co.id atau lainnya), Internet
-                        Service Provider (ISP) membuat
-                        sebuah permintaan kepada Anda untuk mengkoneksikannya dengan alamat tujuan.
-                        <br><br>
-                        Akan tetapi, berbeda kondisinya ketika menggunakan server proxy. Koneksi yang Anda gunakan akan
-                        terhubung terlebih dahulu ke server proxy.
-                        Baru kemudian server proxy meneruskan permintaan Anda ke alamat tujuan. Cara ini membuat alamat
-                        IP asli yang Anda gunakan tidak dapat terdeteksi
-                        oleh website dan yang Anda gunakan adalah alamat IP server proxy.
-                    </ul>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 

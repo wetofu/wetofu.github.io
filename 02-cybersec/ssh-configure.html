@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
     <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>Proxy</title>
+    <title>Conf SSH</title>
     <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
 
 
@@ -150,11 +150,11 @@
                     </li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">2.20.</strong> Dasar Pengamanan Server </span></li>
                     <li class="chapter-item expanded "><span><strong aria-hidden="true">2.21.</strong> Firewall </span></li>
-                    <li class="chapter-item expanded "><a href="proxy.html" style="color: rgb(255, 115, 138);"><span><strong aria-hidden="true">2.22.</strong> Proxy </span></li>
+                    <li class="chapter-item expanded "><a href="proxy.html"><span><strong aria-hidden="true">2.22.</strong> Proxy </span></li>
                     <li class="chapter-item expanded "><a href="ssh.html"><span><strong aria-hidden="true">2.23.</strong> SSH </span></li>
                     <li>
                         <ol class="section">
-                            <li class="chapter-item expanded "><a href="ssh-configure.html"><span>2.23.1. Configure SSH</span></a></li>
+                            <li class="chapter-item expanded "><a href="ssh-configure.html" style="color: rgb(255, 115, 138);"><span>2.23.1. Configure SSH</span></a></li>
                             <li class="chapter-item expanded "><a href="ssh-key.html"><span>2.23.2. SSH Key</span></a></li>
                             <li class="chapter-item expanded "><a href="ssh-port-forwarding.html"><span>2.23.3. SSH Port Forwarding</span></a></li>
                         </ol>
@@ -207,7 +207,7 @@
 
                 </div>
                 <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">Proxy</h1>
+                <h1 class="menu-title">Configure SSH</h1>
                 <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
                 <div class="right-buttons">
@@ -248,87 +248,31 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <br><br>
-                    sumber : 
+                    <h2>Configure OpenSSH server</h2>
                     <ul>
-                        <li><a href="https://www.niagahoster.co.id/blog/apa-itu-proxy/" target="_blank">https://www.niagahoster.co.id/blog/apa-itu-proxy/</a></li>
-                        <li><a href="https://lms.onnocenter.or.id/wiki/index.php/Proxy" target="_blank">https://lms.onnocenter.or.id/wiki/index.php/Proxy</a></li>
-                    </ul>
-                    <br>
-                    <h1><a class="header" href="#intro" id="intro">Proxy</a></h1>
-                    <h3>Apa Itu Proxy?</h3>
-                    Proxy adalah suatu sistem yang memungkinkan kita untuk bisa mengakses jaringan internet menggunakan
-                    IP yang
-                    berbeda dengan yang diterima oleh perangkat. Sistem ini menggunakan proxy server untuk dapat
-                    bekerja.
-                    Sedangkan proxy server itu sendiri merupakan perangkat atau komputer yang digunakan untuk
-                    menyediakan layanan proxy.
-
-                    <br><br>
-                    Dalam jaringan komputer, server proxy adalah server (sistem komputer atau program aplikasi) yang bertindak sebagai perantara permintaan dari
-                     klien untuk mencari sumber daya dari server lain. Klien terhubung ke server proxy, meminta beberapa layanan, seperti file, koneksi, halaman web, 
-                     atau sumber lainnya, tersedia dari server yang berbeda. Server proxy mengevaluasi permintaan sesuai dengan aturan penyaringan. Misalnya, 
-                     mungkin filter lalu lintas menurut alamat IP atau protokol. Jika permintaan itu divalidasi oleh filter, proxy menyediakan sumber daya oleh 
-                     relevan menghubungkan ke server dan meminta operator atas nama klien. A proxy server mungkin opsional mengubah klien atau permintaan dari respon server, 
-                     dan kadang-kadang dapat melayani permintaan tanpa menghubungi server yang telah ditentukan. Dalam hal ini, proxy server akan 
-                     meng-"cache" tanggapan dari server jauh, dan kembali setelah permintaan untuk konten yang sama secara langsung.
-<br><br>
-Sebuah proxy server memiliki dua tujuan:
-<ul>
-    <li>Untuk menjaga mesin belakangnya agar menjadi anonymous (terutama untuk keamanan).</li>
-    <li>Untuk mempercepat akses ke sumber daya (via caching). Hal ini biasanya digunakan untuk cache halaman web dari web server.</li>
-</ul>
-Sebuah proxy server yang lolos dan meminta balasan tanpa di modifikasi biasanya disebut gateway atau terkadang tunneling proxy.
-<br><br>
-Sebuah proxy server dapat ditempatkan pada komputer pengguna lokal atau di berbagai titik antara pengguna dan tujuan atau server Internet. Sebuah reverse proxy adalah proxy yang digunakan sebagai front-end untuk mempercepat di-cache dan permintaan sumber daya (seperti halaman web). 
-
-                    <h3>Kenapa Harus Menggunakan Proxy?</h3>
-                    <ul>
-                        <li>Beberapa pengguna tidak ingin identitasnya diketahui: lokasi dan alamat IP yang digunakan,
-                            maka mereka menyembunyikannya dengan menggunakan proxy.</li>
-                        <li>Terkadang beberapa sekolah melakukan pembatasan akses pada website tertentu. Proxy digunakan
-                            oleh siswa untuk menyiasatinya sehingga bisa mengakses website yang diblokir.</li>
-                        <li>Pengguna yang pergi ke luar negeri dan memblokir akses ke negara asal atau rumah Anda.</li>
-                        <li>Kantor atau penyedia layanan internet di rumah memblokir akses ke sosial media atau situs
-                            lainnya.</li>
-                    </ul>
-
-                    <h3>Jenis-jenis Proxy</h3>
-                    <ul>
-                        <li><strong>Transparent Proxy</strong></li>
-
-                        Jenis ini memberikan informasi ke website bahwa koneksi menggunakan proxy server dan tetap akan
-                        meneruskan informasi IP Anda.
-                        <li><strong>Anonymous Proxy</strong></li>
-
-                        Jenis ini akan mengidentifikasi dirinya sebagai proxy, tapi tidak mengirimkan/meneruskan alamat
-                        IP asli yang Anda gunakan.
-                        <li><strong>Distorting Proxy</strong></li>
-
-                        Jenis proxy ini akan memberikan alamat IP yang berbeda dari yang Anda gunakan, tapi tetap
-                        mengidentifikasi dirinya sebagai proxy server.
-                        <li><strong>High Anonymity Proxy</strong></li>
-
-                        Jenis yang terakhir ini adalah jenis proxy yang menyembunyikan identitas proxy server dan alamat
-                        IP yang digunakan oleh pengguna. Website hanya akan melihat alamat IP acak yang
-                        menghubungkannya, bukan alamat IP milik Anda.
-                    </ul>
-
-                    <h3>Bagaimana Cara Kerja Proxy?</h3>
-                    <ul>
-                        Server proxy bertugas untuk meneruskan koneksi Anda ke alamat website yang ingin dibuka. Apa
-                        maksudnya?
+                        <pre><code>sudo apt-get install openssh-server</code></pre>
+                        you will need to configure it by editing the <code>sshd_config</code> file in the
+                        <code>/etc/ssh</code> directory.
+                        <pre><code> <strong>!!!</strong>
+sshd_config is the configuration file for the OpenSSH server.
+ssh_config is the configuration file for the OpenSSH client.
+Make sure not to get them mixed up.</code></pre>
+                        First, make a backup of your sshd_config file by copying it to your home directory, or by making
+                        a read-only copy in <code>/etc/ssh</code> by doing:
+                        <pre><code>sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.factory-defaults
+sudo chmod a-w /etc/ssh/sshd_config.factory-defaults</code></pre>
+                        Creating a read-only backup in /etc/ssh means you'll always be able to find a known-good
+                        configuration when you need it.
                         <br><br>
-                        Secara normal, ketika Anda mengetikkan alamat website (niagahoster.co.id atau lainnya), Internet
-                        Service Provider (ISP) membuat
-                        sebuah permintaan kepada Anda untuk mengkoneksikannya dengan alamat tujuan.
-                        <br><br>
-                        Akan tetapi, berbeda kondisinya ketika menggunakan server proxy. Koneksi yang Anda gunakan akan
-                        terhubung terlebih dahulu ke server proxy.
-                        Baru kemudian server proxy meneruskan permintaan Anda ke alamat tujuan. Cara ini membuat alamat
-                        IP asli yang Anda gunakan tidak dapat terdeteksi
-                        oleh website dan yang Anda gunakan adalah alamat IP server proxy.
+                        Once you've backed up your sshd_config file, you can make changes with any text editor, for
+                        example;
+                        <pre><code>sudo gedit /etc/ssh/sshd_config
+sudo restart ssh</code></pre>
+
+                        If you get the error, "Unable to connect to Upstart", restart ssh with the following:
+                        <pre><code>sudo systemctl restart ssh</code></pre>
                     </ul>
+
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>
 

@@ -221,28 +221,101 @@
             <div id="content" class="content">
                 <main>
                     <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h1><a class="header" href="#intro" id="intro">Intro</a></h1>
+                    <h1><a class="header" href="#intro" id="intro">Linux User & Group</a></h1>
                     <!-- <ul>
                         <li><a class="header" href="#pengertian">Pengertian</a></li>
                     </ul>
                     <br>
                     <hr><br>
                     <h2><a class="header" id="pengertian" style="text-decoration: none;">Pengertian</a></h2> -->
-                    <h4>Cek User :</h4>
+                    <h2>Cek User :</h2>
                     <ul>
                         <pre><code>cat /etc/passwd</code></pre>
                         atau
                         <pre><code>cat /etc/passwd | cut -d: -f1</code></pre>
                         <pre><code>root :  x   :  0  :  0  :   root  :  /root  : /usr/bin/zsh
 user : pass : uid : gid : comment : homedir :     shell</code></pre>
+                        check id user
+                        <pre><code>id tecmint</code></pre>
                     </ul>
-                    <h4>Cek Group :</h4>
+                    <h2>Cek Group :</h2>
                     <ul>
                         <pre><code>cat /etc/group</code></pre>
                         atau
                         <pre><code>cat /etc/group | cut -d: -f1</code></pre>
                         <pre><code>kaboxer :  x   : 146 : syahrul,root
 gname   : pass : GID : 	   users</code></pre>
+                    </ul>
+                    <h2>Add user</h2>
+                    <ul>
+                        sumber : <a href="https://www.tecmint.com/add-users-in-linux/" target="_blank">https://www.tecmint.com/add-users-in-linux/</a>
+                        <pre><code>mkdir &lt;nama_user></code></pre>
+                        <pre><code>useradd &lt;nama_user></code></pre>
+                        <pre><code>passwd &lt;nama_user></code></pre>
+                        <li>membuat user untuk directory tertentu</li>
+                        <ul>
+                            <pre><code>useradd -d /home/carloz/coba &lt;nama_user></code></pre>
+                        </ul>
+                        <li>membuat user dengan user id</li>
+                        <ul>
+                            <pre><code>useradd -u 999 &lt;nama_user>     # default id 500, 501, 502, and so on...</code></pre>
+                        </ul>
+                        <li>membuat user dengan group id</li>
+                        <ul>
+                            <pre><code>useradd -u 1000 -g 500 &lt;nama_user></code></pre>
+                        </ul>
+                        <li>menambahkan user pada group</li>
+                        <ul>
+                            <pre><code>useradd -G admins,webadmin,developers &lt;nama_user></code></pre>
+                        </ul>
+                        <li>menambah user tanpa home directory</li>
+                        <ul>
+                            <pre><code>useradd -M &lt;nama_user></code></pre>
+                        </ul>
+                        <li>menambah user dengan batas akun expiry</li>
+                        <ul>
+                            <pre><code>useradd -e 2014-03-27 &lt;nama_user></code></pre>
+                            Next, verify the age of account and password with ‘chage‘ command for user ‘&lt;nama_user>‘
+                            after setting account expiry date.
+                            <pre><code>chage -l aparna</code></pre>
+                            <pre><code>Last password change						: Mar 28, 2014
+Password expires						: never
+Password inactive						: never
+Account expires							: Mar 27, 2014
+Minimum number of days between password change		        : 0
+Maximum number of days between password change		        : 99999
+Number of days of warning before password expires		: 7</code></pre>
+                        </ul>
+                        <li>menambah user dengan batas password expiry</li>
+                        <ul>
+                            <pre><code>useradd -e 2014-04-27 -f 45 &lt;nama_user></code></pre>
+                        </ul>
+                        <li>menambah user dengan shell yang disediakan</li>
+                        <ul>
+                            <pre><code>useradd -s /sbin/nologin &lt;nama_user></code></pre>
+                        </ul>
+                        <li>menambah user dengan custom command</li>
+                        <ul>
+                            <pre><code>useradd -c "Aku ganteng dan aku bangga" &lt;nama_user></code></pre>
+                        </ul>
+                        <br>
+                        <h3>contoh hasil</h3>
+                        <ul>
+                            <strong>Add a User with Specific Home Directory, Default Shell and Custom Comment</strong> <br>
+                            This command will create a user ‘ravi‘ with home directory ‘/var/www/tecmint‘, default shell /bin/bash and adds extra information about user.
+                            In the above command ‘-m -d‘ option creates a user with specified home directory and the ‘-s‘ option set the user’s default shell i.e. /bin/bash. The ‘-c‘ option adds the extra information about user and ‘-U‘ argument create/adds a group with the same name as the user.
+                            <pre><code>useradd -m -d /var/www/ravi -s /bin/bash -c "TecMint Owner" -U ravi</code></pre>
+                            <br>
+                            <strong>Add a User with Home Directory, No Shell, Custom Comment and User ID</strong><br>
+                            The following command is very much similar to above two commands, the only difference is here, that we disabling login shell to a user called ‘avishek‘ with custom User ID (i.e. 1019).
+Here ‘-s‘ option adds the default shell /bin/bash, but in this case we set login to ‘/usr/sbin/nologin‘. That means user ‘avishek‘ will not able to login into the system.
+                            <pre><code>useradd -m -d /var/www/avishek -s /usr/sbin/nologin -c "TecMint Sr. Technical Writer" -u 1019 avishek</code></pre>
+                            <br>
+                            <strong>Add a User without Home Directory, No Shell, No Group and Custom Comment</strong>
+This following command is very different than the other commands explained above. Here we used ‘-M‘ option to create user without user’s home directory and ‘-N‘ argument is used that tells the system to only create username (without group). The ‘-r‘ arguments is for creating a system user.
+<pre><code>useradd -M -N -r -s /bin/false -c "Disabled TecMint Member" clayton</code></pre> 
+                            
+                        </ul>
                     </ul>
                     <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
                 </main>

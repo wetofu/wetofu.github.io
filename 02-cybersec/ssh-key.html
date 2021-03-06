@@ -1,0 +1,562 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js navy">
+
+<head>
+    <!-- Book generated using mdBook -->
+    <meta charset="UTF-8">
+
+    <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
+    <title>SSH Key</title>
+    <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
+
+
+
+    <!-- Custom HTML head -->
+
+
+
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta name="description" content="Wetofu : belajar suka-suka aee">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" />
+
+
+    <link rel="icon" href="../favicon.svg">
+
+
+    <link rel="shortcut icon" href="../favicon.png">
+
+    <link rel="stylesheet" href="../css/variables.css">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/chrome.css">
+    <link rel="stylesheet" href="../css/print.css" media="print">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+
+    <link rel="stylesheet" href="../fonts/fonts.css">
+
+
+    <!-- Highlight.js Stylesheets -->
+    <link rel="stylesheet" href="../highlight.css">
+    <link rel="stylesheet" href="../tomorrow-night.css">
+    <link rel="stylesheet" href="../ayu-highlight.css">
+
+    <!-- Custom theme stylesheets -->
+
+
+
+</head>
+
+<body>
+    <!-- Provide site root to javascript -->
+    <script type="text/javascript">
+        var path_to_root = "../";
+        var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
+    </script>
+
+    <!-- Work around some values being stored in localStorage wrapped in quotes -->
+    <script type="text/javascript">
+        try {
+            var theme = localStorage.getItem('mdbook-theme');
+            var sidebar = localStorage.getItem('mdbook-sidebar');
+
+            if (theme.startsWith('"') && theme.endsWith('"')) {
+                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+            }
+
+            if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+            }
+        } catch (e) { }
+    </script>
+
+    <!-- Set the theme before any content is loaded, prevents flash -->
+    <script type="text/javascript">
+        var theme;
+        try {
+            theme = localStorage.getItem('mdbook-theme');
+        } catch (e) { }
+        if (theme === null || theme === undefined) {
+            theme = default_theme;
+        }
+        var html = document.querySelector('html');
+        html.classList.remove('no-js')
+        html.classList.remove('navy')
+        html.classList.add(theme);
+        html.classList.add('js');
+    </script>
+
+    <!-- Hide / unhide sidebar before it is displayed -->
+    <script type="text/javascript">
+        var html = document.querySelector('html');
+        var sidebar = 'hidden';
+        if (document.body.clientWidth >= 1080) {
+            try {
+                sidebar = localStorage.getItem('mdbook-sidebar');
+            } catch (e) { }
+            sidebar = sidebar || 'visible';
+        }
+        html.classList.remove('sidebar-visible');
+        html.classList.add("sidebar-" + sidebar);
+    </script>
+
+    <!-- ---------------------------------------- NAV ---------------------------------------- -->
+<nav id="sidebar" class="sidebar" aria-label="Table of contents">
+    <div class="sidebar-scrollbox">
+        <div class="search_box">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Topik..." title="Type in a name">
+        </div>
+        <ol class="chapter" id="myUL">
+            <!-- -------------------- KENALAN -------------------- -->
+            <li class="chapter-item expanded affix "><a href="../index.html"><span><strong aria-hidden="true">KENALAN</strong></span></a></li>
+            <!-- -------------------- Cari -------------------- -->
+            <li class="chapter-item expanded "><a href="../cari/index.html"><span><strong aria-hidden="true">List Topik </strong></span></a></li>
+            <!-- -------------------- CYBER SECURITY -------------------- -->
+            <li class="chapter-item expanded ">
+                <a href="index.html"><span>
+                    <strong aria-hidden="true">2. Cyber Security </strong></span>
+                </a>
+            </li>
+            <li>
+                <ol class="section">
+                    <li class="chapter-item expanded "><a href="konsep-tcp-ip.html"><span><strong aria-hidden="true">2.01.</strong> Konsep TCP/IP</span></a></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.02.</strong> IPv6</span></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.03.</strong> Routing</span></li>
+                    <li class="chapter-item expanded "><a href="kernel.html"><span><strong aria-hidden="true">2.04.</strong> Kernel</span></a></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.05.</strong> Network Programming</span></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.06.</strong> Persiapan Hacking</span></li>
+                    <li class="chapter-item expanded "><a href="footprinting.html"><span><strong aria-hidden="true">2.07.</strong> Footprinting </span></a></li>
+                    <li class="chapter-item expanded "><a href="information-gathering.html"><span><strong aria-hidden="true">2.08.</strong> Information Gathering </span></a></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.09.</strong> Sniffing </span></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.10.</strong> Spoffing </span></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.11.</strong> Hacking Wireless </span></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.12.</strong> Attack password </span></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.13.</strong> Attack database SQL </span></li>
+                    <li class="chapter-item expanded "><a href="mitm.html"><span><strong aria-hidden="true">2.14.</strong> MITM </span></a></li>
+                    <li class="chapter-item expanded "><a href="metasploit.html"><span><strong aria-hidden="true">2.15.</strong> Metasploit </span></a></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.16.</strong> DNS & Deface WEB </span></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.17.</strong> Attack File Sharing </span></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.18.</strong> Vulnerability Analysis </span></li>
+                    <li class="chapter-item expanded "><a href="dvwa.html"><span><strong aria-hidden="true">2.19.</strong> DVWA </span></a></li>
+                    <li>
+                        <ol class="section">
+                            <li class="chapter-item expanded "><a href="dvwa-command-injection.html"><span>2.19.1. Command Injection</span></a></li>
+                            <li class="chapter-item expanded "><a href="dvwa-sql-injection.html"><span>2.19.2. SQL Injection</span></a></li>
+                            <li class="chapter-item expanded "><a href="dvwa-upload-vuln.html"><span>2.19.3. Upload Vuln</span></a></li>
+                            <li class="chapter-item expanded "><a href="dvwa-xss.html"><span>2.19.4. XSS</span></a></li>
+                            <li class="chapter-item expanded "><a href="dvwa-xsrf.html"><span>2.19.4. XSRF</span></a></li>
+                        </ol>
+                    </li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.20.</strong> Dasar Pengamanan Server </span></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.21.</strong> Firewall </span></li>
+                    <li class="chapter-item expanded "><a href="proxy.html"><span><strong aria-hidden="true">2.22.</strong> Proxy </span></li>
+                    <li class="chapter-item expanded "><a href="ssh.html"><span><strong aria-hidden="true">2.23.</strong> SSH </span></li>
+                    <li>
+                        <ol class="section">
+                            <li class="chapter-item expanded "><a href="ssh-configure.html"><span>2.23.1. Configure SSH</span></a></li>
+                            <li class="chapter-item expanded "><a href="ssh-key.html" style="color: rgb(255, 115, 138);"><span>2.23.2. SSH Key</span></a></li>
+                            <li class="chapter-item expanded "><a href="ssh-port-forwarding.html"><span>2.23.3. SSH Port Forwarding</span></a></li>
+                        </ol>
+                    </li>
+                    <li class="chapter-item expanded "><a href="vpn.html"><span><strong aria-hidden="true">2.24.</strong> VPN </span></a></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.25.</strong> Web Application Firewall </span></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.26.</strong> Pertahanan Host </span></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.27.</strong> Basic Data Security </span></li>
+                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.28.</strong> Forensic </span></li>
+                    <li class="chapter-item expanded "><a href="stay-anonymous.html"><span><strong aria-hidden="true">2.29.</strong> Stay Anonymous </span></a></li>
+                    <li class="chapter-item expanded "><a href="deepweeb.html"><span><strong aria-hidden="true">2.30.</strong> Deep Web </span></a></li>
+                    <li class="chapter-item expanded "><a href="torrent.html"><span><strong aria-hidden="true">2.31.</strong> Torrent</span></a></li>
+                </ol>
+            </li>
+            <!-- -------------------- Akhir -------------------- -->
+        </ol>
+    </div>
+    <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+</nav>
+<!-- ---------------------------------------# NAV #--------------------------------------- -->
+
+    <div id="page-wrapper" class="page-wrapper">
+
+        <div class="page">
+
+            <div id="menu-bar-hover-placeholder"></div>
+            <div id="menu-bar" class="menu-bar sticky bordered">
+                <div class="left-buttons">
+                    <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
+                        aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
+                        aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                        <i class="fa fa-paint-brush"></i>
+                    </button>
+                    <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                        <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="navy">Navy (default)</button></li>
+                        <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                    </ul>
+
+                    <!-- <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
+                        aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
+                        aria-controls="searchbar">
+                        <i class="fa fa-search"></i>
+                    </button> -->
+
+                </div>
+                <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
+                <h1 class="menu-title">SSH Key</h1>
+                <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
+
+                <div class="right-buttons">
+                    <a href="../print.html" title="Print this book" aria-label="Print this book">
+                        <i id="print-button" class="fa fa-print"></i>
+                    </a>
+
+                    <a href="https://github.com/syahrolus" title="Git repository" aria-label="Git repository">
+                        <i id="git-repository-button" class="fa fa-github"></i>
+                    </a>
+                </div>
+            </div>
+
+
+            <div id="search-wrapper" class="hidden">
+                <form id="searchbar-outer" class="searchbar-outer">
+                    <input type="search" name="search" id="searchbar" name="searchbar"
+                        placeholder="Search this book ..." aria-controls="searchresults-outer"
+                        aria-describedby="searchresults-header">
+                </form>
+                <div id="searchresults-outer" class="searchresults-outer hidden">
+                    <div id="searchresults-header" class="searchresults-header"></div>
+                    <ul id="searchresults">
+                    </ul>
+                </div>
+            </div>
+
+
+            <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+            <script type="text/javascript">
+                document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
+                    link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                });
+            </script>
+
+            <div id="content" class="content">
+                <main>
+                    <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
+                    <h2>OpenSSH Key</h2>
+                    <ul>
+                        <h3>Public and Private Keys</h3>
+
+                        Public key authentication is more secure than password authentication. This is particularly
+                        important if the computer is visible on the internet. If you don't think it's important, try
+                        logging the login attempts you get for the next week. My computer - a perfectly ordinary desktop
+                        PC - had over 4,000 attempts to guess my password and almost 2,500 break-in attempts in the last
+                        week alone.
+                        <br><br>
+                        With public key authentication, the authenticating entity has a public key and a private key.
+                        Each key is a large number with special mathematical properties. The private key is kept on the
+                        computer you log in from, while the public key is stored on the .ssh/authorized_keys file on all
+                        the computers you want to log in to. When you log in to a computer, the SSH server uses the
+                        public key to "lock" messages in a way that can only be "unlocked" by your private key - this
+                        means that even the most resourceful attacker can't snoop on, or interfere with, your session.
+                        As an extra security measure, most SSH programs store the private key in a passphrase-protected
+                        format, so that if your computer is stolen or broken in to, you should have enough time to
+                        disable your old public key before they break the passphrase and start using your key. Wikipedia
+                        has a more detailed explanation of how keys work.
+                        <br><br>
+                        Public key authentication is a much better solution than passwords for most people. In fact, if
+                        you don't mind leaving a private key unprotected on your hard disk, you can even use keys to do
+                        secure automatic log-ins - as part of a network backup, for example. Different SSH programs
+                        generate public keys in different ways, but they all generate public keys in a similar format:
+
+                        <pre><code>&lt;ssh-rsa or ssh-dss> &lt;really long string of nonsense> &lt;username>@&lt;host></code></pre>
+
+                        <h3>Key-Based SSH Logins</h3>
+
+                        Key-based authentication is the most secure of several modes of authentication usable with
+                        OpenSSH, such as plain password and Kerberos tickets. Key-based authentication has several
+                        advantages over password authentication, for example the key values are significantly more
+                        difficult to brute-force, or guess than plain passwords, provided an ample key length. Other
+                        authentication methods are only used in very specific situations.
+                        <br><br>
+                        SSH can use either "RSA" (Rivest-Shamir-Adleman) or "DSA" ("Digital Signature Algorithm") keys.
+                        Both of these were considered state-of-the-art algorithms when SSH was invented, but DSA has
+                        come to be seen as less secure in recent years. RSA is the only recommended choice for new keys,
+                        so this guide uses "RSA key" and "SSH key" interchangeably.
+                        <br><br>
+                        Key-based authentication uses two keys, one "public" key that anyone is allowed to see, and
+                        another "private" key that only the owner is allowed to see. To securely communicate using
+                        key-based authentication, one needs to create a key pair, securely store the private key on the
+                        computer one wants to log in from, and store the public key on the computer one wants to log in
+                        to.
+                        <br><br>
+                        Using key based logins with ssh is generally considered more secure than using plain password
+                        logins. This section of the guide will explain the process of generating a set of public/private
+                        RSA keys, and using them for logging into your Ubuntu computer(s) via OpenSSH.
+
+                        <h3>Generating RSA Keys</h3>
+                        <ul>
+                            The first step involves creating a set of RSA keys for use in authentication.
+                            <br><br>
+                            This should be done on the client.
+                            <br><br>
+                            To create your public and private SSH keys on the command-line:
+
+                            <pre><code>mkdir ~/.ssh
+chmod 700 ~/.ssh
+ssh-keygen -t rsa</code></pre>
+
+                            You will be prompted for a location to save the keys, and a passphrase for the keys. This
+                            passphrase will protect your private key while it's stored on the hard drive:
+
+                            <pre><code>Generating public/private rsa key pair.
+Enter file in which to save the key (/home/b/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/b/.ssh/id_rsa.
+Your public key has been saved in /home/b/.ssh/id_rsa.pub.</code></pre>
+
+                            Your public key is now available as .ssh/id_rsa.pub in your home folder.
+
+                            Congratulations! You now have a set of keys. Now it's time to make your systems allow you to
+                            login with them
+
+                            <h4>Choosing a good passphrase</h4>
+
+                            You need to change all your locks if your RSA key is stolen. Otherwise the thief could
+                            impersonate you wherever you authenticate with that key.
+                            <br><br>
+                            An SSH key passphrase is a secondary form of security that gives you a little time when your
+                            keys are stolen. If your RSA key has a strong passphrase, it might take your attacker a few
+                            hours to guess by brute force. That extra time should be enough to log in to any computers
+                            you have an account on, delete your old key from the .ssh/authorized_keys file, and add a
+                            new key.
+                            <br><br>
+                            Your SSH key passphrase is only used to protect your private key from thieves. It's never
+                            transmitted over the Internet, and the strength of your key has nothing to do with the
+                            strength of your passphrase.
+                            <br><br>
+                            The decision to protect your key with a passphrase involves convenience x security. Note
+                            that if you protect your key with a passphrase, then when you type the passphrase to unlock
+                            it, your local computer will generally leave the key unlocked for a time. So if you use the
+                            key multiple times without logging out of your local account in the meantime, you will
+                            probably only have to type the passphrase once.
+                            <br><br>
+                            If you do adopt a passphrase, pick a strong one and store it securely in a password manager.
+                            You may also write it down on a piece of paper and keep it in a secure place. If you choose
+                            not to protect the key with a passphrase, then just press the return when ssh-keygen asks.
+
+                            <h4>Key Encryption Level</h4>
+
+                            Note: The default is a 2048 bit key. You can increase this to 4096 bits with the -b flag
+                            (Increasing the bits makes it harder to crack the key by brute force methods).
+
+                            <pre><code>ssh-keygen -t rsa -b 4096</code></pre>
+
+                            <h4>Password Authentication</h4>
+
+                            The main problem with public key authentication is that you need a secure way of getting the
+                            public key onto a computer before you can log in with it. If you will only ever use an SSH
+                            key to log in to your own computer from a few other computers (such as logging in to your PC
+                            from your laptop), you should copy your SSH keys over on a memory stick, and disable
+                            password authentication altogether. If you would like to log in from other computers from
+                            time to time (such as a friend's PC), make sure you have a strong password.
+                        </ul>
+
+                        <h3>Transfer Client Key to Host</h3>
+
+                        The key you need to transfer to the host is the public one. If you can log in to a computer over
+                        SSH using a password, you can transfer your RSA key by doing the following from your own
+                        computer:
+
+                        <pre><code>ssh-copy-id &lt;username>@&lt;host></code></pre>
+
+                        Where &lt;username> and &lt;host> should be replaced by your username and the name of the
+                        computer you're transferring your key to.
+                        <br><br>
+                        (i) Due to this bug, you cannot specify a port other than the standard port 22. You can work
+                        around this by issuing the command like this: ssh-copy-id "&lt;username>@&lt;host> -p
+                        &lt;port_nr>". If you are using the standard port 22, you can ignore this tip.
+                        <br><br>
+                        Another alternative is to copy the public key file to the server and concatenate it onto the
+                        authorized_keys file manually. It is wise to back that up first:
+                        <pre><code>cp authorized_keys authorized_keys_Backup
+cat id_rsa.pub >> authorized_keys</code></pre>
+
+                        You can make sure this worked by doing:
+                        <pre><code>ssh &lt;username>@&lt;host></code></pre>
+
+                        You should be prompted for the passphrase for your key:
+                        <pre><code>Enter passphrase for key '/home/&lt;user>/.ssh/id_rsa':</code></pre>
+
+                        Enter your passphrase, and provided host is configured to allow key-based logins, you should
+                        then be logged in as usual.
+
+                        <h3>Troubleshooting</h3>
+                        <ul>
+                            <strong>Encrypted Home Directory</strong>
+                            <br><br>
+                            If you have an encrypted home directory, SSH cannot access your authorized_keys file because
+                            it is inside your encrypted home directory and won't be available until after you are
+                            authenticated. Therefore, SSH will default to password authentication.
+                            <br><br>
+                            To solve this, create a folder outside your home named /etc/ssh/&ltusername> (replace
+                            "&lt;username>" with your actual username). This directory should have 755 permissions and
+                            be owned by the user. Move the authorized_keys file into it. The authorized_keys file should
+                            have 644 permissions and be owned by the user.
+                            <br><br>
+                            Then edit your /etc/ssh/sshd_config and add:
+                            <pre><code>AuthorizedKeysFile    /etc/ssh/%u/authorized_keys</code></pre>
+
+                            Finally, restart ssh with:
+                            <pre><code>sudo service ssh restart</code></pre>
+
+                            The next time you connect with SSH you should not have to enter your password.
+                            <br><br>
+                            <strong>username@host's password:</strong>
+                            <br><br>
+                            If you are not prompted for the passphrase, and instead get just the
+
+                            <pre><code>username@host's password:</code></pre>
+
+                            prompt as usual with password logins, then read on. There are a few things which could
+                            prevent this from working as easily as demonstrated above. On default Ubuntu installs
+                            however, the above examples should work. If not, then check the following condition, as it
+                            is the most frequent cause:
+                            <br><br>
+                            On the host computer, ensure that the /etc/ssh/sshd_config contains the following lines, and
+                            that they are uncommented;
+                            <pre><code>PubkeyAuthentication yes
+RSAAuthentication yes</code></pre>
+
+                            If not, add them, or uncomment them, restart OpenSSH, and try logging in again. If you get
+                            the passphrase prompt now, then congratulations, you're logging in with a key!
+                            <br><br>
+                            <strong>Permission denied (publickey)</strong>
+                            <br><br>
+                            If you're sure you've correctly configured sshd_config, copied your ID, and have your
+                            private key in the .ssh directory, and still getting this error:
+                            <br><br>
+                            <pre><code>Permission denied (publickey).</code></pre>
+
+                            Chances are, your /home/&lt;user> or ~/.ssh/authorized_keys permissions are too open by
+                            OpenSSH standards. You can get rid of this problem by issuing the following commands:
+                            <pre><code>chmod go-w ~/
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys</code></pre>
+
+                            <strong>Error: Agent admitted failure to sign using the key.</strong>
+                            <br><br>
+                            This error occurs when the ssh-agent on the client is not yet managing the key. Issue the
+                            following commands to fix:
+                            <br><br>
+                            <pre><code>ssh-add</code></pre>
+
+                            This command should be entered after you have copied your public key to the host computer.
+                            <br><br>
+                            <strong>Debugging and sorting out further problems</strong>
+                            <br><br>
+                            The permissions of files and folders is crucial to this working. You can get debugging
+                            information from both the client and server.
+                            <br><br>
+                            if you think you have set it up correctly , yet still get asked for the password, try
+                            starting the server with debugging output to the terminal.
+                            <pre><code>sudo /usr/sbin/sshd -d</code></pre>
+
+                            To connect and send information to the client terminal
+                            <pre><code>ssh -v ( or -vv) username@host's</code></pre>
+
+                            <h3>Where to From Here?</h3>
+
+                            No matter how your public key was generated, you can add it to your Ubuntu system by opening
+                            the file .ssh/authorized_keys in your favourite text editor and adding the key to the bottom
+                            of the file. You can also limit the SSH features that the key can use, such as disallowing
+                            port-forwarding or only allowing a specific command to be run. This is done by adding
+                            "options" before the SSH key, on the same line in the authorized_keys file. For example, if
+                            you maintain a CVS repository, you could add a line like this:
+                            <pre><code>command="/usr/bin/cvs server",no-agent-forwarding,no-port-forwarding,no-X11-forwarding,no-user-rc ssh-dss &lt;string of nonsense>...</code></pre>
+
+                            When the user with the specified key logged in, the server would automatically run
+                            /usr/bin/cvs server, ignoring any requests from the client to run another command such as a
+                            shell. For more information, see the sshd man page. /755
+                        </ul>
+                    </ul>
+
+                    <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
+                </main>
+
+                <!-- <nav class="nav-wrapper" aria-label="Page navigation">
+                    Mobile navigation buttons
+                    ----------------------------------------------- DIGANTI PREV NEXT -----------------------------------------------
+
+                    sebelum
+                    <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter"
+                        aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    sesudah
+                    <a rel="next" href="../index.html" class="mobile-nav-chapters next" title="Next chapter"
+                        aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                    ----------------------------------------------# DIGANTI PREV NEXT #----------------------------------------------
+
+                    <div style="clear: both"></div>
+                </nav> -->
+            </div>
+        </div>
+
+        <!-- <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            ----------------------------------------------- DIGANTI PREV NEXT 2 -----------------------------------------------
+            sebelum
+            <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter"
+                aria-label="Previous chapter" aria-keyshortcuts="Left">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            sesudah
+            <a rel="next" href="../index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
+                aria-keyshortcuts="Right">
+                <i class="fa fa-angle-right"></i>
+            </a>
+            ----------------------------------------------# DIGANTI PREV NEXT 2 #----------------------------------------------
+        </nav> -->
+
+    </div>
+
+
+
+
+
+
+
+
+    <script type="text/javascript">
+        window.playground_copyable = true;
+    </script>
+
+
+
+
+
+    <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+
+
+    <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+    <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- Custom JS scripts -->
+
+
+
+
+</body>
+
+</html>
