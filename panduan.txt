@@ -1,6 +1,0 @@
-add/rm file :
-	add/rm file.html di directory terserah
-	ubah base/baseNav.html
-	run 'python2 importNav.py'
-	edit next & prev
-	edit judul & konten file.html

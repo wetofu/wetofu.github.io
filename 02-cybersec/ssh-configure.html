@@ -1,348 +1,343 @@
 <!DOCTYPE HTML>
-<html lang="en" class="sidebar-visible no-js navy">
-
-<head>
-    <!-- Book generated using mdBook -->
-    <meta charset="UTF-8">
-
-    <!-- ----------------------------------------------- DIGANTI JUDUL ----------------------------------------------- -->
-    <title>Conf SSH</title>
-    <!-- ----------------------------------------------# DIGANTI JUDUL #---------------------------------------------- -->
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>SSH Key - Wetofu</title>
+        
+        
 
 
-
-    <!-- Custom HTML head -->
-
-
-
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-    <meta name="description" content="Wetofu : belajar suka-suka aee">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#ffffff" />
+        <!-- Custom HTML head -->
+        
 
 
-    <link rel="icon" href="../favicon.svg">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
 
+        
+        <link rel="icon" href="../favicon.svg">
+        
+        
+        <link rel="shortcut icon" href="../favicon.png">
+        
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        
 
-    <link rel="shortcut icon" href="../favicon.png">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        
 
-    <link rel="stylesheet" href="../css/variables.css">
-    <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/chrome.css">
-    <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
-    <!-- Fonts -->
-    <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <!-- Custom theme stylesheets -->
+        
 
-    <link rel="stylesheet" href="../fonts/fonts.css">
+        
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
 
-
-    <!-- Highlight.js Stylesheets -->
-    <link rel="stylesheet" href="../highlight.css">
-    <link rel="stylesheet" href="../tomorrow-night.css">
-    <link rel="stylesheet" href="../ayu-highlight.css">
-
-    <!-- Custom theme stylesheets -->
-
-
-
-</head>
-
-<body>
-    <!-- Provide site root to javascript -->
-    <script type="text/javascript">
-        var path_to_root = "../";
-        var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "navy";
-    </script>
-
-    <!-- Work around some values being stored in localStorage wrapped in quotes -->
-    <script type="text/javascript">
-        try {
-            var theme = localStorage.getItem('mdbook-theme');
-            var sidebar = localStorage.getItem('mdbook-sidebar');
-
-            if (theme.startsWith('"') && theme.endsWith('"')) {
-                localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
-            }
-
-            if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
-                localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
-            }
-        } catch (e) { }
-    </script>
-
-    <!-- Set the theme before any content is loaded, prevents flash -->
-    <script type="text/javascript">
-        var theme;
-        try {
-            theme = localStorage.getItem('mdbook-theme');
-        } catch (e) { }
-        if (theme === null || theme === undefined) {
-            theme = default_theme;
-        }
-        var html = document.querySelector('html');
-        html.classList.remove('no-js')
-        html.classList.remove('navy')
-        html.classList.add(theme);
-        html.classList.add('js');
-    </script>
-
-    <!-- Hide / unhide sidebar before it is displayed -->
-    <script type="text/javascript">
-        var html = document.querySelector('html');
-        var sidebar = 'hidden';
-        if (document.body.clientWidth >= 1080) {
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
             try {
-                sidebar = localStorage.getItem('mdbook-sidebar');
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
             } catch (e) { }
-            sidebar = sidebar || 'visible';
-        }
-        html.classList.remove('sidebar-visible');
-        html.classList.add("sidebar-" + sidebar);
-    </script>
+        </script>
 
-    <!-- ---------------------------------------- NAV ---------------------------------------- -->
-<nav id="sidebar" class="sidebar" aria-label="Table of contents">
-    <div class="sidebar-scrollbox">
-        <div class="search_box">
-            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Topik..." title="Type in a name">
-        </div>
-        <ol class="chapter" id="myUL">
-            <!-- -------------------- KENALAN -------------------- -->
-            <li class="chapter-item expanded affix "><a href="../index.html"><span><strong aria-hidden="true">KENALAN</strong></span></a></li>
-            <!-- -------------------- Cari -------------------- -->
-            <li class="chapter-item expanded "><a href="../cari/index.html"><span><strong aria-hidden="true">List Topik </strong></span></a></li>
-            <!-- -------------------- CYBER SECURITY -------------------- -->
-            <li class="chapter-item expanded ">
-                <a href="index.html"><span>
-                    <strong aria-hidden="true">2. Cyber Security </strong></span>
-                </a>
-            </li>
-            <li>
-                <ol class="section">
-                    <li class="chapter-item expanded "><a href="konsep-tcp-ip.html"><span><strong aria-hidden="true">2.01.</strong> Konsep TCP/IP</span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.02.</strong> IPv6</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.03.</strong> Routing</span></li>
-                    <li class="chapter-item expanded "><a href="kernel.html"><span><strong aria-hidden="true">2.04.</strong> Kernel</span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.05.</strong> Network Programming</span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.06.</strong> Persiapan Hacking</span></li>
-                    <li class="chapter-item expanded "><a href="footprinting.html"><span><strong aria-hidden="true">2.07.</strong> Footprinting </span></a></li>
-                    <li class="chapter-item expanded "><a href="information-gathering.html"><span><strong aria-hidden="true">2.08.</strong> Information Gathering </span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.09.</strong> Sniffing </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.10.</strong> Spoffing </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.11.</strong> Hacking Wireless </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.12.</strong> Attack password </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.13.</strong> Attack database SQL </span></li>
-                    <li class="chapter-item expanded "><a href="mitm.html"><span><strong aria-hidden="true">2.14.</strong> MITM </span></a></li>
-                    <li class="chapter-item expanded "><a href="metasploit.html"><span><strong aria-hidden="true">2.15.</strong> Metasploit </span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.16.</strong> DNS & Deface WEB </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.17.</strong> Attack File Sharing </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.18.</strong> Vulnerability Analysis </span></li>
-                    <li class="chapter-item expanded "><a href="dvwa.html"><span><strong aria-hidden="true">2.19.</strong> DVWA </span></a></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="dvwa-command-injection.html"><span>2.19.1. Command Injection</span></a></li>
-                            <li class="chapter-item expanded "><a href="dvwa-sql-injection.html"><span>2.19.2. SQL Injection</span></a></li>
-                            <li class="chapter-item expanded "><a href="dvwa-upload-vuln.html"><span>2.19.3. Upload Vuln</span></a></li>
-                            <li class="chapter-item expanded "><a href="dvwa-xss.html"><span>2.19.4. XSS</span></a></li>
-                            <li class="chapter-item expanded "><a href="dvwa-xsrf.html"><span>2.19.4. XSRF</span></a></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.20.</strong> Dasar Pengamanan Server </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.21.</strong> Firewall </span></li>
-                    <li class="chapter-item expanded "><a href="proxy.html"><span><strong aria-hidden="true">2.22.</strong> Proxy </span></li>
-                    <li class="chapter-item expanded "><a href="ssh.html"><span><strong aria-hidden="true">2.23.</strong> SSH </span></li>
-                    <li>
-                        <ol class="section">
-                            <li class="chapter-item expanded "><a href="ssh-configure.html" style="color: rgb(255, 115, 138);"><span>2.23.1. Configure SSH</span></a></li>
-                            <li class="chapter-item expanded "><a href="ssh-key.html"><span>2.23.2. SSH Key</span></a></li>
-                            <li class="chapter-item expanded "><a href="ssh-port-forwarding.html"><span>2.23.3. SSH Port Forwarding</span></a></li>
-                        </ol>
-                    </li>
-                    <li class="chapter-item expanded "><a href="vpn.html"><span><strong aria-hidden="true">2.24.</strong> VPN </span></a></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.25.</strong> Web Application Firewall </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.26.</strong> Pertahanan Host </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.27.</strong> Basic Data Security </span></li>
-                    <li class="chapter-item expanded "><span><strong aria-hidden="true">2.28.</strong> Forensic </span></li>
-                    <li class="chapter-item expanded "><a href="stay-anonymous.html"><span><strong aria-hidden="true">2.29.</strong> Stay Anonymous </span></a></li>
-                    <li class="chapter-item expanded "><a href="deepweeb.html"><span><strong aria-hidden="true">2.30.</strong> Deep Web </span></a></li>
-                    <li class="chapter-item expanded "><a href="torrent.html"><span><strong aria-hidden="true">2.31.</strong> Torrent</span></a></li>
-                </ol>
-            </li>
-            <!-- -------------------- Akhir -------------------- -->
-        </ol>
-    </div>
-    <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
-</nav>
-<!-- ---------------------------------------# NAV #--------------------------------------- -->
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
 
-    <div id="page-wrapper" class="page-wrapper">
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
 
-        <div class="page">
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../index.html"><strong aria-hidden="true">1.</strong> Kenalan</a></li><li class="chapter-item expanded "><a href="../00-intro/index.html"><strong aria-hidden="true">2.</strong> Mata Kuliah</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../00-intro/informatika.html"><strong aria-hidden="true">2.1.</strong> Informatika</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../00-intro/pbo.html"><strong aria-hidden="true">2.1.1.</strong> PBO</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../00-intro/pbo-java-generic.html"><strong aria-hidden="true">2.1.1.1.</strong> Java Generics</a></li><li class="chapter-item expanded "><a href="../00-intro/pbo-string-operation.html"><strong aria-hidden="true">2.1.1.2.</strong> String Operation</a></li><li class="chapter-item expanded "><a href="../00-intro/pbo-regex.html"><strong aria-hidden="true">2.1.1.3.</strong> Regex</a></li><li class="chapter-item expanded "><a href="../00-intro/pbo-exception-assertion.html"><strong aria-hidden="true">2.1.1.4.</strong> Exception &amp; Assertion</a></li><li class="chapter-item expanded "><a href="../00-intro/pbo-input-output.html"><strong aria-hidden="true">2.1.1.5.</strong> I/O</a></li></ol></li><li class="chapter-item expanded "><a href="../00-intro/basis-data.html"><strong aria-hidden="true">2.1.2.</strong> Basdat</a></li><li class="chapter-item expanded "><a href="../05-jarkom/index.html"><strong aria-hidden="true">2.1.3.</strong> Jarkom</a></li></ol></li><li class="chapter-item expanded "><a href="../00-intro/kimia.html"><strong aria-hidden="true">2.2.</strong> Kimia</a></li><li class="chapter-item expanded "><a href="../00-intro/teknik-elektro.html"><strong aria-hidden="true">2.3.</strong> Teknik Elektro</a></li></ol></li><li class="chapter-item expanded "><a href="../02-cybersec/index.html"><strong aria-hidden="true">3.</strong> Cyber Security</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02-cybersec/konsep-tcp-ip.html"><strong aria-hidden="true">3.1.</strong> Konsep TCP/IP</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.2.</strong> IPv6</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.3.</strong> Routing</div></li><li class="chapter-item expanded "><a href="../02-cybersec/kernel.html"><strong aria-hidden="true">3.4.</strong> Kernel</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.5.</strong> Network Programming</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.6.</strong> Persiapan Hacking</div></li><li class="chapter-item expanded "><a href="../02-cybersec/footprinting.html"><strong aria-hidden="true">3.7.</strong> Footprinting</a></li><li class="chapter-item expanded "><a href="../02-cybersec/information-gathering.html"><strong aria-hidden="true">3.8.</strong> Information Gathering</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.9.</strong> Sniffing</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.10.</strong> Spoffing</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.11.</strong> Hacking Wireless</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.12.</strong> Attack password</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.13.</strong> Attack database SQL</div></li><li class="chapter-item expanded "><a href="../02-cybersec/mitm.html"><strong aria-hidden="true">3.14.</strong> MITM</a></li><li class="chapter-item expanded "><a href="../02-cybersec/metasploit.html"><strong aria-hidden="true">3.15.</strong> Metasploit</a></li><li class="chapter-item expanded "><a href="../02-cybersec/deface.html"><strong aria-hidden="true">3.16.</strong> Deface WEB</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02-cybersec/defacing-routing.html"><strong aria-hidden="true">3.16.1.</strong> Defacing Routing</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.17.</strong> Attack File Sharing</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.18.</strong> Vulnerability Analysis</div></li><li class="chapter-item expanded "><a href="../02-cybersec/dvwa.html"><strong aria-hidden="true">3.19.</strong> DVWA</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02-cybersec/dvwa-command-injection.html"><strong aria-hidden="true">3.19.1.</strong> Command Injection</a></li><li class="chapter-item expanded "><a href="../02-cybersec/dvwa-sql-injection.html"><strong aria-hidden="true">3.19.2.</strong> SQL Injection</a></li><li class="chapter-item expanded "><a href="../02-cybersec/dvwa-upload-vuln.html"><strong aria-hidden="true">3.19.3.</strong> Upload Vuln</a></li><li class="chapter-item expanded "><a href="../02-cybersec/dvwa-xss.html"><strong aria-hidden="true">3.19.4.</strong> XSS</a></li><li class="chapter-item expanded "><a href="../02-cybersec/dvwa-xsrf.html"><strong aria-hidden="true">3.19.5.</strong> XSRF</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.20.</strong> Dasar Pengamanan Server</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.21.</strong> Firewall</div></li><li class="chapter-item expanded "><a href="../02-cybersec/proxy.html"><strong aria-hidden="true">3.22.</strong> Proxy</a></li><li class="chapter-item expanded "><a href="../02-cybersec/ssh.html"><strong aria-hidden="true">3.23.</strong> SSH</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../02-cybersec/ssh-key.html"><strong aria-hidden="true">3.23.1.</strong> Configure SSH</a></li><li class="chapter-item expanded "><a href="../02-cybersec/ssh-configure.html" class="active"><strong aria-hidden="true">3.23.2.</strong> SSH Key</a></li><li class="chapter-item expanded "><a href="../02-cybersec/ssh-port-forwarding.html"><strong aria-hidden="true">3.23.3.</strong> SSH Port Forwarding</a></li><li class="chapter-item expanded "><a href="../02-cybersec/ssh-port.html"><strong aria-hidden="true">3.23.4.</strong> SSH Port</a></li><li class="chapter-item expanded "><a href="../02-cybersec/ssh-remote.html"><strong aria-hidden="true">3.23.5.</strong> SSH Remote</a></li><li class="chapter-item expanded "><a href="../02-cybersec/ssh-reverse.html"><strong aria-hidden="true">3.23.6.</strong> SSH Reverse</a></li></ol></li><li class="chapter-item expanded "><a href="../02-cybersec/vpn.html"><strong aria-hidden="true">3.24.</strong> VPN</a></li><li class="chapter-item expanded "><a href="../02-cybersec/proxy-vs-vpn.html"><strong aria-hidden="true">3.25.</strong> Proxy VS VPN</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.26.</strong> Web Application Firewall</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.27.</strong> Pertahanan Host</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.28.</strong> Basic Data Security</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">3.29.</strong> Forensic</div></li><li class="chapter-item expanded "><a href="../02-cybersec/stay-anonymous.html"><strong aria-hidden="true">3.30.</strong> Stay Anonymous</a></li><li class="chapter-item expanded "><a href="../02-cybersec/deepweeb.html"><strong aria-hidden="true">3.31.</strong> Deep Web</a></li><li class="chapter-item expanded "><a href="../02-cybersec/torrent.html"><strong aria-hidden="true">3.32.</strong> Torrent</a></li></ol></li><li class="chapter-item expanded "><a href="../05-jarkom/index.html"><strong aria-hidden="true">4.</strong> Jaringan Komputer</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">4.1.</strong> Pendahuluan</div></li><li class="chapter-item expanded "><a href="../05-jarkom/wireshark.html"><strong aria-hidden="true">4.2.</strong> Wireshark</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.3.</strong> Simulator Jaringan</div></li><li class="chapter-item expanded "><a href="../05-jarkom/perangkat-keras-jaringan-dan-data-link-layer.html"><strong aria-hidden="true">4.4.</strong> Perangkat Keras Jaringan &amp; Data Link Layer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../05-jarkom/data-link-layer.html"><strong aria-hidden="true">4.4.1.</strong> Data Link Layer</a></li><li class="chapter-item expanded "><a href="../05-jarkom/lebihdetail-data-link-layer.html"><strong aria-hidden="true">4.4.2.</strong> Lebih Detail Data Link Layer</a></li><li class="chapter-item expanded "><a href="../05-jarkom/ethernet.html"><strong aria-hidden="true">4.4.3.</strong> Ethernet</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.4.4.</strong> Wireless Internet</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.4.5.</strong> MAC Address</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.4.6.</strong> Teknologi ADSL</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.4.7.</strong> Wireless Internet Wifi</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.4.8.</strong> Teknik Modulasi</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.5.</strong> Perangkat WiFi / Wireless Internet</div></li><li class="chapter-item expanded "><a href="../05-jarkom/switch-hub.html"><strong aria-hidden="true">4.6.</strong> Switch &amp; Hub</a></li><li class="chapter-item expanded "><a href="../05-jarkom/network-layer-ipv4.html"><strong aria-hidden="true">4.7.</strong> Network Layer IPv4</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../05-jarkom/network-layer.html"><strong aria-hidden="true">4.7.1.</strong> Network Layer</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.7.2.</strong> IPv4</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.8.</strong> Transport Layer</div></li><li class="chapter-item expanded "><a href="../05-jarkom/dns-pengaturanInternet.html"><strong aria-hidden="true">4.9.</strong> Domain Name System &amp; Pengaturan Internet</a></li><li class="chapter-item expanded "><a href="../05-jarkom/routing-nat.html"><strong aria-hidden="true">4.10.</strong> Routing &amp; NAT</a></li><li class="chapter-item expanded "><a href="../05-jarkom/mikrotik.html"><strong aria-hidden="true">4.11.</strong> Mikrotik</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../05-jarkom/mikrotik-basicNetworking.html"><strong aria-hidden="true">4.11.1.</strong> Basic Networking</a></li><li class="chapter-item expanded "><a href="../05-jarkom/mikrotik-vpn-pptp.html"><strong aria-hidden="true">4.11.2.</strong> VPN-PPTP</a></li><li class="chapter-item expanded "><a href="../05-jarkom/mikrotik-vpn-sstp.html"><strong aria-hidden="true">4.11.3.</strong> VPN-SSTP</a></li><li class="chapter-item expanded "><a href="../05-jarkom/mikrotik-vpn-lt2p.html"><strong aria-hidden="true">4.11.4.</strong> VPN-L2TP</a></li><li class="chapter-item expanded "><a href="../05-jarkom/mikrotik-vpn-openvpn.html"><strong aria-hidden="true">4.11.5.</strong> VPN-OpenVPN</a></li></ol></li><li class="chapter-item expanded "><a href="../05-jarkom/cisco.html"><strong aria-hidden="true">4.12.</strong> Cisco</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../05-jarkom/cisco-packettracer.html"><strong aria-hidden="true">4.12.1.</strong> Cisco Packet Tracer</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../05-jarkom/cisco-pt-midQuiz.html"><strong aria-hidden="true">4.12.1.1.</strong> Basic Quiz</a></li><li class="chapter-item expanded "><a href="../05-jarkom/cisco-pt-Quiz.html"><strong aria-hidden="true">4.12.1.2.</strong> IoT Basic Quiz</a></li></ol></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.13.</strong> Web / Content Management System</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.14.</strong> e-mail / SMTP / POP3 / IMAP / Webmail</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.15.</strong> VoIP / Internet Telepon</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.16.</strong> Streaming Multimedia</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.17.</strong> IPv6</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.18.</strong> Hacking</div></li><li class="chapter-item expanded "><a href="../02-cybersec/index.html"><strong aria-hidden="true">4.19.</strong> Cyber Security</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.20.</strong> BasicData Security</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.21.</strong> Pemrograman Jaringan &amp; IoT</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">4.22.</strong> Network Management &amp; Benchmarking</div></li></ol></li><li class="chapter-item expanded "><a href="../07-robotics/index.html"><strong aria-hidden="true">5.</strong> Robotics</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../07-robotics/arduino.html"><strong aria-hidden="true">5.1.</strong> Arduino</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../07-robotics/arduinoBoard.html"><strong aria-hidden="true">5.1.1.</strong> Arduino Board</a></li><li class="chapter-item expanded "><a href="../07-robotics/arduinoDataType.html"><strong aria-hidden="true">5.1.2.</strong> Arduino Data Types</a></li><li class="chapter-item expanded "><a href="../07-robotics/arduinoCoding.html"><strong aria-hidden="true">5.1.3.</strong> Arduino Coding</a></li><li class="chapter-item expanded "><a href="../07-robotics/arduinoFuncLib.html"><strong aria-hidden="true">5.1.4.</strong> Arduino Function Lbraries</a></li></ol></li><li class="chapter-item expanded "><a href="../07-robotics/android-studio.html"><strong aria-hidden="true">5.2.</strong> Android Studio</a></li></ol></li><li class="chapter-item expanded "><a href="../03-ctf/index.html"><strong aria-hidden="true">6.</strong> Capture The Flag</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-ctf/overthewire.html"><strong aria-hidden="true">6.1.</strong> Overthewire</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-ctf/overtw-bandit.html"><strong aria-hidden="true">6.1.1.</strong> Bandit</a></li><li class="chapter-item expanded "><a href="../03-ctf/overtw-natas.html"><strong aria-hidden="true">6.1.2.</strong> Natas</a></li></ol></li><li class="chapter-item expanded "><a href="../03-ctf/binary-exploitation.html"><strong aria-hidden="true">6.2.</strong> Binary Exploitation</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../03-ctf/pwn-shellcode.html"><strong aria-hidden="true">6.2.1.</strong> Pwn &amp; Shellcode</a></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.3.</strong> Cryptography</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.4.</strong> Reverse Engineering</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.5.</strong> Web</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.6.</strong> Forensic</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">6.7.</strong> Miscellaneous</div></li><li class="chapter-item expanded "><a href="../03-ctf/assembly.html"><strong aria-hidden="true">6.8.</strong> Assembly</a></li><li class="chapter-item expanded "><a href="../03-ctf/john-hammond.html"><strong aria-hidden="true">6.9.</strong> John-Hammond</a></li><li class="chapter-item expanded "><a href="../03-ctf/ctflicense.html"><strong aria-hidden="true">6.10.</strong> Contoh cracking CTF licence key</a></li><li class="chapter-item expanded "><a href="../03-ctf/ctf-random.html"><strong aria-hidden="true">6.11.</strong> Random</a></li></ol></li><li class="chapter-item expanded "><a href="../06-tools/index.html"><strong aria-hidden="true">7.</strong> Tools</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../06-tools/nmap.html"><strong aria-hidden="true">7.1.</strong> Nmap</a></li><li class="chapter-item expanded "><a href="../06-tools/python.html"><strong aria-hidden="true">7.2.</strong> Python</a></li><li class="chapter-item expanded "><a href="../06-tools/curl.html"><strong aria-hidden="true">7.3.</strong> Curl</a></li><li class="chapter-item expanded "><a href="../06-tools/tcpdump.html"><strong aria-hidden="true">7.4.</strong> Tcpdump</a></li><li class="chapter-item expanded "><a href="../06-tools/gdb.html"><strong aria-hidden="true">7.5.</strong> GDB</a></li><li class="chapter-item expanded "><a href="../06-tools/radare2.html"><strong aria-hidden="true">7.6.</strong> Radare2</a></li><li class="chapter-item expanded "><a href="../06-tools/fcrackzip.html"><strong aria-hidden="true">7.7.</strong> fcrackzip</a></li><li class="chapter-item expanded "><a href="../06-tools/ngrok.html"><strong aria-hidden="true">7.8.</strong> ngrok</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.9.</strong> Ghidra</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.10.</strong> Ida</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">7.11.</strong> Hydra</div></li></ol></li><li class="chapter-item expanded "><a href="../04-tips/index.html"><strong aria-hidden="true">8.</strong> TIPS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04-tips/guide-this-website.html"><strong aria-hidden="true">8.1.</strong> Guide This Web</a></li><li class="chapter-item expanded "><a href="../04-tips/mdbook.html"><strong aria-hidden="true">8.2.</strong> Mdbook</a></li><li class="chapter-item expanded "><a href="../04-tips/deb-file.html"><strong aria-hidden="true">8.3.</strong> Install / Remove .deb in ubuntu</a></li><li class="chapter-item expanded "><a href="../04-tips/sql-server.html"><strong aria-hidden="true">8.4.</strong> Install sql server ubuntu 20.04</a></li><li class="chapter-item expanded "><a href="../04-tips/set-ip-static.html"><strong aria-hidden="true">8.5.</strong> Setting IP Static</a></li><li class="chapter-item expanded "><a href="../04-tips/set-https.html"><strong aria-hidden="true">8.6.</strong> HTTPS in Local Network (Ubuntu Server 20.04)</a></li><li class="chapter-item expanded "><a href="../04-tips/itcareer.html"><strong aria-hidden="true">8.7.</strong> IT Career Roadmap</a></li><li class="chapter-item expanded "><a href="../04-tips/wlan-monitor-mode.html"><strong aria-hidden="true">8.8.</strong> Wlan Monitor Mode</a></li><li class="chapter-item expanded "><a href="../04-tips/virtualbox.html"><strong aria-hidden="true">8.9.</strong> Virtualbox</a></li><li class="chapter-item expanded "><a href="../04-tips/terminal-path.html"><strong aria-hidden="true">8.10.</strong> Path variable terminal</a></li><li class="chapter-item expanded "><a href="../04-tips/linux-user-group.html"><strong aria-hidden="true">8.11.</strong> Linux Users &amp; Groups</a></li><li class="chapter-item expanded "><a href="../04-tips/replikasi-onnocenter.html"><strong aria-hidden="true">8.12.</strong> Replikasi Onnocenter</a></li><li class="chapter-item expanded "><a href="../04-tips/moodle.html"><strong aria-hidden="true">8.13.</strong> Install Moodle</a></li><li class="chapter-item expanded "><a href="../04-tips/ros.html"><strong aria-hidden="true">8.14.</strong> Install ROS</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../04-tips/ros-melodic.html"><strong aria-hidden="true">8.14.1.</strong> ROS Melodic</a></li><li class="chapter-item expanded "><a href="../04-tips/ros-noetic.html"><strong aria-hidden="true">8.14.2.</strong> ROS Noetic</a></li><li class="chapter-item expanded "><a href="../04-tips/ros-opencv.html"><strong aria-hidden="true">8.14.3.</strong> Install ROS &amp; Opencv</a></li></ol></li><li class="chapter-item expanded "><a href="../04-tips/hapus-dualboot.html"><strong aria-hidden="true">8.15.</strong> Hapus Dual Boot</a></li><li class="chapter-item expanded "><a href="../04-tips/membuat-file-iso.html"><strong aria-hidden="true">8.16.</strong> Membuat File ISO</a></li><li class="chapter-item expanded "><a href="../04-tips/tips-random.html"><strong aria-hidden="true">8.17.</strong> Random</a></li></ol></li><li class="chapter-item expanded "><a href="../08-ujian/index.html"><strong aria-hidden="true">9.</strong> Pembahasan Ujian</a></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">9.1.</strong> Cisco Packet Tracer</div></li><li><ol class="section"><li class="chapter-item expanded "><a href="../08-ujian/cisco-pt-quiz1.html"><strong aria-hidden="true">9.1.1.</strong> Quiz 1</a></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.1.2.</strong> Quiz 2</div></li></ol></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.2.</strong> Onnocenter/moodle</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">9.2.1.</strong> Jaringan Komputer</div></li><li><ol class="section"><li class="chapter-item expanded "><div><strong aria-hidden="true">9.2.1.1.</strong> TCP/IP</div></li><li class="chapter-item expanded "><div><strong aria-hidden="true">9.2.1.2.</strong> DNS</div></li></ol></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
 
-            <div id="menu-bar-hover-placeholder"></div>
-            <div id="menu-bar" class="menu-bar sticky bordered">
-                <div class="left-buttons">
-                    <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents"
-                        aria-label="Toggle Table of Contents" aria-controls="sidebar">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                    <button id="theme-toggle" class="icon-button" type="button" title="Change theme"
-                        aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
-                        <i class="fa fa-paint-brush"></i>
-                    </button>
-                    <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
-                        <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
-                        <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
-                        <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
-                        <li role="none"><button role="menuitem" class="theme" id="navy">Navy (default)</button></li>
-                        <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
-                    </ul>
+        <div id="page-wrapper" class="page-wrapper">
 
-                    <!-- <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)"
-                        aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S"
-                        aria-controls="searchbar">
-                        <i class="fa fa-search"></i>
-                    </button> -->
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                        
+                    </div>
 
+                    <h1 class="menu-title">Wetofu</h1>
+
+                    <div class="right-buttons">
+                        
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        
+                        
+                    </div>
                 </div>
-                <!-- ----------------------------------------------- DIGANTI MENU TITLE ----------------------------------------------- -->
-                <h1 class="menu-title">Configure SSH</h1>
-                <!-- ----------------------------------------------# DIGANTI MENU TITLE #---------------------------------------------- -->
 
-                <div class="right-buttons">
-                    <a href="../print.html" title="Print this book" aria-label="Print this book">
-                        <i id="print-button" class="fa fa-print"></i>
-                    </a>
+                
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" name="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
 
-                    <a href="https://github.com/syahrolus" title="Git repository" aria-label="Git repository">
-                        <i id="git-repository-button" class="fa fa-github"></i>
-                    </a>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="openssh-key"><a class="header" href="#openssh-key">OpenSSH Key</a></h1>
+<h3 id="public-and-private-keys"><a class="header" href="#public-and-private-keys">Public and Private Keys</a></h3>
+<p>Public key authentication is more secure than password authentication. This is particularly important if the computer is visible on the internet. If you don't think it's important, try logging the login attempts you get for the next week. My computer - a perfectly ordinary desktop PC - had over 4,000 attempts to guess my password and almost 2,500 break-in attempts in the last week alone.</p>
+<p>With public key authentication, the authenticating entity has a public key and a private key. Each key is a large number with special mathematical properties. The private key is kept on the computer you log in from, while the public key is stored on the .ssh/authorized_keys file on all the computers you want to log in to. When you log in to a computer, the SSH server uses the public key to &quot;lock&quot; messages in a way that can only be &quot;unlocked&quot; by your private key - this means that even the most resourceful attacker can't snoop on, or interfere with, your session. As an extra security measure, most SSH programs store the private key in a passphrase-protected format, so that if your computer is stolen or broken in to, you should have enough time to disable your old public key before they break the passphrase and start using your key. Wikipedia has a more detailed explanation of how keys work.</p>
+<p>Public key authentication is a much better solution than passwords for most people. In fact, if you don't mind leaving a private key unprotected on your hard disk, you can even use keys to do secure automatic log-ins - as part of a network backup, for example. Different SSH programs generate public keys in different ways, but they all generate public keys in a similar format:</p>
+<pre><code>&lt;ssh-rsa or ssh-dss&gt; &lt;really long string of nonsense&gt; &lt;username&gt;@&lt;host&gt;
+</code></pre>
+<h3 id="key-based-ssh-logins"><a class="header" href="#key-based-ssh-logins">Key-Based SSH Logins</a></h3>
+<p>Key-based authentication is the most secure of several modes of authentication usable with OpenSSH, such as plain password and Kerberos tickets. Key-based authentication has several advantages over password authentication, for example the key values are significantly more difficult to brute-force, or guess than plain passwords, provided an ample key length. Other authentication methods are only used in very specific situations.</p>
+<p>SSH can use either &quot;RSA&quot; (Rivest-Shamir-Adleman) or &quot;DSA&quot; (&quot;Digital Signature Algorithm&quot;) keys. Both of these were considered state-of-the-art algorithms when SSH was invented, but DSA has come to be seen as less secure in recent years. RSA is the only recommended choice for new keys, so this guide uses &quot;RSA key&quot; and &quot;SSH key&quot; interchangeably.</p>
+<p>Key-based authentication uses two keys, one &quot;public&quot; key that anyone is allowed to see, and another &quot;private&quot; key that only the owner is allowed to see. To securely communicate using key-based authentication, one needs to create a key pair, securely store the private key on the computer one wants to log in from, and store the public key on the computer one wants to log in to.</p>
+<p>Using key based logins with ssh is generally considered more secure than using plain password logins. This section of the guide will explain the process of generating a set of public/private RSA keys, and using them for logging into your Ubuntu computer(s) via OpenSSH.</p>
+<h3 id="generating-rsa-keys"><a class="header" href="#generating-rsa-keys">Generating RSA Keys</a></h3>
+<p>The first step involves creating a set of RSA keys for use in authentication.</p>
+<p>This should be done on the client.</p>
+<p>To create your public and private SSH keys on the command-line:</p>
+<pre><code>mkdir ~/.ssh
+chmod 700 ~/.ssh
+ssh-keygen -t rsa
+</code></pre>
+<p>You will be prompted for a location to save the keys, and a passphrase for the keys. This passphrase will protect your private key while it's stored on the hard drive:</p>
+<pre><code>Generating public/private rsa key pair.
+Enter file in which to save the key (/home/b/.ssh/id_rsa):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /home/b/.ssh/id_rsa.
+Your public key has been saved in /home/b/.ssh/id_rsa.pub.
+</code></pre>
+<p>Your public key is now available as .ssh/id_rsa.pub in your home folder.</p>
+<p>Congratulations! You now have a set of keys. Now it's time to make your systems allow you to login with them</p>
+<h4 id="choosing-a-good-passphrase"><a class="header" href="#choosing-a-good-passphrase">Choosing a good passphrase</a></h4>
+<p>You need to change all your locks if your RSA key is stolen. Otherwise the thief could impersonate you wherever you authenticate with that key.</p>
+<p>An SSH key passphrase is a secondary form of security that gives you a little time when your keys are stolen. If your RSA key has a strong passphrase, it might take your attacker a few hours to guess by brute force. That extra time should be enough to log in to any computers you have an account on, delete your old key from the .ssh/authorized_keys file, and add a new key.</p>
+<p>Your SSH key passphrase is only used to protect your private key from thieves. It's never transmitted over the Internet, and the strength of your key has nothing to do with the strength of your passphrase.</p>
+<p>The decision to protect your key with a passphrase involves convenience x security. Note that if you protect your key with a passphrase, then when you type the passphrase to unlock it, your local computer will generally leave the key unlocked for a time. So if you use the key multiple times without logging out of your local account in the meantime, you will probably only have to type the passphrase once.</p>
+<p>If you do adopt a passphrase, pick a strong one and store it securely in a password manager. You may also write it down on a piece of paper and keep it in a secure place. If you choose not to protect the key with a passphrase, then just press the return when ssh-keygen asks.</p>
+<h4 id="key-encryption-level"><a class="header" href="#key-encryption-level">Key Encryption Level</a></h4>
+<p>Note: The default is a 2048 bit key. You can increase this to 4096 bits with the -b flag (Increasing the bits makes it harder to crack the key by brute force methods).</p>
+<pre><code>ssh-keygen -t rsa -b 4096
+</code></pre>
+<h4 id="password-authentication"><a class="header" href="#password-authentication">Password Authentication</a></h4>
+<p>The main problem with public key authentication is that you need a secure way of getting the public key onto a computer before you can log in with it. If you will only ever use an SSH key to log in to your own computer from a few other computers (such as logging in to your PC from your laptop), you should copy your SSH keys over on a memory stick, and disable password authentication altogether. If you would like to log in from other computers from time to time (such as a friend's PC), make sure you have a strong password.</p>
+<h3 id="transfer-client-key-to-host"><a class="header" href="#transfer-client-key-to-host">Transfer Client Key to Host</a></h3>
+<p>The key you need to transfer to the host is the public one. If you can log in to a computer over SSH using a password, you can transfer your RSA key by doing the following from your own computer:</p>
+<pre><code>ssh-copy-id &lt;username&gt;@&lt;host&gt;
+</code></pre>
+<p>Where <username> and <host> should be replaced by your username and the name of the
+computer you're transferring your key to.</p>
+<p>(i) Due to this bug, you cannot specify a port other than the standard port 22. You can work around this by issuing the command like this: ssh-copy-id &quot;<username>@<host> -p &lt;port_nr&gt;&quot;. If you are using the standard port 22, you can ignore this tip.</p>
+<p>Another alternative is to copy the public key file to the server and concatenate it onto the authorized_keys file manually. It is wise to back that up first:</p>
+<pre><code>cp authorized_keys authorized_keys_Backup
+cat id_rsa.pub &gt;&gt; authorized_keys
+</code></pre>
+<p>You can make sure this worked by doing:</p>
+<pre><code>ssh &lt;username&gt;@&lt;host&gt;
+</code></pre>
+<p>You should be prompted for the passphrase for your key:</p>
+<pre><code>Enter passphrase for key '/home/&lt;user&gt;/.ssh/id_rsa':
+</code></pre>
+<p>Enter your passphrase, and provided host is configured to allow key-based logins, you should then be logged in as usual.</p>
+<h3 id="troubleshooting"><a class="header" href="#troubleshooting">Troubleshooting</a></h3>
+<p><strong>Encrypted Home Directory</strong></p>
+<p>If you have an encrypted home directory, SSH cannot access your authorized_keys file because it is inside your encrypted home directory and won't be available until after you are authenticated. Therefore, SSH will default to password authentication.</p>
+<p>To solve this, create a folder outside your home named /etc/ssh/&amp;ltusername&gt; (replace &quot;<username>&quot; with your actual username). This directory should have 755 permissions and be owned by the user. Move the authorized_keys file into it. The authorized_keys file should have 644 permissions and be owned by the user.</p>
+<p>Then edit your /etc/ssh/sshd_config and add:</p>
+<pre><code>AuthorizedKeysFile   /etc/ssh/%u/authorized_keys
+</code></pre>
+<p>Finally, restart ssh with:</p>
+<pre><code>sudo service ssh restart
+</code></pre>
+<p>The next time you connect with SSH you should not have to enter your password.</p>
+<p><strong>username@host's password:</strong></p>
+<p>If you are not prompted for the passphrase, and instead get just the</p>
+<pre><code>username@host's password:
+</code></pre>
+<p>prompt as usual with password logins, then read on. There are a few things which could prevent this from working as easily as demonstrated above. On default Ubuntu installs however, the above examples should work. If not, then check the following condition, as it is the most frequent cause:</p>
+<p>On the host computer, ensure that the /etc/ssh/sshd_config contains the following lines, and that they are uncommented;</p>
+<pre><code>PubkeyAuthentication yes
+RSAAuthentication yes
+</code></pre>
+<p>If not, add them, or uncomment them, restart OpenSSH, and try logging in again. If you get the passphrase prompt now, then congratulations, you're logging in with a key!</p>
+<p><strong>Permission denied (publickey)</strong></p>
+<p>If you're sure you've correctly configured sshd_config, copied your ID, and have your private key in the .ssh directory, and still getting this error:</p>
+<pre><code>Permission denied (publickey).
+</code></pre>
+<p>Chances are, your /home/<user> or ~/.ssh/authorized_keys permissions are too open by OpenSSH standards. You can get rid of this problem by issuing the following commands:</p>
+<pre><code>chmod go-w ~/
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+</code></pre>
+<p><strong>Error: Agent admitted failure to sign using the key.</strong></p>
+<p>This error occurs when the ssh-agent on the client is not yet managing the key. Issue the
+following commands to fix:</p>
+<pre><code>ssh-add
+</code></pre>
+<p>This command should be entered after you have copied your public key to the host computer.</p>
+<p><strong>Debugging and sorting out further problems</strong></p>
+<p>The permissions of files and folders is crucial to this working. You can get debugging information from both the client and server.</p>
+<p>if you think you have set it up correctly , yet still get asked for the password, try starting the server with debugging output to the terminal.</p>
+<pre><code>sudo /usr/sbin/sshd -d
+</code></pre>
+<p>To connect and send information to the client terminal</p>
+<pre><code>ssh -v ( or -vv) username@host's
+</code></pre>
+<h3 id="where-to-from-here"><a class="header" href="#where-to-from-here">Where to From Here</a></h3>
+<p>No matter how your public key was generated, you can add it to your Ubuntu system by opening the file .ssh/authorized_keys in your favourite text editor and adding the key to the bottom of the file. You can also limit the SSH features that the key can use, such as disallowing port-forwarding or only allowing a specific command to be run. This is done by adding &quot;options&quot; before the SSH key, on the same line in the authorized_keys file. For example, if you maintain a CVS repository, you could add a line like this:</p>
+<pre><code>command=&quot;/usr/bin/cvs server&quot;,no-agent-forwarding,no-port-forwarding,no-X11-forwarding,no-user-rc ssh-dss &lt;string of nonsense&gt;...
+</code></pre>
+<p>When the user with the specified key logged in, the server would automatically run /usr/bin/cvs server, ignoring any requests from the client to run another command such as a shell. For more information, see the sshd man page. /755</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../02-cybersec/ssh-key.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+
+                        
+                            <a rel="next" href="../02-cybersec/ssh-port-forwarding.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+
+                        <div style="clear: both"></div>
+                    </nav>
                 </div>
             </div>
 
-
-            <div id="search-wrapper" class="hidden">
-                <form id="searchbar-outer" class="searchbar-outer">
-                    <input type="search" name="search" id="searchbar" name="searchbar"
-                        placeholder="Search this book ..." aria-controls="searchresults-outer"
-                        aria-describedby="searchresults-header">
-                </form>
-                <div id="searchresults-outer" class="searchresults-outer hidden">
-                    <div id="searchresults-header" class="searchresults-header"></div>
-                    <ul id="searchresults">
-                    </ul>
-                </div>
-            </div>
-
-
-            <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
-            <script type="text/javascript">
-                document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
-                document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
-                Array.from(document.querySelectorAll('#sidebar a')).forEach(function (link) {
-                    link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
-                });
-            </script>
-
-            <div id="content" class="content">
-                <main>
-                    <!-- ----------------------------------------------- DIGANTI MENU ----------------------------------------------- -->
-                    <h2>Configure OpenSSH server</h2>
-                    <ul>
-                        <pre><code>sudo apt-get install openssh-server</code></pre>
-                        you will need to configure it by editing the <code>sshd_config</code> file in the
-                        <code>/etc/ssh</code> directory.
-                        <pre><code> <strong>!!!</strong>
-sshd_config is the configuration file for the OpenSSH server.
-ssh_config is the configuration file for the OpenSSH client.
-Make sure not to get them mixed up.</code></pre>
-                        First, make a backup of your sshd_config file by copying it to your home directory, or by making
-                        a read-only copy in <code>/etc/ssh</code> by doing:
-                        <pre><code>sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.factory-defaults
-sudo chmod a-w /etc/ssh/sshd_config.factory-defaults</code></pre>
-                        Creating a read-only backup in /etc/ssh means you'll always be able to find a known-good
-                        configuration when you need it.
-                        <br><br>
-                        Once you've backed up your sshd_config file, you can make changes with any text editor, for
-                        example;
-                        <pre><code>sudo gedit /etc/ssh/sshd_config
-sudo restart ssh</code></pre>
-
-                        If you get the error, "Unable to connect to Upstart", restart ssh with the following:
-                        <pre><code>sudo systemctl restart ssh</code></pre>
-                    </ul>
-
-                    <!-- ----------------------------------------------# DIGANTI MENU #---------------------------------------------- -->
-                </main>
-
-                <!-- <nav class="nav-wrapper" aria-label="Page navigation">
-                    Mobile navigation buttons
-                    ----------------------------------------------- DIGANTI PREV NEXT -----------------------------------------------
-
-                    sebelum
-                    <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter"
-                        aria-label="Previous chapter" aria-keyshortcuts="Left">
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../02-cybersec/ssh-key.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
-                    sesudah
-                    <a rel="next" href="../index.html" class="mobile-nav-chapters next" title="Next chapter"
-                        aria-label="Next chapter" aria-keyshortcuts="Right">
+                
+
+                
+                    <a rel="next" href="../02-cybersec/ssh-port-forwarding.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                    ----------------------------------------------# DIGANTI PREV NEXT #----------------------------------------------
+                
+            </nav>
 
-                    <div style="clear: both"></div>
-                </nav> -->
-            </div>
         </div>
 
-        <!-- <nav class="nav-wide-wrapper" aria-label="Page navigation">
-            ----------------------------------------------- DIGANTI PREV NEXT 2 -----------------------------------------------
-            sebelum
-            <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter"
-                aria-label="Previous chapter" aria-keyshortcuts="Left">
-                <i class="fa fa-angle-left"></i>
-            </a>
-            sesudah
-            <a rel="next" href="../index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter"
-                aria-keyshortcuts="Right">
-                <i class="fa fa-angle-right"></i>
-            </a>
-            ----------------------------------------------# DIGANTI PREV NEXT 2 #----------------------------------------------
-        </nav> -->
+        
 
-    </div>
+        
 
+        
 
+        
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
 
+        
 
+        
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
 
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
+        <!-- Custom JS scripts -->
+        
 
+        
 
-    <script type="text/javascript">
-        window.playground_copyable = true;
-    </script>
-
-
-
-
-
-    <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
-
-
-    <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-    <script src="../book.js" type="text/javascript" charset="utf-8"></script>
-
-    <!-- Custom JS scripts -->
-
-
-
-
-</body>
-
+    </body>
 </html>
