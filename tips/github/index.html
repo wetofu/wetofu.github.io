@@ -3135,6 +3135,76 @@
 
             
           
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ctf/writeup/nahamcon_brsaq/" class="md-nav__link">
+        Nahamcon 2022, Baby RSA Quiz
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ctf/writeup/nahamcon_xorrox/" class="md-nav__link">
+        Nahamcon 2022, XORROX
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ctf/writeup/nahamcon_sloc/" class="md-nav__link">
+        Nahamcon 2022, Steam Locomotive
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ctf/writeup/nahamcon_awr/" class="md-nav__link">
+        Nahamcon 2022, A Wild Ride
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ctf/writeup/nahamcon_ostr/" class="md-nav__link">
+        Nahamcon 2022, Ostrich
+      </a>
+    </li>
+  
+
+            
+          
         </ul>
       </nav>
     </li>
@@ -4201,7 +4271,7 @@
 
 
 <h1 id="github">Github<a class="headerlink" href="#github" title="Permanent link">&para;</a></h1>
-<h3 id="cheatsheets">Cheatsheets<a class="headerlink" href="#cheatsheets" title="Permanent link">&para;</a></h3>
+<h2 id="cheatsheets">Cheatsheets<a class="headerlink" href="#cheatsheets" title="Permanent link">&para;</a></h2>
 <ol>
 <li>git folder</li>
 </ol>
@@ -4215,10 +4285,49 @@
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>git log
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>git log -3
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git checkout c0a1dd1fd1a22e272532312930965a3054988d2a
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git checkout c0a1dd1fd1a22e272532312930965a3054988d2a
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>git checkout c0a1dd1fd1a22e272532312930965a3054988d2a data2.txt
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a># back to last edited
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>git checkout &lt;branch_name&gt;
+</code></pre></div>
+3. branch</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>git branch branch1
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>git branch branch2
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>git log
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>git log --all --decorate --oneline --graph
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>alias graph=&quot;git log --all --decorate --oneline --graph&quot;
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>graph
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>git checkout &lt;nama_branch&gt;
+</code></pre></div>
+<ol>
+<li>merge</li>
+</ol>
+<p><strong>Fast forward</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>git merge branch1
+</code></pre></div>
+<p>hapus branch</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>git branch --merged
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>git branch -d branch1
+</code></pre></div>
+<p>delete tanpa merge</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>git branch -D branch1
+</code></pre></div>
+<p><strong>Three-way Merge</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>git merge branch2
+</code></pre></div>
+<p>lalu ada pesan commit (membuka editor baru), lalu save &amp; quit   </p>
+<ol>
+<li>push branch</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>git push origin branch1
+</code></pre></div>
+<ol>
+<li>config</li>
+</ol>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>git config --global user.name &quot;&lt;user_name_github&gt;&quot;
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>git config --global user.email &quot;&lt;user_email_github&gt;&quot;
 </code></pre></div>
 
               
