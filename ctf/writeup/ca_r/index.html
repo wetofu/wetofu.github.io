@@ -4705,38 +4705,39 @@
 <a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 <p>inti dari source code adalah mencari <code>v5 += ((unsigned __int8)key[i % 6] ^ encrypted[i]) == argv[1][i];</code>, input akan dibandingkan dengan <code>(unsigned __int8)key[i % 6] ^ encrypted[i]</code> (flag), dengan bantuan <a href="https://gef.readthedocs.io/en/master/" target="_blank">GDB</a> akan diketahui proses pembandingan nilai input dengan nilai flag</p>
-<p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> <em>mungkin bukan cara paling efektif</em></p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ gdb -q ./rebuilding
+<p><img alt="⚠" class="twemoji" src="https://twemoji.maxcdn.com/v/latest/svg/26a0.svg" title=":warning:" /> <em>mungkin bukan cara paling efisien</em></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>$ gdb ./rebuilding
 <a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>(gdb) source ~/path/to/gef/gef.py
 <a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
 <a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>gef&gt; disas main
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>gef&gt; # terlihat fungsi xor (main+277) dan cmp (main+303) setelah fungsi xor
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>gef&gt; # langsung set break pada cmp (main+303)
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>gef&gt; break *main+303
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>gef&gt; run
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>...
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>0x5555554009b6 &lt;main+303&gt;       cmp    cl, al
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>...
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>gef&gt; # register $al merupakan input kita
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>gef&gt; # register $cl merupakan input flag
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>gef&gt; info register $cl
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>cl             0x48                0x48
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>gef&gt; # chr(0x48) = H
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>gef&gt; c
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>...
-<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>0x5555554009b6 &lt;main+303&gt;       cmp    cl, al
-<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>...
-<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>gef&gt; i r $cl
-<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>cl             0x54                0x54
-<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>gef&gt; # chr(0x54) = T
-<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>gef&gt; # proses manual seterusnya :)
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>...
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>gef&gt; # terlihat fungsi xor (main+277) dan cmp (main+303) setelah fungsi xor
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>gef&gt; # langsung set break pada cmp (main+303)
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>gef&gt; break *main+303
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>gef&gt; run
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>...
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>0x5555554009b6 &lt;main+303&gt;       cmp    cl, al
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>...
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>gef&gt; # register $al merupakan input kita
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>gef&gt; # register $cl merupakan input flag
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>gef&gt; info register $cl
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>cl             0x48                0x48
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>gef&gt; # chr(0x48) = H
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>gef&gt; c
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>...
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>0x5555554009b6 &lt;main+303&gt;       cmp    cl, al
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>...
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>gef&gt; i r $cl
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>cl             0x54                0x54
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>gef&gt; # chr(0x54) = T
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a>gef&gt; # proses manual seterusnya :)
 </code></pre></div>
-<p>```python "flag.py"
-flag = [0x48, 0x54, 0x42, 0x7b, 0x68, 0x31, 0x64, 0x31, 0x6e, 0x67, 0x5f, 0x31, 0x6e, 0x5f, 0x63, 0x30, 0x6e, 0x73, 0x74, 0x72, 0x75, 0x63, 0x74, 0x30, 0x72, 0x35, 0x5f, 0x31, 0x6e, 0x31, 0x74, 0x7d]</p>
-<p>for i in flag:
-    print(chr(i),end='')
-print()
-```</p>
+<div class="highlight"><span class="filename">flag.py</span><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">flag</span> <span class="o">=</span> <span class="p">[</span><span class="mh">0x48</span><span class="p">,</span> <span class="mh">0x54</span><span class="p">,</span> <span class="mh">0x42</span><span class="p">,</span> <span class="mh">0x7b</span><span class="p">,</span> <span class="mh">0x68</span><span class="p">,</span> <span class="mh">0x31</span><span class="p">,</span> <span class="mh">0x64</span><span class="p">,</span> <span class="mh">0x31</span><span class="p">,</span> <span class="mh">0x6e</span><span class="p">,</span> <span class="mh">0x67</span><span class="p">,</span> <span class="mh">0x5f</span><span class="p">,</span> <span class="mh">0x31</span><span class="p">,</span> <span class="mh">0x6e</span><span class="p">,</span> <span class="mh">0x5f</span><span class="p">,</span> <span class="mh">0x63</span><span class="p">,</span> <span class="mh">0x30</span><span class="p">,</span> <span class="mh">0x6e</span><span class="p">,</span> <span class="mh">0x73</span><span class="p">,</span> <span class="mh">0x74</span><span class="p">,</span> <span class="mh">0x72</span><span class="p">,</span> <span class="mh">0x75</span><span class="p">,</span> <span class="mh">0x63</span><span class="p">,</span> <span class="mh">0x74</span><span class="p">,</span> <span class="mh">0x30</span><span class="p">,</span> <span class="mh">0x72</span><span class="p">,</span> <span class="mh">0x35</span><span class="p">,</span> <span class="mh">0x5f</span><span class="p">,</span> <span class="mh">0x31</span><span class="p">,</span> <span class="mh">0x6e</span><span class="p">,</span> <span class="mh">0x31</span><span class="p">,</span> <span class="mh">0x74</span><span class="p">,</span> <span class="mh">0x7d</span><span class="p">]</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">flag</span><span class="p">:</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="n">i</span><span class="p">),</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="nb">print</span><span class="p">()</span>
+</code></pre></div>
 <p>flag <code>HTB{h1d1ng_1n_c0nstruct0r5_1n1t}</code></p>
 
               
