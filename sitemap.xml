@@ -2,1282 +2,1034 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://wetofu.github.io/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ai/apriori/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ai/basics/af/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ai/basics/bp/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ai/basics/cr/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ai/basics/lr/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ai/boosting/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ai/deeplearning/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ai/kmeans/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ai/knn/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ai/logr/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ai/naivebayes/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ai/nn/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ai/nn/ann/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ai/nn/cnn/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ai/randomforest/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ai/svm/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/blog/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://wetofu.github.io/blog/2024/07/13/real-case---time-based-blind-sql-injection-using-manual-script-python/</loc>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/blog/2024/07/06/real-case---bypass-sql-injection-using-character-encoding-and-sqlmap-tamper/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
+    </url>
+    <url>
+         <loc>https://wetofu.github.io/blog/2024/07/13/easy-auto-penetration-report-with-spreadsheet-and-apps-script/</loc>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/blog/2023/12/31/happy-new-years-eve/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/cloud/aws/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/cloud/google/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/bindshellcode/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/rtl/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/format/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/format/format0/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/format/format1/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/format/format2/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/format/format3/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/format/format4/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/heap/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/heap/bc/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/heap/cf/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/heap/first_fit/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/heap/if/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/heap/malloc_chunk/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/heap/malloc_state/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/heap/sc/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/netfinal/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/netfinal/final0/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/netfinal/final1/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/netfinal/final2/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/netfinal/net0/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/netfinal/net1/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/netfinal/net2/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/stack/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/stack/stack0/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/stack/stack1/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/stack/stack2/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/stack/stack3/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/stack/stack4/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/stack/stack5/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/binex/stack/stack6/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/cpp/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/php/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/python/linkedlist/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/webvuln/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/ca_aitm/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/ca_htcht/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/ca_jftb/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/ca_oo/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/ca_r/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/ca_snake/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/ca_spgd/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/ca_tteo/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/ca_wide/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/ca_wt/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/nahamcon_awr/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/nahamcon_brsaq/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/nahamcon_ostr/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/nahamcon_sloc/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/nahamcon_xorrox/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/vishwa22_hb/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/vishwa22_jtr/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/vishwa22_kys/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/vishwa22_tl/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/comp/zero0pts22_af/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-appointment/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-archetype/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-bat_computer/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-bike/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-blue/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-crocodile/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-curling/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-dancing/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-explosion/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-fawn/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-heist/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-htb_console/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-ignition/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-included/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-jeeves/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-jerry/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-lame/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-markup/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-md5fl/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-meow/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-netmon/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-oopsie/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-openadmin/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-optimistic/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-pennyworth/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-preignition/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-pwnshop/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-redeemer/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-reg/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-responder/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-sequel/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-tactics/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-unified/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/htb/htb-vaccine/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/overthewire/bandit/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/overthewire/leviathan/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/ctf/writeup/overthewire/natas/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/cybersecurity/firewall/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/cybersecurity/idsips/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/cybersecurity/lab/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/cybersecurity/term/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/cybersecurity/tns/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/cybersecurity/bug_hunter/laravel/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/cybersecurity/bug_hunter/ls/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/cybersecurity/bug_hunter/method/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/cybersecurity/bug_hunter/some_cases/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/cybersecurity/bug_hunter/tools/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/cybersecurity/securityp/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/cybersecurity/securityp/modul1/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/cybersecurity/tsa-cyberops/nsi/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/acl/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/arista/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/as/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/bgp/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/dns/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/eigrp/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/fortigate/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/ip_s_w/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/ldap/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/mikrotik/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/mssql/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/net_tools/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/netbios/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/netsec/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/ntp/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/osi_layer/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/ospf/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/perangkat_cisco/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/rip/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/routing/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/rr/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/snmp/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/ssdp/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/syn/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/tftp/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/udp/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/vboxnet/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/vlan/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/vpn_l2tp/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/vpn_openvpn/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/vpn_pptp/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/jarkom/vpn_sstp/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/aes/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/blowfish/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/des/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/dh/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/ecc/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/ecc/rumus/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/elgamal/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/hash/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/ntru/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/rc4/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/rsa/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/rsa/index_related/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/rsa/mod_dsb_att/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/rsa/pkey_d/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/rsa/plaintext/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/rsa/random/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/theorem/cbc/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/theorem/cfb/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/theorem/crt/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/theorem/dc/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/theorem/ds/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/theorem/dss/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/theorem/ecb/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/theorem/fermat/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/theorem/fn/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/theorem/gcd_egcd/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/theorem/mac/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/theorem/mmi/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/theorem/ofb/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/theorem/pkcs1/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/theorem/sbox/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/theorem/shannon/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kripto/twofish/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/kuliah/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/deb-file/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/docker/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/github/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/guide-this-website/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/hapus-dualboot/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/itcareer/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/keylogger/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/linux-user-group/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/mdbook/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/membuat-file-iso/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/moodle/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/phising/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/py_email/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/python_version/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/replikasi-onnocenter/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/ros-melodic/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/ros-noetic/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/ros-opencv/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/ros/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/set-https/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/set-ip-static/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/sql-server/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/ssh_openssl/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/terminal-path/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/tips-random/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/virtualbox/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/wifihack/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tips/wlan-monitor-mode/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/archive/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/burpsuite/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/commix/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/curl/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/cutter/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/fcrackzip/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/gdb/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/gns3/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/hydra/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/ironbee/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/maltego/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/modsecurity/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/netcat/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/ngrok/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/nmap/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/openssl/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/owasp/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/radare2/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/snort/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/sqlmap/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/tcpdump/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/zabbix/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/shellscript/shell-Array/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/shellscript/shell-Operators/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/shellscript/shell-decision/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/shellscript/shell-loop/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/shellscript/shell-script/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/tool/shellscript/shell-spcChar/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/blog/archive/2024/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
     <url>
          <loc>https://wetofu.github.io/blog/archive/2023/</loc>
-         <lastmod>2024-07-06</lastmod>
-         <changefreq>daily</changefreq>
+         <lastmod>2025-06-08</lastmod>
     </url>
 </urlset>
